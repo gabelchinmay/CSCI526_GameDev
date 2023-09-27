@@ -1,0 +1,34 @@
+{
+    "name": "RestartAction",
+    "maps": [
+        {
+            "name": "Restart",
+            "id": "b8591026-ece3-429d-a4bc-6ff4ed415c03",
+            "actions": [
+                {
+                    "name": "ReStart",
+                    "type": "Button",
+                    "id": "60b450eb-a0bd-4de6-8fb3-747981f283ed",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "97e8c915-8402-4a65-b14f-aa386dee9cc5",
+                    "path": "<Keyboard>/f12",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ReStart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -1,1 +1,2 @@
-# CSCI526_GameDev
+# csci526_prototype
+
