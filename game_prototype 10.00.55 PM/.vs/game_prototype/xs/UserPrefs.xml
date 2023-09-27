@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{F170F08D-1FD0-0DFC-77CB-3E88872F3CE4}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EatTarget.cs">
+    <Files>
+      <File FileName="Assets/Scripts/EatTarget.cs" Line="37" Column="6" />
+      <File FileName="Assets/mainMenuScript.cs" Line="11" Column="6" />
+      <File FileName="Assets/Timer.cs" Line="11" Column="1" />
+      <File FileName="Assets/Scripts/playerMovements.cs" Line="74" Column="6" />
+      <File FileName="Assets/gateScript.cs" Line="5" Column="24" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="game_prototype" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="EatTarget.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="941e59f1-1e25-4d05-af17-820dd25342e9" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
