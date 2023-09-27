@@ -9,9 +9,6 @@ public class ColorCollectable : MonoBehaviour
     private SpriteRenderer sr;
     private Color collectableColor;
     
-    //Public variables
-    public String colorTag;
-    
     // Start is called before the first frame update
     void Start()
     {
