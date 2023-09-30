@@ -12,6 +12,7 @@ TagManager:
   - Gate
   - TestObj
   - JumpHigher
+  - ColorCollectable
   layers:
   - Default
   - TransparentFX
