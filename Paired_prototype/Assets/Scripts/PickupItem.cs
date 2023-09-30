@@ -18,6 +18,9 @@ public class PickupItem : MonoBehaviour
             case "Defrost":
                 return "De-frost Collected";
 
+            case "InvincibleShield":
+                return "Invincible Shield Collected";
+
             default:
                 return "Unknown Item Collected";
         }
