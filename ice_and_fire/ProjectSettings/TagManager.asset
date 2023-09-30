@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Placeholder
+  - ColorCollectable
+  - HealthUp
+  - Defrost
+  - InvincibleShield
+  - JumpHigher
+  - SpeedUp
+  - Key
   layers:
   - Default
   - TransparentFX

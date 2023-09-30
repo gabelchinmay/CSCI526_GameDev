@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 playerPreviousPosition;
     public GameObject placeholderPrefab;
     private bool isOnDefrost = false;
+    private KeyGateController key = null;
 
     // new Feature: Invicible Shield, boolean variable to show if this player is shielded or not
     private bool isShielded = false;
@@ -125,6 +126,10 @@ public class PlayerController : MonoBehaviour
             {
                 InventoryText.text += "\nInvincibleShield: " + inventory["InvincibleShield"];
             }
+            if (inventory.ContainsKey("Key"))
+            {
+                InventoryText.text += "\nKeys: " + inventory["Key"];
+            }
         }
         else
         {
@@ -218,6 +223,25 @@ public class PlayerController : MonoBehaviour
                 if (inventory["InvincibleShield"] <= 0)
                 {
                     inventory.Remove("InvincibleShield");
+                }
+            }
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.O) && inventory.ContainsKey("Key"))
+        {
+            //StartCoroutine(JumpHigherPowerUp());
+            if (key != null)
+            {
+                key.openGate();
+            }
+
+            if (inventory.ContainsKey("Key"))
+            {
+                inventory["Key"]--;
+                if (inventory["Key"] <= 0)
+                {
+                    inventory.Remove("Key");
                 }
             }
 
@@ -344,7 +368,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("HealthUp") || collision.CompareTag("SpeedUp") || collision.CompareTag("Defrost") || collision.CompareTag("Placeholder") || collision.CompareTag("JumpHigher") || collision.CompareTag("InvincibleShield"))
+        if (collision.CompareTag("HealthUp") || collision.CompareTag("Key") || collision.CompareTag("Defrost") || collision.CompareTag("Placeholder") || collision.CompareTag("JumpHigher") || collision.CompareTag("InvincibleShield"))
         {
             string itemName = collision.tag;
 
@@ -357,7 +381,22 @@ public class PlayerController : MonoBehaviour
                 inventory[itemName] = 1;
             }
 
-            Destroy(collision.gameObject);
+            if (itemName == "Key")
+            {
+                SpriteRenderer spriteRenderer = collision.GetComponent<SpriteRenderer>();
+                spriteRenderer.enabled = false;
+                Collider2D collider = collision.GetComponent<Collider2D>();
+                this.key = collision.GetComponent<KeyGateController>();
+                if (collider != null)
+                {
+                    collider.enabled = false;
+                }
+
+            }
+            else
+            {
+                Destroy(collision.gameObject);
+            }
         }
     }
 
