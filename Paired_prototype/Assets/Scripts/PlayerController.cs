@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
     public GameObject placeholderPrefab;
     private bool isOnDefrost = false;
 
+    // new Feature: Invicible Shield, boolean variable to show if this player is shielded or not
+    private bool isShielded = false;
+
     public GameOverScreen gameOverScreen;
 
     void Start()
@@ -117,6 +120,11 @@ public class PlayerController : MonoBehaviour
             {
                 InventoryText.text += "\nPlaceholders: " + inventory["Placeholder"];
             }
+
+            if (inventory.ContainsKey("InvincibleShield")) // Inverntory text for invincible shield
+            {
+                InventoryText.text += "\nInvincibleShield: " + inventory["InvincibleShield"];
+            }
         }
         else
         {
@@ -198,7 +206,22 @@ public class PlayerController : MonoBehaviour
 
         }
 
+        // Update for invincible shields
+        if (Input.GetKeyDown(KeyCode.Q) && inventory.ContainsKey("InvincibleShield"))
+        {
+            // Press Q to use this item
+            StartCoroutine(ActivateShield());
 
+            if (inventory.ContainsKey("InvincibleShield"))
+            {
+                inventory["InvincibleShield"]--;
+                if (inventory["InvincibleShield"] <= 0)
+                {
+                    inventory.Remove("InvincibleShield");
+                }
+            }
+
+        }
     }
 
 
@@ -254,8 +277,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
-
     private IEnumerator InflictDamages()
     {
         while (true){
@@ -284,16 +305,27 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // A new IEnumerator for shielded status
+    private IEnumerator ActivateShield()
+    {
+        isShielded = true;
+        yield return new WaitForSeconds(10.0f); // This time can be adjusted
+        isShielded = false;
+    }
+
     public void TakeDamage(int damageAmount)
     {
-        currentHealth -= damageAmount;
-        UpdateHealthUI();
-
-        if (currentHealth <= 0)
+        if (!isShielded) // When the player is not shielded
         {
-            //gameOverText.gameObject.SetActive(true);
-            this.freeze();
-            gameOverScreen.SetUp();
+            currentHealth -= damageAmount;
+            UpdateHealthUI();
+
+            if (currentHealth <= 0)
+            {
+                //gameOverText.gameObject.SetActive(true);
+                this.freeze();
+                gameOverScreen.SetUp();
+            }
         }
     }
     private void UpdateHealthUI()
@@ -310,29 +342,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("HealthUp") || collision.CompareTag("SpeedUp") || collision.CompareTag("Defrost") || collision.CompareTag("Placeholder") || collision.CompareTag("JumpHigher"))
+        if (collision.CompareTag("HealthUp") || collision.CompareTag("SpeedUp") || collision.CompareTag("Defrost") || collision.CompareTag("Placeholder") || collision.CompareTag("JumpHigher") || collision.CompareTag("InvincibleShield"))
         {
+            string itemName = collision.tag;
 
-                string itemName = collision.tag;
-
-                if (inventory.ContainsKey(itemName))
-                {
-                    inventory[itemName]++;
-                }
-                else
-                {
-                    inventory[itemName] = 1;
-                }
-
-                Destroy(collision.gameObject);
+            if (inventory.ContainsKey(itemName))
+            {
+                inventory[itemName]++;
+            }
+            else
+            {
+                inventory[itemName] = 1;
             }
 
-
+            Destroy(collision.gameObject);
+        }
     }
 
 }

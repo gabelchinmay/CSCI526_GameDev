@@ -12,7 +12,7 @@ TagManager:
   - Gate
   - TestObj
   - JumpHigher
-  - ColorCollectable
+  - InvincibleShield
   layers:
   - Default
   - TransparentFX
