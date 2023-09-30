@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 playerPreviousPosition;
     public GameObject placeholderPrefab;
     private bool isOnDefrost = false;
+    private KeyGateController key = null;
+    //private SpriteRenderer spriteRenderer;
 
     public GameOverScreen gameOverScreen;
 
@@ -117,6 +119,10 @@ public class PlayerController : MonoBehaviour
             {
                 InventoryText.text += "\nPlaceholders: " + inventory["Placeholder"];
             }
+            if (inventory.ContainsKey("Key"))
+            {
+                InventoryText.text += "\nKeys: " + inventory["Key"];
+            }
         }
         else
         {
@@ -181,6 +187,25 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+        if (Input.GetKeyDown(KeyCode.O) && inventory.ContainsKey("Key"))
+        {
+            //StartCoroutine(JumpHigherPowerUp());
+            if(key!= null)
+            {
+                key.openGate();
+            }
+
+            if (inventory.ContainsKey("Key"))
+            {
+                inventory["Key"]--;
+                if (inventory["Key"] <= 0)
+                {
+                    inventory.Remove("Key");
+                }
+            }
+
+        }
+
 
 
         if (Input.GetKeyDown(KeyCode.F) && inventory.ContainsKey("Defrost"))
@@ -315,7 +340,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("HealthUp") || collision.CompareTag("SpeedUp") || collision.CompareTag("Defrost") || collision.CompareTag("Placeholder") || collision.CompareTag("JumpHigher"))
+        if (collision.CompareTag("HealthUp") || collision.CompareTag("SpeedUp") || collision.CompareTag("Defrost") || collision.CompareTag("Placeholder") || collision.CompareTag("JumpHigher") || collision.CompareTag("Key"))
         {
 
                 string itemName = collision.tag;
@@ -329,7 +354,23 @@ public class PlayerController : MonoBehaviour
                     inventory[itemName] = 1;
                 }
 
-                Destroy(collision.gameObject);
+                if(itemName == "Key"){
+                    SpriteRenderer spriteRenderer = collision.GetComponent<SpriteRenderer>();
+                    spriteRenderer.enabled = false;
+                    Collider2D collider = collision.GetComponent<Collider2D>();
+                    this.key = collision.GetComponent<KeyGateController>();
+                    if (collider != null)
+                    {
+                        collider.enabled = false;
+                    }
+
+            }
+                else {
+                    Destroy(collision.gameObject);
+                }
+
+
+                
             }
 
 

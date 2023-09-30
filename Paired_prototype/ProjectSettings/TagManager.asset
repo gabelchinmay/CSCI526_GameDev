@@ -13,6 +13,7 @@ TagManager:
   - TestObj
   - JumpHigher
   - ColorCollectable
+  - Key
   layers:
   - Default
   - TransparentFX
