@@ -1,0 +1,22 @@
+{
+    "name": "Unity.Services.Core.Environments.Editor",
+    "references": [
+        "Unity.Services.Core.Internal",
+        "Unity.Services.Core.Editor",
+        "Unity.Services.Core.Configuration.Editor",
+        "Unity.Services.Core.Environments"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_2021_3_OR_NEWER"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

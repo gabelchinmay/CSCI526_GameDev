@@ -1,0 +1,43 @@
+{
+  "name": "com.unity.2d.animation",
+  "version": "7.0.11",
+  "unity": "2021.2",
+  "unityRelease": "7f1",
+  "displayName": "2D Animation",
+  "description": "2D Animation provides all the necessary tooling and runtime components for skeletal animation using Sprites.",
+  "keywords": [
+    "2d",
+    "animation"
+  ],
+  "category": "2D",
+  "dependencies": {
+    "com.unity.2d.common": "6.0.6",
+    "com.unity.2d.sprite": "1.0.0",
+    "com.unity.modules.animation": "1.0.0",
+    "com.unity.modules.uielements": "1.0.0"
+  },
+  "relatedPackages": {
+    "com.unity.2d.animation.tests": "7.0.11",
+    "com.unity.2d.common.tests": "6.0.6",
+    "com.unity.2d.psdimporter": "6.0.7"
+  },
+  "samples": [
+    {
+      "displayName": "Samples",
+      "description": "Various 2D Animation sample scenes to show different usage of the 2D Animation tooling for various outcomes.",
+      "path": "Samples~/AnimationSamples"
+    }
+  ],
+  "_upm": {
+    "changelog": "### Fixed\n- Fixed Sprite Resolver inspector not able to set category to 'No Category' if it contains the old hash value. (case DAB-397)\n- Fixed Sprite Resolver inspector not updating its previews when the category is set externally to 'No Category'. (case DANB-392)\n- Fixed an issue where the Limb IK solver will become unstable when the child bones have different Z position. (case DANB-414)\n- Fixed an issue where changing Sprite Library reference in the Inspector will result in an exception. (case DANB-427)\n- Fixed an issue where the CCD and Fabrik solvers will become unstable when the child bones have different Z position. (case DANB-419)\n\n### Changed\n- Updated IK parameter names and comments in public APIs."
+  },
+  "upmCi": {
+    "footprint": "e48bfa3ad14d2c2d6b71f3239b57d36b7b340d16"
+  },
+  "documentationUrl": "https://docs.unity3d.com/Packages/com.unity.2d.animation@7.0/manual/index.html",
+  "repository": {
+    "url": "https://github.cds.internal.unity3d.com/unity/2d.git",
+    "type": "git",
+    "revision": "9cc2f2e9b975c4194859b8922cb13f1d9b4bff7d"
+  }
+}
