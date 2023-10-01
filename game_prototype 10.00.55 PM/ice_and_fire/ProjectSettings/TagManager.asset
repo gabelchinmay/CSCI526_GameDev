@@ -12,6 +12,7 @@ TagManager:
   - JumpHigher
   - SpeedUp
   - Key
+  - Saw
   layers:
   - Default
   - TransparentFX

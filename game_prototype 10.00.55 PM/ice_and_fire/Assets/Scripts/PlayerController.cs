@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 using System.Collections;
 using System.Collections.Generic; 
 using TMPro; 
@@ -337,6 +338,7 @@ public class PlayerController : MonoBehaviour
         isShielded = false;
     }
 
+
     public void TakeDamage(int damageAmount)
     {
         if (!isShielded) // When the player is not shielded
@@ -352,6 +354,9 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+
+
     private void UpdateHealthUI()
     {
         if (healthText != null && !isGameOver)
@@ -397,6 +402,12 @@ public class PlayerController : MonoBehaviour
             {
                 Destroy(collision.gameObject);
             }
+        }
+
+        //lose 5% health when hit the moving saw
+        if(collision.gameObject.tag == "Saw"){
+            currentHealth -= (int)MathF.Round(0.05f*currentHealth);
+            //Destroy(this.gameObject);
         }
     }
 

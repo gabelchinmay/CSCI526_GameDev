@@ -407,6 +407,7 @@
 "Assets/Scripts/PlatformController.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/Restart.cs"
+"Assets/Scripts/Saw.cs"
 "Assets/Scripts/StartMenu.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
