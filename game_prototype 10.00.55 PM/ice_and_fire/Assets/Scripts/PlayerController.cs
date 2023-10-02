@@ -409,6 +409,12 @@ public class PlayerController : MonoBehaviour
             currentHealth -= (int)MathF.Round(0.05f*currentHealth);
             //Destroy(this.gameObject);
         }
+
+        //lose 10% health when hit by the fire emitted by flying enemy
+        if(collision.gameObject.name == "FireAttack"){
+            currentHealth -= (int)MathF.Round(0.1f*currentHealth);
+            Destroy(collision.gameObject);
+        }
     }
 
 }
