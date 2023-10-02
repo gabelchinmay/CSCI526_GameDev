@@ -398,6 +398,14 @@ public class PlayerController : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
+
+        if (collision.CompareTag("ColorCollectable"))
+        {
+            SpriteRenderer collectableSR = collision.GetComponent<SpriteRenderer>();
+            Color collectableColor = collectableSR.color;
+            this.GetComponent<SpriteRenderer>().color = collectableColor;
+            Destroy(collision.gameObject);
+        }
     }
 
 }
