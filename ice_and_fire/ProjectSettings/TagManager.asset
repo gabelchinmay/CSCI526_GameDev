@@ -12,6 +12,8 @@ TagManager:
   - JumpHigher
   - SpeedUp
   - Key
+  - Gap
+  - MegaEnhancer
   layers:
   - Default
   - TransparentFX
