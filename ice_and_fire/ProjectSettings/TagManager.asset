@@ -12,6 +12,8 @@ TagManager:
   - JumpHigher
   - SpeedUp
   - Key
+  - GapDeath
+  - Spikes
   - Gap
   - MegaEnhancer
   layers:

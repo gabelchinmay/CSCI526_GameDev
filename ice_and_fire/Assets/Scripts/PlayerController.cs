@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
     // new Feature: Invicible Shield, boolean variable to show if this player is shielded or not
     private bool isShielded = false;
+    private bool isOnSpike = false;
 
     public GameOverScreen gameOverScreen;
 
@@ -285,6 +286,17 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void OnSpikeEnter(SpikeController platform)
+    {
+        isOnSpike = true;
+    }
+
+    public void OnSpikeExit(SpikeController platform)
+    {
+        isOnSpike = false;
+
+    }
+
     private IEnumerator JumpHigherPowerUp()
     {
         jumpForce = 14.0f;
@@ -322,6 +334,11 @@ public class PlayerController : MonoBehaviour
                 }
 
                 yield return new WaitForSeconds(0.5f);
+            }
+
+            if (isOnSpike)
+            {
+                this.TakeDamage(10);
             }
 
             yield return new WaitForSeconds(0.5f);
