@@ -24,4 +24,9 @@ public class GameOverScreen : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void ChooseLevel()
+    {
+        SceneManager.LoadScene("ChooseLevel");
+    }
 }
