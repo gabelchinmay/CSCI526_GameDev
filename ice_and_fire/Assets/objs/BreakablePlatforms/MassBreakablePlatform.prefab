@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7427187597449528642}
   - component: {fileID: 4780557589608871807}
   - component: {fileID: 4606868078151346724}
-  - component: {fileID: 1625746099958968789}
+  - component: {fileID: 1304422190994641112}
   m_Layer: 0
   m_Name: MassBreakablePlatform
   m_TagString: Untagged
@@ -125,7 +125,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &1625746099958968789
+--- !u!114 &1304422190994641112
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

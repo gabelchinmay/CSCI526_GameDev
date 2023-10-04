@@ -424,13 +424,20 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        if (collision.CompareTag("GapDeath"))
+        if (collision.CompareTag("Gap"))
         {
-            int maxDamage = int.MaxValue;
-            TakeDamage(maxDamage);
-
+            // destroy player object
+            this.freeze();
+            gameOverScreen.SetUp();
         }
 
+        if (collision.CompareTag("MegaEnhancer"))
+        {
+            Destroy(collision.gameObject);
+            this.transform.localScale += new Vector3(0.2f, 0.2f, 0.2f);
+            rb.mass *= 100;
+            jumpForce = 700.0f;
+        }
 
     }
 
