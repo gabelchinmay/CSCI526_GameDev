@@ -32,6 +32,9 @@ public class PlayerController : MonoBehaviour
 
     // new Feature: Invicible Shield, boolean variable to show if this player is shielded or not
     private bool isShielded = false;
+    private bool isOnSpike = false;
+    private bool isOnMonster = false;
+    private bool isOnSaw = false;
 
     public GameOverScreen gameOverScreen;
 
@@ -285,6 +288,39 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void OnSpikeEnter(SpikeController spike)
+    {
+        isOnSpike = true;
+    }
+
+    public void OnSpikeExit(SpikeController spike)
+    {
+        isOnSpike = false;
+
+    }
+
+    public void OnMonsterEnter(FlyMonsterController monster)
+    {
+        isOnMonster = true;
+    }
+
+    public void OnMonsterExit(FlyMonsterController monster)
+    {
+        isOnMonster = false;
+
+    }
+
+    public void OnSawEnter(SawController saw)
+    {
+        isOnMonster = true;
+    }
+
+    public void OnSawExit(SawController saw)
+    {
+        isOnMonster = false;
+
+    }
+
     private IEnumerator JumpHigherPowerUp()
     {
         jumpForce = 14.0f;
@@ -322,6 +358,21 @@ public class PlayerController : MonoBehaviour
                 }
 
                 yield return new WaitForSeconds(0.5f);
+            }
+
+            if (isOnSpike)
+            {
+                this.TakeDamage(10);
+            }
+
+            if (isOnMonster)
+            {
+                this.TakeDamage(20);
+            }
+
+            if (isOnSaw)
+            {
+                this.TakeDamage(15);
             }
 
             yield return new WaitForSeconds(0.5f);
@@ -406,6 +457,22 @@ public class PlayerController : MonoBehaviour
             this.GetComponent<SpriteRenderer>().color = collectableColor;
             Destroy(collision.gameObject);
         }
+
+        if (collision.CompareTag("Gap"))
+        {
+            // destroy player object
+            this.freeze();
+            gameOverScreen.SetUp();
+        }
+
+        if (collision.CompareTag("MegaEnhancer"))
+        {
+            Destroy(collision.gameObject);
+            this.transform.localScale += new Vector3(0.2f, 0.2f, 0.2f);
+            rb.mass *= 100;
+            jumpForce = 700.0f;
+        }
+
     }
 
 }

@@ -27,6 +27,10 @@ public class GameOverScreen : MonoBehaviour
 
     public void ChooseLevel()
     {
+<<<<<<< HEAD
         SceneManager.LoadScene("ChoosingLevel");
+=======
+        SceneManager.LoadScene("ChooseLevel");
+>>>>>>> 7496ea6d6ecfa40f44891ed20b42823fdb680644
     }
 }

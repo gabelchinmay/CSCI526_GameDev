@@ -17,7 +17,11 @@ public class EatElectron : MonoBehaviour
         //if collision between player and electron happened
         //make electron merge into player and player change into larger size and larger mass
 
+<<<<<<< HEAD
         if (other.name == "player"){
+=======
+        if (other.name == "Player"){
+>>>>>>> 7496ea6d6ecfa40f44891ed20b42823fdb680644
 
             Destroy(this.gameObject);
             other.gameObject.transform.localScale += new Vector3(0.2f,0.2f,0.2f);

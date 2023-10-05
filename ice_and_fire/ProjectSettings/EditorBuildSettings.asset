@@ -36,6 +36,11 @@ EditorBuildSettings:
     path: Assets/Scenes/EndMenu.unity
     guid: 6258c85f476a0ad43833b63e351525d8
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/ChoosingLevel.unity
     guid: 7d788bb756596414faae4dd0c69d0ac5
+=======
+    path: Assets/Scenes/ChooseLevel.unity
+    guid: 6af27ab5887244389af5292636e57185
+>>>>>>> 7496ea6d6ecfa40f44891ed20b42823fdb680644
   m_configObjects: {}

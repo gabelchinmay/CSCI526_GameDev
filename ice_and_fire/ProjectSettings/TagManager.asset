@@ -12,6 +12,12 @@ TagManager:
   - JumpHigher
   - SpeedUp
   - Key
+  - GapDeath
+  - Spikes
+  - Gap
+  - MegaEnhancer
+  - VerticalMovingPlatform
+  - monster
   layers:
   - Default
   - TransparentFX
