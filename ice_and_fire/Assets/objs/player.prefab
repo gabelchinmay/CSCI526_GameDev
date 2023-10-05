@@ -158,3 +158,4 @@ MonoBehaviour:
   HealthSkeleton: {fileID: 0}
   HealthBar: {fileID: 0}
   placeholderPrefab: {fileID: 0}
+  gameOverScreen: {fileID: 0}
