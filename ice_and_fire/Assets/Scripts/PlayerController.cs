@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
     // new Feature: Invicible Shield, boolean variable to show if this player is shielded or not
     private bool isShielded = false;
     private bool isOnSpike = false;
+    private bool isOnMonster = false;
+    private bool isOnSaw = false;
 
     public GameOverScreen gameOverScreen;
 
@@ -286,14 +288,36 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void OnSpikeEnter(SpikeController platform)
+    public void OnSpikeEnter(SpikeController spike)
     {
         isOnSpike = true;
     }
 
-    public void OnSpikeExit(SpikeController platform)
+    public void OnSpikeExit(SpikeController spike)
     {
         isOnSpike = false;
+
+    }
+
+    public void OnMonsterEnter(FlyMonsterController monster)
+    {
+        isOnMonster = true;
+    }
+
+    public void OnMonsterExit(FlyMonsterController monster)
+    {
+        isOnMonster = false;
+
+    }
+
+    public void OnSawEnter(SawController saw)
+    {
+        isOnMonster = true;
+    }
+
+    public void OnSawExit(SawController saw)
+    {
+        isOnMonster = false;
 
     }
 
@@ -339,6 +363,16 @@ public class PlayerController : MonoBehaviour
             if (isOnSpike)
             {
                 this.TakeDamage(10);
+            }
+
+            if (isOnMonster)
+            {
+                this.TakeDamage(20);
+            }
+
+            if (isOnSaw)
+            {
+                this.TakeDamage(15);
             }
 
             yield return new WaitForSeconds(0.5f);
