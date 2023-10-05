@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private bool isShielded = false;
     private bool isOnSpike = false;
     private bool isOnMonster = false;
+    private bool isOnSaw = false;
 
     public GameOverScreen gameOverScreen;
 
@@ -309,6 +310,17 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void OnSawEnter(SawController saw)
+    {
+        isOnMonster = true;
+    }
+
+    public void OnSawExit(SawController saw)
+    {
+        isOnMonster = false;
+
+    }
+
     private IEnumerator JumpHigherPowerUp()
     {
         jumpForce = 14.0f;
@@ -356,6 +368,11 @@ public class PlayerController : MonoBehaviour
             if (isOnMonster)
             {
                 this.TakeDamage(20);
+            }
+
+            if (isOnSaw)
+            {
+                this.TakeDamage(15);
             }
 
             yield return new WaitForSeconds(0.5f);
