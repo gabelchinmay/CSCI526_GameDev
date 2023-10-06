@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.Networking;
 public class EndGate : MonoBehaviour
 {
 
@@ -17,7 +17,26 @@ public class EndGate : MonoBehaviour
     private void LoadNextLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+         SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+
+            if (sendToGoogle != null)
+            {
+                // 获取关卡数据或其他参数
+                int chapter = 1; // 你可以设置章节的值
+                int level = currentSceneIndex ; // 假设关卡等级从1开始
+
+                // 设置 SendToGoogle 的参数
+                sendToGoogle.SetParameters(chapter, level);
+            Debug.Log("set");
+
+            // 发送数据
+            sendToGoogle.Send();
+            Debug.Log("sent");
+            
+        }
         SceneManager.LoadScene(currentSceneIndex + 1);
+        
     }
 
     private void UnlockNewLevel()
