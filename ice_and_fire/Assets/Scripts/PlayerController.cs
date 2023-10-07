@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
@@ -86,7 +87,7 @@ public class PlayerController : MonoBehaviour
             jumpCount++;
             if(jumpCount == maxJumps){
                 canJump = false;
-                StartCoroutine(ResetJumpCooldown());
+                //StartCoroutine(ResetJumpCooldown());
             }
         }
 
@@ -488,4 +489,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        //Debug.Log("Enter collision");
+        canJump = true;
+        jumpCount = 0;
+    }
 }

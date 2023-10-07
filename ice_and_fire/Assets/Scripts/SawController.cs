@@ -25,7 +25,7 @@ public class SawController : MonoBehaviour
 
         transform.Rotate(-1*Vector3.forward * rotationSpeed * Time.deltaTime);
         float oscillation = amplitude * Mathf.Sin(frequency * Time.time);
-        Debug.Log("Oscillation: " + oscillation);
+        //Debug.Log("Oscillation: " + oscillation);
         // Set the new position of the sprite based on the oscillation
         transform.position = initialPosition + Vector3.right * oscillation;
     }
