@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class DestroyGateByMass : MonoBehaviour
 {
-    public GameObject player;
+    public float massThreshold = 50f;
+    //public GameObject player;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && player.GetComponent<Rigidbody2D>().mass > 50)
+
+
+        if (collision.gameObject.CompareTag("Player") && (float) collision.gameObject.GetComponent<Rigidbody2D>().mass > massThreshold)
         {
             Destroy(this.gameObject);
         }

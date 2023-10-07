@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
     private bool isOnMonster = false;
     private bool isOnSaw = false;
 
+    public float playerMassMultiplicationFactor = 100f;
+    public float playerJumpForceMultiplicationFactor = 100f;
+
     public GameOverScreen gameOverScreen;
 
     void Start()
@@ -49,6 +52,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        rb = GetComponent<Rigidbody2D>();
         currentColour = Color.black;
 
         if (CurrPlatform != null)
@@ -144,7 +148,15 @@ public class PlayerController : MonoBehaviour
 
                 playerPreviousPosition = transform.position;
                 Vector3 placeholderPosition = playerPreviousPosition - Vector3.up * 0.7f;
-                transform.Translate(Vector2.right * 1.1f); 
+                if(rb.mass < 9) {
+                    //Debug.Log("Old mass! " + rb.mass);
+                    transform.Translate(Vector2.right * 1.1f);
+                }
+                else {
+                    //Debug.Log("Increased mass! " + rb.mass);
+                    transform.Translate(Vector2.right * 1.3f);
+                }
+               
                 Instantiate(placeholderPrefab, placeholderPosition, Quaternion.identity);
 
                 if (inventory.ContainsKey("Placeholder"))
@@ -264,7 +276,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            Debug.Log("Jump");
+            //Debug.Log("Jump");
         }
 
     }
@@ -470,8 +482,8 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             this.transform.localScale += new Vector3(0.2f, 0.2f, 0.2f);
-            rb.mass *= 100;
-            jumpForce = 700.0f;
+            rb.mass *= playerMassMultiplicationFactor;
+            jumpForce *= playerJumpForceMultiplicationFactor;
         }
 
     }
