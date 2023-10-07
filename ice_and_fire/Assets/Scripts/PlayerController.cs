@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
         {
             currentColour = CurrPlatform.getSpriteColor();
         }
-        // On Java/Frost
+        // On Lava/Frost
         if (!isOnPlatform)
         {
             //Debug.Log("On platform");
@@ -260,10 +260,11 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        if(!isGameOver){
+        if(!isGameOver)
+        {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-
+            Debug.Log("Jump");
         }
 
     }
