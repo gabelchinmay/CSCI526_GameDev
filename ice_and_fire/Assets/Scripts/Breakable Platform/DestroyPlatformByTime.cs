@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class DestroyPlatformByTime : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(this.gameObject, 2);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(this.gameObject, 2);
+        }
     }
 }
