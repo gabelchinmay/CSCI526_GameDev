@@ -45,10 +45,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Chapter4_Level0.unity
     guid: 3bcb2a22453e34457ae6f447e62962f7
   - enabled: 1
-    path: Assets/Scenes/Chapter4_Level1_King's Landing.unity
+    path: Assets/Scenes/Chapter4_Level11.unity
     guid: 492994aa6e22557428f08a98dbad16bc
   - enabled: 1
-    path: Assets/Scenes/Chapter4_Level1c.unity
+    path: Assets/Scenes/Chapter4_Level12.unity
+    guid: edb990683d62d4945aafdcd0aa868726
+  - enabled: 1
+    path: Assets/Scenes/Chapter4_Level13.unity
     guid: 1abf2d2603e424b938e70e33efceba8e
   - enabled: 1
     path: Assets/Scenes/EndMenu.unity
