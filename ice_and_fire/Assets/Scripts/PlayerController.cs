@@ -501,7 +501,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnCollisionExit2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         //Debug.Log("Enter collision");
         canJump = true;
