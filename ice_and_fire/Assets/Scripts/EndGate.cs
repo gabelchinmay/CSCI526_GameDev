@@ -16,16 +16,23 @@ public class EndGate : MonoBehaviour
 
     private void LoadNextLevel()
     {
-        if(!nextLevel.Equals(""))
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+
+        if (sendToGoogle != null)
         {
-            SceneManager.LoadScene(nextLevel);
+
+            int chapter = 1;
+            int level = currentSceneIndex;
+            sendToGoogle.SetParameters(chapter, level);
+            Debug.Log("set");
+            sendToGoogle.Send();
+            Debug.Log("sent");
+
         }
-        else
-        {
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentSceneIndex + 1);
-        }
-        
+        SceneManager.LoadScene(currentSceneIndex + 1);
+
     }
 
     private void UnlockNewLevel()

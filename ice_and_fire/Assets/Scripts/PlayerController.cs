@@ -41,9 +41,10 @@ public class PlayerController : MonoBehaviour
     public float playerJumpForceMultiplicationFactor = 100f;
 
     public GameOverScreen gameOverScreen;
-
+    
     void Start()
     {
+        
         currentHealth = maxHealth;
         UpdateHealthUI();
         rb = GetComponent<Rigidbody2D>();
@@ -53,6 +54,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
         rb = GetComponent<Rigidbody2D>();
         currentColour = Color.black;
 
@@ -85,7 +87,8 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
             jumpCount++;
-            if(jumpCount == maxJumps){
+            sendToGoogle.addJump();
+            if (jumpCount == maxJumps){
                 canJump = false;
                 //StartCoroutine(ResetJumpCooldown());
             }
