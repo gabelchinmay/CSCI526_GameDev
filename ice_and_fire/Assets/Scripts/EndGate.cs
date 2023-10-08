@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class EndGate : MonoBehaviour
 {
-
+    public string nextLevel;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -16,8 +16,16 @@ public class EndGate : MonoBehaviour
 
     private void LoadNextLevel()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        if(!nextLevel.Equals(""))
+        {
+            SceneManager.LoadScene(nextLevel);
+        }
+        else
+        {
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentSceneIndex + 1);
+        }
+        
     }
 
     private void UnlockNewLevel()
