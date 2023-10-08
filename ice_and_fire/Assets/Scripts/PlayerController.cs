@@ -2,8 +2,8 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using System.Collections.Generic; 
-using TMPro; 
+using System.Collections.Generic;
+using TMPro;
 
 
 public class PlayerController : MonoBehaviour
@@ -19,8 +19,8 @@ public class PlayerController : MonoBehaviour
     private Color currentColour;
     private PlatformController CurrPlatform = null;
     public int maxHealth = 100;
-    private int currentHealth; 
-    public TMP_Text healthText; 
+    private int currentHealth;
+    public TMP_Text healthText;
     public TMP_Text gameOverText;
     public TMP_Text InventoryText;
     public Image HealthSkeleton;
@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+
         currentHealth = maxHealth;
         UpdateHealthUI();
         rb = GetComponent<Rigidbody2D>();
@@ -53,6 +54,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
         rb = GetComponent<Rigidbody2D>();
         currentColour = Color.black;
 
@@ -70,7 +72,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            if(currentColour == Color.red || (currentColour == Color.cyan && !isOnDefrost))
+            if (currentColour == Color.red || (currentColour == Color.cyan && !isOnDefrost))
             {
                 canJump = false;
             }
@@ -85,17 +87,20 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
             jumpCount++;
-            if(jumpCount == maxJumps){
+            sendToGoogle.addJump();
+            if (jumpCount == maxJumps)
+            {
                 canJump = false;
                 //StartCoroutine(ResetJumpCooldown());
             }
         }
 
         // Movements
-        if(!isGameOver){
+        if (!isGameOver)
+        {
             float horizontalInput = Input.GetAxis("Horizontal");
             rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
-            
+
 
         }
         else
@@ -123,7 +128,7 @@ public class PlayerController : MonoBehaviour
 
             if (inventory.ContainsKey("Defrost"))
             {
-                InventoryText.text += "\nDefrosts: " + inventory["Defrost"]; 
+                InventoryText.text += "\nDefrosts: " + inventory["Defrost"];
             }
             if (inventory.ContainsKey("Placeholder"))
             {
@@ -145,31 +150,34 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.K) && inventory.ContainsKey("Placeholder")){
+        if (Input.GetKeyDown(KeyCode.K) && inventory.ContainsKey("Placeholder"))
+        {
 
-                playerPreviousPosition = transform.position;
-                Vector3 placeholderPosition = playerPreviousPosition - Vector3.up * 0.7f;
-                if(rb.mass < 9) {
-                    //Debug.Log("Old mass! " + rb.mass);
-                    transform.Translate(Vector2.right * 1.1f);
-                }
-                else {
-                    //Debug.Log("Increased mass! " + rb.mass);
-                    transform.Translate(Vector2.right * 1.3f);
-                }
-               
-                Instantiate(placeholderPrefab, placeholderPosition, Quaternion.identity);
-
-                if (inventory.ContainsKey("Placeholder"))
-                {
-                    inventory["Placeholder"]--;
-                    if (inventory["Placeholder"] <= 0)
-                    {
-                        inventory.Remove("Placeholder");
-                    }
-                }
-
+            playerPreviousPosition = transform.position;
+            Vector3 placeholderPosition = playerPreviousPosition - Vector3.up * 0.7f;
+            if (rb.mass < 9)
+            {
+                //Debug.Log("Old mass! " + rb.mass);
+                transform.Translate(Vector2.right * 1.1f);
             }
+            else
+            {
+                //Debug.Log("Increased mass! " + rb.mass);
+                transform.Translate(Vector2.right * 1.3f);
+            }
+
+            Instantiate(placeholderPrefab, placeholderPosition, Quaternion.identity);
+
+            if (inventory.ContainsKey("Placeholder"))
+            {
+                inventory["Placeholder"]--;
+                if (inventory["Placeholder"] <= 0)
+                {
+                    inventory.Remove("Placeholder");
+                }
+            }
+
+        }
 
 
         if (Input.GetKeyDown(KeyCode.J) && inventory.ContainsKey("JumpHigher"))
@@ -189,7 +197,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.H) && inventory.ContainsKey("HealthUp"))
         {
-            if(currentHealth<= maxHealth-10)
+            if (currentHealth <= maxHealth - 10)
             {
                 currentHealth += 10;
 
@@ -267,13 +275,14 @@ public class PlayerController : MonoBehaviour
 
 
 
-    public void freeze(){
+    public void freeze()
+    {
         isGameOver = true;
     }
 
     private void Jump()
     {
-        if(!isGameOver)
+        if (!isGameOver)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -284,9 +293,9 @@ public class PlayerController : MonoBehaviour
 
     private System.Collections.IEnumerator ResetJumpCooldown()
     {
-        yield return new WaitForSeconds(1.5f); 
+        yield return new WaitForSeconds(1.5f);
         canJump = true;
-        jumpCount=0;
+        jumpCount = 0;
     }
 
     public void OnPlatformEnter(PlatformController platform)
@@ -353,21 +362,24 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator InflictDamages()
     {
-        while (true){
-            if(isOnPlatform)
+        while (true)
+        {
+            if (isOnPlatform)
             {
-                
-                if (currentColour == Color.red){
+
+                if (currentColour == Color.red)
+                {
                     this.TakeDamage(2);
                     speed = 10.0f;
                 }
 
-                else if(currentColour == Color.cyan && !isOnDefrost)
+                else if (currentColour == Color.cyan && !isOnDefrost)
                 {
                     this.TakeDamage(1);
                     speed = 1.0f;
                 }
-                else{
+                else
+                {
                     speed = 10.0f;
                 }
 
@@ -390,7 +402,7 @@ public class PlayerController : MonoBehaviour
             }
 
             yield return new WaitForSeconds(0.5f);
-            
+
         }
     }
 
@@ -421,13 +433,13 @@ public class PlayerController : MonoBehaviour
     {
         if (healthText != null && !isGameOver)
         {
-            if(currentHealth <= 0)
+            if (currentHealth <= 0)
             {
                 currentHealth = 0;
             }
-            
+
             HealthBar.fillAmount = (float)currentHealth / (float)maxHealth;
-            healthText.text = "Health: " + currentHealth.ToString()+"/"+maxHealth.ToString();
+            healthText.text = "Health: " + currentHealth.ToString() + "/" + maxHealth.ToString();
         }
     }
 
