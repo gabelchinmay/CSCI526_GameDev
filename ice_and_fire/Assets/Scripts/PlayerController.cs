@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 //Debug.Log("Increased mass! " + rb.mass);
-                transform.Translate(Vector2.right * 1.3f);
+                transform.Translate(Vector2.right * 1.4f);
             }
 
             Instantiate(placeholderPrefab, placeholderPosition, Quaternion.identity);
