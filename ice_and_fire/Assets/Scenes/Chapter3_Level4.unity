@@ -239,6 +239,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rotating Platform (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5842808858894744511, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
 --- !u!224 &118286856 stripped
@@ -373,6 +377,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rotating Platform (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5842808858894744511, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
 --- !u!1001 &371610980
@@ -429,6 +437,10 @@ PrefabInstance:
     - target: {fileID: 714271806097954010, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
       propertyPath: m_Name
       value: Rotating Platform (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842808858894744511, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
+      propertyPath: m_Mass
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
@@ -544,6 +556,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rotating Platform (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 5842808858894744511, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
 --- !u!1001 &589732481
@@ -600,6 +616,10 @@ PrefabInstance:
     - target: {fileID: 714271806097954010, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
       propertyPath: m_Name
       value: Rotating Platform (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842808858894744511, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
+      propertyPath: m_Mass
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
@@ -783,6 +803,10 @@ PrefabInstance:
     - target: {fileID: 714271806097954010, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
       propertyPath: m_Name
       value: Rotating Platform (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842808858894744511, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
+      propertyPath: m_Mass
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
@@ -1203,6 +1227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rotating Platform (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 5842808858894744511, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
 --- !u!1001 &1460866065
@@ -1259,6 +1287,10 @@ PrefabInstance:
     - target: {fileID: 714271806097954010, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
       propertyPath: m_Name
       value: Rotating Platform (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842808858894744511, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
+      propertyPath: m_Mass
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
@@ -1367,6 +1399,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rotating Platform (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5842808858894744511, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
 --- !u!1001 &1592700475
@@ -1424,6 +1460,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rotating Platform (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5842808858894744511, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
 --- !u!1001 &1597603576
@@ -1480,6 +1520,10 @@ PrefabInstance:
     - target: {fileID: 714271806097954010, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
       propertyPath: m_Name
       value: Rotating Platform (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842808858894744511, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
+      propertyPath: m_Mass
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
@@ -1671,6 +1715,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rotating Platform (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5842808858894744511, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
 --- !u!1001 &1900121830
@@ -1728,6 +1776,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rotating Platform (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 5842808858894744511, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
 --- !u!1001 &1911174979
@@ -1784,6 +1836,10 @@ PrefabInstance:
     - target: {fileID: 714271806097954010, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
       propertyPath: m_Name
       value: Rotating Platform (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842808858894744511, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
+      propertyPath: m_Mass
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
@@ -2017,6 +2073,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5436406374883510393, guid: 603efd81e104c4637ad9b705eb43204f, type: 3}
+      propertyPath: orthographic size
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5436406374883510395, guid: 603efd81e104c4637ad9b705eb43204f, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -2081,6 +2141,10 @@ PrefabInstance:
     - target: {fileID: 714271806097954010, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
       propertyPath: m_Name
       value: Rotating Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842808858894744511, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
+      propertyPath: m_Mass
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a9f9d85378754aa0b5531780de3105f, type: 3}
