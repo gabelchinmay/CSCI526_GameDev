@@ -27,6 +27,15 @@ public class GameOverScreen : MonoBehaviour
 
     public void ChooseLevel()
     {
-        SceneManager.LoadScene("ChooseLevel");
+        //SceneManager.LoadScene("ChooseLevel");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("ChooseLevel");
+        asyncLoad.completed += OnSceneLoaded;
+
+    }
+
+    private void OnSceneLoaded(AsyncOperation asyncLoad)
+    {
+
+        Debug.Log("Scene loaded!");
     }
 }
