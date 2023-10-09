@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
         UpdateHealthUI();
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(InflictDamages());
+        StartCoroutine(InflictDamagesFromAntagonists());
 
     }
 
@@ -382,29 +383,36 @@ public class PlayerController : MonoBehaviour
                 {
                     speed = 10.0f;
                 }
-
-                yield return new WaitForSeconds(0.5f);
             }
+
+
+            yield return new WaitForSeconds(1.0f);
+
+        }
+    }
+
+    private IEnumerator InflictDamagesFromAntagonists() {
+        while (true)
+        {
 
             if (isOnSpike)
             {
-                this.TakeDamage(10);
+                this.TakeDamage(1);
             }
 
             if (isOnMonster)
             {
-                this.TakeDamage(20);
+                this.TakeDamage(2);
             }
 
             if (isOnSaw)
             {
-                this.TakeDamage(15);
+                this.TakeDamage(1);
             }
-
-            yield return new WaitForSeconds(0.5f);
-
+            yield return new WaitForSeconds(0.1f);
         }
     }
+
 
     // A new IEnumerator for shielded status
     private IEnumerator ActivateShield()
