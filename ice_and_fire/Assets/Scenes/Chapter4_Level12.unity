@@ -1344,6 +1344,14 @@ PrefabInstance:
       propertyPath: placeholderPrefab
       value: 
       objectReference: {fileID: 1679066785320752784, guid: ac07f1a19709c4e72a6bc4202f7db101, type: 3}
+    - target: {fileID: 8013627977215371535, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
+      propertyPath: playerMassMultiplicationFactor
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013627977215371535, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
+      propertyPath: playerJumpForceMultiplicationFactor
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
 --- !u!114 &1287061531 stripped
@@ -2361,9 +2369,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8746117736839896874, guid: 85b832a35408ef44aaf8181f4532c0d6, type: 3}
+      propertyPath: massThreshold
+      value: 999
+      objectReference: {fileID: 0}
     - target: {fileID: 8746117736839896876, guid: 85b832a35408ef44aaf8181f4532c0d6, type: 3}
       propertyPath: m_Name
       value: MassBreakableGate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746117736839896878, guid: 85b832a35408ef44aaf8181f4532c0d6, type: 3}
+      propertyPath: m_Mass
+      value: 1000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746117736839896878, guid: 85b832a35408ef44aaf8181f4532c0d6, type: 3}
+      propertyPath: m_BodyType
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85b832a35408ef44aaf8181f4532c0d6, type: 3}
