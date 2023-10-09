@@ -31,7 +31,16 @@ public class EndGate : MonoBehaviour
             Debug.Log("sent");
 
         }
-        SceneManager.LoadScene(currentSceneIndex + 1);
+
+        if(!nextLevel.Equals(""))
+        {
+            SceneManager.LoadScene(nextLevel);
+        }
+
+        else
+        {
+            SceneManager.LoadScene(currentSceneIndex + 1);
+        }
 
     }
 
