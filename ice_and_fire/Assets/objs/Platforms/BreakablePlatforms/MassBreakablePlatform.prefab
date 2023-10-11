@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1304422190994641112}
   m_Layer: 0
   m_Name: MassBreakablePlatform
-  m_TagString: Untagged
+  m_TagString: Platform_Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,4 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a0b559e09a64ed79a89abe3e3ed35e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8013627977215371528, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
+  breakMass: 0

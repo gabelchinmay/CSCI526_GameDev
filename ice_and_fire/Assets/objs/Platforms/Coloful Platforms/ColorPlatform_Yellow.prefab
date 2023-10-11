@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6603119063151809243}
   m_Layer: 0
   m_Name: ColorPlatform_Yellow
-  m_TagString: Untagged
+  m_TagString: Platform_Color
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -18,6 +18,13 @@ TagManager:
   - MegaEnhancer
   - VerticalMovingPlatform
   - monster
+  - Platform_AutoSpin
+  - Platform_Rotate
+  - Platform_Normal
+  - Platform_Breakable
+  - Platform_Color
+  - Platform_Moving
+  - Platform_Tri
   layers:
   - Default
   - TransparentFX
