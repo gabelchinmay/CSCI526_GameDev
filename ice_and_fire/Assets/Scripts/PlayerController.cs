@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float speed = 10.0f;
-    private float jumpForce = 7.0f;
+    private float jumpForce;
     private int jumpCount;
     private int maxJumps = 2;
     private bool isGameOver = false;
@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
             if (jumpCount == maxJumps)
             {
                 canJump = false;
+                //Reset the jump count on collision enter
                 //StartCoroutine(ResetJumpCooldown());
             }
         }
@@ -285,6 +286,12 @@ public class PlayerController : MonoBehaviour
     {
         if (!isGameOver)
         {
+            if (jumpCount < 1) jumpForce = 7.0f;
+            else
+            {
+                jumpForce = 5.0f;
+            }
+
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             //Debug.Log("Jump");
@@ -511,8 +518,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        //Debug.Log("Enter collision");
-        canJump = true;
-        jumpCount = 0;
+        if (other.gameObject.CompareTag("StandingPlatform") || isOnMonster || isOnSaw || isOnSpike)
+        {
+            canJump = true;
+            jumpCount = 0;
+        }
     }
 }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 897400135330868254}
   m_Layer: 0
   m_Name: TriColorPlatform
-  m_TagString: Untagged
+  m_TagString: StandingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

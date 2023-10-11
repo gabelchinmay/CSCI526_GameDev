@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 241271393}
   m_Layer: 0
   m_Name: NormalPlatform3
-  m_TagString: Untagged
+  m_TagString: StandingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 597256332}
   m_Layer: 0
   m_Name: NormalPlatform2
-  m_TagString: Untagged
+  m_TagString: StandingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -613,7 +613,7 @@ GameObject:
   - component: {fileID: 603008576}
   m_Layer: 0
   m_Name: NormalPlatform5
-  m_TagString: Untagged
+  m_TagString: StandingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1340,7 +1340,7 @@ GameObject:
   - component: {fileID: 2002039534}
   m_Layer: 0
   m_Name: NormalPlatform4
-  m_TagString: Untagged
+  m_TagString: StandingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

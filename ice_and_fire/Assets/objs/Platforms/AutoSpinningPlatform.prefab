@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5430525056545524132}
   m_Layer: 0
   m_Name: AutoSpinningPlatform
-  m_TagString: Untagged
+  m_TagString: StandingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

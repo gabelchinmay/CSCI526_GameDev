@@ -18,6 +18,7 @@ TagManager:
   - MegaEnhancer
   - VerticalMovingPlatform
   - monster
+  - StandingPlatform
   layers:
   - Default
   - TransparentFX
