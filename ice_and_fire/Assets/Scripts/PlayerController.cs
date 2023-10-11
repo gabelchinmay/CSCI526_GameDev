@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float speed = 10.0f;
-    private float jumpForce = 7.0f;
+    private float jumpForce;
     private int jumpCount;
     private int maxJumps = 2;
     private bool isGameOver = false;
@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
             if (jumpCount == maxJumps)
             {
                 canJump = false;
+                //Reset the jump count on collision enter (Platform, Antagonist only)
                 //StartCoroutine(ResetJumpCooldown());
             }
         }
@@ -285,9 +286,11 @@ public class PlayerController : MonoBehaviour
     {
         if (!isGameOver)
         {
+            if (jumpCount < 1) jumpForce = 7.0f;
+            else jumpForce = 5.0f; //Reduce the jump force for second jump
+            
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            //Debug.Log("Jump");
         }
 
     }
@@ -511,8 +514,23 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        //Debug.Log("Enter collision");
-        canJump = true;
-        jumpCount = 0;
+        //Reset jump count only if colliding with "Platform" and "Antagonist"
+        bool onPlatform = (other.gameObject.CompareTag("Platform_Normal")||other.gameObject.CompareTag("Platform_Moving")||other.gameObject.CompareTag("Platform_Rotate")||other.gameObject.CompareTag("Platform_AutoSpin")
+                           ||other.gameObject.CompareTag("Platform_Breakable")||other.gameObject.CompareTag("Platform_Color")||other.gameObject.CompareTag("Platform_Tri"));
+        bool onAntagonist = (isOnMonster || isOnSaw || isOnSpike);
+        if (onPlatform || onAntagonist)
+        {
+            canJump = true;
+            jumpCount = 0;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        //Disable double jump on rotating platform
+        if (other.gameObject.CompareTag("Platform_Rotate") || other.gameObject.CompareTag("Platform_AutoSpin"))
+        {
+            jumpCount++;
+        }
     }
 }

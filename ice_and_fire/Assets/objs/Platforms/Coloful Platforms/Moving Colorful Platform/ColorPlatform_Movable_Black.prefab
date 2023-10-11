@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6767249630988296674}
   m_Layer: 0
   m_Name: ColorPlatform_Movable_Black
-  m_TagString: Untagged
+  m_TagString: Platform_Moving
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

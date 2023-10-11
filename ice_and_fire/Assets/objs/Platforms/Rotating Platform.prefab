@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5842808858894744511}
   m_Layer: 0
   m_Name: Rotating Platform
-  m_TagString: Untagged
+  m_TagString: Platform_Rotate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
