@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public TMP_Text healthText;
     public TMP_Text gameOverText;
     public TMP_Text InventoryText;
+    public TMP_Text pickUpText;
     public Image HealthSkeleton;
     public Image HealthBar;
     private Dictionary<string, int> inventory = new Dictionary<string, int>();
@@ -430,7 +431,10 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.CompareTag("Key") || collision.CompareTag("Defrost") || collision.CompareTag("Placeholder") || collision.CompareTag("JumpHigher") || collision.CompareTag("InvincibleShield"))
         {
+
             string itemName = collision.tag;
+            StartCoroutine(DisplayTextForDuration("Picked up "+itemName+"!", 3.0f, Color.yellow));
+
 
             if (inventory.ContainsKey(itemName))
             {
@@ -461,6 +465,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.CompareTag("HealthUp"))
         {
+            StartCoroutine(DisplayTextForDuration("+10 HP", 3.0f, Color.green));
             if (currentHealth <= maxHealth - 10)
             {
                 currentHealth += 10;
@@ -476,6 +481,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.CompareTag("ColorCollectable"))
         {
+            StartCoroutine(DisplayTextForDuration("Player changed color! ", 3.0f, Color.yellow));
             SpriteRenderer collectableSR = collision.GetComponent<SpriteRenderer>();
             Color collectableColor = collectableSR.color;
             this.GetComponent<SpriteRenderer>().color = collectableColor;
@@ -491,6 +497,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.CompareTag("MegaEnhancer"))
         {
+            StartCoroutine(DisplayTextForDuration("Picked up MegaEnhancer!", 3.0f, Color.yellow));
             Destroy(collision.gameObject);
             this.transform.localScale += new Vector3(0.2f, 0.2f, 0.2f);
             rb.mass *= playerMassMultiplicationFactor;
@@ -520,4 +527,14 @@ public class PlayerController : MonoBehaviour
             jumpCount++;
         }
     }
+
+    private IEnumerator DisplayTextForDuration(string message, float duration, Color c)
+    {
+        pickUpText.text = message;
+        pickUpText.color = c;
+        yield return new WaitForSeconds(duration);
+        pickUpText.text = "";
+    }
+
+
 }
