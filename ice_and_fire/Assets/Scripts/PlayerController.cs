@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     public float playerJumpForceMultiplicationFactor = 100f;
 
     public GameOverScreen gameOverScreen;
-
+    private bool isMovingToPosition = false;
     void Start()
     {
 
@@ -148,32 +148,28 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.K) && inventory.ContainsKey("Placeholder"))
+        if (Input.GetKeyDown(KeyCode.K) && inventory.ContainsKey("Placeholder") && !isMovingToPosition)
         {
 
             playerPreviousPosition = transform.position;
             Vector3 placeholderPosition = playerPreviousPosition - Vector3.up * 0.7f;
+            
             if (rb.mass < 9)
             {
                 //Debug.Log("Old mass! " + rb.mass);
-                transform.Translate(Vector2.right * 1.1f);
+                //transform.Translate(Vector2.right * 1.1f);
+                Vector2 targetPosition = rb.position + Vector2.right * 1.1f;
+                StartCoroutine(MovePlayerToPositionAndPlacePlaceHolder(targetPosition, speed, placeholderPosition));
             }
             else
             {
                 //Debug.Log("Increased mass! " + rb.mass);
-                transform.Translate(Vector2.right * 1.4f);
+                //transform.Translate(Vector2.right * 1.4f);
+                Vector2 targetPosition = rb.position + Vector2.right * 1.4f;
+                StartCoroutine(MovePlayerToPositionAndPlacePlaceHolder(targetPosition, speed, placeholderPosition));
             }
 
-            Instantiate(placeholderPrefab, placeholderPosition, Quaternion.identity);
 
-            if (inventory.ContainsKey("Placeholder"))
-            {
-                inventory["Placeholder"]--;
-                if (inventory["Placeholder"] <= 0)
-                {
-                    inventory.Remove("Placeholder");
-                }
-            }
 
         }
 
@@ -244,6 +240,47 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
+        }
+    }
+
+
+
+    private IEnumerator MovePlayerToPositionAndPlacePlaceHolder(Vector2 targetPosition, float speed, Vector3 placeholderPosition)
+    {
+        float startTime = Time.time;
+        Vector2 startPosition = rb.position;
+        isMovingToPosition = true;
+
+        while (Time.time - startTime < 0.5f)
+        {
+            Vector2 direction = (targetPosition - rb.position).normalized;
+
+            // Set the velocity to move the player in the specified direction with the given speed
+            rb.velocity = direction * speed;
+
+            // Check if the player has reached the target position
+            if (Vector2.Distance(rb.position, targetPosition) < 0.1f)
+            {
+                rb.velocity = Vector2.zero;
+                rb.position = targetPosition;
+                break; // Exit the loop
+            }
+
+
+        yield return null;
+        }
+
+        isMovingToPosition = false;
+
+        Instantiate(placeholderPrefab, placeholderPosition, Quaternion.identity);
+
+        if (inventory.ContainsKey("Placeholder"))
+        {
+            inventory["Placeholder"]--;
+            if (inventory["Placeholder"] <= 0)
+            {
+                inventory.Remove("Placeholder");
+            }
         }
     }
 

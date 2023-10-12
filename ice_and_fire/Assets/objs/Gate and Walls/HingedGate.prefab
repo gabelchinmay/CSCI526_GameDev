@@ -99,7 +99,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 55000
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 1
@@ -123,7 +123,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.49999997}
-  m_ConnectedAnchor: {x: 26.777409, y: 4.1884503}
+  m_ConnectedAnchor: {x: -17.14259, y: 8.81845}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 90
