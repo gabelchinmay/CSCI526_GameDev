@@ -117,11 +117,6 @@ public class PlayerController : MonoBehaviour
             InventoryText.text = "";
             InventoryText.text += "INVENTORY";
 
-            if (inventory.ContainsKey("HealthUp"))
-            {
-                InventoryText.text += "\nHealthUp: " + inventory["HealthUp"];
-
-            }
             if (inventory.ContainsKey("JumpHigher"))
             {
                 InventoryText.text += "\nJumpHighers: " + inventory["JumpHigher"];
@@ -197,29 +192,6 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.H) && inventory.ContainsKey("HealthUp"))
-        {
-            if (currentHealth <= maxHealth - 10)
-            {
-                currentHealth += 10;
-
-            }
-            else
-            {
-                currentHealth = maxHealth;
-            }
-            UpdateHealthUI();
-
-            if (inventory.ContainsKey("HealthUp"))
-            {
-                inventory["HealthUp"]--;
-                if (inventory["HealthUp"] <= 0)
-                {
-                    inventory.Remove("HealthUp");
-                }
-            }
-
-        }
 
 
         if (Input.GetKeyDown(KeyCode.F) && inventory.ContainsKey("Defrost"))
@@ -456,7 +428,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("HealthUp") || collision.CompareTag("Key") || collision.CompareTag("Defrost") || collision.CompareTag("Placeholder") || collision.CompareTag("JumpHigher") || collision.CompareTag("InvincibleShield"))
+        if (collision.CompareTag("Key") || collision.CompareTag("Defrost") || collision.CompareTag("Placeholder") || collision.CompareTag("JumpHigher") || collision.CompareTag("InvincibleShield"))
         {
             string itemName = collision.tag;
 
@@ -485,6 +457,21 @@ public class PlayerController : MonoBehaviour
             {
                 Destroy(collision.gameObject);
             }
+        }
+
+        if (collision.CompareTag("HealthUp"))
+        {
+            if (currentHealth <= maxHealth - 10)
+            {
+                currentHealth += 10;
+
+            }
+            else
+            {
+                currentHealth = maxHealth;
+            }
+            UpdateHealthUI();
+            Destroy(collision.gameObject);
         }
 
         if (collision.CompareTag("ColorCollectable"))
