@@ -259,8 +259,9 @@ public class PlayerController : MonoBehaviour
     {
         if (!isGameOver)
         {
-            if (jumpCount < 1) jumpForce = 7.0f;
-            else jumpForce = 5.0f; //Reduce the jump force for second jump
+            float mass = rb.mass;
+            if (jumpCount < 1) jumpForce = 7.0f * mass;
+            else jumpForce = 5.0f * mass; //Reduce the jump force for second jump
             
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
