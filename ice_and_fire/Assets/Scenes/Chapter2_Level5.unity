@@ -1189,7 +1189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1303599796809000183, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
-      value: Chapter-3, Level-5
+      value: Chapter-2, Level-5
       objectReference: {fileID: 0}
     - target: {fileID: 3278267854159422273, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_Pivot.x
@@ -1852,7 +1852,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7523905617811977664, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
       propertyPath: m_Mass
-      value: 1000
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7523905617811977676, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
       propertyPath: m_Name

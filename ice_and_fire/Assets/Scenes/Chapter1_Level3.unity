@@ -452,7 +452,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7135860621012740792, guid: 98f1435ffe158db43a930b62428528b0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 98f1435ffe158db43a930b62428528b0, type: 3}
 --- !u!1 &929351075 stripped
 GameObject:
@@ -573,6 +574,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 313858167116525945, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_text
+      value: "Use  <- -> to move \n<space> to jump.\n2x <space> to double jump\nPress
+        K to place weight on ground\nPress F to use Defrost"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196766692646918426, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1303599796809000183, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
       value: Chapter-1, Level-3
@@ -1726,7 +1736,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7523905617811977664, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
       propertyPath: m_Mass
-      value: 1000
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7523905617811977665, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
       propertyPath: m_ConnectedAnchor.x

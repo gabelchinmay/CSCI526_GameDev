@@ -2313,9 +2313,13 @@ PrefabInstance:
       propertyPath: m_text
       value: Beware! The platforms rotate
       objectReference: {fileID: 0}
+    - target: {fileID: 1196766692646918426, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1303599796809000183, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
-      value: Chapter 3 - Level 4
+      value: Chapter-2 - Level 4
       objectReference: {fileID: 0}
     - target: {fileID: 3278267854159422273, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_Pivot.x
@@ -3638,7 +3642,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7135860621012740792, guid: 98f1435ffe158db43a930b62428528b0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 98f1435ffe158db43a930b62428528b0, type: 3}
 --- !u!1001 &1732324950
 PrefabInstance:
@@ -4207,7 +4212,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7135860621012740792, guid: 98f1435ffe158db43a930b62428528b0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 98f1435ffe158db43a930b62428528b0, type: 3}
 --- !u!1001 &2016274432
 PrefabInstance:

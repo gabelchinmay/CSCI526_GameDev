@@ -782,7 +782,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7135860621012740792, guid: 98f1435ffe158db43a930b62428528b0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 98f1435ffe158db43a930b62428528b0, type: 3}
 --- !u!114 &979366330 stripped
 MonoBehaviour:
@@ -1598,11 +1599,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 313858167116525945, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
-      value: 
+      value: "Use  <- -> to move \n<space> to jump.\n2x <space> to double jump\nPlace
+        \u201CWeight\u201D or the player on the button to open the door\nWeight 
+        press K: put on any button to open a door\nDefrost  press F: use it when
+        you are frozen\nPress O to use the key to open the gate\nPress Q to enable
+        shield for 10 sec"
       objectReference: {fileID: 0}
     - target: {fileID: 1303599796809000183, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
-      value: 'Chapter-4, Level-1
+      value: 'Chapter-3, Level-1
 
         Night''s Watch'
       objectReference: {fileID: 0}

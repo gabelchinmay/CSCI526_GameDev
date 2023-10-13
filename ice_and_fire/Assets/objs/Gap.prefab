@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7135860621012740797}
   - component: {fileID: 7135860621012740798}
   - component: {fileID: 7135860621012740799}
-  - component: {fileID: 7135860621012740792}
   m_Layer: 0
   m_Name: Gap
   m_TagString: Gap
@@ -112,15 +111,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7135860621012740792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7135860621012740793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9dcfcf831c1eb64c9729c83ad64fb2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

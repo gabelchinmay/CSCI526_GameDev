@@ -494,11 +494,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 313858167116525945, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
-      value: "Avoid the enemies \nPress Q to use InvincibleShield"
+      value: "Avoid the enemies \nShield: Protect the player from any damage for
+        10 seconds\nPress Q to use InvincibleShield"
+      objectReference: {fileID: 0}
+    - target: {fileID: 570123438188111303, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196766692646918426, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1303599796809000183, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
-      value: Chapter-3, Level-3
+      value: Chapter-2, Level-2
       objectReference: {fileID: 0}
     - target: {fileID: 3278267854159422273, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_Pivot.x
@@ -606,7 +615,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6959943140579243970, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6959943140579243970, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 178
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df40229f7eab94490bb764a34777a35f, type: 3}

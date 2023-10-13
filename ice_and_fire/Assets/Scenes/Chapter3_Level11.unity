@@ -3864,7 +3864,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7523905617811977664, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
       propertyPath: m_Mass
-      value: 1000
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7523905617811977665, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -5357,11 +5357,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 313858167116525945, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
-      value: 
+      value: "Use  <- -> to move \n<space> to jump.\n2x <space> to double jump\nPlace
+        \u201CWeight\u201D or the player on the button to open the door\nWeight 
+        press K: put on any button to open a door\nDefrost  press F: use it when
+        you are frozen\nPress O to use the key to open the gate\nPress Q to enable
+        shield for 10 sec"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196766692646918426, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1303599796809000183, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
-      value: Chapter-4, Level-1 King's Landing
+      value: Chapter-3, Level-1 King's Landing
       objectReference: {fileID: 0}
     - target: {fileID: 3278267854159422273, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_Pivot.x

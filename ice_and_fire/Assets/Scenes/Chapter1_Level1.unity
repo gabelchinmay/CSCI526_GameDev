@@ -447,7 +447,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 313858167116525945, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
-      value: "Use  <- -> to move \n<space> to jump.\n2x <space> to double jump\nblablablabla\n"
+      value: "Move forward     -> \nMove backward    <-\nJump    <Space>\nDouble-jump   
+        <Space> x 2\n\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 313858167116525945, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_margin.x
+      value: -275.0099
+      objectReference: {fileID: 0}
+    - target: {fileID: 313858167116525945, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_margin.z
+      value: 129.1242
+      objectReference: {fileID: 0}
+    - target: {fileID: 313858167116525945, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 570123438188111303, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_RootOrder
