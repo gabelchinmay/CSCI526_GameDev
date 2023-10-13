@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 97662929}
   - component: {fileID: 97662928}
   m_Layer: 0
-  m_Name: EndWall
+  m_Name: EndpointWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1172,7 +1172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6437144975825527535, guid: f2753ed6d5d3e4ad8b9c4d12210b86a9, type: 3}
       propertyPath: m_Name
-      value: EndpointWall
+      value: EndGate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2753ed6d5d3e4ad8b9c4d12210b86a9, type: 3}
