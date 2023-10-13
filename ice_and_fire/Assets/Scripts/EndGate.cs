@@ -53,10 +53,10 @@ public class EndGate : MonoBehaviour
             PlayerPrefs.Save();
         }
 
-        if(SceneManager.GetActiveScene().Equals(15))
+        if(SceneManager.GetActiveScene().buildIndex >= 10)
         {
-            PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
-            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+            PlayerPrefs.SetInt("ReachedIndex", 13);
+            PlayerPrefs.SetInt("UnlockedLevel", 13);
             PlayerPrefs.Save();
         }
 

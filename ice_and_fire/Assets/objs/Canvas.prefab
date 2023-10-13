@@ -733,7 +733,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 529, y: 237}
+  m_AnchoredPosition: {x: 387.1, y: 237}
   m_SizeDelta: {x: 200, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &151639632233723006
@@ -1143,8 +1143,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -1.2518}
+  m_SizeDelta: {x: 15.0201, y: 15.0201}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8269586711336733639
 CanvasRenderer:
@@ -1167,7 +1167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2264151, g: 0.18476325, b: 0.18476325, a: 0.392}
+  m_Color: {r: 0.13207549, g: 0.11027057, b: 0.11027057, a: 0.9019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4714,9 +4714,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Use  <- -> to move \n<space> to jump.\n2x <space> to double jump\nPress
-    K to keep placeholder on ground\nPress J to use JumpHigher\nPress H to use healthUp\nPress
-    F to use Defrost"
+  m_text: "Use  <- -> to move \n<space> to jump.\n2x <space> to double jump\nPlace
+    \u201CWeight\u201D or the player on the button to open the door\nWeight  press
+    K: put on any button to open a door\nDefrost  press F: use it when you are frozen\nPress
+    O to use the key to open the gate\nPress Q to enable shield for 10 sec\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4749,7 +4750,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
