@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     public TMP_Text gameOverText;
     public TMP_Text InventoryText;
     public TMP_Text pickUpText;
+    public TMP_Text shieldTimerText;
     public Image HealthSkeleton;
     public Image HealthBar;
     private Dictionary<string, int> inventory = new Dictionary<string, int>();
@@ -201,23 +202,6 @@ public class PlayerController : MonoBehaviour
                 if (inventory["Defrost"] <= 0)
                 {
                     inventory.Remove("Defrost");
-                }
-            }
-
-        }
-
-        // Update for invincible shields
-        if (Input.GetKeyDown(KeyCode.Q) && inventory.ContainsKey("InvincibleShield"))
-        {
-            // Press Q to use this item
-            StartCoroutine(ActivateShield());
-
-            if (inventory.ContainsKey("InvincibleShield"))
-            {
-                inventory["InvincibleShield"]--;
-                if (inventory["InvincibleShield"] <= 0)
-                {
-                    inventory.Remove("InvincibleShield");
                 }
             }
 
@@ -429,15 +413,35 @@ public class PlayerController : MonoBehaviour
 
 
     // A new IEnumerator for shielded status
-    private IEnumerator ActivateShield()
+    private IEnumerator ActivateShield(float duration)
     {
+        if (isShielded)
+        {
+            yield break;
+        }
+
         isShielded = true;
-        yield return new WaitForSeconds(10.0f); // This time can be adjusted
+        float remainingTime = duration;
+
+        while (remainingTime > 0)
+        {
+            shieldTimerText.text = "Shield: " + Mathf.Ceil(remainingTime).ToString();
+            remainingTime -= Time.deltaTime;
+
+            yield return null;
+        }
+
         isShielded = false;
+
+        shieldTimerText.gameObject.SetActive(false);
     }
+
+
 
     public void TakeDamage(int damageAmount)
     {
+        Debug.Log("isShielded: " + isShielded);
+
         if (!isShielded) // When the player is not shielded
         {
             currentHealth -= damageAmount;
@@ -467,7 +471,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Key") || collision.CompareTag("Defrost") || collision.CompareTag("Placeholder") || collision.CompareTag("JumpHigher") || collision.CompareTag("InvincibleShield"))
+        if (collision.CompareTag("Key") || collision.CompareTag("Defrost") || collision.CompareTag("Placeholder") || collision.CompareTag("JumpHigher"))
         {
 
             string itemName = collision.tag;
@@ -499,6 +503,12 @@ public class PlayerController : MonoBehaviour
             {
                 Destroy(collision.gameObject);
             }
+        }
+
+        if (collision.CompareTag("InvincibleShield"))
+        {
+            StartCoroutine(ActivateShield(10.0f));
+            Destroy(collision.gameObject);
         }
 
         if (collision.CompareTag("HealthUp"))
