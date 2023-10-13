@@ -7,6 +7,9 @@ public class Restart : MonoBehaviour
 {
    public void RestartGame()
     {
+
+        SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+        sendToGoogle.PlayerAttempted();
         SceneManager.LoadScene(0);
     }
 }
