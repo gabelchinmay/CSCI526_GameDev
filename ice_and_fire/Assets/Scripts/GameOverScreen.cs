@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MonoBehaviour
 {
+    
+
     public void SetUp()
     {
         gameObject.SetActive(true);
@@ -12,24 +14,45 @@ public class GameOverScreen : MonoBehaviour
 
     public void Replay()
     {
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+
+        SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+        sendToGoogle.PlayerAttempted();
+
     }
 
     public void Exit()
     {
+
+        
         SceneManager.LoadScene(0);
+
+        SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+        sendToGoogle.PlayerPassedLevel();
+
     }
 
     public void MainMenu()
     {
+
+        
         SceneManager.LoadScene(0);
+
+        SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+        sendToGoogle.PlayerPassedLevel();
     }
 
     public void ChooseLevel()
     {
-        //SceneManager.LoadScene("ChooseLevel");
+
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("ChooseLevel");
         asyncLoad.completed += OnSceneLoaded;
+
+        SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+        sendToGoogle.PlayerPassedLevel();
+
 
     }
 

@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-   
+    
+
     public void Pause()
     {
        gameObject.SetActive(true);
@@ -14,6 +15,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Replay()
     {
+        SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+        sendToGoogle.PlayerAttempted();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }
