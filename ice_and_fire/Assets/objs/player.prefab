@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8013627977215371533}
   - component: {fileID: 8013627977215371532}
   - component: {fileID: 8013627977215371535}
+  - component: {fileID: -190714943948111198}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -155,7 +156,25 @@ MonoBehaviour:
   healthText: {fileID: 0}
   gameOverText: {fileID: 0}
   InventoryText: {fileID: 0}
+  pickUpText: {fileID: 0}
+  shieldTimerText: {fileID: 0}
   HealthSkeleton: {fileID: 0}
   HealthBar: {fileID: 0}
   placeholderPrefab: {fileID: 0}
+  playerMassMultiplicationFactor: 100
+  playerJumpForceMultiplicationFactor: 100
   gameOverScreen: {fileID: 0}
+--- !u!114 &-190714943948111198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013627977215371528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a37ce3798293e8644a5e7b88072ed971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localCamera: {fileID: 0}
+  globalCamera: {fileID: 0}

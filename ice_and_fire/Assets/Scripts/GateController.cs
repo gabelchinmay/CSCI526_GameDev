@@ -17,7 +17,7 @@ public class GateController : MonoBehaviour
     {
         Vector2 checkPosition = transform.position;
 
-        Collider2D  collider = CheckOverlapWithTolerance(checkPosition, 0.15f);
+        Collider2D  collider = CheckOverlapWithTolerance(checkPosition, 0.9f);
         if(collider != null)
         {
             if(collider.tag == "Placeholder") {
