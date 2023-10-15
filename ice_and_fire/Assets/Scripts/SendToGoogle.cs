@@ -24,22 +24,32 @@ public class SendToGoogle : MonoBehaviour
 
     public void SetParameters(int chapter, int level)
     {
-        this.Chapter = chapter;
+        
         this.Level = level;
-        if (this.Chapter == 1 && this.Level > 3)
+        if (this.Level <3 )
         {
-            this.Chapter++;
-            this.Level = 1;
+            this.Chapter = 1;
+            this.Level = level;
         }
-        else if (this.Chapter == 2 && this.Level > 3)
+        else if (this.Level > 3 && this.Level <9)
         {
-            this.Chapter++;
-            this.Level = 1;
+            this.Chapter=2;
+            this.Level = level-3;
         }
-        else if (this.Chapter == 3 && this.Level > 6)
+        else if (this.Level ==9)
         {
-            this.Chapter++;
-            this.Level = 1;
+            this.Chapter = 3;
+            this.Level = 0;
+        }
+        else if (this.Level > 8 && this.Level < 13)
+        {
+            this.Chapter=3;
+            this.Level = level+2;
+        }
+        else if (this.Level > 12)
+        {
+            this.Chapter=4;
+            this.Level = level -11;
         }
         Debug.Log("parameter passed");
 
