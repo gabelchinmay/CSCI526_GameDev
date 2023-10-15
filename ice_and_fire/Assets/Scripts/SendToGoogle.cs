@@ -44,7 +44,7 @@ public class SendToGoogle : MonoBehaviour
         else if (this.Level > 8 && this.Level < 13)
         {
             this.Chapter=3;
-            this.Level = level+2;
+            this.Level = level+1;
         }
         else if (this.Level > 12)
         {
