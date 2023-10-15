@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public TMP_Text InventoryText;
     public TMP_Text pickUpText;
     public TMP_Text shieldTimerText;
+    public TMP_Text defrostTimerTxt;
     public Image HealthSkeleton;
     public Image HealthBar;
     private Dictionary<string, int> inventory = new Dictionary<string, int>();
@@ -157,15 +158,12 @@ public class PlayerController : MonoBehaviour
             
             if (rb.mass < 9)
             {
-                //Debug.Log("Old mass! " + rb.mass);
-                //transform.Translate(Vector2.right * 1.1f);
                 Vector2 targetPosition = rb.position + Vector2.right * 1.1f;
                 StartCoroutine(MovePlayerToPositionAndPlacePlaceHolder(targetPosition, speed, placeholderPosition));
             }
             else
             {
-                //Debug.Log("Increased mass! " + rb.mass);
-                //transform.Translate(Vector2.right * 1.4f);
+
                 Vector2 targetPosition = rb.position + Vector2.right * 1.4f;
                 StartCoroutine(MovePlayerToPositionAndPlacePlaceHolder(targetPosition, speed, placeholderPosition));
             }
@@ -354,8 +352,22 @@ public class PlayerController : MonoBehaviour
     private IEnumerator DefrostPowerUp()
     {
         isOnDefrost = true;
+        StartCoroutine(DefrostTimer(5.0f));
         yield return new WaitForSeconds(5.0f);
         isOnDefrost = false;
+
+    }
+
+    private IEnumerator DefrostTimer(float time)
+    {
+        while (time > 0)
+        {
+            defrostTimerTxt.text = "Defrost: " + Mathf.Ceil(time).ToString();
+            time -= Time.deltaTime;
+
+            yield return null;
+        }
+        defrostTimerTxt.gameObject.SetActive(false);
 
     }
 

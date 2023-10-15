@@ -863,6 +863,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 591676681}
     - target: {fileID: 8013627977215371535, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
+      propertyPath: defrostTimerTxt
+      value: 
+      objectReference: {fileID: 1785744144}
+    - target: {fileID: 8013627977215371535, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
       propertyPath: shieldTimerText
       value: 
       objectReference: {fileID: 1309679288}
@@ -1551,6 +1555,10 @@ PrefabInstance:
       propertyPath: countdownDuration
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 8176819400088296851, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df40229f7eab94490bb764a34777a35f, type: 3}
 --- !u!114 &1785744141 stripped
@@ -1580,6 +1588,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3278267854159422273, guid: df40229f7eab94490bb764a34777a35f, type: 3}
   m_PrefabInstance: {fileID: 1785744140}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1785744144 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4013727378708113705, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+  m_PrefabInstance: {fileID: 1785744140}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &1874152448 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5436406374883510393, guid: 603efd81e104c4637ad9b705eb43204f, type: 3}
