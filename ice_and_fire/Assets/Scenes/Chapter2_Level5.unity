@@ -1074,6 +1074,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6437144975825527532, guid: f2753ed6d5d3e4ad8b9c4d12210b86a9, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2868652
+      objectReference: {fileID: 0}
+    - target: {fileID: 6437144975825527532, guid: f2753ed6d5d3e4ad8b9c4d12210b86a9, type: 3}
+      propertyPath: m_Size.y
+      value: 4.0598917
+      objectReference: {fileID: 0}
+    - target: {fileID: 6437144975825527532, guid: f2753ed6d5d3e4ad8b9c4d12210b86a9, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.14343262
+      objectReference: {fileID: 0}
+    - target: {fileID: 6437144975825527532, guid: f2753ed6d5d3e4ad8b9c4d12210b86a9, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.1673379
+      objectReference: {fileID: 0}
     - target: {fileID: 6437144975825527533, guid: f2753ed6d5d3e4ad8b9c4d12210b86a9, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -2374,7 +2390,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771905724}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!4 &1771905727
 Transform:
   m_ObjectHideFlags: 0
