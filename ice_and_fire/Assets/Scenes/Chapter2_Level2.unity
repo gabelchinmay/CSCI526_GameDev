@@ -789,7 +789,7 @@ PrefabInstance:
     - target: {fileID: 313858167116525945, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
       value: "Avoid the enemies \nShield: Protect the player from any damage for
-        10 seconds\nPress Q to use InvincibleShield"
+        10 seconds\nPress Q to use InvincibleShield\nPress V for view change"
       objectReference: {fileID: 0}
     - target: {fileID: 570123438188111303, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_RootOrder
