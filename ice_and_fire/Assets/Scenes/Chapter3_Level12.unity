@@ -1322,7 +1322,7 @@ PrefabInstance:
         \u201CWeight\u201D or the player on the button to open the door\nWeight 
         press K: put on any button to open a door\nDefrost  press F: use it when
         you are frozen\nPress O to use the key to open the gate\nPress Q to enable
-        shield for 10 sec"
+        shield for 10 sec\nPress V for view change"
       objectReference: {fileID: 0}
     - target: {fileID: 1196766692646918426, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_IsActive
@@ -1441,6 +1441,10 @@ PrefabInstance:
     - target: {fileID: 8176819400088296851, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_RootOrder
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553688173942810358, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df40229f7eab94490bb764a34777a35f, type: 3}

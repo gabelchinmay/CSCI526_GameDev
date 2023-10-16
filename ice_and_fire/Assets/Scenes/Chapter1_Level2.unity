@@ -778,7 +778,7 @@ PrefabInstance:
       value: "Use  <- -> to move \n<space> to jump.\n2x <space> to double jump\nPlace
         \u201CWeight\u201D or the player on the button to open the door\nWeight 
         press K: put on any button to open a door\nDefrost  press F: use it when
-        you are frozen\n\n\n\n\n\n"
+        you are frozen\nPress V for view change\n\n\n\n\n\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 313858167116525945, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_margin.w
