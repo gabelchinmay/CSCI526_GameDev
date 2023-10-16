@@ -365,9 +365,10 @@ PrefabInstance:
     - target: {fileID: 313858167116525945, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
       value: "Use  <- -> to move \n<space> to jump.\n2x <space> to double jump\nPress
-        K to keep placeholder on ground\nPress F to use Defrost\nMegaEnhancer:  Make
-        the player bigger and increase its mass\nBreakable platforms and gates: Breakable
-        when the player's mass is higher than the threshold\n"
+        K to keep placeholder on ground\nPress F to use Defrost\nPress V to change
+        view\nMegaEnhancer:  Make the player bigger and increase its mass\nBreakable
+        platforms and gates: Breakable when the player's mass is higher than the
+        threshold\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 313858167116525945, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_margin.x

@@ -1331,7 +1331,7 @@ PrefabInstance:
     - target: {fileID: 313858167116525945, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
       value: "Move forward     -> \nMove backward    <-\nJump    <Space>\nDouble-jump   
-        <Space> x 2\n\n"
+        <Space> x 2\nPress V to change view\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 313858167116525945, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_margin.x

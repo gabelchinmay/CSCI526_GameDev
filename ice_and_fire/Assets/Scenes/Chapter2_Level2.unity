@@ -789,7 +789,7 @@ PrefabInstance:
     - target: {fileID: 313858167116525945, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
       value: "Avoid the enemies \nShield: Protect the player from any damage for
-        10 seconds\nPress Q to use InvincibleShield"
+        10 seconds\nPress Q to use InvincibleShield\nPress V for view change"
       objectReference: {fileID: 0}
     - target: {fileID: 570123438188111303, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_RootOrder
@@ -2862,17 +2862,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingMonster
       objectReference: {fileID: 0}
+    - target: {fileID: 6724454165531921492, guid: 2344d2719e9544ce786c4ea28cb35a91, type: 3}
+      propertyPath: amplitude
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6724454165531921493, guid: 2344d2719e9544ce786c4ea28cb35a91, type: 3}
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6724454165531921493, guid: 2344d2719e9544ce786c4ea28cb35a91, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.57
+      value: -10.29
       objectReference: {fileID: 0}
     - target: {fileID: 6724454165531921493, guid: 2344d2719e9544ce786c4ea28cb35a91, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.6
+      value: 4.36
       objectReference: {fileID: 0}
     - target: {fileID: 6724454165531921493, guid: 2344d2719e9544ce786c4ea28cb35a91, type: 3}
       propertyPath: m_LocalPosition.z

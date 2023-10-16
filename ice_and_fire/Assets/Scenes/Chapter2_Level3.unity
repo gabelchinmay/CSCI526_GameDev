@@ -1615,6 +1615,8 @@ PrefabInstance:
         Press
         O to open the gate
 
+        Press V for view change
+
 
 '
       objectReference: {fileID: 0}
