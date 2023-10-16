@@ -4725,7 +4725,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7523905617811977664, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
       propertyPath: m_Mass
-      value: 1000
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7523905617811977665, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
       propertyPath: m_ConnectedAnchor.x
