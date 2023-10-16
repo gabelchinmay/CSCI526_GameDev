@@ -158,9 +158,10 @@ MonoBehaviour:
   InventoryText: {fileID: 0}
   pickUpText: {fileID: 0}
   shieldTimerText: {fileID: 0}
+  defrostTimerTxt: {fileID: 0}
   HealthSkeleton: {fileID: 0}
   HealthBar: {fileID: 0}
-  placeholderPrefab: {fileID: 0}
+  placeholderPrefab: {fileID: 1679066785320752784, guid: 587e236623100447aae1b3afc4f0b1a8, type: 3}
   playerMassMultiplicationFactor: 100
   playerJumpForceMultiplicationFactor: 100
   gameOverScreen: {fileID: 0}
