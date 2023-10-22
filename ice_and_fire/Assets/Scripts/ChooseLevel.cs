@@ -34,4 +34,14 @@ public class ChooseLevel : MonoBehaviour
             buttons[i].interactable = true;
         }
     }
+
+    public void UnlockAll()
+    {
+        PlayerPrefs.SetInt("ReachedIndex", 13);
+        PlayerPrefs.SetInt("UnlockedLevel", 13);
+        PlayerPrefs.Save();
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+    }
 }
