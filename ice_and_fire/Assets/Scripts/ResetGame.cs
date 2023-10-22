@@ -8,6 +8,6 @@ public class ResetGame : MonoBehaviour
     public void Reset()
     {
         PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
