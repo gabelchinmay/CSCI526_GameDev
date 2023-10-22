@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Chapter2_Level1.unity
     guid: 4db31d99a0dcfe04fa9b921f14c70a6b
   - enabled: 1
-    path: Assets/Scenes/Chapter2_Level2.unity
+    path: Assets/Scenes/Jack_Arrack.unity
     guid: 867f33f8d7cf58049b2c5f9f88c05b21
   - enabled: 1
     path: Assets/Scenes/Chapter2_Level3.unity

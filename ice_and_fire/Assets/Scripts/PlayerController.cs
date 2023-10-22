@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
     public GameObject placeholderPrefab;
     private bool isOnDefrost = false;
     private KeyGateController key = null;
+    private int attackCount = 0;
+    public float attackRange = 5.0f;
 
     // new Feature: Invicible Shield, boolean variable to show if this player is shielded or not
     private bool isShielded = false;
@@ -61,6 +63,12 @@ public class PlayerController : MonoBehaviour
         SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
         rb = GetComponent<Rigidbody2D>();
         currentColour = Color.black;
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            Debug.Log("attack");
+            Attack();
+        }
 
         if (CurrPlatform != null)
         {
@@ -594,6 +602,35 @@ public class PlayerController : MonoBehaviour
         pickUpText.color = c;
         yield return new WaitForSeconds(duration);
         pickUpText.text = "";
+    }
+
+    public void Attack()
+    {
+        Vector2 playerPosition = transform.position;
+        float nearestMonsterDistance = float.MaxValue;
+        FlyMonsterController nearestMonster = null;
+
+        // attack
+        FlyMonsterController[] monsters = FindObjectsOfType<FlyMonsterController>();
+
+        foreach (FlyMonsterController monster in monsters)
+        {
+            // distance  
+            float distance = Vector2.Distance(playerPosition, monster.transform.position);
+
+            // if yes, damage
+            if (distance <= attackRange && distance < nearestMonsterDistance)
+            {
+                nearestMonsterDistance = distance;
+                nearestMonster = monster;
+            }
+        }
+
+        if (nearestMonster != null)
+        {
+            Debug.Log("Attacking nearest monster: " + nearestMonster.gameObject.name);
+            nearestMonster.TakeDamage();
+        }
     }
 
 

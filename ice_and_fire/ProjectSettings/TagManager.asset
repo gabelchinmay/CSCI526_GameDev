@@ -25,6 +25,7 @@ TagManager:
   - Platform_Color
   - Platform_Moving
   - Platform_Tri
+  - Monster
   layers:
   - Default
   - TransparentFX
