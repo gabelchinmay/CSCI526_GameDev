@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     private bool isOnSpike = false;
     private bool isOnMonster = false;
     private bool isOnSaw = false;
+    private bool isGettingSwordHits = false;
 
     public float playerMassMultiplicationFactor = 100f;
     public float playerJumpForceMultiplicationFactor = 100f;
@@ -79,10 +80,7 @@ public class PlayerController : MonoBehaviour
         {
             playerAnimator.SetBool("attack",true);
         }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            playerAnimator.SetBool("shoot",true);
-        }
+
 
         SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
         rb = GetComponent<Rigidbody2D>();
@@ -275,6 +273,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S)) // Replace with your preferred shoot key.
         {
+            playerAnimator.SetBool("shoot", true);
             ShootArrow();
         }
     }
@@ -386,12 +385,24 @@ public class PlayerController : MonoBehaviour
 
     public void OnSawEnter(SawController saw)
     {
-        isOnMonster = true;
+        isOnSaw = true;
     }
 
     public void OnSawExit(SawController saw)
     {
-        isOnMonster = false;
+        isOnSaw = false;
+
+    }
+
+
+    public void OnSwordEnemyEnter(SwordEnemyBehaviour arrowEnemy)
+    {
+        isGettingSwordHits = true;
+    }
+
+    public void OnSwordEnemyExit(SwordEnemyBehaviour arrowEnemy)
+    {
+        isGettingSwordHits = false;
 
     }
 
@@ -472,6 +483,10 @@ public class PlayerController : MonoBehaviour
             if (isOnSaw)
             {
                 this.TakeDamage(1);
+            }
+            if (isGettingSwordHits)
+            {
+                this.TakeDamage(2);
             }
             yield return new WaitForSeconds(0.1f);
         }
@@ -686,7 +701,7 @@ public class PlayerController : MonoBehaviour
 
         if (this.direction == -1)
         {
-            offset = transform.position + Vector3.up * 1.5f + Vector3.left * 2f;
+            offset = transform.position + Vector3.up * 1f + Vector3.left * 2f;
             arrow = Instantiate(arrowPrefab, offset, Quaternion.identity);
             arrow.GetComponent<SpriteRenderer>().flipX =true;
             a = arrow.GetComponent<Rigidbody2D>();
@@ -695,7 +710,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            offset = transform.position + Vector3.up * 1.5f + Vector3.right * 2f;
+            offset = transform.position + Vector3.up * 1f + Vector3.right * 2f;
             arrow = Instantiate(arrowPrefab, offset, Quaternion.identity);
             a = arrow.GetComponent<Rigidbody2D>();
             a.velocity = new Vector2(35f * this.direction, 0);
