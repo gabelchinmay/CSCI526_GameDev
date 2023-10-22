@@ -10,17 +10,10 @@ public class FlyMonsterController : MonoBehaviour
 
     private void Start()
     {
-        initialPosition = transform.position;
-    }
-
-    void Update()
-    {
         float oscillation = amplitude * Mathf.Sin(frequency * Time.time);
-        // Set the new position of the sprite based on the oscillation
-        transform.position = initialPosition + Vector2.right * oscillation;
-
-        
     }
+
+    
 
     private void OnCollisionEnter2D(Collision2D other)
     {
