@@ -617,7 +617,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8013627977215371535, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
   m_PrefabInstance: {fileID: 1185467150}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1891021579}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c7ff325f0e764658ac34dcc9c494598, type: 3}
@@ -1158,7 +1158,23 @@ PrefabInstance:
       objectReference: {fileID: 1657668395}
     - target: {fileID: 8013627977215371528, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
       propertyPath: m_Name
-      value: player
+      value: Zihao
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013627977215371531, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f377d1ac3dd744f0ba399855a7d985c0, type: 3}
+    - target: {fileID: 8013627977215371532, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013627977215371532, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013627977215371532, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.948
       objectReference: {fileID: 0}
     - target: {fileID: 8013627977215371534, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
       propertyPath: m_Pivot.x
@@ -1194,6 +1210,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8013627977215371534, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013627977215371534, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
+      propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8013627977215371534, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
@@ -1226,11 +1246,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8013627977215371534, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -19.47
+      value: -20.36
       objectReference: {fileID: 0}
     - target: {fileID: 8013627977215371534, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.44
+      value: -0.82
       objectReference: {fileID: 0}
     - target: {fileID: 8013627977215371534, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2184,6 +2204,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1891021579 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8013627977215371528, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
+  m_PrefabInstance: {fileID: 1185467150}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1891021580
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891021579}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2fb2bd165885b4058ba88d0e6bf6a643, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1895961671
 GameObject:
   m_ObjectHideFlags: 0

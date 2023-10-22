@@ -53,6 +53,11 @@ public class PlayerController : MonoBehaviour
     private int direction = 1;
 
 
+    private void Awake()
+    {
+        playerAnimator = GetComponent<Animator>();
+    }
+
     void Start()
     {
 
@@ -61,8 +66,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(InflictDamages());
         StartCoroutine(InflictDamagesFromAntagonists());
-        playerAnimator = GetComponent<Animator>();
-
     }
 
     void Update()
@@ -88,7 +91,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            //playerAnimator.SetBool("isJumping", true);
             if (currentColour == Color.red || (currentColour == Color.cyan && !isOnDefrost))
             {
                 canJump = false;
@@ -630,10 +632,8 @@ public class PlayerController : MonoBehaviour
         {
             canJump = true;
             jumpCount = 0;
-        }
-
-        if (onPlatform)
-        {
+            
+            //Disable the Jumping animation when landing
             playerAnimator.SetBool("isJumping", false);
         }
     }
@@ -642,6 +642,7 @@ public class PlayerController : MonoBehaviour
     {
         bool offPlatform = (other.gameObject.CompareTag("Platform_Normal") || other.gameObject.CompareTag("Platform_Moving") || other.gameObject.CompareTag("Platform_Rotate") || other.gameObject.CompareTag("Platform_AutoSpin")
                    || other.gameObject.CompareTag("Platform_Breakable") || other.gameObject.CompareTag("Platform_Color") || other.gameObject.CompareTag("Platform_Tri"));
+        
         //Disable double jump on rotating platform
         if (other.gameObject.CompareTag("Platform_Rotate") || other.gameObject.CompareTag("Platform_AutoSpin"))
         {

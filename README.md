@@ -5,10 +5,14 @@
 * GDD: https://docs.google.com/document/d/1JIe3gtocTormrH2_740sOwYux0RFbqNJ5cfkP2wucFo/edit
 * Alpha Build: https://gabelchinmay.github.io/ice_and_fire/alpha720/
 
-Credits:
+Credits (From left to right in the pic):
 Ziyu Liu,
-Jiancong Zhang,
-Ashley (Yi-Hsuan) Chen,
 Zihao Su,
+Jiancong Zhang,
 Chinmay Gabel, 
+Ashley (Yi-Hsuan) Chen,
 Danyang Zhang
+
+
+![IMG_4119](https://github.com/gabelchinmay/CSCI526_GameDev/assets/112030203/e8622dda-6af6-4437-b5d5-35a61ccd384c)
+
