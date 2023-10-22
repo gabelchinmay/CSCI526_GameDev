@@ -608,12 +608,12 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 playerPosition = transform.position;
         float nearestMonsterDistance = float.MaxValue;
-        FlyMonsterController nearestMonster = null;
+        MonsterAttack nearestMonster = null;
 
         // attack
-        FlyMonsterController[] monsters = FindObjectsOfType<FlyMonsterController>();
+        MonsterAttack[] monsters = FindObjectsOfType<MonsterAttack>();
 
-        foreach (FlyMonsterController monster in monsters)
+        foreach (MonsterAttack monster in monsters)
         {
             // distance  
             float distance = Vector2.Distance(playerPosition, monster.transform.position);
