@@ -3227,6 +3227,14 @@ PrefabInstance:
       value: Brian
       objectReference: {fileID: 0}
     - target: {fileID: 8013627977215371531, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
+      propertyPath: m_Size.x
+      value: 10.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013627977215371531, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
+      propertyPath: m_Size.y
+      value: 10.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013627977215371531, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: c48326ea5242149069ce2302cffd87bc, type: 3}
@@ -3316,7 +3324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8013627977215371534, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 30.630001
+      value: 30.51
       objectReference: {fileID: 0}
     - target: {fileID: 8013627977215371534, guid: cc6edef9e5bf14d889d9eb821b4f687a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
