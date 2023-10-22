@@ -49,9 +49,11 @@ public class PlayerController : MonoBehaviour
 
     private Animator playerAnimator;
 
+
     public GameObject arrowPrefab;
 
     private int direction = 1;
+
 
 
     private void Awake()
@@ -71,6 +73,18 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        //Testing attack animation only:
+        playerAnimator.SetBool("attack",false);
+        playerAnimator.SetBool("shoot",false);
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            playerAnimator.SetBool("attack",true);
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            playerAnimator.SetBool("shoot",true);
+        }
+
         SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
         rb = GetComponent<Rigidbody2D>();
         currentColour = Color.black;
