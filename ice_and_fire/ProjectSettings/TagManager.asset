@@ -25,6 +25,8 @@ TagManager:
   - Platform_Color
   - Platform_Moving
   - Platform_Tri
+  - arrow
+  - enemy
   layers:
   - Default
   - TransparentFX

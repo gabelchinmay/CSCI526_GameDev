@@ -48,6 +48,13 @@ public class PlayerController : MonoBehaviour
 
     private Animator playerAnimator;
 
+
+    public GameObject arrowPrefab;
+
+    private int direction = 1;
+
+
+
     private void Awake()
     {
         playerAnimator = GetComponent<Animator>();
@@ -131,11 +138,13 @@ public class PlayerController : MonoBehaviour
             if (horizontalInput < 0)
             {
                 spriteRenderer.flipX = true;
+                direction = -1;
 
             }
             else
             {
                 spriteRenderer.flipX = false;
+                direction = 1;
             }
 
 
@@ -256,6 +265,12 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.S)) // Replace with your preferred shoot key.
+        {
+            ShootArrow();
         }
     }
 
@@ -598,6 +613,22 @@ public class PlayerController : MonoBehaviour
             jumpForce *= playerJumpForceMultiplicationFactor;
         }
 
+        if (collision.CompareTag("arrow"))
+        {
+            StartCoroutine(DisplayTextForDuration("-2 HP", 1f, Color.red));
+            currentHealth -= 2;
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+            }
+
+            UpdateHealthUI();
+            Destroy(collision.gameObject);
+        }
+
+
+
+
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -639,6 +670,32 @@ public class PlayerController : MonoBehaviour
         pickUpText.color = c;
         yield return new WaitForSeconds(duration);
         pickUpText.text = "";
+    }
+
+
+    void ShootArrow()
+    {
+        Vector3 offset;
+        GameObject arrow;
+        Rigidbody2D a;
+
+        if (this.direction == -1)
+        {
+            offset = transform.position + Vector3.up * 1.5f + Vector3.left * 2f;
+            arrow = Instantiate(arrowPrefab, offset, Quaternion.identity);
+            arrow.GetComponent<SpriteRenderer>().flipX =true;
+            a = arrow.GetComponent<Rigidbody2D>();
+            a.velocity = new Vector2(35f * this.direction, 0);
+
+        }
+        else
+        {
+            offset = transform.position + Vector3.up * 1.5f + Vector3.right * 2f;
+            arrow = Instantiate(arrowPrefab, offset, Quaternion.identity);
+            a = arrow.GetComponent<Rigidbody2D>();
+            a.velocity = new Vector2(35f * this.direction, 0);
+        }
+
     }
 
 
