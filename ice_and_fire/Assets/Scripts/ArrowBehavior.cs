@@ -5,7 +5,6 @@ using UnityEngine;
 public class ArrowBehavior : MonoBehaviour
 {
     private float moveSpeed = 5f;
-    private bool movingRight = true;
     // Start is called before the first frame update
     void Start()
     {

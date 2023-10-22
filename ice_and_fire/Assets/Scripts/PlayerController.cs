@@ -39,8 +39,8 @@ public class PlayerController : MonoBehaviour
     private bool isOnSpike = false;
     private bool isOnMonster = false;
     private bool isOnSaw = false;
-    private bool isGettingSwordHits = false;
-
+    //private bool isGettingSwordHits = false;
+    //private bool isNearArrowEnemy = false;
     public float playerMassMultiplicationFactor = 100f;
     public float playerJumpForceMultiplicationFactor = 100f;
 
@@ -54,6 +54,10 @@ public class PlayerController : MonoBehaviour
 
     private int direction = 1;
 
+    private ArrowEnemyBehavior currentArrowEnemyPlayerFighting = null;
+    private SwordEnemyBehaviour currentSwordEnemyPlayerFighting = null;
+    private bool canSwordAttack = true;
+    private bool canArrowAttack = true;
 
 
     private void Awake()
@@ -69,16 +73,34 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(InflictDamages());
         StartCoroutine(InflictDamagesFromAntagonists());
+        playerAnimator.SetBool("attack", false);
+        playerAnimator.SetBool("shoot", false);
     }
 
     void Update()
     {
         //Testing attack animation only:
-        playerAnimator.SetBool("attack",false);
-        playerAnimator.SetBool("shoot",false);
-        if (Input.GetKeyDown(KeyCode.T))
+
+        if (Input.GetKeyDown(KeyCode.T) && canSwordAttack)
         {
-            playerAnimator.SetBool("attack",true);
+            canSwordAttack = false;
+
+            playerAnimator.SetBool("attack", true);
+            StartCoroutine(resetSwordAttackAnimation());
+
+            if(currentArrowEnemyPlayerFighting != null)
+            {
+                currentArrowEnemyPlayerFighting.TakeHits();
+            }
+
+            if (currentSwordEnemyPlayerFighting != null)
+            {
+                currentSwordEnemyPlayerFighting.TakeHits();
+            }
+
+            StartCoroutine(swordAttackCooldownRoutine());
+
+
         }
 
 
@@ -219,20 +241,20 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.J) && inventory.ContainsKey("JumpHigher"))
-        {
-            StartCoroutine(JumpHigherPowerUp());
+        //if (Input.GetKeyDown(KeyCode.J) && inventory.ContainsKey("JumpHigher"))
+        //{
+        //    StartCoroutine(JumpHigherPowerUp());
 
-            if (inventory.ContainsKey("JumpHigher"))
-            {
-                inventory["JumpHigher"]--;
-                if (inventory["JumpHigher"] <= 0)
-                {
-                    inventory.Remove("JumpHigher");
-                }
-            }
+        //    if (inventory.ContainsKey("JumpHigher"))
+        //    {
+        //        inventory["JumpHigher"]--;
+        //        if (inventory["JumpHigher"] <= 0)
+        //        {
+        //            inventory.Remove("JumpHigher");
+        //        }
+        //    }
 
-        }
+        //}
 
 
 
@@ -271,13 +293,27 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.S)) // Replace with your preferred shoot key.
+        if (Input.GetKeyDown(KeyCode.S) && canArrowAttack) // Replace with your preferred shoot key.
         {
+            canArrowAttack = false;
             playerAnimator.SetBool("shoot", true);
-            ShootArrow();
+            StartCoroutine(resetBowAttackAnimation());
+            StartCoroutine(ShootArrow());
+            StartCoroutine(bowAttackCooldownRoutine());
         }
     }
 
+    IEnumerator swordAttackCooldownRoutine()
+    {
+        yield return new WaitForSeconds(1);
+        canSwordAttack = true; // Reset the flag after cooldown
+    }
+
+    IEnumerator bowAttackCooldownRoutine()
+    {
+        yield return new WaitForSeconds(1);
+        canArrowAttack = true; // Reset the flag after cooldown
+    }
 
 
     private IEnumerator MovePlayerToPositionAndPlacePlaceHolder(Vector2 targetPosition, float speed, Vector3 placeholderPosition)
@@ -394,15 +430,29 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
-    public void OnSwordEnemyEnter(SwordEnemyBehaviour arrowEnemy)
+    public void OnSwordEnemyEnter(SwordEnemyBehaviour swordEnemy)
     {
-        isGettingSwordHits = true;
+        //isGettingSwordHits = true;
+        currentSwordEnemyPlayerFighting = swordEnemy;
     }
 
-    public void OnSwordEnemyExit(SwordEnemyBehaviour arrowEnemy)
+    public void OnSwordEnemyExit(SwordEnemyBehaviour swordEnemy)
     {
-        isGettingSwordHits = false;
+        //isGettingSwordHits = false;
+        currentSwordEnemyPlayerFighting = null;
+
+    }
+
+    public void OnArrowEnemyEnter(ArrowEnemyBehavior arrowEnemy)
+    {
+        //isNearArrowEnemy = true;
+        currentArrowEnemyPlayerFighting = arrowEnemy;
+    }
+
+    public void OnArrowEnemyExit(ArrowEnemyBehavior arrowEnemy)
+    {
+        //isGettingSwordHits = false;
+        currentArrowEnemyPlayerFighting = null;
 
     }
 
@@ -420,6 +470,21 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(DefrostTimer(5.0f));
         yield return new WaitForSeconds(5.0f);
         isOnDefrost = false;
+
+    }
+
+    private IEnumerator resetSwordAttackAnimation()
+    {
+        yield return new WaitForSeconds(1.0f);
+        playerAnimator.SetBool("attack", false);
+
+    }
+
+
+    private IEnumerator resetBowAttackAnimation()
+    {
+        yield return new WaitForSeconds(1.0f);
+        playerAnimator.SetBool("shoot", false);
 
     }
 
@@ -484,9 +549,9 @@ public class PlayerController : MonoBehaviour
             {
                 this.TakeDamage(1);
             }
-            if (isGettingSwordHits)
+            if (currentSwordEnemyPlayerFighting != null)
             {
-                this.TakeDamage(2);
+                this.TakeDamage(1);
             }
             yield return new WaitForSeconds(0.1f);
         }
@@ -693,11 +758,12 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void ShootArrow()
+    private IEnumerator ShootArrow()
     {
         Vector3 offset;
         GameObject arrow;
         Rigidbody2D a;
+        yield return new WaitForSeconds(0.8f);
 
         if (this.direction == -1)
         {
