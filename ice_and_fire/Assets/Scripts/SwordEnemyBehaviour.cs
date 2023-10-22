@@ -7,16 +7,29 @@ public class SwordEnemyBehaviour : MonoBehaviour
     public float moveSpeed = 5f;
     private int hitCount = 0;
     private int maxHits = 3;
+    private bool isAttacking = false;
     // Start is called before the first frame update
+    private Animator playerAnimator;
+
     void Start()
     {
-        
+        playerAnimator = GetComponent<Animator>();
+        playerAnimator.SetBool("attack", true);
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+
+        if (isAttacking)
+        {
+            playerAnimator.SetBool("attack", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("attack", false);
+        }
 
     }
 
@@ -29,12 +42,14 @@ public class SwordEnemyBehaviour : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            moveSpeed = 0;
+            moveSpeed = 0f;
             PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
             if (playerController != null)
             {
                 playerController.OnSwordEnemyEnter(this);
             }
+            isAttacking = true;
+            
         }
     }
 
@@ -50,22 +65,28 @@ public class SwordEnemyBehaviour : MonoBehaviour
             {
                 playerController.OnSwordEnemyExit(this);
             }
+            isAttacking = false;
         }
     }
 
+    public void TakeHits()
+    {
+        hitCount++;
+
+        if (hitCount >= maxHits)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Check if the colliding object has the tag "arrow"
         if (other.CompareTag("arrow"))
         {
-            // Increase the hit count
             hitCount++;
 
-            // Destroy the arrow that hit the enemy
             Destroy(other.gameObject);
 
-            // Check if hit count reached max hits
             if (hitCount >= maxHits)
             {
                 Destroy(gameObject);

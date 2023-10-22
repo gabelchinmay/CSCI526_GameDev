@@ -80,10 +80,7 @@ public class PlayerController : MonoBehaviour
         {
             playerAnimator.SetBool("attack",true);
         }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            playerAnimator.SetBool("shoot",true);
-        }
+
 
         SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
         rb = GetComponent<Rigidbody2D>();
@@ -276,6 +273,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S)) // Replace with your preferred shoot key.
         {
+            playerAnimator.SetBool("shoot", true);
             ShootArrow();
         }
     }
