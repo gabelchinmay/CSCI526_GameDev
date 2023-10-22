@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     public Image HealthSkeleton;
     public Image HealthBar;
     private Dictionary<string, int> inventory = new Dictionary<string, int>();
-    private Vector3 playerPreviousPosition;
+    private Vector2 playerPreviousPosition;
     public GameObject placeholderPrefab;
     private bool isOnDefrost = false;
     private KeyGateController key = null;
@@ -162,7 +162,7 @@ public class PlayerController : MonoBehaviour
         {
 
             playerPreviousPosition = transform.position;
-            Vector3 placeholderPosition = playerPreviousPosition - Vector3.up * 0.7f;
+            Vector2 placeholderPosition = playerPreviousPosition - Vector2.up * 0.7f;
             
             if (rb.mass < 9)
             {
@@ -235,7 +235,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-    private IEnumerator MovePlayerToPositionAndPlacePlaceHolder(Vector2 targetPosition, float speed, Vector3 placeholderPosition)
+    private IEnumerator MovePlayerToPositionAndPlacePlaceHolder(Vector2 targetPosition, float speed, Vector2 placeholderPosition)
     {
         float startTime = Time.time;
         Vector2 startPosition = rb.position;
@@ -333,6 +333,17 @@ public class PlayerController : MonoBehaviour
     }
 
     public void OnMonsterExit(FlyMonsterController monster)
+    {
+        isOnMonster = false;
+
+    }
+
+    public void OnMonsterEnter(MonsterAttack monster)
+    {
+        isOnMonster = true;
+    }
+
+    public void OnMonsterExit(MonsterAttack monster)
     {
         isOnMonster = false;
 
@@ -604,25 +615,67 @@ public class PlayerController : MonoBehaviour
         pickUpText.text = "";
     }
 
+
+
     public void Attack()
     {
         Vector2 playerPosition = transform.position;
-        float nearestMonsterDistance = float.MaxValue;
-        MonsterAttack nearestMonster = null;
+        float attackDirection = 0f; // 初始化攻击方向为0
 
-        // attack
+        if (Input.GetKey(KeyCode.A))
+        {
+            attackDirection = -1f;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            attackDirection = 1f;
+        }
+        Debug.Log("A Key Pressed: " + Input.GetKey(KeyCode.A));
+        Debug.Log("D Key Pressed: " + Input.GetKey(KeyCode.D));
+        Debug.Log("Attack Direction: " + attackDirection); // 添加这行调试输出
+
+        // 获取所有怪物
         MonsterAttack[] monsters = FindObjectsOfType<MonsterAttack>();
 
         foreach (MonsterAttack monster in monsters)
         {
-            // distance  
-            float distance = Vector2.Distance(playerPosition, monster.transform.position);
+            // 计算怪物相对于玩家的位置
+            float relativePosition = Mathf.Abs(monster.transform.position.x - playerPosition.x);
 
-            // if yes, damage
-            if (distance <= attackRange && distance < nearestMonsterDistance)
+            // 判断怪物是否在攻击范围内并且在正确的方向上
+            if (Mathf.Abs(relativePosition) <= 5 && Mathf.Sign(attackDirection) == Mathf.Sign(relativePosition))
             {
-                nearestMonsterDistance = distance;
-                nearestMonster = monster;
+                // 如果满足条件，就攻击怪物
+                Debug.Log("Attacking nearest monster: " + monster.gameObject.name);
+                monster.TakeDamage();
+            }
+        }
+    }
+
+
+
+    private void AttackInDirection(Vector3 attackDirection, Vector3 playerPosition)
+    {
+        float nearestMonsterDistance = float.MaxValue;
+        MonsterAttack nearestMonster = null;
+
+        // 获取所有怪物
+        MonsterAttack[] monsters = FindObjectsOfType<MonsterAttack>();
+
+        foreach (MonsterAttack monster in monsters)
+        {
+            // 计算距离
+            float distance = Vector3.Distance(playerPosition, monster.transform.position);
+
+            // 如果怪物在攻击范围内，并且在正确的方向上
+            if (distance <= attackRange && Vector3.Dot(attackDirection, (monster.transform.position - playerPosition).normalized) > 0)
+            {
+                // 如果距离更近，就攻击它
+                if (distance < nearestMonsterDistance)
+                {
+                    nearestMonsterDistance = distance;
+                    nearestMonster = monster;
+                }
             }
         }
 
@@ -632,6 +685,9 @@ public class PlayerController : MonoBehaviour
             nearestMonster.TakeDamage();
         }
     }
+
+
+
 
 
 }

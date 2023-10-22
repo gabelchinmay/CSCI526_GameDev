@@ -30,12 +30,10 @@ public class MonsterAttack : MonoBehaviour
             PlayerController playerController = other.gameObject.GetComponent<PlayerController>();
             if (playerController != null)
             {
-                playerController.OnMonsterEnter(this);
+                playerController.OnMonsterEnter(this); // 传递自己（MonsterAttack 对象）作为参数
             }
         }
     }
-
-
 
     private void OnCollisionExit2D(Collision2D other)
     {
@@ -44,10 +42,11 @@ public class MonsterAttack : MonoBehaviour
             PlayerController playerController = other.gameObject.GetComponent<PlayerController>();
             if (playerController != null)
             {
-                playerController.OnMonsterExit(this);
+                playerController.OnMonsterExit(this); // 传递自己（MonsterAttack 对象）作为参数
             }
         }
     }
+
 
     public void TakeDamage()
     {
