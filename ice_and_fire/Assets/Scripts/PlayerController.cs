@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
 
 
     public GameObject arrowPrefab;
+    public GameObject wildFirePrefab;
 
     private int direction = 1;
 
@@ -298,7 +299,7 @@ public class PlayerController : MonoBehaviour
             canArrowAttack = false;
             playerAnimator.SetBool("shoot", true);
             StartCoroutine(resetBowAttackAnimation());
-            StartCoroutine(ShootArrow());
+            StartCoroutine(ShootArrow(arrowPrefab));
             StartCoroutine(bowAttackCooldownRoutine());
         }
     }
@@ -773,7 +774,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private IEnumerator ShootArrow()
+    private IEnumerator ShootArrow(GameObject arrowType)
     {
         Vector3 offset;
         GameObject arrow;
@@ -783,7 +784,7 @@ public class PlayerController : MonoBehaviour
         if (this.direction == -1)
         {
             offset = transform.position + Vector3.up * 1f + Vector3.left * 2f;
-            arrow = Instantiate(arrowPrefab, offset, Quaternion.identity);
+            arrow = Instantiate(arrowType, offset, Quaternion.identity);
             arrow.GetComponent<SpriteRenderer>().flipX =true;
             a = arrow.GetComponent<Rigidbody2D>();
             a.velocity = new Vector2(35f * this.direction, 0);
@@ -792,7 +793,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             offset = transform.position + Vector3.up * 1f + Vector3.right * 2f;
-            arrow = Instantiate(arrowPrefab, offset, Quaternion.identity);
+            arrow = Instantiate(arrowType, offset, Quaternion.identity);
             a = arrow.GetComponent<Rigidbody2D>();
             a.velocity = new Vector2(35f * this.direction, 0);
         }
