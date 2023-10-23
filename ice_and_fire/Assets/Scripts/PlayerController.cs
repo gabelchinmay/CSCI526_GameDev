@@ -295,6 +295,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S) && canArrowAttack) // Replace with your preferred shoot key.
         {
+            sendToGoogle.ShootArrow();
             canArrowAttack = false;
             playerAnimator.SetBool("shoot", true);
             StartCoroutine(resetBowAttackAnimation());
@@ -765,6 +766,8 @@ public class PlayerController : MonoBehaviour
         Rigidbody2D a;
         yield return new WaitForSeconds(0.8f);
 
+        
+
         if (this.direction == -1)
         {
             offset = transform.position + Vector3.up * 1f + Vector3.left * 2f;
@@ -772,7 +775,7 @@ public class PlayerController : MonoBehaviour
             arrow.GetComponent<SpriteRenderer>().flipX =true;
             a = arrow.GetComponent<Rigidbody2D>();
             a.velocity = new Vector2(35f * this.direction, 0);
-
+            
         }
         else
         {
