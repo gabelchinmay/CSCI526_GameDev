@@ -26,12 +26,14 @@ TagManager:
   - Platform_Moving
   - Platform_Tri
   - arrow
-  - enemy
   - wall
   - DefenseWallSpawn
   - DefenseWall
   - ValyrianSword
-
+  - WildFire
+  - FireArea
+  - arrow_enemy
+  - sword_enemy
   layers:
   - Default
   - TransparentFX

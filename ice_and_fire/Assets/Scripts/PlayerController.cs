@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerController : MonoBehaviour
@@ -53,6 +54,7 @@ public class PlayerController : MonoBehaviour
 
 
     public GameObject arrowPrefab;
+    public GameObject wildFirePrefab;
 
     private int direction = 1;
 
@@ -77,6 +79,18 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetBool("attack", false);
         playerAnimator.SetBool("shoot", false);
         playerAnimator.SetBool("isHurt",false);
+
+
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
+        if(sceneName == "wild_fire") // change it later 
+        {
+            inventory["WildFire"]=2;
+
+        }
+
+
     }
 
     void Update()
@@ -92,17 +106,15 @@ public class PlayerController : MonoBehaviour
 
             if(currentArrowEnemyPlayerFighting != null)
             {
-                currentArrowEnemyPlayerFighting.TakeHits();
+                currentArrowEnemyPlayerFighting.TakeHits(1);
             }
 
             if (currentSwordEnemyPlayerFighting != null)
             {
-                currentSwordEnemyPlayerFighting.TakeHits();
+                currentSwordEnemyPlayerFighting.TakeHits(1);
             }
 
             StartCoroutine(swordAttackCooldownRoutine());
-
-
         }
         
         SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
@@ -211,6 +223,11 @@ public class PlayerController : MonoBehaviour
                 InventoryText.text += "\nDefenseWalls: " + inventory["DefenseWall"];
             }
 
+            if (inventory.ContainsKey("WildFire"))
+            {
+                InventoryText.text += "\nWildFireArrows: " + inventory["WildFire"];
+            }
+
         }
         else
         {
@@ -298,7 +315,20 @@ public class PlayerController : MonoBehaviour
             canArrowAttack = false;
             playerAnimator.SetBool("shoot", true);
             StartCoroutine(resetBowAttackAnimation());
-            StartCoroutine(ShootArrow());
+            if (inventory.ContainsKey("WildFire"))
+            {
+                StartCoroutine(ShootArrow(wildFirePrefab));
+                inventory["WildFire"]--;
+                if (inventory["WildFire"] <= 0)
+                {
+                    inventory.Remove("WildFire");
+                }
+
+            }
+            else
+            {
+                StartCoroutine(ShootArrow(arrowPrefab));
+            }
             StartCoroutine(bowAttackCooldownRoutine());
         }
     }
@@ -483,6 +513,14 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         playerAnimator.SetBool("shoot", false);
+
+    }
+
+
+    private IEnumerator resetHurtAnimation()
+    {
+        yield return new WaitForSeconds(0.5f);
+        playerAnimator.SetBool("isHurt", false);
 
     }
 
@@ -701,6 +739,8 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("arrow"))
         {
             StartCoroutine(DisplayTextForDuration("-2 HP", 1f, Color.red));
+            playerAnimator.SetBool("isHurt", true);
+            StartCoroutine(resetHurtAnimation());
             currentHealth -= 2;
             if (currentHealth <= 0)
             {
@@ -709,6 +749,7 @@ public class PlayerController : MonoBehaviour
 
             UpdateHealthUI();
             Destroy(collision.gameObject);
+            
         }
 
         if (collision.CompareTag("ValyrianSword"))
@@ -770,7 +811,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private IEnumerator ShootArrow()
+    private IEnumerator ShootArrow(GameObject arrowType)
     {
         Vector3 offset;
         GameObject arrow;
@@ -779,8 +820,8 @@ public class PlayerController : MonoBehaviour
 
         if (this.direction == -1)
         {
-            offset = transform.position + Vector3.up * 1f + Vector3.left * 2f;
-            arrow = Instantiate(arrowPrefab, offset, Quaternion.identity);
+            offset = transform.position + Vector3.up * 0.5f + Vector3.left * 2.5f;
+            arrow = Instantiate(arrowType, offset, Quaternion.identity);
             arrow.GetComponent<SpriteRenderer>().flipX =true;
             a = arrow.GetComponent<Rigidbody2D>();
             a.velocity = new Vector2(35f * this.direction, 0);
@@ -788,8 +829,8 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            offset = transform.position + Vector3.up * 1f + Vector3.right * 2f;
-            arrow = Instantiate(arrowPrefab, offset, Quaternion.identity);
+            offset = transform.position + Vector3.up * 0.5f + Vector3.right * 2.5f;
+            arrow = Instantiate(arrowType, offset, Quaternion.identity);
             a = arrow.GetComponent<Rigidbody2D>();
             a.velocity = new Vector2(35f * this.direction, 0);
         }

@@ -12,12 +12,15 @@ public class ArrowEnemyBehavior : MonoBehaviour
     private int maxHits = 3;
     private Animator playerAnimator;
 
+    private bool isOnFire = false;
+
 
     void Start()
     {
         playerAnimator = GetComponent<Animator>();
         playerAnimator.SetBool("shoot", true);
         InvokeRepeating("ShootArrow", 0f, shootInterval);
+        StartCoroutine(InflictDamages());
 
     }
 
@@ -49,6 +52,20 @@ public class ArrowEnemyBehavior : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        if (other.CompareTag("FireArea"))
+        {
+            isOnFire = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("FireArea"))
+        {
+            isOnFire = false;
+        }
+
     }
 
 
@@ -65,6 +82,8 @@ public class ArrowEnemyBehavior : MonoBehaviour
             }
 
         }
+
+
     }
 
 
@@ -81,13 +100,29 @@ public class ArrowEnemyBehavior : MonoBehaviour
         }
     }
 
-    public void TakeHits()
+    public void TakeHits(int amt)
     {
-        hitCount++;
+        hitCount+=amt;
 
         if (hitCount >= maxHits)
         {
             Destroy(gameObject);
+        }
+    }
+
+
+
+    private IEnumerator InflictDamages()
+    {
+        while (true)
+        {
+            if (isOnFire)
+            {
+                this.TakeHits(1);
+                Debug.Log("Arrow Enemy damaged");
+            }
+            yield return new WaitForSeconds(1.0f);
+
         }
     }
 
