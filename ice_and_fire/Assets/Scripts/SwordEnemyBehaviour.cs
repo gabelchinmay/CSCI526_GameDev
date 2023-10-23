@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class SwordEnemyBehaviour : MonoBehaviour
 {
-    public float moveSpeed = 5f;
     private int hitCount = 0;
     private int maxHits = 3;
     private bool isAttacking = false;
     // Start is called before the first frame update
     private Animator playerAnimator;
+
+    //Private Variables
+    private int currIndex = 0;
+
+    //Public Variables
+    public Vector2[] setPoints;
+    public float movingSpeed = 1.0f;
 
     void Start()
     {
@@ -20,7 +26,15 @@ public class SwordEnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+        if (Vector2.Distance(transform.position, setPoints[currIndex]) < 0.02f)
+        {
+            currIndex++;
+            if (currIndex >= setPoints.Length)
+            {
+                currIndex = 0;
+            }
+        }
+        transform.position = Vector2.MoveTowards(transform.position, setPoints[currIndex], movingSpeed * Time.deltaTime);
 
         if (isAttacking)
         {
@@ -42,7 +56,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            moveSpeed = 0f;
+            // moveSpeed = 0f;
             PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
             if (playerController != null)
             {
@@ -59,7 +73,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            moveSpeed = 5f;
+            // moveSpeed = 5f;
             PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
             if (playerController != null)
             {
