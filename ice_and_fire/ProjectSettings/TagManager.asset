@@ -30,6 +30,8 @@ TagManager:
   - wall
   - DefenseWallSpawn
   - DefenseWall
+  - ValyrianSword
+
   layers:
   - Default
   - TransparentFX

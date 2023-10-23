@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     public GameObject defenseWallPrefab;
     private bool isOnDefrost = false;
     private KeyGateController key = null;
+    private bool isValyrian = false;
 
     // new Feature: Invicible Shield, boolean variable to show if this player is shielded or not
     private bool isShielded = false;
@@ -710,7 +711,11 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-
+        if (collision.CompareTag("ValyrianSword"))
+        {
+            Destroy(collision.gameObject);
+            this.isValyrian = true;
+        }
 
 
     }
