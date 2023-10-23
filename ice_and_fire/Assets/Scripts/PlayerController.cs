@@ -211,6 +211,11 @@ public class PlayerController : MonoBehaviour
             {
                 InventoryText.text += "\nKeys: " + inventory["Key"];
             }
+            if (inventory.ContainsKey("DefenseWall"))
+            {
+                InventoryText.text += "\nDefenseWalls: " + inventory["DefenseWall"];
+            }
+
         }
         else
         {
@@ -241,20 +246,20 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        //if (Input.GetKeyDown(KeyCode.J) && inventory.ContainsKey("JumpHigher"))
-        //{
-        //    StartCoroutine(JumpHigherPowerUp());
+        if (Input.GetKeyDown(KeyCode.J) && inventory.ContainsKey("DefenseWall"))
+        {
+            StartCoroutine(DefenseWallPowerUp());
 
-        //    if (inventory.ContainsKey("JumpHigher"))
-        //    {
-        //        inventory["JumpHigher"]--;
-        //        if (inventory["JumpHigher"] <= 0)
-        //        {
-        //            inventory.Remove("JumpHigher");
-        //        }
-        //    }
+            if (inventory.ContainsKey("DefenseWall"))
+            {
+                inventory["DefenseWall"]--;
+                if (inventory["DefenseWall"] <= 0)
+                {
+                    inventory.Remove("DefenseWall");
+                }
+            }
 
-        //}
+        }
 
 
 
@@ -456,11 +461,11 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private IEnumerator JumpHigherPowerUp()
+    private IEnumerator DefenseWallPowerUp()
     {
-        jumpForce = 14.0f;
+        //jumpForce = 14.0f;
         yield return new WaitForSeconds(5.0f);
-        jumpForce = 7.0f;
+        //jumpForce = 7.0f;
 
     }
 
@@ -617,7 +622,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Key") || collision.CompareTag("Defrost") || collision.CompareTag("Placeholder") || collision.CompareTag("JumpHigher"))
+        if (collision.CompareTag("Key") || collision.CompareTag("Defrost") || collision.CompareTag("Placeholder") || collision.CompareTag("DefenseWall"))
         {
 
             string itemName = collision.tag;

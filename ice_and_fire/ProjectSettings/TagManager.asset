@@ -28,6 +28,8 @@ TagManager:
   - arrow
   - enemy
   - wall
+  - DefenseWallSpawn
+  - DefenseWall
   layers:
   - Default
   - TransparentFX
