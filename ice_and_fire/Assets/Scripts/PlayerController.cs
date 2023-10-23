@@ -618,39 +618,42 @@ public class PlayerController : MonoBehaviour
 
 
     public void Attack()
+{
+    Vector2 playerPosition = transform.position;
+    float attackDirection = 0f; // 初始化攻击方向为0
+
+    if (Input.GetKey(KeyCode.A))
     {
-        Vector2 playerPosition = transform.position;
-        float attackDirection = 0f; // 初始化攻击方向为0
+        attackDirection = -1f;
+    }
+    else if (Input.GetKey(KeyCode.D))
+    {
+        attackDirection = 1f;
+    }
 
-        if (Input.GetKey(KeyCode.A))
+    Debug.Log("A Key Pressed: " + Input.GetKey(KeyCode.A));
+    Debug.Log("D Key Pressed: " + Input.GetKey(KeyCode.D));
+    Debug.Log("Attack Direction: " + attackDirection);
+
+    // 获取所有怪物
+    MonsterAttack[] monsters = FindObjectsOfType<MonsterAttack>();
+
+    foreach (MonsterAttack monster in monsters)
+    {
+        // 计算怪物相对于玩家的位置
+        float relativePosition = Mathf.Abs(monster.transform.position.x - playerPosition.x);
+
+        // 判断怪物是否在攻击范围内并且在正确的方向上
+        if (Mathf.Abs(relativePosition) <= 5 && Mathf.Sign(attackDirection) == Mathf.Sign(relativePosition))
         {
-            attackDirection = -1f;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            attackDirection = 1f;
-        }
-        Debug.Log("A Key Pressed: " + Input.GetKey(KeyCode.A));
-        Debug.Log("D Key Pressed: " + Input.GetKey(KeyCode.D));
-        Debug.Log("Attack Direction: " + attackDirection); // 添加这行调试输出
-
-        // 获取所有怪物
-        MonsterAttack[] monsters = FindObjectsOfType<MonsterAttack>();
-
-        foreach (MonsterAttack monster in monsters)
-        {
-            // 计算怪物相对于玩家的位置
-            float relativePosition = Mathf.Abs(monster.transform.position.x - playerPosition.x);
-
-            // 判断怪物是否在攻击范围内并且在正确的方向上
-            if (Mathf.Abs(relativePosition) <= 5 && Mathf.Sign(attackDirection) == Mathf.Sign(relativePosition))
-            {
-                // 如果满足条件，就攻击怪物
-                Debug.Log("Attacking nearest monster: " + monster.gameObject.name);
-                monster.TakeDamage();
-            }
+            // 如果满足条件，就攻击怪物
+            Debug.Log("Attacking nearest monster: " + monster.gameObject.name);
+            monster.TakeDamage();
         }
     }
+}
+
+
 
 
 
