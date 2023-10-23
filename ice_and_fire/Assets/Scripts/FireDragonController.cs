@@ -8,6 +8,11 @@ public class FireDragonController : MonoBehaviour
     // private Animator playerAnimator;
     public GameObject FireDragon; 
     private Animator anim;
+
+    [SerializeField] float health, maxHealth = 1000f;
+    [SerializeField] FloatingHealthBar healthBar;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +21,7 @@ public class FireDragonController : MonoBehaviour
         anim.SetBool("flaming",false);
         anim.SetBool("isAlive",true);
 
+        healthBar = GetComponentInChildren<FloatingHealthBar>();
         
     }
 
@@ -31,7 +37,30 @@ public class FireDragonController : MonoBehaviour
             anim.SetBool("flaming",false);
             changingTime = 5.0f;
         }
+        // if(changingTime <= 2){
+        //     takeDamage(1);
+        // }
+        
 
+    }
+
+    public void takeDamage(float damageAmount)
+    {
+        health -= damageAmount;
+        healthBar.UpdateHealthBar(health, maxHealth);
+        anim.SetBool("isHurt", true);
+        if (health <= 0)
+        {
+            anim.SetBool("isHurt", false);
+            anim.SetBool("isAlive",false);
+            // yield return new WaitForSeconds(2);
+            Invoke("Des", 1);
+
+        }
+    }
+
+    void Des(){
+        Destroy(FireDragon);
     }
        
 }
