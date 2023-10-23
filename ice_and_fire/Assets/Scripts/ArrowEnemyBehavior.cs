@@ -51,4 +51,44 @@ public class ArrowEnemyBehavior : MonoBehaviour
         }
     }
 
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                playerController.OnArrowEnemyEnter(this);
+            }
+
+        }
+    }
+
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                playerController.OnArrowEnemyExit(this);
+            }
+        }
+    }
+
+    public void TakeHits()
+    {
+        hitCount++;
+
+        if (hitCount >= maxHits)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }
