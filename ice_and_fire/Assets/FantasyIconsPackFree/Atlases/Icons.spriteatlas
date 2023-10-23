@@ -1,0 +1,223 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Icons
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 100
+      maxTextureSize: 2048
+      textureCompression: 2
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 1
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 2
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 701f8d3b6112e8d4c80ce90b73cd22d4, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 0c7f2b30efde63b4e85506baea6e3484, type: 3}
+  - {fileID: 21300000, guid: 7c00ea4006710ea4994e82ed1d0387ac, type: 3}
+  - {fileID: 21300000, guid: 17790c504822a7041b2cb232729c9b19, type: 3}
+  - {fileID: 21300000, guid: bd414a9002c9cc743a6b1481e409997d, type: 3}
+  - {fileID: 21300000, guid: fc6ec0b0f09e050458575e72975d27bb, type: 3}
+  - {fileID: 21300000, guid: b7d19ec039fa7b141bd165aa95496c75, type: 3}
+  - {fileID: 21300000, guid: f84b6dd0347a94f4a9a69ac911fc1f9d, type: 3}
+  - {fileID: 21300000, guid: d1debd018f9877c408ca2c35857bb8c2, type: 3}
+  - {fileID: 21300000, guid: b9505e419a14dda4ea399d26d5955f94, type: 3}
+  - {fileID: 21300000, guid: f66c057114b8725409847a8a8e83a75b, type: 3}
+  - {fileID: 21300000, guid: 789e518168d493d4396ec984b1b5bcb3, type: 3}
+  - {fileID: 21300000, guid: 4097dec1e9a0ede4c85bf4caa28e9bcf, type: 3}
+  - {fileID: 21300000, guid: 28b103e16acf21b45afc90eb7afb7e42, type: 3}
+  - {fileID: 21300000, guid: 4ceb0a22206fea046be70ad00381bf62, type: 3}
+  - {fileID: 21300000, guid: 71bd4f726fd131046bf2bde8c724fefe, type: 3}
+  - {fileID: 21300000, guid: 8c9bfd928f78cb541b9b79cfb995e5ae, type: 3}
+  - {fileID: 21300000, guid: 4ebc70b29cf84034aa52eafdbca3951d, type: 3}
+  - {fileID: 21300000, guid: 7b7b7063f51899d4ab6475ddb0f94ca9, type: 3}
+  - {fileID: 21300000, guid: bbceae73b019590439ef5129744308a1, type: 3}
+  - {fileID: 21300000, guid: 6f6648c32a819be4a87ef3bad2807bad, type: 3}
+  - {fileID: 21300000, guid: 62b4a2f3dff4a9a4ba03a764d5fdd006, type: 3}
+  - {fileID: 21300000, guid: eab93444844589c40a72574411dd0120, type: 3}
+  - {fileID: 21300000, guid: e76b30749d6bac4489c3ccf1ccb2c8fc, type: 3}
+  - {fileID: 21300000, guid: 556def944fd02f54c98ac89a1fd817a7, type: 3}
+  - {fileID: 21300000, guid: d5ab6ea498c4d064781b7c052c6b6a2a, type: 3}
+  - {fileID: 21300000, guid: cee802c4711b2cc4c9be089c2d913ba9, type: 3}
+  - {fileID: 21300000, guid: 1fc17835ae1807b47ab82fd81ecf71d8, type: 3}
+  - {fileID: 21300000, guid: b53db54545fcd5747b7ba5e450c07baf, type: 3}
+  - {fileID: 21300000, guid: 69b6fac54bf33d94f8b56a037beeb7bf, type: 3}
+  - {fileID: 21300000, guid: 131ae7d5c3bf62f4ca9d47f57e1ef952, type: 3}
+  - {fileID: 21300000, guid: 0d047a16ca0627f4c8781f0168dcc35a, type: 3}
+  - {fileID: 21300000, guid: fb2acd264db5e24428dbf84cf8f0f467, type: 3}
+  - {fileID: 21300000, guid: c278ec36abbc540489a08ba8765cd092, type: 3}
+  - {fileID: 21300000, guid: 865ffc765fa708b49aef6dc9e46d7a50, type: 3}
+  - {fileID: 21300000, guid: 2624c48670f92d649b04d03fe36abcd8, type: 3}
+  - {fileID: 21300000, guid: dbaa50961e3cd37468021eb65d631c9f, type: 3}
+  - {fileID: 21300000, guid: 9309c4b66286c02498fce9e465b4916b, type: 3}
+  - {fileID: 21300000, guid: cb71f977c061814419dd5a6a79a1a061, type: 3}
+  - {fileID: 21300000, guid: c6b96b87adbd25343b9079d963ffb637, type: 3}
+  - {fileID: 21300000, guid: 67eaf2a7d1686074684270d1821c55cb, type: 3}
+  - {fileID: 21300000, guid: 8661c2c7e325a33438f06b02458fd199, type: 3}
+  - {fileID: 21300000, guid: f2a6caf7b6afd7b4095cfac985b5869c, type: 3}
+  - {fileID: 21300000, guid: 9d4ad9585d881b9469236aa4e598a8b1, type: 3}
+  - {fileID: 21300000, guid: 4a59607811bc1f9459591856511467a5, type: 3}
+  - {fileID: 21300000, guid: e67e11d800ebc144b9a0a05702c468e4, type: 3}
+  - {fileID: 21300000, guid: ee0ed61959fdb2a4fa6a6294228f5f47, type: 3}
+  - {fileID: 21300000, guid: 60c1d42986dc0094c808b9e135f31ba2, type: 3}
+  - {fileID: 21300000, guid: 469c2629c08b96944b6e1f3575449d4b, type: 3}
+  - {fileID: 21300000, guid: e29f293938fc0494d87d11a7532e32ea, type: 3}
+  - {fileID: 21300000, guid: fb1f2a59f67448f4db4f862dcb445aa9, type: 3}
+  - {fileID: 21300000, guid: 896dada9aa8b8444b8145f80381d5fda, type: 3}
+  - {fileID: 21300000, guid: 8bcb07d9c2c4c484caf61c33f48e3dd8, type: 3}
+  - {fileID: 21300000, guid: 51d0cbd98e5243c4eac6f1e283a558c2, type: 3}
+  - {fileID: 21300000, guid: dc038b2ab22c65c4488779487c9dae97, type: 3}
+  - {fileID: 21300000, guid: 0c6de69acca756c409be4810a8510ac5, type: 3}
+  - {fileID: 21300000, guid: e8f4e1ea22c66c7478593a19e0add994, type: 3}
+  - {fileID: 21300000, guid: d359cffafe45e0e4c82527e85234799b, type: 3}
+  - {fileID: 21300000, guid: f60a784b4c692634c923c83dc6d7addb, type: 3}
+  - {fileID: 21300000, guid: a889cb8ba677b3e418c33307c1336099, type: 3}
+  - {fileID: 21300000, guid: d7236dfb0d0b195439305df676f2425b, type: 3}
+  - {fileID: 21300000, guid: fb6df7dc5ceebe744a0ea02ca322493c, type: 3}
+  - {fileID: 21300000, guid: 5105fe1d825990746b9a92407ea447ca, type: 3}
+  - {fileID: 21300000, guid: 37665b2ddd98b1849afa610bb8214b9e, type: 3}
+  - {fileID: 21300000, guid: 1ff1175d56df9eb4f8cfa0ba429d9254, type: 3}
+  - {fileID: 21300000, guid: f7a8708dc5bcaf14ebd3978a42a6ea65, type: 3}
+  - {fileID: 21300000, guid: e41335ed24c5d4641b9e03ec7a6adcd0, type: 3}
+  - {fileID: 21300000, guid: 12bba31e10a26b645908ca35cce3ac2a, type: 3}
+  - {fileID: 21300000, guid: c65e285e2bfa766428d07aef51d7757d, type: 3}
+  - {fileID: 21300000, guid: 68377f5ef74af2a448279951a5a833b9, type: 3}
+  - {fileID: 21300000, guid: c544836e2ceee34428d1abdac6b5ac59, type: 3}
+  - {fileID: 21300000, guid: 84d6a36e47e8f9042a960a8b033203a1, type: 3}
+  - {fileID: 21300000, guid: c0ea4b6e528e7fe4aa6cdc94d38691a1, type: 3}
+  - {fileID: 21300000, guid: cfddf38e2d0fcbb40b169564fd58ea23, type: 3}
+  - {fileID: 21300000, guid: 54f8589e2ef2f7a4e875a51ae49b1e7b, type: 3}
+  - {fileID: 21300000, guid: 643c42ee4c957c44abcac1152d4794f1, type: 3}
+  - {fileID: 21300000, guid: cc2fc20f0f4c1264aa897c67dfcc4553, type: 3}
+  - {fileID: 21300000, guid: 158be32ff2ccad14e8831bd617f89478, type: 3}
+  - {fileID: 21300000, guid: a4b5f62f33b3e004e8aace652e009615, type: 3}
+  - {fileID: 21300000, guid: 6f17b16f02b2246499ac554b97a16d4a, type: 3}
+  - {fileID: 21300000, guid: c03fbd6f990a8a54680cdd21777738e1, type: 3}
+  - {fileID: 21300000, guid: 74b95f8fcc76fcc4cb42a25e8d3cdbe0, type: 3}
+  - {fileID: 21300000, guid: 62a99ebf2f5cfe04da1d208b9e7817a9, type: 3}
+  - {fileID: 21300000, guid: 0f1303cfff6593747a97f9c964728649, type: 3}
+  - {fileID: 21300000, guid: 5df4b9cfda870304c9e2decfcc0b094f, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - BattleBow
+  - BattleBow
+  - Scout [Paint]
+  - RedwoodBow
+  - VikingShortBow
+  - SmallPotion
+  - SilverRing
+  - GladiatorShield
+  - SteelAxe
+  - MagicGoldenRing
+  - BalancedSword [Paint]
+  - WoodenShield2
+  - BattleguardArmor
+  - BerserkAxe
+  - FreeFolkAxe
+  - WoodenBuckler
+  - SandHealerStaff1
+  - Scout [Paint]
+  - SwampWarriorSpear
+  - ManticoreArmor
+  - DarkMountain
+  - VikingAxe3
+  - BronzeRing
+  - WoodcutterAxe
+  - DarkSword
+  - MilitiamanShield
+  - DarkMountain
+  - BattleguardHelm
+  - DarkMountain
+  - GreyKnight
+  - HunterKnife [Paint]
+  - HunterBow
+  - SharpenedInfantrySword
+  - ButcherKnife
+  - MarauderBow
+  - Grog
+  - GreyKnight
+  - RedwoodBow
+  - VikingShortBow
+  - ScoutHelm
+  - GoldenRing
+  - Katana1 [Paint]
+  - ManticoreHelmet
+  - BanditLightArmor [Paint]
+  - GateCrusher
+  - HighKnightHelm
+  - Apple
+  - HardwoodWand
+  - RoyalTunic
+  - WyvernHornBow
+  - KnightHelm [Paint]
+  - MagicSilverRing
+  - MarauderBow
+  - WoodenClub
+  - WoodenShield
+  - HunterBow
+  - ManticoreArmor
+  - ManticoreArmor
+  - BattleguardArmor
+  - BanditLightArmor [Paint]
+  - SteelTowerShield
+  - BanditLightArmor [Paint]
+  - TwoHandedWoodenMace
+  - AssassinDagger [Paint]
+  - HawkHelm
+  - Cheese
+  - BattleguardArmor
+  - Scout [Paint]
+  - DestroyerAxe
+  - GreyKnight
+  - DarkMountain
+  - AriostinGreatsword
+  - WyvernHornBow
+  - BronzeDagger
+  - WarHammer
+  - Harpoon
+  - ManticoreSword
+  - WaterAdeptWand1
+  - ChickenLeg
+  - OldPoleaxe
+  - LongHammer
+  - MountainSword [Paint]
+  - MagicBronzeRing
+  - HandBomb
+  m_RenderDataMap: {}
+  m_Tag: Icons
+  m_IsVariant: 0
