@@ -753,15 +753,12 @@ public class PlayerController : MonoBehaviour
             playerAnimator.SetBool("isJumping", true);
         }
 
-        if (offAntagonist)
+        float countDown = 1.0f;
+        while (countDown > 0)
         {
-            float countDown = 1.0f;
-            while (countDown > 0)
-            {
-                countDown -= (0.5f * Time.deltaTime);
-            }
-            playerAnimator.SetBool("isHurt", false);
+            countDown -= (0.5f * Time.deltaTime);
         }
+        playerAnimator.SetBool("isHurt", false);
     }
 
     private IEnumerator DisplayTextForDuration(string message, float duration, Color c)
