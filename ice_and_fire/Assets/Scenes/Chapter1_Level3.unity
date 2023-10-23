@@ -263,8 +263,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4280669388
+  m_fontColor: {r: 0.7992722, g: 0.8301887, b: 0.1461967, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1014,6 +1014,22 @@ PrefabInstance:
       value: "Use  <- -> to move \n<space> to jump.\n2x <space> to double jump\nPress
         K to place weight on ground\nPress F to use Defrost\nPress V for view change"
       objectReference: {fileID: 0}
+    - target: {fileID: 631600823198157972, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 631600823198157972, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 631600823198157972, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 25.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 631600823198157972, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -46.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1196766692646918426, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1025,6 +1041,30 @@ PrefabInstance:
     - target: {fileID: 2896113918490553937, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -1.25177
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040012281604768807, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_Size.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040012281604768807, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_Size.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040012281604768807, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dcecb4bed081cb248b711be68ea780a4, type: 3}
+    - target: {fileID: 3040012281604768807, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040012281604768807, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2032097367
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040012281604768807, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3278267854159422273, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_Pivot.x
@@ -1122,9 +1162,45 @@ PrefabInstance:
       propertyPath: countdownDuration
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 6029783318648114568, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029783318648114568, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029783318648114568, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -29.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029783318648114568, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859793454728799995, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_Size.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859793454728799995, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_Size.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859793454728799995, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dcecb4bed081cb248b711be68ea780a4, type: 3}
+    - target: {fileID: 6859793454728799995, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859793454728799995, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8176819400088296851, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df40229f7eab94490bb764a34777a35f, type: 3}
