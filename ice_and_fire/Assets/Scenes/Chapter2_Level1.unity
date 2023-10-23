@@ -825,6 +825,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5982138976164433477, guid: 2c47eacf560474486822f16e841df2f7, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8819735654176732990, guid: 2c47eacf560474486822f16e841df2f7, type: 3}
       propertyPath: setPoints.Array.data[0].x
       value: 13
@@ -2263,6 +2267,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2981714374592428409, guid: 40ce7729e995d45e1958bb41da08e639, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8186810413298963996, guid: 40ce7729e995d45e1958bb41da08e639, type: 3}
       propertyPath: m_Name
       value: NormalPlatform2
@@ -2522,6 +2530,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2981714374592428409, guid: 40ce7729e995d45e1958bb41da08e639, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8186810413298963996, guid: 40ce7729e995d45e1958bb41da08e639, type: 3}
       propertyPath: m_Name
       value: NormalPlatform1
@@ -2589,11 +2601,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1304422190994641112, guid: 5b460f70f919242138669d0a9c9a342a, type: 3}
       propertyPath: breakMass
-      value: 999
+      value: 999999
       objectReference: {fileID: 0}
     - target: {fileID: 4606868078151346724, guid: 5b460f70f919242138669d0a9c9a342a, type: 3}
       propertyPath: m_Mass
       value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4606868078151346724, guid: 5b460f70f919242138669d0a9c9a342a, type: 3}
+      propertyPath: m_BodyType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7427187597449528641, guid: 5b460f70f919242138669d0a9c9a342a, type: 3}
       propertyPath: m_Name
@@ -2656,6 +2672,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3592692152791652513, guid: e77d255328ed6431c821def4cb3de7c3, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3592692152791652515, guid: e77d255328ed6431c821def4cb3de7c3, type: 3}
       propertyPath: m_RootOrder
       value: 3
