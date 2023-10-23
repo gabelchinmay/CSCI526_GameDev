@@ -69,7 +69,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-
         currentHealth = maxHealth;
         UpdateHealthUI();
         rb = GetComponent<Rigidbody2D>();
@@ -77,6 +76,7 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(InflictDamagesFromAntagonists());
         playerAnimator.SetBool("attack", false);
         playerAnimator.SetBool("shoot", false);
+        playerAnimator.SetBool("isHurt",false);
     }
 
     void Update()
@@ -104,8 +104,7 @@ public class PlayerController : MonoBehaviour
 
 
         }
-
-
+        
         SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
         rb = GetComponent<Rigidbody2D>();
         currentColour = Color.black;
@@ -406,7 +405,6 @@ public class PlayerController : MonoBehaviour
     public void OnSpikeExit(SpikeController spike)
     {
         isOnSpike = false;
-
     }
 
     public void OnMonsterEnter(FlyMonsterController monster)
@@ -592,7 +590,9 @@ public class PlayerController : MonoBehaviour
         {
             currentHealth -= damageAmount;
             UpdateHealthUI();
-
+            
+            playerAnimator.SetBool("isHurt",true);
+            
             if (currentHealth <= 0)
             {
                 //gameOverText.gameObject.SetActive(true);
@@ -740,6 +740,7 @@ public class PlayerController : MonoBehaviour
     {
         bool offPlatform = (other.gameObject.CompareTag("Platform_Normal") || other.gameObject.CompareTag("Platform_Moving") || other.gameObject.CompareTag("Platform_Rotate") || other.gameObject.CompareTag("Platform_AutoSpin")
                    || other.gameObject.CompareTag("Platform_Breakable") || other.gameObject.CompareTag("Platform_Color") || other.gameObject.CompareTag("Platform_Tri") || other.gameObject.CompareTag("DefenseWallSpawn"));
+        bool offAntagonist = (isOnMonster || isOnSaw || isOnSpike);
         
         //Disable double jump on rotating platform
         if (other.gameObject.CompareTag("Platform_Rotate") || other.gameObject.CompareTag("Platform_AutoSpin"))
@@ -750,6 +751,16 @@ public class PlayerController : MonoBehaviour
         if (offPlatform)
         {
             playerAnimator.SetBool("isJumping", true);
+        }
+
+        if (offAntagonist)
+        {
+            float countDown = 1.0f;
+            while (countDown > 0)
+            {
+                countDown -= (0.5f * Time.deltaTime);
+            }
+            playerAnimator.SetBool("isHurt", false);
         }
     }
 
