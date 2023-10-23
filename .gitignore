@@ -10,8 +10,4 @@ ice_and_fire/UserSettings
 ice_and_fire/ice_and_fire.sin
 ice_and_fire/.vsconfig
 ice_and_fire/Paired_prototype.sin
-ice_and_fire/Assets/objs/GapDeath.prefab
-ice_and_fire/Assets/objs/GapDeath.prefab.meta
-ice_and_fire/Assets/objs/GapDeath.prefab
-ice_and_fire/Assets/objs/GapDeath.prefab.meta
-ice_and_fire/Assets/objs/GapDeath.prefab
+.gitignore
