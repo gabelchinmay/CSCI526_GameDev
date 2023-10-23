@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     private Dictionary<string, int> inventory = new Dictionary<string, int>();
     private Vector3 playerPreviousPosition;
     public GameObject placeholderPrefab;
+    public GameObject defenseWallPrefab;
     private bool isOnDefrost = false;
     private KeyGateController key = null;
 
@@ -115,13 +116,8 @@ public class PlayerController : MonoBehaviour
         // On Lava/Frost
         if (!isOnPlatform)
         {
-            //Debug.Log("On platform");
             speed = 10.0f;
             canJump = true;
-
-            //playerAnimator.SetBool("isJumping", false);
-
-
         }
         else
         {
@@ -144,8 +140,7 @@ public class PlayerController : MonoBehaviour
             if (jumpCount == maxJumps)
             {
                 canJump = false;
-                //Reset the jump count on collision enter (Platform, Antagonist only)
-                //StartCoroutine(ResetJumpCooldown());
+
             }
         }
 
@@ -248,7 +243,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.J) && inventory.ContainsKey("DefenseWall"))
         {
-            StartCoroutine(DefenseWallPowerUp());
+            DefenseWallPowerUp();
 
             if (inventory.ContainsKey("DefenseWall"))
             {
@@ -461,11 +456,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private IEnumerator DefenseWallPowerUp()
+    private void DefenseWallPowerUp()
     {
-        //jumpForce = 14.0f;
-        yield return new WaitForSeconds(5.0f);
-        //jumpForce = 7.0f;
+        Vector3 offset = transform.position + Vector3.up * 0.40f + Vector3.right * 2f;
+        Instantiate(defenseWallPrefab,offset,Quaternion.identity);
 
     }
 
@@ -725,7 +719,7 @@ public class PlayerController : MonoBehaviour
     {
         //Reset jump count only if colliding with "Platform" and "Antagonist"
         bool onPlatform = (other.gameObject.CompareTag("Platform_Normal")||other.gameObject.CompareTag("Platform_Moving")||other.gameObject.CompareTag("Platform_Rotate")||other.gameObject.CompareTag("Platform_AutoSpin")
-                           ||other.gameObject.CompareTag("Platform_Breakable")||other.gameObject.CompareTag("Platform_Color")||other.gameObject.CompareTag("Platform_Tri"));
+                           ||other.gameObject.CompareTag("Platform_Breakable")||other.gameObject.CompareTag("Platform_Color")||other.gameObject.CompareTag("Platform_Tri") || other.gameObject.CompareTag("DefenseWallSpawn"));
         bool onAntagonist = (isOnMonster || isOnSaw || isOnSpike);
         if (onPlatform || onAntagonist)
         {
@@ -740,7 +734,7 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionExit2D(Collision2D other)
     {
         bool offPlatform = (other.gameObject.CompareTag("Platform_Normal") || other.gameObject.CompareTag("Platform_Moving") || other.gameObject.CompareTag("Platform_Rotate") || other.gameObject.CompareTag("Platform_AutoSpin")
-                   || other.gameObject.CompareTag("Platform_Breakable") || other.gameObject.CompareTag("Platform_Color") || other.gameObject.CompareTag("Platform_Tri"));
+                   || other.gameObject.CompareTag("Platform_Breakable") || other.gameObject.CompareTag("Platform_Color") || other.gameObject.CompareTag("Platform_Tri") || other.gameObject.CompareTag("DefenseWallSpawn"));
         
         //Disable double jump on rotating platform
         if (other.gameObject.CompareTag("Platform_Rotate") || other.gameObject.CompareTag("Platform_AutoSpin"))

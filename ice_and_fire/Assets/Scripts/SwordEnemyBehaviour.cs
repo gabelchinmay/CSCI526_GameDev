@@ -7,34 +7,50 @@ public class SwordEnemyBehaviour : MonoBehaviour
     private int hitCount = 0;
     private int maxHits = 3;
     private bool isAttacking = false;
-    // Start is called before the first frame update
     private Animator playerAnimator;
+    private float previousOscillation = 0f;
 
-    //Private Variables
-    private int currIndex = 0;
+    public float amplitude = 5f; 
+    public float frequency = 1 / 2f; 
 
-    //Public Variables
-    public Vector2[] setPoints;
-    public float movingSpeed = 1.0f;
+
+    private Vector3 initialPosition;
+
+    private bool canMove = true;
+
 
     void Start()
     {
         playerAnimator = GetComponent<Animator>();
+        initialPosition = transform.position;
         playerAnimator.SetBool("attack", true);
+        previousOscillation = amplitude * Mathf.Sin(frequency * Time.time);
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, setPoints[currIndex]) < 0.02f)
+        if (canMove)
         {
-            currIndex++;
-            if (currIndex >= setPoints.Length)
+
+            float oscillation = amplitude * Mathf.Sin(frequency * Time.time);
+            transform.position = initialPosition + Vector3.right * oscillation;
+
+
+            if (oscillation > previousOscillation)
             {
-                currIndex = 0;
+                this.GetComponent<SpriteRenderer>().flipX = false;
+
             }
+            else
+            {
+                this.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            previousOscillation = oscillation;
+
         }
-        transform.position = Vector2.MoveTowards(transform.position, setPoints[currIndex], movingSpeed * Time.deltaTime);
+
+
 
         if (isAttacking)
         {
@@ -65,6 +81,13 @@ public class SwordEnemyBehaviour : MonoBehaviour
             isAttacking = true;
             
         }
+
+        if (collision.gameObject.CompareTag("DefenseWallSpawn"))
+        {
+            isAttacking = true;
+            canMove = false;
+
+        }
     }
 
 
@@ -80,6 +103,12 @@ public class SwordEnemyBehaviour : MonoBehaviour
                 playerController.OnSwordEnemyExit(this);
             }
             isAttacking = false;
+        }
+
+        if (collision.gameObject.CompareTag("DefenseWallSpawn"))
+        {
+            isAttacking = false;
+            canMove = true;
         }
     }
 
