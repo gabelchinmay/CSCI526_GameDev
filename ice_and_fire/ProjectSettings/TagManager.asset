@@ -28,7 +28,10 @@ TagManager:
   - arrow
   - enemy
   - wall
+  - DefenseWallSpawn
+  - DefenseWall
   - ValyrianSword
+
   layers:
   - Default
   - TransparentFX
