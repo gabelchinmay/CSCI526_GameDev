@@ -39,12 +39,32 @@ public class PlayerController : MonoBehaviour
     private bool isOnSpike = false;
     private bool isOnMonster = false;
     private bool isOnSaw = false;
-
+    //private bool isGettingSwordHits = false;
+    //private bool isNearArrowEnemy = false;
     public float playerMassMultiplicationFactor = 100f;
     public float playerJumpForceMultiplicationFactor = 100f;
 
     public GameOverScreen gameOverScreen;
     private bool isMovingToPosition = false;
+
+    private Animator playerAnimator;
+
+
+    public GameObject arrowPrefab;
+
+    private int direction = 1;
+
+    private ArrowEnemyBehavior currentArrowEnemyPlayerFighting = null;
+    private SwordEnemyBehaviour currentSwordEnemyPlayerFighting = null;
+    private bool canSwordAttack = true;
+    private bool canArrowAttack = true;
+
+
+    private void Awake()
+    {
+        playerAnimator = GetComponent<Animator>();
+    }
+
     void Start()
     {
 
@@ -53,11 +73,37 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(InflictDamages());
         StartCoroutine(InflictDamagesFromAntagonists());
-
+        playerAnimator.SetBool("attack", false);
+        playerAnimator.SetBool("shoot", false);
     }
 
     void Update()
     {
+        //Testing attack animation only:
+
+        if (Input.GetKeyDown(KeyCode.T) && canSwordAttack)
+        {
+            canSwordAttack = false;
+
+            playerAnimator.SetBool("attack", true);
+            StartCoroutine(resetSwordAttackAnimation());
+
+            if(currentArrowEnemyPlayerFighting != null)
+            {
+                currentArrowEnemyPlayerFighting.TakeHits();
+            }
+
+            if (currentSwordEnemyPlayerFighting != null)
+            {
+                currentSwordEnemyPlayerFighting.TakeHits();
+            }
+
+            StartCoroutine(swordAttackCooldownRoutine());
+
+
+        }
+
+
         SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
         rb = GetComponent<Rigidbody2D>();
         currentColour = Color.black;
@@ -72,6 +118,9 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("On platform");
             speed = 10.0f;
             canJump = true;
+
+            //playerAnimator.SetBool("isJumping", false);
+
 
         }
         else
@@ -105,6 +154,25 @@ public class PlayerController : MonoBehaviour
         {
             float horizontalInput = Input.GetAxis("Horizontal");
             rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
+
+            playerAnimator.SetFloat("speed",Math.Abs(horizontalInput * speed));
+
+
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+
+            if (horizontalInput < 0)
+            {
+                spriteRenderer.flipX = true;
+                direction = -1;
+
+            }
+            else
+            {
+                spriteRenderer.flipX = false;
+                direction = 1;
+            }
+
+
 
 
         }
@@ -173,20 +241,20 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.J) && inventory.ContainsKey("JumpHigher"))
-        {
-            StartCoroutine(JumpHigherPowerUp());
+        //if (Input.GetKeyDown(KeyCode.J) && inventory.ContainsKey("JumpHigher"))
+        //{
+        //    StartCoroutine(JumpHigherPowerUp());
 
-            if (inventory.ContainsKey("JumpHigher"))
-            {
-                inventory["JumpHigher"]--;
-                if (inventory["JumpHigher"] <= 0)
-                {
-                    inventory.Remove("JumpHigher");
-                }
-            }
+        //    if (inventory.ContainsKey("JumpHigher"))
+        //    {
+        //        inventory["JumpHigher"]--;
+        //        if (inventory["JumpHigher"] <= 0)
+        //        {
+        //            inventory.Remove("JumpHigher");
+        //        }
+        //    }
 
-        }
+        //}
 
 
 
@@ -223,8 +291,29 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+
+
+        if (Input.GetKeyDown(KeyCode.S) && canArrowAttack) // Replace with your preferred shoot key.
+        {
+            canArrowAttack = false;
+            playerAnimator.SetBool("shoot", true);
+            StartCoroutine(resetBowAttackAnimation());
+            StartCoroutine(ShootArrow());
+            StartCoroutine(bowAttackCooldownRoutine());
+        }
     }
 
+    IEnumerator swordAttackCooldownRoutine()
+    {
+        yield return new WaitForSeconds(1);
+        canSwordAttack = true; // Reset the flag after cooldown
+    }
+
+    IEnumerator bowAttackCooldownRoutine()
+    {
+        yield return new WaitForSeconds(1);
+        canArrowAttack = true; // Reset the flag after cooldown
+    }
 
 
     private IEnumerator MovePlayerToPositionAndPlacePlaceHolder(Vector2 targetPosition, float speed, Vector3 placeholderPosition)
@@ -332,12 +421,38 @@ public class PlayerController : MonoBehaviour
 
     public void OnSawEnter(SawController saw)
     {
-        isOnMonster = true;
+        isOnSaw = true;
     }
 
     public void OnSawExit(SawController saw)
     {
-        isOnMonster = false;
+        isOnSaw = false;
+
+    }
+
+    public void OnSwordEnemyEnter(SwordEnemyBehaviour swordEnemy)
+    {
+        //isGettingSwordHits = true;
+        currentSwordEnemyPlayerFighting = swordEnemy;
+    }
+
+    public void OnSwordEnemyExit(SwordEnemyBehaviour swordEnemy)
+    {
+        //isGettingSwordHits = false;
+        currentSwordEnemyPlayerFighting = null;
+
+    }
+
+    public void OnArrowEnemyEnter(ArrowEnemyBehavior arrowEnemy)
+    {
+        //isNearArrowEnemy = true;
+        currentArrowEnemyPlayerFighting = arrowEnemy;
+    }
+
+    public void OnArrowEnemyExit(ArrowEnemyBehavior arrowEnemy)
+    {
+        //isGettingSwordHits = false;
+        currentArrowEnemyPlayerFighting = null;
 
     }
 
@@ -355,6 +470,21 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(DefrostTimer(5.0f));
         yield return new WaitForSeconds(5.0f);
         isOnDefrost = false;
+
+    }
+
+    private IEnumerator resetSwordAttackAnimation()
+    {
+        yield return new WaitForSeconds(1.0f);
+        playerAnimator.SetBool("attack", false);
+
+    }
+
+
+    private IEnumerator resetBowAttackAnimation()
+    {
+        yield return new WaitForSeconds(1.0f);
+        playerAnimator.SetBool("shoot", false);
 
     }
 
@@ -416,6 +546,10 @@ public class PlayerController : MonoBehaviour
             }
 
             if (isOnSaw)
+            {
+                this.TakeDamage(1);
+            }
+            if (currentSwordEnemyPlayerFighting != null)
             {
                 this.TakeDamage(1);
             }
@@ -564,6 +698,22 @@ public class PlayerController : MonoBehaviour
             jumpForce *= playerJumpForceMultiplicationFactor;
         }
 
+        if (collision.CompareTag("arrow"))
+        {
+            StartCoroutine(DisplayTextForDuration("-2 HP", 1f, Color.red));
+            currentHealth -= 2;
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+            }
+
+            UpdateHealthUI();
+            Destroy(collision.gameObject);
+        }
+
+
+
+
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -576,15 +726,26 @@ public class PlayerController : MonoBehaviour
         {
             canJump = true;
             jumpCount = 0;
+            
+            //Disable the Jumping animation when landing
+            playerAnimator.SetBool("isJumping", false);
         }
     }
 
     private void OnCollisionExit2D(Collision2D other)
     {
+        bool offPlatform = (other.gameObject.CompareTag("Platform_Normal") || other.gameObject.CompareTag("Platform_Moving") || other.gameObject.CompareTag("Platform_Rotate") || other.gameObject.CompareTag("Platform_AutoSpin")
+                   || other.gameObject.CompareTag("Platform_Breakable") || other.gameObject.CompareTag("Platform_Color") || other.gameObject.CompareTag("Platform_Tri"));
+        
         //Disable double jump on rotating platform
         if (other.gameObject.CompareTag("Platform_Rotate") || other.gameObject.CompareTag("Platform_AutoSpin"))
         {
             jumpCount++;
+        }
+
+        if (offPlatform)
+        {
+            playerAnimator.SetBool("isJumping", true);
         }
     }
 
@@ -594,6 +755,33 @@ public class PlayerController : MonoBehaviour
         pickUpText.color = c;
         yield return new WaitForSeconds(duration);
         pickUpText.text = "";
+    }
+
+
+    private IEnumerator ShootArrow()
+    {
+        Vector3 offset;
+        GameObject arrow;
+        Rigidbody2D a;
+        yield return new WaitForSeconds(0.8f);
+
+        if (this.direction == -1)
+        {
+            offset = transform.position + Vector3.up * 1f + Vector3.left * 2f;
+            arrow = Instantiate(arrowPrefab, offset, Quaternion.identity);
+            arrow.GetComponent<SpriteRenderer>().flipX =true;
+            a = arrow.GetComponent<Rigidbody2D>();
+            a.velocity = new Vector2(35f * this.direction, 0);
+
+        }
+        else
+        {
+            offset = transform.position + Vector3.up * 1f + Vector3.right * 2f;
+            arrow = Instantiate(arrowPrefab, offset, Quaternion.identity);
+            a = arrow.GetComponent<Rigidbody2D>();
+            a.velocity = new Vector2(35f * this.direction, 0);
+        }
+
     }
 
 
