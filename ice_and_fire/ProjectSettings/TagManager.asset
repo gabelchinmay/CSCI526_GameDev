@@ -28,6 +28,7 @@ TagManager:
   - arrow
   - enemy
   - wall
+  - ValyrianSword
   layers:
   - Default
   - TransparentFX
