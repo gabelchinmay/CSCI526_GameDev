@@ -23,7 +23,7 @@ public class ArrowBehavior : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         //PerformActionBeforeDestroy();
-        if (!collision.CompareTag("enemy"))
+        if (!(collision.CompareTag("sword_enemy") || collision.CompareTag("arrow_enemy")))
         {
             Destroy(gameObject);
 

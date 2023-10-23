@@ -18,6 +18,8 @@ public class SwordEnemyBehaviour : MonoBehaviour
 
     private bool canMove = true;
 
+    private bool isOnFire = false;
+
 
     void Start()
     {
@@ -25,6 +27,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
         initialPosition = transform.position;
         playerAnimator.SetBool("attack", true);
         previousOscillation = amplitude * Mathf.Sin(frequency * Time.time);
+        StartCoroutine(InflictDamages());
 
     }
 
@@ -112,9 +115,9 @@ public class SwordEnemyBehaviour : MonoBehaviour
         }
     }
 
-    public void TakeHits()
+    public void TakeHits(int amt)
     {
-        hitCount++;
+        hitCount+=amt;
 
         if (hitCount >= maxHits)
         {
@@ -135,6 +138,36 @@ public class SwordEnemyBehaviour : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        if (other.CompareTag("FireArea"))
+        {
+            isOnFire = true;
+        }
     }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("FireArea"))
+        {
+            isOnFire = false;
+        }
+
+    }
+
+
+    private IEnumerator InflictDamages()
+    {
+        while (true)
+        {
+            if (isOnFire)
+            {
+                this.TakeHits(1);
+                Debug.Log("Sword Enemy damaged");
+            }
+            yield return new WaitForSeconds(1.0f);
+
+        }
+    }
+
 
 }

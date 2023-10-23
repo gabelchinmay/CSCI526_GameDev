@@ -49,7 +49,7 @@ public class DefenseWallBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("enemy"))
+        if (collision.gameObject.CompareTag("sword_enemy"))
         {
             isEnemyAttacking = true;
 
@@ -58,7 +58,7 @@ public class DefenseWallBehaviour : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("enemy"))
+        if (collision.gameObject.CompareTag("sword_enemy"))
         {
             isEnemyAttacking = false;
 

@@ -857,7 +857,7 @@ PrefabInstance:
     - target: {fileID: 4276742610548151997, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 6ae5675ba7d5e4138b78290c01d896e4, type: 2}
+      objectReference: {fileID: 9100000, guid: db7f96ed4f52c4bb5a579db3fbe82346, type: 2}
     - target: {fileID: 5044167347324355009, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: localCamera
       value: 
@@ -869,7 +869,7 @@ PrefabInstance:
     - target: {fileID: 6083283999004043880, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c48326ea5242149069ce2302cffd87bc, type: 3}
+      objectReference: {fileID: 21300000, guid: 68dcbb6cc1c01499488804dc8b113137, type: 3}
     - target: {fileID: 6083283999004043883, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: m_Name
       value: Player
@@ -906,6 +906,10 @@ PrefabInstance:
       propertyPath: gameOverScreen
       value: 
       objectReference: {fileID: 1645707768}
+    - target: {fileID: 6083283999004043884, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
+      propertyPath: wildFirePrefab
+      value: 
+      objectReference: {fileID: 8738422562909323680, guid: ef89d1870389a4606baaac3d01a96888, type: 3}
     - target: {fileID: 6083283999004043884, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: defrostTimerTxt
       value: 
@@ -988,7 +992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6083283999004043885, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.3800333
+      value: -1.72
       objectReference: {fileID: 0}
     - target: {fileID: 6083283999004043885, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1004,11 +1008,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6083283999004043887, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.158
+      value: 1.016
       objectReference: {fileID: 0}
     - target: {fileID: 6083283999004043887, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.996
+      value: 1.93
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
@@ -1093,7 +1097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8405549490185211133, guid: 63bac9ecba1434af3b392b92ce7d6817, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -15.77
+      value: -8.52
       objectReference: {fileID: 0}
     - target: {fileID: 8405549490185211133, guid: 63bac9ecba1434af3b392b92ce7d6817, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1201,7 +1205,7 @@ GameObject:
   - component: {fileID: 1762575620}
   m_Layer: 0
   m_Name: Jack (1)
-  m_TagString: enemy
+  m_TagString: arrow_enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1469,63 +1473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &210605778464142600
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 210605776975804516, guid: ef89d1870389a4606baaac3d01a96888, type: 3}
-      propertyPath: m_Name
-      value: WildFire
-      objectReference: {fileID: 0}
-    - target: {fileID: 210605776975804536, guid: ef89d1870389a4606baaac3d01a96888, type: 3}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 210605776975804536, guid: ef89d1870389a4606baaac3d01a96888, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -15.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 210605776975804536, guid: ef89d1870389a4606baaac3d01a96888, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.3127
-      objectReference: {fileID: 0}
-    - target: {fileID: 210605776975804536, guid: ef89d1870389a4606baaac3d01a96888, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 210605776975804536, guid: ef89d1870389a4606baaac3d01a96888, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.92453146
-      objectReference: {fileID: 0}
-    - target: {fileID: 210605776975804536, guid: ef89d1870389a4606baaac3d01a96888, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 210605776975804536, guid: ef89d1870389a4606baaac3d01a96888, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 210605776975804536, guid: ef89d1870389a4606baaac3d01a96888, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.38110572
-      objectReference: {fileID: 0}
-    - target: {fileID: 210605776975804536, guid: ef89d1870389a4606baaac3d01a96888, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 210605776975804536, guid: ef89d1870389a4606baaac3d01a96888, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 210605776975804536, guid: ef89d1870389a4606baaac3d01a96888, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -44.804
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ef89d1870389a4606baaac3d01a96888, type: 3}
 --- !u!50 &3694931961349037904
 Rigidbody2D:
   serializedVersion: 4
@@ -1590,7 +1537,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.38, y: -1.66}
+  m_AnchoredPosition: {x: 4.41, y: -1.76}
   m_SizeDelta: {x: 1, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3694931961349037909
@@ -1609,7 +1556,7 @@ GameObject:
   - component: {fileID: 6661150564456570308}
   m_Layer: 0
   m_Name: Jack
-  m_TagString: enemy
+  m_TagString: sword_enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
