@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4053572833631740}
   - component: {fileID: 95804141182312614}
   - component: {fileID: 114986853356713162}
+  - component: {fileID: 2365461469376913092}
   m_Layer: 0
   m_Name: FireDragon
   m_TagString: Untagged
@@ -73,6 +74,32 @@ MonoBehaviour:
   health: 1000
   maxHealth: 1000
   healthBar: {fileID: 0}
+--- !u!61 &2365461469376913092
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007881207213896}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 70d0ac1f29234bb418dad84ac54f412a, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5126121, y: 1.5561414}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.1530485, y: 2.9171205}
+  m_EdgeRadius: 0
 --- !u!1 &1045360385935228
 GameObject:
   m_ObjectHideFlags: 0

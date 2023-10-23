@@ -970,6 +970,7 @@ GameObject:
   - component: {fileID: 7815461469468295597}
   - component: {fileID: 7868932562746330005}
   - component: {fileID: 7922554504172906809}
+  - component: {fileID: 3650048674257026426}
   m_Layer: 0
   m_Name: IceDragon
   m_TagString: Untagged
@@ -1032,6 +1033,32 @@ MonoBehaviour:
   health: 1000
   maxHealth: 1000
   healthBar: {fileID: 0}
+--- !u!61 &3650048674257026426
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7810044330357230693}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 70d0ac1f29234bb418dad84ac54f412a, type: 2}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.50789356, y: 1.4846141}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.2974043, y: 2.4064755}
+  m_EdgeRadius: 0
 --- !u!1 &7810149153380458507
 GameObject:
   m_ObjectHideFlags: 0
