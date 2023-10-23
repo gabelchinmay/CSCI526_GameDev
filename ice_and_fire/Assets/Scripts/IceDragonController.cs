@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class IceDragonController : MonoBehaviour
 {
+    // switching time between idle and flaming
     public float changingTime = 5.0f;
-    // private Animator playerAnimator;
+
+    // gameobject and animator
     public GameObject IceDragon; 
     private Animator anim;
 
+    // time delay for events like return to idle and disappear
+    private float DELAY = 1;
+    private float ARROW_DAMAGE = 100;
+
+    // initialize the health bar
     [SerializeField] float health, maxHealth = 1000f;
     [SerializeField] FloatingHealthBar healthBar;
 
@@ -37,13 +44,10 @@ public class IceDragonController : MonoBehaviour
             anim.SetBool("flaming",false);
             changingTime = 5.0f;
         }
-        // if(changingTime <= 2){
-        //     takeDamage(1);
-        // }
         
-
     }
 
+    // when being hurt
     public void takeDamage(float damageAmount)
     {
         health -= damageAmount;
@@ -53,14 +57,34 @@ public class IceDragonController : MonoBehaviour
         {
             anim.SetBool("isHurt", false);
             anim.SetBool("isAlive",false);
-            // yield return new WaitForSeconds(2);
             Invoke("Des", 1);
 
         }
+        Invoke("closeHurt", (float)(DELAY/4));
     }
 
+    // return to idle
+    private void closeHurt()
+    {
+        anim.SetBool("isHurt", false);
+        anim.SetBool("returnIdle", true);
+    }
+
+    // disappear
     void Des(){
         Destroy(IceDragon);
+    }
+
+    // get hurt by arrows
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // Check if the colliding object has the tag "arrow"
+        if (other.CompareTag("arrow"))
+        {
+            takeDamage(ARROW_DAMAGE);
+
+        }
+
     }
        
 }
