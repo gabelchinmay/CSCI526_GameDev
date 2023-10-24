@@ -35,6 +35,11 @@ TagManager:
   - arrow_enemy
   - sword_enemy
   - enemy
+  - Dead
+  - WhiteWalker
+  - NightKing
+  - ColdArea
+  - NightKingArea
   layers:
   - Default
   - TransparentFX
