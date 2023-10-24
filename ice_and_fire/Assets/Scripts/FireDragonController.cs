@@ -19,6 +19,10 @@ public class FireDragonController : MonoBehaviour
     [SerializeField] float health, maxHealth = 1000f;
     [SerializeField] FloatingHealthBar healthBar;
 
+    // flaming
+    Transform fireTransform;
+    GameObject fire;
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,21 +33,49 @@ public class FireDragonController : MonoBehaviour
         anim.SetBool("isAlive",true);
 
         healthBar = GetComponentInChildren<FloatingHealthBar>();
+
+        // assign the Fire component
+        fireTransform = FireDragon.transform.Find("Fire");
+        if (fireTransform != null)
+        {
+            // Access the 'Fire' GameObject's components here
+            fire = fireTransform.gameObject;
+            // You can now access the components of the 'Fire' GameObject
+        }
+        else
+        {
+            Debug.LogError("Fire GameObject not found under the dragon.");
+        }
+        fire.SetActive(false);
+
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        bool isFlaming = anim.GetBool("flaming");
+        fire.SetActive(isFlaming);
+
+        // Set the visibility of the head GameObject
+        
+
         changingTime -= Time.deltaTime;
         if (changingTime < 0){
+            
             anim.SetBool("flaming",true);
+            // fire.SetActive(true);
+            
             
         }
         if (changingTime < -3.0f){
+            // fire.SetActive(false);
             anim.SetBool("flaming",false);
             changingTime = 5.0f;
+            
         }
+
+        
         
     }
 
