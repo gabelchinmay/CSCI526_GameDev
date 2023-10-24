@@ -1981,7 +1981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1303599796809000183, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
-      value: Chapter-1, Level-1
+      value: "Tutorial: \nCombat System"
       objectReference: {fileID: 0}
     - target: {fileID: 2896113918490553937, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3937,6 +3937,9 @@ MonoBehaviour:
   Level: 1
   Count: 0
   TotalJump: 0
+  ArrowCount: 0
+  ArrowHitsEnemyCount: 0
+  KillCount: 0
 --- !u!4 &2137968510
 Transform:
   m_ObjectHideFlags: 0
