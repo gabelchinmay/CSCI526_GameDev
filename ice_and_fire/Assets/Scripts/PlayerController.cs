@@ -311,7 +311,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.RightShift) && canArrowAttack) // Replace with your preferred shoot key.
+        if (Input.GetKeyDown(KeyCode.UpArrow) && canArrowAttack) // Replace with your preferred shoot key.
         {
             sendToGoogle.ShootArrow();
             canArrowAttack = false;
@@ -323,7 +323,7 @@ public class PlayerController : MonoBehaviour
 
         //Testing attack animation only:
 
-        if (Input.GetKeyDown(KeyCode.T) && canSwordAttack)
+        if (Input.GetKeyDown(KeyCode.DownArrow) && canSwordAttack)
         {
             canSwordAttack = false;
             sendToGoogle.HitCount();

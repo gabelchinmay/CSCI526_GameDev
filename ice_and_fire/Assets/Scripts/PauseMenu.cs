@@ -16,7 +16,11 @@ public class PauseMenu : MonoBehaviour
     public void Replay()
     {
         SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
-        sendToGoogle.PlayerAttempted();
+        if(sendToGoogle != null)
+        {
+            sendToGoogle.PlayerAttempted();
+
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }

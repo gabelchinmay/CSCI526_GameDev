@@ -9,7 +9,12 @@ public class Restart : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
-        sendToGoogle.PlayerAttempted();
-        
+        if(sendToGoogle != null)
+        {
+            sendToGoogle.PlayerAttempted();
+
+
+        }
+
     }
 }

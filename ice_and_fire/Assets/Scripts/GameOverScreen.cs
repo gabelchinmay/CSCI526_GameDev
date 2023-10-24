@@ -19,7 +19,11 @@ public class GameOverScreen : MonoBehaviour
 
 
         SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
-        sendToGoogle.PlayerAttempted();
+        if(sendToGoogle != null)
+        {
+            sendToGoogle.PlayerAttempted();
+
+        }
 
     }
 
@@ -30,7 +34,10 @@ public class GameOverScreen : MonoBehaviour
         SceneManager.LoadScene(0);
 
         SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
-        sendToGoogle.PlayerPassedLevel();
+        if(sendToGoogle != null)
+        {
+            sendToGoogle.PlayerPassedLevel();
+        }
 
     }
 
@@ -41,15 +48,16 @@ public class GameOverScreen : MonoBehaviour
         SceneManager.LoadScene(0);
 
         SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
-        sendToGoogle.PlayerPassedLevel();
+
+        if(sendToGoogle != null)
+        {
+            sendToGoogle.PlayerPassedLevel();
+        }
     }
 
     public void ChooseLevel()
     {
         SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
-       // AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("ChooseLevel");
-       // asyncLoad.completed += OnSceneLoaded;
-
         SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
         if (sendToGoogle != null)
         {
