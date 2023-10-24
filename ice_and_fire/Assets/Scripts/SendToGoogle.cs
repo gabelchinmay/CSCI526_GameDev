@@ -13,8 +13,13 @@ public class SendToGoogle : MonoBehaviour
     public float Count = 0.0f;
     public int TotalJump = 0;
     public static int Attempts = 1; // 将Attempts变为静态变量
-
+    public int ArrowCount = 0; // 用于记录箭矢数量
+    private bool arrowHitsEnemy = false;
+    public int ArrowHitsEnemyCount = 0;
     public static SendToGoogle currentSendToGoogle;
+    public int KillCount = 0;
+
+   
 
     public void Start()
     {
@@ -70,7 +75,9 @@ public class SendToGoogle : MonoBehaviour
 
     public void Send()
     {
-        StartCoroutine(Post(sessionID.ToString(), Attempts.ToString(), Chapter.ToString(), Level.ToString(), Count.ToString(), TotalJump.ToString()));
+        StartCoroutine(Post(sessionID.ToString(), Attempts.ToString(), Chapter.ToString(), Level.ToString(), Count.ToString(), TotalJump.ToString(), ArrowCount.ToString(), ArrowHitsEnemyCount.ToString(), KillCount.ToString()));
+        Debug.Log("ArrowHitsEnemyCount: " + ArrowHitsEnemyCount.ToString());
+        Debug.Log(KillCount.ToString());
     }
 
     public void PlayerAttempted()
@@ -85,10 +92,28 @@ public class SendToGoogle : MonoBehaviour
         Attempts = 1;
     }
 
-    public IEnumerator Post(string sessionID, string attempts, string Chapter, string Level, string Time, string Jump)
+    public void ShootArrow()
     {
-        Debug.Log("begin to send");
-        Debug.Log("Attempts: " + Attempts);
+        ArrowCount++;
+    }
+
+    public void killEnemy()
+    {
+        KillCount++;
+        Debug.Log("u killed a JACK = =// ");
+
+    }
+
+    public void HitCount()
+    {
+        ArrowHitsEnemyCount++;
+        Debug.Log(ArrowHitsEnemyCount);
+    }
+
+    public IEnumerator Post(string sessionID, string attempts, string Chapter, string Level, string Time, string Jump, string arrowShotted, string validShot, string KillCount)
+    {
+
+
         WWWForm form = new WWWForm();
         form.AddField("entry.779211660", sessionID);
         form.AddField("entry.1494050405", attempts);
@@ -97,8 +122,9 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.726422087", Time);
         form.AddField("entry.24347338", Jump);
 
-        // 添加玩家尝试次数到表单中
-        form.AddField("entry.123456789", Attempts.ToString());
+        form.AddField("entry.1161303837", arrowShotted);
+        form.AddField("entry.1154553542", validShot);
+        form.AddField("entry.1963625633", KillCount);
 
         Debug.Log(form.ToString());
 

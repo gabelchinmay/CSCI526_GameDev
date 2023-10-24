@@ -49,6 +49,9 @@ public class ArrowEnemyBehavior : MonoBehaviour
 
             if (hitCount >= maxHits)
             {
+
+                SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+                sendToGoogle.killEnemy();
                 Destroy(gameObject);
             }
         }
@@ -106,6 +109,8 @@ public class ArrowEnemyBehavior : MonoBehaviour
 
         if (hitCount >= maxHits)
         {
+            SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+            sendToGoogle.killEnemy();
             Destroy(gameObject);
         }
     }
