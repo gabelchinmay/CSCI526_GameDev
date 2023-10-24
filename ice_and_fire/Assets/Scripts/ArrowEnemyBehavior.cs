@@ -46,6 +46,9 @@ public class ArrowEnemyBehavior : MonoBehaviour
 
             if (hitCount >= maxHits)
             {
+                Debug.Log("u killed a JACK = =// ");
+                SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+                sendToGoogle.killEnemy();
                 Destroy(gameObject);
             }
         }
@@ -61,6 +64,8 @@ public class ArrowEnemyBehavior : MonoBehaviour
             PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
             if (playerController != null)
             {
+                
+                Destroy(gameObject);
                 playerController.OnArrowEnemyEnter(this);
             }
 
@@ -83,12 +88,15 @@ public class ArrowEnemyBehavior : MonoBehaviour
 
     public void TakeHits()
     {
+        
         hitCount++;
 
         if (hitCount >= maxHits)
         {
+            
             Destroy(gameObject);
         }
     }
+
 
 }

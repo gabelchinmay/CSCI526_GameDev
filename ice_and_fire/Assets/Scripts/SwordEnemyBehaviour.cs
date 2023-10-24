@@ -71,11 +71,14 @@ public class SwordEnemyBehaviour : MonoBehaviour
 
     public void TakeHits()
     {
+        
         hitCount++;
-
+        
         if (hitCount >= maxHits)
         {
+            
             Destroy(gameObject);
+            
         }
     }
 
@@ -89,6 +92,9 @@ public class SwordEnemyBehaviour : MonoBehaviour
 
             if (hitCount >= maxHits)
             {
+                Debug.Log("u killed a JACK = =// ");
+                SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+                sendToGoogle.killEnemy();
                 Destroy(gameObject);
             }
         }

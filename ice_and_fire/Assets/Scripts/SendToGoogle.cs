@@ -17,7 +17,7 @@ public class SendToGoogle : MonoBehaviour
     private bool arrowHitsEnemy = false;
     public int ArrowHitsEnemyCount = 0;
     public static SendToGoogle currentSendToGoogle;
-
+    public int KillCount = 0;
     public void Start()
     {
         sessionID = DateTime.Now.Ticks;
@@ -68,6 +68,13 @@ public class SendToGoogle : MonoBehaviour
         ArrowCount++;
     }
 
+    public void killEnemy()
+    {
+        KillCount++;
+        Debug.Log("u killed a JACK = =// ");
+
+    }
+
     public void Update()
     {
         Count += Time.deltaTime;
@@ -76,7 +83,8 @@ public class SendToGoogle : MonoBehaviour
     public void Send()
     {
         StartCoroutine(Post(sessionID.ToString(), Attempts.ToString(), Chapter.ToString(), Level.ToString(), Count.ToString(), TotalJump.ToString(), ArrowCount.ToString(), ArrowHitsEnemyCount.ToString()));
-        Debug.Log("ArrowHitsEnemyCount: " + ArrowHitsEnemyCount.ToString()); 
+        Debug.Log("ArrowHitsEnemyCount: " + ArrowHitsEnemyCount.ToString());
+        Debug.Log(KillCount.ToString());
     }
 
     public void PlayerAttempted()

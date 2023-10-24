@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     public GameObject placeholderPrefab;
     private bool isOnDefrost = false;
     private KeyGateController key = null;
+    public int killCount = 0;
 
     // new Feature: Invicible Shield, boolean variable to show if this player is shielded or not
     private bool isShielded = false;
@@ -618,6 +619,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
         if (collision.CompareTag("Key") || collision.CompareTag("Defrost") || collision.CompareTag("Placeholder") || collision.CompareTag("JumpHigher"))
         {
 
@@ -706,6 +708,8 @@ public class PlayerController : MonoBehaviour
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
+                
+                sendToGoogle.killEnemy();
             }
 
             UpdateHealthUI();
@@ -716,6 +720,13 @@ public class PlayerController : MonoBehaviour
 
 
     }
+
+   // private IEnumerator IncreaseKillCount()
+   // {
+     //   SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+      //  yield return new WaitForSeconds(0.5f); // track dead after 5ms
+    //     kill count
+ //   }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
