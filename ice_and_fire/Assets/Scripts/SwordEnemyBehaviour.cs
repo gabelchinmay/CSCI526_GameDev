@@ -127,6 +127,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Trigger:" + other.tag);
         if (other.CompareTag("arrow"))
         {
             hitCount++;
@@ -142,6 +143,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
         if (other.CompareTag("FireArea"))
         {
             isOnFire = true;
+            Debug.Log("On Fire!!!");
         }
     }
 
@@ -150,6 +152,8 @@ public class SwordEnemyBehaviour : MonoBehaviour
         if (other.CompareTag("FireArea"))
         {
             isOnFire = false;
+            Debug.Log("Off Fire!!!");
+
         }
 
     }
