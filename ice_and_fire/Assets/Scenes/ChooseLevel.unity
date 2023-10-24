@@ -272,7 +272,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 2
   chapter: 1
-  buttons: []
   levelName: 
 --- !u!1 &270377056
 GameObject:
@@ -423,7 +422,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   chapter: 1
-  buttons: []
   levelName: 
 --- !u!1 &276436531
 GameObject:
@@ -574,7 +572,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 13
   chapter: 3
-  buttons: []
   levelName: 
 --- !u!1 &304634603
 GameObject:
@@ -1198,7 +1195,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 3
   chapter: 2
-  buttons: []
   levelName: 
 --- !u!1 &802928739
 GameObject:
@@ -1568,7 +1564,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 11
   chapter: 3
-  buttons: []
   levelName: 
 --- !u!1 &914809017
 GameObject:
@@ -1719,7 +1714,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 2
   chapter: 2
-  buttons: []
   levelName: 
 --- !u!1 &929326978
 GameObject:
@@ -2364,11 +2358,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1092681383}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebd1a8ffb6c8440f2b6c08c2a2a24fb8, type: 3}
+  m_Script: {fileID: 11500000, guid: 15e4d89821eaf594ca35ddce47c973c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  chapter: 1
   buttons:
   - {fileID: 270377058}
   - {fileID: 68222491}
@@ -2383,7 +2375,6 @@ MonoBehaviour:
   - {fileID: 1807217198}
   - {fileID: 276436533}
   - {fileID: 1654527404}
-  levelName: 
 --- !u!1 &1096897771
 GameObject:
   m_ObjectHideFlags: 0
@@ -2844,7 +2835,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   chapter: 0
-  buttons: []
   levelName: 
 --- !u!114 &1203784028
 MonoBehaviour:
@@ -3337,7 +3327,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   chapter: 2
-  buttons: []
   levelName: 
 --- !u!1 &1654527401
 GameObject:
@@ -3394,7 +3383,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   chapter: 0
-  buttons: []
   levelName: Combat_Test
 --- !u!114 &1654527404
 MonoBehaviour:
@@ -3639,7 +3627,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 4
   chapter: 2
-  buttons: []
   levelName: 
 --- !u!1 &1663306222
 GameObject:
@@ -4207,7 +4194,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 12
   chapter: 3
-  buttons: []
   levelName: 
 --- !u!1 &1933382015
 GameObject:
@@ -4399,7 +4385,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   chapter: 3
-  buttons: []
   levelName: 
 --- !u!114 &1993306178
 MonoBehaviour:
@@ -4644,7 +4629,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 3
   chapter: 1
-  buttons: []
   levelName: 
 --- !u!1 &2017166884
 GameObject:
@@ -4973,7 +4957,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 5
   chapter: 2
-  buttons: []
   levelName: 
 --- !u!114 &2116025080
 MonoBehaviour:
