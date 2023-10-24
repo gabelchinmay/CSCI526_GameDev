@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     private bool isOnDefrost = false;
     private KeyGateController key = null;
     private bool isValyrian = false;
+    public int killCount = 0;
 
     // new Feature: Invicible Shield, boolean variable to show if this player is shielded or not
     private bool isShielded = false;
@@ -312,6 +313,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S) && canArrowAttack) // Replace with your preferred shoot key.
         {
+            
             canArrowAttack = false;
             playerAnimator.SetBool("shoot", true);
             StartCoroutine(resetBowAttackAnimation());
@@ -330,6 +332,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.RightShift) && canArrowAttack) // Replace with your preferred shoot key.
         {
+            sendToGoogle.ShootArrow();
             canArrowAttack = false;
             playerAnimator.SetBool("shoot", true);
             StartCoroutine(resetBowAttackAnimation());

@@ -49,6 +49,9 @@ public class ArrowEnemyBehavior : MonoBehaviour
 
             if (hitCount >= maxHits)
             {
+                Debug.Log("u killed a JACK = =// ");
+                SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+                sendToGoogle.killEnemy();
                 Destroy(gameObject);
             }
         }
