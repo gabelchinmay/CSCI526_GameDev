@@ -34,6 +34,8 @@ TagManager:
   - FireArea
   - arrow_enemy
   - sword_enemy
+  - enemy
+  - Dead
   layers:
   - Default
   - TransparentFX

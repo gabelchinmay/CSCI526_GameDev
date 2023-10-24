@@ -5,7 +5,7 @@ using UnityEngine;
 public class SwordEnemyBehaviour : MonoBehaviour
 {
     private int hitCount = 0;
-    private int maxHits = 3;
+    public int maxHits = 3;
     private bool isAttacking = false;
     private Animator playerAnimator;
     private float previousOscillation = 0f;
