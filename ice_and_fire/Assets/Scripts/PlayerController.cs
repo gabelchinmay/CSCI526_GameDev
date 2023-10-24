@@ -63,6 +63,9 @@ public class PlayerController : MonoBehaviour
     private bool canSwordAttack = true;
     private bool canArrowAttack = true;
 
+    private bool isInColdArea = false;
+    private bool isInNightKingArea = false;
+
 
     private void Awake()
     {
@@ -90,33 +93,11 @@ public class PlayerController : MonoBehaviour
 
         }
 
-
+        StartCoroutine(InflictColdDamage());
     }
 
     void Update()
-    {
-        //Testing attack animation only:
-
-        if (Input.GetKeyDown(KeyCode.T) && canSwordAttack)
-        {
-            canSwordAttack = false;
-
-            playerAnimator.SetBool("attack", true);
-            StartCoroutine(resetSwordAttackAnimation());
-
-            if(currentArrowEnemyPlayerFighting != null)
-            {
-                currentArrowEnemyPlayerFighting.TakeHits(1);
-            }
-
-            if (currentSwordEnemyPlayerFighting != null)
-            {
-                currentSwordEnemyPlayerFighting.TakeHits(1);
-            }
-
-            StartCoroutine(swordAttackCooldownRoutine());
-        }
-        
+    {   
         SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
         rb = GetComponent<Rigidbody2D>();
         currentColour = Color.black;
@@ -335,6 +316,31 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(resetBowAttackAnimation());
             StartCoroutine(ShootArrow(arrowPrefab));
             StartCoroutine(bowAttackCooldownRoutine());
+        }
+
+        //Testing attack animation only:
+
+        if (Input.GetKeyDown(KeyCode.T) && canSwordAttack)
+        {
+            canSwordAttack = false;
+
+            playerAnimator.SetBool("attack", true);
+            StartCoroutine(resetSwordAttackAnimation());
+
+            if (currentArrowEnemyPlayerFighting != null)
+            {
+                currentArrowEnemyPlayerFighting.TakeHits(1);
+            }
+
+            if (currentSwordEnemyPlayerFighting != null)
+            {
+                if ((!currentSwordEnemyPlayerFighting.CompareTag("Dead") && !currentSwordEnemyPlayerFighting.CompareTag("WhiteWalker") && !currentSwordEnemyPlayerFighting.CompareTag("NightKing")) || this.isValyrian)
+                {
+                    currentSwordEnemyPlayerFighting.TakeHits(1);
+                }
+            }
+
+            StartCoroutine(swordAttackCooldownRoutine());
         }
     }
 
@@ -598,6 +604,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private IEnumerator InflictColdDamage()
+    {
+        Debug.Log("Damage");
+        while (true)
+        {
+            if (isInColdArea)
+            {
+                TakeDamage(1);
+            }
+             
+            if (isInNightKingArea)
+            {
+                TakeDamage(3);
+            }
+            yield return new WaitForSeconds(1.0f);
+        }
+    }
+
 
     // A new IEnumerator for shielded status
     private IEnumerator ActivateShield(float duration)
@@ -627,8 +651,6 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
-        Debug.Log("isShielded: " + isShielded);
-
         if (!isShielded) // When the player is not shielded
         {
             currentHealth -= damageAmount;
@@ -763,12 +785,34 @@ public class PlayerController : MonoBehaviour
             this.isValyrian = true;
         }
 
-        if( collision.CompareTag("FireArea"))
+        if (collision.CompareTag("FireArea"))
         {
             Debug.Log("Player on fire!!!!!");
         }
 
+        if (collision.CompareTag("ColdArea"))
+        {
+            isInColdArea = true;
+        }
 
+        if (collision.CompareTag("NightKingArea"))
+        {
+            isInNightKingArea = true;
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("ColdArea"))
+        {
+            isInColdArea = false;
+        }
+
+        if (collision.CompareTag("NightKingArea"))
+        {
+            isInNightKingArea = false;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
