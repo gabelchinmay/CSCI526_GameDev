@@ -63,7 +63,10 @@ public class PlayerController : MonoBehaviour
     private bool canSwordAttack = true;
     private bool canArrowAttack = true;
 
+<<<<<<< Updated upstream
     private float originalSpeed;
+=======
+>>>>>>> Stashed changes
     private bool isInColdArea = false;
     private bool isInNightKingArea = false;
 
@@ -95,7 +98,10 @@ public class PlayerController : MonoBehaviour
         }
 
         StartCoroutine(InflictColdDamage());
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
 
     void Update()
@@ -340,6 +346,31 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(resetBowAttackAnimation());
             StartCoroutine(ShootArrow(arrowPrefab));
             StartCoroutine(bowAttackCooldownRoutine());
+        }
+
+        //Testing attack animation only:
+
+        if (Input.GetKeyDown(KeyCode.T) && canSwordAttack)
+        {
+            canSwordAttack = false;
+
+            playerAnimator.SetBool("attack", true);
+            StartCoroutine(resetSwordAttackAnimation());
+
+            if (currentArrowEnemyPlayerFighting != null)
+            {
+                currentArrowEnemyPlayerFighting.TakeHits(1);
+            }
+
+            if (currentSwordEnemyPlayerFighting != null)
+            {
+                if ((!currentSwordEnemyPlayerFighting.CompareTag("Dead") && !currentSwordEnemyPlayerFighting.CompareTag("WhiteWalker") && !currentSwordEnemyPlayerFighting.CompareTag("NightKing")) || this.isValyrian)
+                {
+                    currentSwordEnemyPlayerFighting.TakeHits(1);
+                }
+            }
+
+            StartCoroutine(swordAttackCooldownRoutine());
         }
     }
 
@@ -617,6 +648,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private IEnumerator InflictColdDamage()
+    {
+        while (true)
+        {
+            if (isInColdArea)
+            {
+                TakeDamage(1);
+            }
+             
+            if (isInNightKingArea)
+            {
+                TakeDamage(3);
+            }
+            yield return new WaitForSeconds(1.0f);
+        }
+    }
+
 
     // A new IEnumerator for shielded status
     private IEnumerator ActivateShield(float duration)
@@ -646,7 +694,10 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
+<<<<<<< Updated upstream
         Debug.Log(isInColdArea);
+=======
+>>>>>>> Stashed changes
         if (!isShielded) // When the player is not shielded
         {
             currentHealth -= damageAmount;
@@ -790,7 +841,11 @@ public class PlayerController : MonoBehaviour
             isInColdArea = true;
         }
 
+<<<<<<< Updated upstream
         if (collision.CompareTag("ColdArea"))
+=======
+        if (collision.CompareTag("NightKingArea"))
+>>>>>>> Stashed changes
         {
             isInNightKingArea = true;
         }
@@ -804,9 +859,15 @@ public class PlayerController : MonoBehaviour
             isInColdArea = false;
         }
 
+<<<<<<< Updated upstream
         if (collision.CompareTag("ColdArea"))
         {
             isInNightKingArea = true;
+=======
+        if (collision.CompareTag("NightKingArea"))
+        {
+            isInNightKingArea = false;
+>>>>>>> Stashed changes
         }
     }
 

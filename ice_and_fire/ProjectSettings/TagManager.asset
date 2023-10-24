@@ -36,6 +36,13 @@ TagManager:
   - sword_enemy
   - enemy
   - Dead
+<<<<<<< Updated upstream
+=======
+  - WhiteWalker
+  - NightKing
+  - ColdArea
+  - NightKingArea
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
