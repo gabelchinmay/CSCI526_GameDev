@@ -7,7 +7,7 @@ using UnityEngine;
 public class ArrowEnemyBehavior : MonoBehaviour
 {
     public GameObject arrowPrefab;
-    private float shootInterval = 1f;
+    private float shootInterval = 3f;
     private int hitCount = 0;
     private int maxHits = 3;
     private Animator playerAnimator;

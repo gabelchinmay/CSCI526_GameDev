@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
 
-        if(sceneName == "wild_fire") // change it later 
+        if(sceneName == "wild_fire"|| sceneName == "Combat_Test") // change it later 
         {
             inventory["WildFire"]=2;
 
@@ -323,12 +323,17 @@ public class PlayerController : MonoBehaviour
                 {
                     inventory.Remove("WildFire");
                 }
+                StartCoroutine(bowAttackCooldownRoutine());
+            }
+        }
 
-            }
-            else
-            {
-                StartCoroutine(ShootArrow(arrowPrefab));
-            }
+
+        if (Input.GetKeyDown(KeyCode.RightShift) && canArrowAttack) // Replace with your preferred shoot key.
+        {
+            canArrowAttack = false;
+            playerAnimator.SetBool("shoot", true);
+            StartCoroutine(resetBowAttackAnimation());
+            StartCoroutine(ShootArrow(arrowPrefab));
             StartCoroutine(bowAttackCooldownRoutine());
         }
     }
@@ -487,7 +492,7 @@ public class PlayerController : MonoBehaviour
 
     private void DefenseWallPowerUp()
     {
-        Vector3 offset = transform.position + Vector3.up * 0.40f + Vector3.right * 2f;
+        Vector3 offset = transform.position + Vector3.up * 0.6f + Vector3.right * 2f;
         Instantiate(defenseWallPrefab,offset,Quaternion.identity);
 
     }
@@ -756,6 +761,11 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             this.isValyrian = true;
+        }
+
+        if( collision.CompareTag("FireArea"))
+        {
+            Debug.Log("Player on fire!!!!!");
         }
 
 

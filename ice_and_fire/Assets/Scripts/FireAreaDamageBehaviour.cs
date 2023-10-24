@@ -25,6 +25,7 @@ public class FireAreaDamageBehaviour : MonoBehaviour
                 if (enemyController != null)
                 {
                     // Call TakeHits() on the enemy
+                    Debug.Log("Sword Enemy Taking Hits");
                     enemyController.TakeHits(2);
                 }
             }
@@ -34,6 +35,7 @@ public class FireAreaDamageBehaviour : MonoBehaviour
                 ArrowEnemyBehavior enemyController = collider.GetComponent<ArrowEnemyBehavior>();
                 if (enemyController != null)
                 {
+                    Debug.Log("Arrow Enemy Taking Hits");
                     enemyController.TakeHits(2);
                 }
 
