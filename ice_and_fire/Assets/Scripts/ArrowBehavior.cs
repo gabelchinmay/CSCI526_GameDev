@@ -34,7 +34,7 @@ public class ArrowBehavior : MonoBehaviour
             Destroy(gameObject);
 
         }
-        else if (collision.CompareTag("enemy"))
+        if (collision.CompareTag("enemy"))
         {
             Debug.Log("got shoot!");
 
