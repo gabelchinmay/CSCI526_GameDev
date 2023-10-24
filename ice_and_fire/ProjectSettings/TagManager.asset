@@ -34,6 +34,7 @@ TagManager:
   - FireArea
   - arrow_enemy
   - sword_enemy
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -68,6 +69,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3310229861
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

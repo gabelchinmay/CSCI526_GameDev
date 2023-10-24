@@ -45,6 +45,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Chapter3_Level13.unity
     guid: 1abf2d2603e424b938e70e33efceba8e
   - enabled: 1
+    path: Assets/Scenes/Combat_Test.unity
+    guid: 37234aff637111c47a256f926afc7abc
+  - enabled: 1
     path: Assets/Scenes/EndMenu.unity
     guid: 6258c85f476a0ad43833b63e351525d8
   - enabled: 1
