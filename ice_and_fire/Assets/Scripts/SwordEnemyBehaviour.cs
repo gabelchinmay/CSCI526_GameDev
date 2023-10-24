@@ -121,6 +121,8 @@ public class SwordEnemyBehaviour : MonoBehaviour
 
         if (hitCount >= maxHits)
         {
+            SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+            sendToGoogle.killEnemy();
             Destroy(gameObject);
         }
     }
@@ -132,13 +134,16 @@ public class SwordEnemyBehaviour : MonoBehaviour
         {
             hitCount++;
 
+
+            SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+            sendToGoogle.killEnemy();
             Destroy(other.gameObject);
 
             if (hitCount >= maxHits)
             {
-                Debug.Log("u killed a JACK = =// ");
-                SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
-                sendToGoogle.killEnemy();
+                
+                
+                
                 Destroy(gameObject);
             }
         }

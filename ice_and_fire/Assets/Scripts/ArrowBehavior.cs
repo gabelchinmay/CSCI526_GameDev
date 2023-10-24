@@ -30,6 +30,7 @@ public class ArrowBehavior : MonoBehaviour
         if (!collision.CompareTag("enemy"))
         {
             // 增加射中敌人的箭矢数量
+           
             Destroy(gameObject);
 
         }
