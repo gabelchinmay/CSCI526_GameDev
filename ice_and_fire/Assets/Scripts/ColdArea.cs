@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class ColdArea : MonoBehaviour
 {
-<<<<<<< Updated upstream
     public Transform enemyToFollow;
-
-=======
-    public Transform enemyToFollow; 
->>>>>>> Stashed changes
     void Update()
     {
         if (enemyToFollow != null)
