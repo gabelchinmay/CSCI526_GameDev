@@ -2,22 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBehaviour : MonoBehaviour
+public class IceFireBehaviour : MonoBehaviour
 {
-    // public GameObject fire; // Assign the Fire GameObject in the Inspector
-    // private Animator animator;
-
     // Start is called before the first frame update
     void Start()
     {
-        // animator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        
         
     }
 
@@ -28,7 +23,7 @@ public class FireBehaviour : MonoBehaviour
             PlayerController playerController = other.gameObject.GetComponent<PlayerController>();
             if (playerController != null)
             {
-                playerController.OnDragonFireEnter(this);
+                playerController.OnIceDragonFireEnter(this);
             }
         }
     }
@@ -40,7 +35,7 @@ public class FireBehaviour : MonoBehaviour
             PlayerController playerController = other.gameObject.GetComponent<PlayerController>();
             if (playerController != null)
             {
-                playerController.OnDragonFireExit(this);
+                playerController.OnIceDragonFireExit(this);
             }
         }
     }

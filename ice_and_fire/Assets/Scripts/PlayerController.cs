@@ -43,6 +43,9 @@ public class PlayerController : MonoBehaviour
     private bool isOnSpike = false;
     private bool isOnMonster = false;
     private bool isOnSaw = false;
+    // additional features for dragons
+    private bool isOnFireDragon = false;
+    private bool isOnIceDragon = false;
     //private bool isGettingSwordHits = false;
     //private bool isNearArrowEnemy = false;
     public float playerMassMultiplicationFactor = 100f;
@@ -499,6 +502,33 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    // implement dragons' damage to players
+    public void OnDragonFireEnter(FireBehaviour fire)
+    {
+        this.TakeDamage(15);
+        isOnFireDragon = true;
+    }
+
+    public void OnDragonFireExit(FireBehaviour fire)
+    {
+        isOnFireDragon = false;
+    }
+
+    public void OnIceDragonFireEnter(IceFireBehaviour iceFire)
+    {
+        this.TakeDamage(17);
+        isOnIceDragon = true;
+
+    }
+
+    public void OnIceDragonFireExit(IceFireBehaviour iceFire)
+    {
+        isOnIceDragon = false;
+        
+
+    }
+
+
     private void DefenseWallPowerUp()
     {
         Vector3 offset = transform.position + Vector3.up * 0.6f + Vector3.right * 2f;
@@ -603,9 +633,30 @@ public class PlayerController : MonoBehaviour
             {
                 this.TakeDamage(1);
             }
+
+            if (isOnFireDragon)
+            {
+                TakeDamage(2);
+                
+            }
+            if (isOnIceDragon)
+            {
+                TakeDamage(1);
+                speed = 1.0f;
+                
+            }
             yield return new WaitForSeconds(0.1f);
         }
     }
+    // helper functions for fire and icefire damage
+    // private void fireDamage(){
+    //     TakeDamage(10);
+    // }
+
+    // private void iceFireDamage(){
+    //     TakeDamage(5);
+    // }
+
 
     private IEnumerator InflictColdDamage()
     {

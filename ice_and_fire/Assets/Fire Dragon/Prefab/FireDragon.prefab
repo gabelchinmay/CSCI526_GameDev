@@ -88,7 +88,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5126121, y: 1.5561414}
+  m_Offset: {x: 0.4971552, y: 1.5252284}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -99,7 +99,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.1530485, y: 2.9171205}
+  m_Size: {x: 4.4744673, y: 2.897868}
   m_EdgeRadius: 0
 --- !u!1 &1045360385935228
 GameObject:
@@ -1579,6 +1579,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1377640202535130835}
   - component: {fileID: 1816008083039248588}
+  - component: {fileID: 7166226222426706266}
+  - component: {fileID: 8761202047778065715}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -1653,6 +1655,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7166226222426706266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5294126673635596360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb353152e4d674334adb78549efefe6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &8761202047778065715
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5294126673635596360}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 70d0ac1f29234bb418dad84ac54f412a, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 11, y: 9.08}
+    newSize: {x: 11, y: 9.08}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5}
+  m_EdgeRadius: 0
 --- !u!1 &7652819237907161527
 GameObject:
   m_ObjectHideFlags: 0
