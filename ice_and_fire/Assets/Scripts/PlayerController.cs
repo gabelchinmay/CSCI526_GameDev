@@ -11,9 +11,9 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float speed = 10.0f;
-    private float jumpForce;
+    private float jumpForce = 8.0f;
     private int jumpCount;
-    private int maxJumps = 2;
+    private int maxJumps = 1;
     private bool isGameOver = false;
     private bool canJump = true;
     private bool isOnPlatform = false;
@@ -415,8 +415,7 @@ public class PlayerController : MonoBehaviour
         if (!isGameOver)
         {
             float mass = rb.mass;
-            if (jumpCount < 1) jumpForce = 7.0f * mass;
-            else jumpForce = 5.0f * mass; //Reduce the jump force for second jump
+            jumpForce *= mass;
             
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
