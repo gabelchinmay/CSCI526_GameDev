@@ -99,6 +99,8 @@ public class PlayerController : MonoBehaviour
     private void InitAnimations()
     {
         playerAnimator.SetBool("attack", false);
+        playerAnimator.SetBool("fireSwordAttack", false);
+        playerAnimator.SetBool("iceSwordAttack", false);
         playerAnimator.SetBool("shoot", false);
         playerAnimator.SetBool("isHurt", false);
     }
@@ -292,13 +294,22 @@ public class PlayerController : MonoBehaviour
                 {
                     this.sendToGoogle.ShootArrow();
                 }
-
+                
+                //Testing fire arrow attack & ice arrow attack animation - Ashley 10.26 13:00
+                if (usingFireArrows)
+                {
+                    playerAnimator.SetBool("fireArrowShoot", true);
+                }
+                else if (usingIceArrows)
+                {
+                    playerAnimator.SetBool("iceArrowShoot", true);
+                }
+                
                 canArrowAttack = false;
-                playerAnimator.SetBool("shoot", true);
+                //playerAnimator.SetBool("shoot", true);
                 StartCoroutine(resetBowAttackAnimation());
 
             }
-
 
             if(inventory.ContainsKey("IceArrows"))
             {
@@ -307,6 +318,7 @@ public class PlayerController : MonoBehaviour
                 if(inventory["IceArrows"] <= 0)
                 {
                     inventory.Remove("IceArrows");
+                    usingIceArrows = false;
                 }
             }
 
@@ -317,13 +329,13 @@ public class PlayerController : MonoBehaviour
                 if (inventory["FireArrows"] <= 0)
                 {
                     inventory.Remove("FireArrows");
+                    usingFireArrows = false;
                 }
             }
 
             StartCoroutine(bowAttackCooldownRoutine());
         }
-
-        //Testing attack animation only:
+        
         //Sword
         if (Input.GetKeyDown(KeyCode.DownArrow) && canSwordAttack)
         {
@@ -334,7 +346,17 @@ public class PlayerController : MonoBehaviour
                 {
                     sendToGoogle.HitCount();
                 }
-                playerAnimator.SetBool("attack", true); //TODO: Need to set based on actual sword animation
+                //Fire sword attack & ice sword attack animation - Ashley 10.26 13:00
+                if (usingFireSword)
+                {
+                    playerAnimator.SetBool("fireSwordAttack", true);
+                }
+                else if (usingIceSword)
+                {
+                    playerAnimator.SetBool("iceSwordAttack", true);
+                }
+
+                //playerAnimator.SetBool("attack", true); //TODO: Need to set based on actual sword animation
                 StartCoroutine(resetSwordAttackAnimation());
 
             }
@@ -799,9 +821,11 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator resetSwordAttackAnimation()
     {
-        yield return new WaitForSeconds(1.0f);
+        //Need to confirm with the cool down time (1.0 -> 0.5) - Ashley
+        yield return new WaitForSeconds(0.5f);
         playerAnimator.SetBool("attack", false);
-
+        playerAnimator.SetBool("fireSwordAttack", false);
+        playerAnimator.SetBool("iceSwordAttack", false);
     }
 
 
@@ -809,6 +833,8 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         playerAnimator.SetBool("shoot", false);
+        playerAnimator.SetBool("fireArrowShoot", false);
+        playerAnimator.SetBool("iceArrowShoot", false);
 
     }
 
