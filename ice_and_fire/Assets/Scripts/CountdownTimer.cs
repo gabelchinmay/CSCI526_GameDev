@@ -15,7 +15,8 @@ public class CountdownTimer : MonoBehaviour
     private void Start()
     {
         currentTime = countdownDuration;
-        UpdateTimerUI();
+        //removing the timer
+        //UpdateTimerUI();
         HideGameOverText(); // Initially hide the "Game Over" message
         StartCountdown();
     }
@@ -29,9 +30,11 @@ public class CountdownTimer : MonoBehaviour
             {
                 currentTime = 0;
                 isCountingDown = false;
-                HandleTimerEnd();
+                //removing the timer
+                //HandleTimerEnd();
             }
-            UpdateTimerUI();
+            //removing the timer
+            //UpdateTimerUI();
         }
     }
 
