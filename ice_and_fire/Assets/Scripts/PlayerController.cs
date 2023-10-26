@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
     public TMP_Text defrostTimerTxt;
     public Image HealthSkeleton;
     public Image HealthBar;
-    public GameObject arrowPrefab;
     public GameObject fireArrowPrefab;
     public GameObject iceArrowPrefab;
     public GameObject wildFirePrefab;

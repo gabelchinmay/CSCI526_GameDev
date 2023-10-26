@@ -50,6 +50,7 @@ TagManager:
   - FireSwordEnemy
   - IceArrowEnemy
   - FireArrowEnemy
+  - MOD
   layers:
   - Default
   - TransparentFX
