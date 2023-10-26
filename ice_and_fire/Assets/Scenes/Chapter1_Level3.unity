@@ -1967,6 +1967,9 @@ MonoBehaviour:
   Level: 1
   Count: 0
   TotalJump: 0
+  ArrowCount: 0
+  ArrowHitsEnemyCount: 0
+  KillCount: 0
 --- !u!4 &1936594509
 Transform:
   m_ObjectHideFlags: 0
@@ -2296,6 +2299,10 @@ PrefabInstance:
       propertyPath: pickUpText
       value: 
       objectReference: {fileID: 209979444}
+    - target: {fileID: 3106164812962953773, guid: 2f46cbf33d648468d8c00b2993dd03cf, type: 3}
+      propertyPath: playerStyle
+      value: normal
+      objectReference: {fileID: 0}
     - target: {fileID: 3106164812962953773, guid: 2f46cbf33d648468d8c00b2993dd03cf, type: 3}
       propertyPath: gameOverText
       value: 

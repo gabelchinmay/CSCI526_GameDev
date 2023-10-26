@@ -1759,6 +1759,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 958997615}
     - target: {fileID: 6083283999004043884, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
+      propertyPath: arrowPrefab
+      value: 
+      objectReference: {fileID: 2762176623784743391, guid: b04ef77d74a7d4b80bf27adf51a56bc1, type: 3}
+    - target: {fileID: 6083283999004043884, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: gameOverText
       value: 
       objectReference: {fileID: 1174373274}
@@ -1775,6 +1779,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 958997614}
     - target: {fileID: 6083283999004043884, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
+      propertyPath: wildFirePrefab
+      value: 
+      objectReference: {fileID: 8738422562909323680, guid: ef89d1870389a4606baaac3d01a96888, type: 3}
+    - target: {fileID: 6083283999004043884, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: defrostTimerTxt
       value: 
       objectReference: {fileID: 958997616}
@@ -1782,6 +1790,10 @@ PrefabInstance:
       propertyPath: shieldTimerText
       value: 
       objectReference: {fileID: 1220705064}
+    - target: {fileID: 6083283999004043884, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
+      propertyPath: defenseWallPrefab
+      value: 
+      objectReference: {fileID: 7171553044905755986, guid: cf7cba3a7fdfe451cba0488c5c84010b, type: 3}
     - target: {fileID: 6083283999004043885, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
