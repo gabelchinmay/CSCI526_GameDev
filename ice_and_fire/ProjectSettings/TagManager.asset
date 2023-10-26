@@ -40,6 +40,16 @@ TagManager:
   - NightKing
   - ColdArea
   - NightKingArea
+  - IceSword
+  - FireSword
+  - IceArrows
+  - FireArrows
+  - FireArrow
+  - IceArrow
+  - IceSwordEnemy
+  - FireSwordEnemy
+  - IceArrowEnemy
+  - FireArrowEnemy
   layers:
   - Default
   - TransparentFX
