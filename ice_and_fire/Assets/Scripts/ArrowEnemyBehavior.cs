@@ -11,16 +11,18 @@ public class ArrowEnemyBehavior : MonoBehaviour
     private int hitCount = 0;
     private int maxHits = 3;
     private Animator playerAnimator;
-
+    private string arrowEnemyType;
     private bool isOnFire = false;
 
 
     void Start()
     {
+        this.arrowEnemyType = this.gameObject.tag;
         playerAnimator = GetComponent<Animator>();
         playerAnimator.SetBool("shoot", true);
         InvokeRepeating("ShootArrow", 0f, shootInterval);
         StartCoroutine(InflictDamages());
+
 
     }
 
@@ -40,26 +42,63 @@ public class ArrowEnemyBehavior : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Check if the colliding object has the tag "arrow"
-        if (other.CompareTag("arrow"))
+        if(other.CompareTag("FireArrow") || other.CompareTag("IceArrow"))
         {
-            hitCount++;
-
             Destroy(other.gameObject);
-
-            if (hitCount >= maxHits)
-            {
-
-                SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
-                sendToGoogle.killEnemy();
-                Destroy(gameObject);
-            }
         }
+
+        if (arrowEnemyType == "IceArrowEnemy")
+        {
+            if (other.CompareTag("FireArrow"))
+            {
+                hitCount++;
+
+
+                if (hitCount >= maxHits)
+                {
+
+                    SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+                    if(sendToGoogle != null)
+                    {
+                        sendToGoogle.killEnemy();
+
+                    }
+                    Destroy(gameObject);
+                }
+            }
+
+        }
+
+        if (arrowEnemyType == "FireArrowEnemy")
+        {
+            if (other.CompareTag("IceArrow"))
+            {
+                hitCount++;
+
+                if (hitCount >= maxHits)
+                {
+
+                    SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+                    if (sendToGoogle != null)
+                    {
+                        sendToGoogle.killEnemy();
+
+                    }
+                    Destroy(gameObject);
+                }
+            }
+
+        }
+
+
+
 
         if (other.CompareTag("FireArea"))
         {
             isOnFire = true;
         }
+
+
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -110,7 +149,10 @@ public class ArrowEnemyBehavior : MonoBehaviour
         if (hitCount >= maxHits)
         {
             SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
-            sendToGoogle.killEnemy();
+            if(sendToGoogle != null)
+            {
+                sendToGoogle.killEnemy();
+            }
             Destroy(gameObject);
         }
     }

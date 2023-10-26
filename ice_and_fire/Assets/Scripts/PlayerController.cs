@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     public Image HealthSkeleton;
     public Image HealthBar;
     public GameObject arrowPrefab;
+    public GameObject fireArrowPrefab;
+    public GameObject iceArrowPrefab;
     public GameObject wildFirePrefab;
     public GameObject placeholderPrefab;
     public GameObject defenseWallPrefab;
@@ -46,6 +48,10 @@ public class PlayerController : MonoBehaviour
     private bool canArrowAttack = true;
     private bool isInColdArea = false;
     private bool isInNightKingArea = false;
+    private bool usingFireSword = false;
+    private bool usingIceSword = false;
+    private bool usingFireArrows = false;
+    private bool usingIceArrows = false;
     private int jumpCount;
     private int maxJumps = 1;
     private int currentHealth;
@@ -106,11 +112,7 @@ public class PlayerController : MonoBehaviour
             InventoryText.text = "";
             InventoryText.text += "INVENTORY";
 
-            if (inventory.ContainsKey("JumpHigher"))
-            {
-                InventoryText.text += "\nJumpHighers: " + inventory["JumpHigher"];
 
-            }
 
             if (inventory.ContainsKey("Defrost"))
             {
@@ -123,7 +125,7 @@ public class PlayerController : MonoBehaviour
 
             if (inventory.ContainsKey("InvincibleShield")) // Inverntory text for invincible shield
             {
-                InventoryText.text += "\nInvincibleShield: " + inventory["InvincibleShield"];
+                InventoryText.text += "\nInvincible Shield: " + inventory["InvincibleShield"];
             }
             if (inventory.ContainsKey("Key"))
             {
@@ -131,12 +133,22 @@ public class PlayerController : MonoBehaviour
             }
             if (inventory.ContainsKey("DefenseWall"))
             {
-                InventoryText.text += "\nDefenseWalls: " + inventory["DefenseWall"];
+                InventoryText.text += "\nDefense Walls: " + inventory["DefenseWall"];
             }
 
             if (inventory.ContainsKey("WildFire"))
             {
-                InventoryText.text += "\nWildFireArrows: " + inventory["WildFire"];
+                InventoryText.text += "\nWild-Fire Arrows: " + inventory["WildFire"];
+            }
+
+            if (inventory.ContainsKey("FireArrows"))
+            {
+                InventoryText.text += "\nFire-Arrows: " + inventory["FireArrows"];
+            }
+
+            if (inventory.ContainsKey("IceArrows"))
+            {
+                InventoryText.text += "\nIce-Arrows: " + inventory["IceArrows"];
             }
 
         }
@@ -275,15 +287,40 @@ public class PlayerController : MonoBehaviour
         // Arrow
         if (Input.GetKeyDown(KeyCode.UpArrow) && canArrowAttack) // Replace with your preferred shoot key.
         {
-            if(this.sendToGoogle != null)
+            if(inventory.ContainsKey("IceArrows") || inventory.ContainsKey("FireArrows"))
             {
-                this.sendToGoogle.ShootArrow();
+                if (this.sendToGoogle != null)
+                {
+                    this.sendToGoogle.ShootArrow();
+                }
+
+                canArrowAttack = false;
+                playerAnimator.SetBool("shoot", true);
+                StartCoroutine(resetBowAttackAnimation());
+
             }
 
-            canArrowAttack = false;
-            playerAnimator.SetBool("shoot", true);
-            StartCoroutine(resetBowAttackAnimation());
-            StartCoroutine(ShootArrow(arrowPrefab));
+
+            if(inventory.ContainsKey("IceArrows"))
+            {
+                StartCoroutine(ShootArrow(iceArrowPrefab));
+                inventory["IceArrows"]--;
+                if(inventory["IceArrows"] <= 0)
+                {
+                    inventory.Remove("IceArrows");
+                }
+            }
+
+            if (inventory.ContainsKey("FireArrows"))
+            {
+                StartCoroutine(ShootArrow(fireArrowPrefab));
+                inventory["FireArrows"]--;
+                if (inventory["FireArrows"] <= 0)
+                {
+                    inventory.Remove("FireArrows");
+                }
+            }
+
             StartCoroutine(bowAttackCooldownRoutine());
         }
 
@@ -291,22 +328,56 @@ public class PlayerController : MonoBehaviour
         //Sword
         if (Input.GetKeyDown(KeyCode.DownArrow) && canSwordAttack)
         {
-            canSwordAttack = false;
-            if(this.sendToGoogle != null)
+            if(usingFireSword == true || usingIceSword == true)
             {
-                sendToGoogle.HitCount();
-            }
-            playerAnimator.SetBool("attack", true);
-            StartCoroutine(resetSwordAttackAnimation());
+                canSwordAttack = false;
+                if (this.sendToGoogle != null)
+                {
+                    sendToGoogle.HitCount();
+                }
+                playerAnimator.SetBool("attack", true); //TODO: Need to set based on actual sword animation
+                StartCoroutine(resetSwordAttackAnimation());
 
-            if (currentArrowEnemyPlayerFighting != null)
-            {
-                currentArrowEnemyPlayerFighting.TakeHits(1);
             }
+
+
+            if(usingIceSword == true)
+            {
+
+                if (currentArrowEnemyPlayerFighting != null && currentArrowEnemyPlayerFighting.CompareTag("FireArrowEnemy"))
+                {
+                    currentArrowEnemyPlayerFighting.TakeHits(1);
+                }
+
+                if (currentSwordEnemyPlayerFighting != null && currentSwordEnemyPlayerFighting.CompareTag("FireSwordEnemy"))
+                {
+                    currentSwordEnemyPlayerFighting.TakeHits(1);
+                }
+
+
+
+            }
+
+
+            if (usingFireSword == true)
+            {
+                if (currentArrowEnemyPlayerFighting != null && currentArrowEnemyPlayerFighting.CompareTag("IceArrowEnemy"))
+                {
+                    currentArrowEnemyPlayerFighting.TakeHits(1);
+
+                }
+
+                if (currentSwordEnemyPlayerFighting != null && currentSwordEnemyPlayerFighting.CompareTag("IceSwordEnemy"))
+                {
+                    currentSwordEnemyPlayerFighting.TakeHits(1);
+                }
+
+            }
+
 
             if (currentSwordEnemyPlayerFighting != null)
             {
-                if ((!currentSwordEnemyPlayerFighting.CompareTag("Dead") && !currentSwordEnemyPlayerFighting.CompareTag("WhiteWalker") && !currentSwordEnemyPlayerFighting.CompareTag("NightKing")) || this.isValyrian)
+                if ((currentSwordEnemyPlayerFighting.CompareTag("Dead") || currentSwordEnemyPlayerFighting.CompareTag("WhiteWalker") || currentSwordEnemyPlayerFighting.CompareTag("NightKing")) && this.isValyrian)
                 {
                     currentSwordEnemyPlayerFighting.TakeHits(1);
                 }
@@ -484,6 +555,69 @@ public class PlayerController : MonoBehaviour
             isInNightKingArea = true;
         }
 
+        if(collision.CompareTag("IceSword"))
+        {
+            // TODO: Set Movement Animation With Ice Sword
+
+            if(usingFireSword == true)
+            {
+                usingFireSword = false;
+            }
+
+            usingIceSword = true;
+            Destroy(collision.gameObject);
+            StartCoroutine(DisplayTextForDuration("Picked up Ice-Sword!", 1.0f, Color.cyan));
+        }
+
+        if (collision.CompareTag("FireSword"))
+        {
+            // TODO: Set Movement Animation With Fire Sword
+
+            if (usingIceSword == true)
+            {
+                usingIceSword = false;
+            }
+
+            usingFireSword = true;
+            Destroy(collision.gameObject);
+            StartCoroutine(DisplayTextForDuration("Picked up Fire-Sword!", 1.0f, Color.yellow));
+
+        }
+
+        if (collision.CompareTag("FireArrows"))
+        {
+            // TODO: Set Movement Animation With Fire Sword
+
+            if (usingIceArrows == true)
+            {
+                inventory.Remove("IceArrows");
+                usingIceArrows = false;
+            }
+
+            usingFireArrows = true;
+            inventory["FireArrows"] = 100;
+            Destroy(collision.gameObject);
+            StartCoroutine(DisplayTextForDuration("Got 100X Fire-Arrows!", 3.0f, Color.yellow));
+
+        }
+
+
+        if (collision.CompareTag("IceArrows"))
+        {
+            // TODO: Set Movement Animation With Fire Sword
+
+            if (usingFireArrows == true)
+            {
+                inventory.Remove("FireArrows");
+                usingFireArrows = false;
+            }
+
+            usingIceArrows = true;
+            inventory["IceArrows"] = 100;
+            Destroy(collision.gameObject);
+            StartCoroutine(DisplayTextForDuration("Got 100X Ice-Arrows!", 3.0f, Color.cyan));
+
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -604,13 +738,13 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator swordAttackCooldownRoutine()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         canSwordAttack = true; // Reset the flag after cooldown
     }
 
     private IEnumerator bowAttackCooldownRoutine()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
         canArrowAttack = true; // Reset the flag after cooldown
     }
 

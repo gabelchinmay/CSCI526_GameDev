@@ -28,19 +28,24 @@ public class ArrowBehavior : MonoBehaviour
 
         sendToGoogle = SendToGoogle.currentSendToGoogle;
         //PerformActionBeforeDestroy();
-        if (!(collision.CompareTag("sword_enemy") || collision.CompareTag("arrow_enemy")))
+        if (!(collision.CompareTag("IceSwordEnemy") || collision.CompareTag("IceArrowEnemy") || collision.CompareTag("FireSwordEnemy") || collision.CompareTag("FireArrowEnemy")))
         {
             
             Destroy(gameObject);
 
         }
-        if (collision.CompareTag("enemy")|| (collision.CompareTag("sword_enemy") || collision.CompareTag("arrow_enemy")))
+
+        //TODO: Need to change this for analytics
+        if (collision.CompareTag("IceSwordEnemy") || collision.CompareTag("IceArrowEnemy") || collision.CompareTag("FireSwordEnemy") || collision.CompareTag("FireArrowEnemy"))
         {
             Debug.Log("got shoot!");
+            if (sendToGoogle != null)
+            {
+                sendToGoogle.HitCount();
 
-            sendToGoogle.HitCount();
+            }
+
         }
     }
-            // Destroy the arrow
             
 }
