@@ -8,7 +8,11 @@ public class KeyGateController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null && player.CompareTag("EDW"))
+        {
+            openGate();
+        }
     }
 
     // Update is called once per frame
@@ -22,6 +26,8 @@ public class KeyGateController : MonoBehaviour
         hingeJoint.useMotor = true;
 
     }
+
+   
 
 
 }
