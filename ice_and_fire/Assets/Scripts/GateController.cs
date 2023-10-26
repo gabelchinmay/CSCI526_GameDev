@@ -30,6 +30,7 @@ public class GateController : MonoBehaviour
         }
     }
 
+  
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,6 +39,13 @@ public class GateController : MonoBehaviour
         {
             HingeJoint2D hingeJoint = hingedGate.GetComponent<HingeJoint2D>();
             hingeJoint.useMotor = true; 
+            spriteRenderer.enabled = false;
+        }
+
+        if (collision.gameObject.CompareTag("MOD")) // MOD mother Fire dragon no need ice holder
+        {
+            HingeJoint2D hingeJoint = hingedGate.GetComponent<HingeJoint2D>();
+            hingeJoint.useMotor = true;
             spriteRenderer.enabled = false;
         }
     }
