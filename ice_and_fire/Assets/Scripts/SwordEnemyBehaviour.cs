@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class SwordEnemyBehaviour : MonoBehaviour
 {
-    private int hitCount = 0;
     public int maxHits = 3;
+    public float amplitude = 5f;
+    public float frequency = 1 / 2f;
+
+    private int hitCount = 0;
     private bool isAttacking = false;
     private Animator playerAnimator;
     private float previousOscillation = 0f;
-
-    public float amplitude = 5f; 
-    public float frequency = 1 / 2f; 
-
-
     private Vector3 initialPosition;
-
     private bool canMove = true;
-
     private bool isOnFire = false;
+    private string swordEnemyType;
 
 
     void Start()
     {
+        this.swordEnemyType = this.gameObject.tag;
         playerAnimator = GetComponent<Animator>();
         initialPosition = transform.position;
         playerAnimator.SetBool("attack", true);
@@ -129,19 +127,52 @@ public class SwordEnemyBehaviour : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Trigger:" + other.tag);
-        if (other.CompareTag("arrow"))
+        if (other.CompareTag("FireArrow") || other.CompareTag("IceArrow"))
         {
-            hitCount++;
-
             Destroy(other.gameObject);
+        }
 
-            if (hitCount >= maxHits)
+        if (swordEnemyType == "IceSwordEnemy")
+        {
+            if (other.CompareTag("FireArrow"))
             {
-                SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
-                sendToGoogle.killEnemy();
-                Destroy(gameObject);
+                hitCount++;
+
+
+                if (hitCount >= maxHits)
+                {
+
+                    SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+                    if (sendToGoogle != null)
+                    {
+                        sendToGoogle.killEnemy();
+
+                    }
+                    Destroy(gameObject);
+                }
             }
+
+        }
+
+        if (swordEnemyType == "FireSwordEnemy")
+        {
+            if (other.CompareTag("IceArrow"))
+            {
+                hitCount++;
+
+                if (hitCount >= maxHits)
+                {
+
+                    SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+                    if (sendToGoogle != null)
+                    {
+                        sendToGoogle.killEnemy();
+
+                    }
+                    Destroy(gameObject);
+                }
+            }
+
         }
 
         if (other.CompareTag("FireArea"))
