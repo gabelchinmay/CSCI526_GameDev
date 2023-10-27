@@ -10,7 +10,7 @@ public class DestroyPlatfromByMass : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && collision.gameObject.GetComponent<Rigidbody2D>().mass >= breakMass)
+        if (collision.gameObject.CompareTag("Player") && collision.gameObject.GetComponent<Rigidbody2D>().mass >= massThreshold)
         {
             playerOnPlatform = true;
         }
@@ -20,7 +20,7 @@ public class DestroyPlatfromByMass : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (playerOnPlatform && collision.gameObject.GetComponent<Rigidbody2D>().mass >= breakMass)
+            if (playerOnPlatform && collision.gameObject.GetComponent<Rigidbody2D>().mass >= massThreshold)
             {
                 Destroy(gameObject);
             }
