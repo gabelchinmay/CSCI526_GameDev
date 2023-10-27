@@ -16,11 +16,12 @@ public class SwordEnemyBehaviour : MonoBehaviour
     private bool canMove = true;
     private bool isOnFire = false;
     private string swordEnemyType;
-
+    private SendToGoogle sendToGoogle;
 
     void Start()
     {
         this.swordEnemyType = this.gameObject.tag;
+        this.sendToGoogle = FindObjectOfType<SendToGoogle>();
         playerAnimator = GetComponent<Animator>();
         initialPosition = transform.position;
         playerAnimator.SetBool("shoot", false);
@@ -122,7 +123,8 @@ public class SwordEnemyBehaviour : MonoBehaviour
         playerAnimator.SetBool("isHurt", true);
         StartCoroutine(resetHurtAnimation());
         hitCount +=amt;
-
+        // sword attack count
+        sendToGoogle.SwordAttackCount(hitCount);
         if (hitCount >= maxHits)
         {
             SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();

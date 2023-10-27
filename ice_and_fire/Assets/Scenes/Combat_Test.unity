@@ -1947,7 +1947,7 @@ GameObject:
   - component: {fileID: 1229521395}
   m_Layer: 0
   m_Name: NightKingArea
-  m_TagString: NightKingArea
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3560,6 +3560,7 @@ MonoBehaviour:
   ArrowCount: 0
   ArrowHitsEnemyCount: 0
   KillCount: 0
+  SwordDamageCount: 0
 --- !u!4 &2137968510
 Transform:
   m_ObjectHideFlags: 0

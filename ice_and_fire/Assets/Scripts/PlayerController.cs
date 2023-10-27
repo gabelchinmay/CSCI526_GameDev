@@ -125,11 +125,13 @@ public class PlayerController : MonoBehaviour
 
     public void EDWpassFireGate()
     {
-        if(keyGateController != null)
+
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("EDW");
+        foreach (GameObject obj in objectsWithTag)
         {
             keyGateController.EDWpassGate();
-
         }
+        
     }
 
 
