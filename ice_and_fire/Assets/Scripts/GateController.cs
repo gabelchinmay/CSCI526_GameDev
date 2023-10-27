@@ -1,16 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class GateController : MonoBehaviour
 {
     public GameObject hingedGate;
-    private SpriteRenderer spriteRenderer;
-
+    private SpriteRenderer spriteRenderer; 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-
     }
 
     private void Update()
@@ -28,11 +25,8 @@ public class GateController : MonoBehaviour
             }
 
         }
+
     }
-
-  
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -77,6 +71,11 @@ public class GateController : MonoBehaviour
         }
 
         return null;
+    }
+
+    public void OpenFireGate()
+    {
+        hingedGate.GetComponent<Collider2D>().enabled = false;
     }
 
 

@@ -67,16 +67,20 @@ public class PlayerController : MonoBehaviour
     private ArrowEnemyBehavior currentArrowEnemyPlayerFighting = null;
     private SwordEnemyBehaviour currentSwordEnemyPlayerFighting = null;
     private SendToGoogle sendToGoogle;
-
+    private GameObject Myobj;
+    private GateController gateController;
 
     private void Awake()
     {
         playerAnimator = GetComponent<Animator>();
+        
     }
 
     void Start()
     {
         this.sendToGoogle = FindObjectOfType<SendToGoogle>();
+        this.gateController = FindObjectOfType<GateController>();
+        
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         UpdateHealthUI();
@@ -94,6 +98,9 @@ public class PlayerController : MonoBehaviour
         UpdateInventoryTxt();
         MovePlayer();
         ButtonControls();
+        MODpassFireGate();// open gate
+
+
     }
 
     private void InitAnimations()
@@ -103,6 +110,15 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetBool("iceSwordAttack", false);
         playerAnimator.SetBool("shoot", false);
         playerAnimator.SetBool("isHurt", false);
+    }
+
+    public void MODpassFireGate()
+    {
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("MOD");
+        foreach (GameObject obj in objectsWithTag)
+        {
+            gateController.OpenFireGate();
+        }
     }
 
 
@@ -409,6 +425,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void MODopenDoor()
+    {
+
+    }
 
     private void HandleIceFireJumpEffects()
     {
@@ -1069,7 +1089,6 @@ public class PlayerController : MonoBehaviour
     {
         //isGettingSwordHits = false;
         currentArrowEnemyPlayerFighting = null;
-
     }
 
     // implement dragons' damage to players
@@ -1088,13 +1107,10 @@ public class PlayerController : MonoBehaviour
     {
         this.TakeDamage(17);
         isOnIceDragon = true;
-
     }
 
     public void OnIceDragonFireExit(IceFireBehaviour iceFire)
     {
         isOnIceDragon = false;
-
-
     }
 }
