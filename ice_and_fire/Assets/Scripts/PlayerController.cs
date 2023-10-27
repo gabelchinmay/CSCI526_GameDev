@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
         UpdateInventoryTxt();
         MovePlayer();
         ButtonControls();
-        MODpassFireGate();
+        MODpassFireGate();// open gate
 
 
     }
