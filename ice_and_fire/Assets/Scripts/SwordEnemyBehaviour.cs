@@ -36,7 +36,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
 
             float oscillation = amplitude * Mathf.Sin(frequency * Time.time);
             transform.position = initialPosition + Vector3.right * oscillation;
-
+            playerAnimator.SetFloat("speed", oscillation);
 
             if (oscillation > previousOscillation)
             {
