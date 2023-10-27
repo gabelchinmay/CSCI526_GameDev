@@ -568,7 +568,7 @@ public class PlayerController : MonoBehaviour
             gameOverScreen.SetUp();
         }
 
-        if (collision.CompareTag("MegaEnhancer"))
+        if (collision.CompareTag("DragonEgg"))
         {
             StartCoroutine(DisplayTextForDuration("Picked up a Dragon egg!", 3.0f, Color.yellow));
             Destroy(collision.gameObject);
