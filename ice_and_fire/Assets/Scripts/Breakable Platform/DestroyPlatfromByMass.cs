@@ -6,7 +6,7 @@ using UnityEngine;
 public class DestroyPlatfromByMass : MonoBehaviour
 {
     private bool playerOnPlatform = false;
-    public int breakMass = 0;
+    private float massThreshold = 5f;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
