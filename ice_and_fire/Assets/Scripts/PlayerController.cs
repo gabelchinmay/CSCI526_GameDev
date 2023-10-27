@@ -984,7 +984,7 @@ public class PlayerController : MonoBehaviour
 
         if (this.direction == -1)
         {
-            offset = transform.position + Vector3.up * 0.5f + Vector3.left * 2.5f;
+            offset = transform.position + Vector3.up * 0.5f + Vector3.left * 3.5f;
             arrow = Instantiate(arrowType, offset, Quaternion.identity);
             arrow.GetComponent<SpriteRenderer>().flipX = true;
             a = arrow.GetComponent<Rigidbody2D>();
@@ -993,7 +993,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            offset = transform.position + Vector3.up * 0.5f + Vector3.right * 2.5f;
+            offset = transform.position + Vector3.up * 0.5f + Vector3.right * 3.5f;
             arrow = Instantiate(arrowType, offset, Quaternion.identity);
             a = arrow.GetComponent<Rigidbody2D>();
             a.velocity = new Vector2(35f * this.direction, 0);
