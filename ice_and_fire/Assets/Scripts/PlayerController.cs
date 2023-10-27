@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
     //public Variables
     public int maxHealth = 100;
     public int killCount = 0;
-    public float playerMassMultiplicationFactor = 100f;
-    public float playerJumpForceMultiplicationFactor = 100f;
+    public float playerMassMultiplicationFactor = 2f;
+    public float playerJumpForceMultiplicationFactor = 2f;
     public string playerStyle = "normal";
     public TMP_Text healthText;
     public TMP_Text gameOverText;
@@ -560,32 +560,28 @@ public class PlayerController : MonoBehaviour
 
         if (collision.CompareTag("Gap"))
         {
-            // destroy player object
             this.freeze();
             gameOverScreen.SetUp();
         }
 
         if (collision.CompareTag("MegaEnhancer"))
         {
-            StartCoroutine(DisplayTextForDuration("Picked up MegaEnhancer!", 3.0f, Color.yellow));
+            StartCoroutine(DisplayTextForDuration("Picked up a Dragon egg!", 3.0f, Color.yellow));
             Destroy(collision.gameObject);
-            this.transform.localScale += new Vector3(0.2f, 0.2f, 0.2f);
             rb.mass *= playerMassMultiplicationFactor;
             jumpForce *= playerJumpForceMultiplicationFactor;
         }
 
         if (collision.CompareTag("arrow"))
-        {
-        
+        {       
             this.TakeDamage(2);
             Destroy(collision.gameObject);
-
         }
 
         if (collision.CompareTag("ValyrianSword"))
         {
-            Destroy(collision.gameObject);
             this.isValyrian = true;
+            Destroy(collision.gameObject);
         }
 
         if (collision.CompareTag("FireArea"))
@@ -734,7 +730,7 @@ public class PlayerController : MonoBehaviour
         if (!isGameOver)
         {
             float mass = rb.mass;
-            jumpForce *= mass;
+            //jumpForce *= mass;
 
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -958,7 +954,6 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator InflictColdDamage()
     {
-        Debug.Log("Damage");
         while (true)
         {
             if (isInColdArea)
@@ -1016,7 +1011,7 @@ public class PlayerController : MonoBehaviour
 
         if (this.direction == -1)
         {
-            offset = transform.position + Vector3.up * 0.5f + Vector3.left * 2.5f;
+            offset = transform.position + Vector3.up * 0.5f + Vector3.left * 3.5f;
             arrow = Instantiate(arrowType, offset, Quaternion.identity);
             arrow.GetComponent<SpriteRenderer>().flipX = true;
             a = arrow.GetComponent<Rigidbody2D>();
@@ -1025,7 +1020,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            offset = transform.position + Vector3.up * 0.5f + Vector3.right * 2.5f;
+            offset = transform.position + Vector3.up * 0.5f + Vector3.right * 3.5f;
             arrow = Instantiate(arrowType, offset, Quaternion.identity);
             a = arrow.GetComponent<Rigidbody2D>();
             a.velocity = new Vector2(35f * this.direction, 0);
