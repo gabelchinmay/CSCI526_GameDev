@@ -27,7 +27,14 @@ public class KeyGateController : MonoBehaviour
 
     }
 
-   
+    public void EDWpassGate()
+    {
+        HingeJoint2D hingeJoint = hingedGate.GetComponent<HingeJoint2D>();
+        hingeJoint.GetComponent<Collider2D>().enabled = false;
+
+    }
+
+
 
 
 }

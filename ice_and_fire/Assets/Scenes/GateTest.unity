@@ -948,6 +948,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Tutorial 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2896113918490553937, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.25177
+      objectReference: {fileID: 0}
     - target: {fileID: 3278267854159422273, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2300,6 +2304,10 @@ PrefabInstance:
     - target: {fileID: 6083283999004043883, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: m_Name
       value: Chinmay
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083283999004043883, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6083283999004043884, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: HealthBar

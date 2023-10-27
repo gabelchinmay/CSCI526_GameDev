@@ -51,6 +51,7 @@ TagManager:
   - IceArrowEnemy
   - FireArrowEnemy
   - MOD
+  - EDW
   layers:
   - Default
   - TransparentFX
