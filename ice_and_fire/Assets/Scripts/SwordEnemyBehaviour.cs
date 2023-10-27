@@ -23,7 +23,9 @@ public class SwordEnemyBehaviour : MonoBehaviour
         this.swordEnemyType = this.gameObject.tag;
         playerAnimator = GetComponent<Animator>();
         initialPosition = transform.position;
-        playerAnimator.SetBool("attack", true);
+        playerAnimator.SetBool("shoot", false);
+        playerAnimator.SetBool("isHurt", false);
+        playerAnimator.SetBool("attack", false);
         previousOscillation = amplitude * Mathf.Sin(frequency * Time.time);
         StartCoroutine(InflictDamages());
 
@@ -115,12 +117,19 @@ public class SwordEnemyBehaviour : MonoBehaviour
 
     public void TakeHits(int amt)
     {
-        hitCount+=amt;
+        //isAttacking = false;
+        //canMove = false;
+        playerAnimator.SetBool("isHurt", true);
+        StartCoroutine(resetHurtAnimation());
+        hitCount +=amt;
 
         if (hitCount >= maxHits)
         {
             SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
-            sendToGoogle.killEnemy();
+            if(sendToGoogle != null)
+            {
+                sendToGoogle.killEnemy();
+            }
             Destroy(gameObject);
         }
     }
@@ -136,20 +145,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
         {
             if (other.CompareTag("FireArrow"))
             {
-                hitCount++;
-
-
-                if (hitCount >= maxHits)
-                {
-
-                    SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
-                    if (sendToGoogle != null)
-                    {
-                        sendToGoogle.killEnemy();
-
-                    }
-                    Destroy(gameObject);
-                }
+                this.TakeHits(1);
             }
 
         }
@@ -158,19 +154,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
         {
             if (other.CompareTag("IceArrow"))
             {
-                hitCount++;
-
-                if (hitCount >= maxHits)
-                {
-
-                    SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
-                    if (sendToGoogle != null)
-                    {
-                        sendToGoogle.killEnemy();
-
-                    }
-                    Destroy(gameObject);
-                }
+                this.TakeHits(1);
             }
 
         }
@@ -194,6 +178,15 @@ public class SwordEnemyBehaviour : MonoBehaviour
     }
 
 
+    private IEnumerator resetHurtAnimation()
+    {
+        yield return new WaitForSeconds(1f);
+        playerAnimator.SetBool("isHurt", false);
+        //isAttacking = false;
+        //canMove = true;
+    }
+
+
     private IEnumerator InflictDamages()
     {
         while (true)
@@ -207,6 +200,5 @@ public class SwordEnemyBehaviour : MonoBehaviour
 
         }
     }
-
 
 }

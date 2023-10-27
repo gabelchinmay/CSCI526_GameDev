@@ -13,6 +13,7 @@ public class ArrowEnemyBehavior : MonoBehaviour
     private Animator playerAnimator;
     private string arrowEnemyType;
     private bool isOnFire = false;
+    private bool canAttack = true;
 
 
     void Start()
@@ -20,6 +21,8 @@ public class ArrowEnemyBehavior : MonoBehaviour
         this.arrowEnemyType = this.gameObject.tag;
         playerAnimator = GetComponent<Animator>();
         playerAnimator.SetBool("shoot", true);
+        playerAnimator.SetBool("isHurt", false);
+        playerAnimator.SetBool("attack", false);
         InvokeRepeating("ShootArrow", 0f, shootInterval);
         StartCoroutine(InflictDamages());
 
@@ -33,10 +36,14 @@ public class ArrowEnemyBehavior : MonoBehaviour
 
     void ShootArrow()
     {
-        Vector3 offset = transform.position + Vector3.up * 1f + Vector3.left * 2f;
-        GameObject arrow = Instantiate(arrowPrefab, offset, Quaternion.identity);
-        Rigidbody2D a = arrow.GetComponent<Rigidbody2D>();
-        a.velocity = new Vector2(-15f, 0); // Shooting to the left
+        if (canAttack) {
+            Vector3 offset = transform.position + Vector3.up * 1f + Vector3.left * 2f;
+            GameObject arrow = Instantiate(arrowPrefab, offset, Quaternion.identity);
+            Rigidbody2D a = arrow.GetComponent<Rigidbody2D>();
+            a.velocity = new Vector2(-15f, 0); // Shooting to the left
+        }
+
+
     }
 
 
@@ -51,20 +58,7 @@ public class ArrowEnemyBehavior : MonoBehaviour
         {
             if (other.CompareTag("FireArrow"))
             {
-                hitCount++;
-
-
-                if (hitCount >= maxHits)
-                {
-
-                    SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
-                    if(sendToGoogle != null)
-                    {
-                        sendToGoogle.killEnemy();
-
-                    }
-                    Destroy(gameObject);
-                }
+                TakeHits(1);
             }
 
         }
@@ -73,19 +67,7 @@ public class ArrowEnemyBehavior : MonoBehaviour
         {
             if (other.CompareTag("IceArrow"))
             {
-                hitCount++;
-
-                if (hitCount >= maxHits)
-                {
-
-                    SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
-                    if (sendToGoogle != null)
-                    {
-                        sendToGoogle.killEnemy();
-
-                    }
-                    Destroy(gameObject);
-                }
+                TakeHits(1);
             }
 
         }
@@ -146,6 +128,11 @@ public class ArrowEnemyBehavior : MonoBehaviour
     {
         hitCount+=amt;
 
+        playerAnimator.SetBool("shoot", false);
+        playerAnimator.SetBool("isHurt", true);
+        this.canAttack = false;
+        StartCoroutine(resetHurtAnimation());
+
         if (hitCount >= maxHits)
         {
             SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
@@ -171,6 +158,16 @@ public class ArrowEnemyBehavior : MonoBehaviour
             yield return new WaitForSeconds(1.0f);
 
         }
+    }
+
+    private IEnumerator resetHurtAnimation()
+    {
+        yield return new WaitForSeconds(1f);
+        playerAnimator.SetBool("shoot", true);
+        playerAnimator.SetBool("isHurt", false);
+        this.canAttack = true;
+
+
     }
 
 }

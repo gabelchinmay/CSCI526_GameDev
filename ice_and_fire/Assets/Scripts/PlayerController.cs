@@ -151,7 +151,7 @@ public class PlayerController : MonoBehaviour
                 InventoryText.text += "\nPlaceholders: " + inventory["Placeholder"];
             }
 
-            if (inventory.ContainsKey("InvincibleShield")) // Inverntory text for invincible shield
+            if (inventory.ContainsKey("InvincibleShield")) 
             {
                 InventoryText.text += "\nInvincible Shield: " + inventory["InvincibleShield"];
             }
@@ -605,7 +605,6 @@ public class PlayerController : MonoBehaviour
 
         if(collision.CompareTag("IceSword"))
         {
-            // TODO: Set Movement Animation With Ice Sword
 
             if(usingFireSword == true)
             {
@@ -619,7 +618,6 @@ public class PlayerController : MonoBehaviour
 
         if (collision.CompareTag("FireSword"))
         {
-            // TODO: Set Movement Animation With Fire Sword
 
             if (usingIceSword == true)
             {
@@ -634,7 +632,6 @@ public class PlayerController : MonoBehaviour
 
         if (collision.CompareTag("FireArrows"))
         {
-            // TODO: Set Movement Animation With Fire Sword
 
             if (usingIceArrows == true)
             {
@@ -652,7 +649,6 @@ public class PlayerController : MonoBehaviour
 
         if (collision.CompareTag("IceArrows"))
         {
-            // TODO: Set Movement Animation With Fire Sword
 
             if (usingFireArrows == true)
             {
