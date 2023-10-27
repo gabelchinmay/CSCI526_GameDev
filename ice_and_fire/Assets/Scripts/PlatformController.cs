@@ -6,7 +6,7 @@ public class PlatformController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     public string platformType;
-
+    public float rotationSpeed = 30f;
 
     private void Start()
     {
@@ -31,7 +31,7 @@ public class PlatformController : MonoBehaviour
 
     private void Update()
     {
-
+        transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
     }
 
     private IEnumerator ColorTriChangingLoop()

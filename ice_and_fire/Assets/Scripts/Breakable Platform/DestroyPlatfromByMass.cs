@@ -7,25 +7,35 @@ public class DestroyPlatfromByMass : MonoBehaviour
 {
     private bool playerOnPlatform = false;
     private float massThreshold = 5f;
+    public float fadeSpeed = 1.0f;
+    private SpriteRenderer spriteRenderer;
+    private Color currentColor;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Start()
     {
-        if (collision.gameObject.CompareTag("Player") && collision.gameObject.GetComponent<Rigidbody2D>().mass >= breakMass)
-        {
-            playerOnPlatform = true;
-        }
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        currentColor = spriteRenderer.color;
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void Update()
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            if (playerOnPlatform && collision.gameObject.GetComponent<Rigidbody2D>().mass >= breakMass)
+        if (playerOnPlatform)
+        { 
+            currentColor.a -= fadeSpeed * Time.deltaTime;
+            spriteRenderer.color = currentColor;
+
+            if (currentColor.a <= 0)
             {
                 Destroy(gameObject);
             }
+        }
+    }
 
-            playerOnPlatform = false;
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && collision.gameObject.GetComponent<Rigidbody2D>().mass >= massThreshold)
+        {
+            playerOnPlatform = true;
         }
     }
 }

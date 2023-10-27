@@ -125,7 +125,11 @@ public class PlayerController : MonoBehaviour
 
     public void EDWpassFireGate()
     {
-        keyGateController.EDWpassGate();
+        if(keyGateController != null)
+        {
+            keyGateController.EDWpassGate();
+
+        }
     }
 
 
@@ -147,7 +151,7 @@ public class PlayerController : MonoBehaviour
                 InventoryText.text += "\nPlaceholders: " + inventory["Placeholder"];
             }
 
-            if (inventory.ContainsKey("InvincibleShield")) // Inverntory text for invincible shield
+            if (inventory.ContainsKey("InvincibleShield")) 
             {
                 InventoryText.text += "\nInvincible Shield: " + inventory["InvincibleShield"];
             }
@@ -200,13 +204,13 @@ public class PlayerController : MonoBehaviour
             if (horizontalInput < 0)
             {
                 spriteRenderer.flipX = true;
-                direction = -1;
+                this.direction = -1;
 
             }
-            else
+            else if(horizontalInput > 0)
             {
                 spriteRenderer.flipX = false;
-                direction = 1;
+                this.direction = 1;
             }
         }
         else
@@ -601,7 +605,6 @@ public class PlayerController : MonoBehaviour
 
         if(collision.CompareTag("IceSword"))
         {
-            // TODO: Set Movement Animation With Ice Sword
 
             if(usingFireSword == true)
             {
@@ -615,7 +618,6 @@ public class PlayerController : MonoBehaviour
 
         if (collision.CompareTag("FireSword"))
         {
-            // TODO: Set Movement Animation With Fire Sword
 
             if (usingIceSword == true)
             {
@@ -630,7 +632,6 @@ public class PlayerController : MonoBehaviour
 
         if (collision.CompareTag("FireArrows"))
         {
-            // TODO: Set Movement Animation With Fire Sword
 
             if (usingIceArrows == true)
             {
@@ -648,7 +649,6 @@ public class PlayerController : MonoBehaviour
 
         if (collision.CompareTag("IceArrows"))
         {
-            // TODO: Set Movement Animation With Fire Sword
 
             if (usingFireArrows == true)
             {
@@ -1008,7 +1008,7 @@ public class PlayerController : MonoBehaviour
         {
             offset = transform.position + Vector3.up * 0.5f + Vector3.left * 3.5f;
             arrow = Instantiate(arrowType, offset, Quaternion.identity);
-            arrow.GetComponent<SpriteRenderer>().flipX = true;
+            arrow.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
             a = arrow.GetComponent<Rigidbody2D>();
             a.velocity = new Vector2(35f * this.direction, 0);
 
