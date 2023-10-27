@@ -12,8 +12,6 @@ public class PlayerController : MonoBehaviour
     //public Variables
     public int maxHealth = 100;
     public int killCount = 0;
-    public float playerMassMultiplicationFactor = 2f;
-    public float playerJumpForceMultiplicationFactor = 2f;
     public string playerStyle = "normal";
     public TMP_Text healthText;
     public TMP_Text gameOverText;
@@ -57,6 +55,8 @@ public class PlayerController : MonoBehaviour
     private int direction = 1;
     private float speed = 10.0f;
     private float jumpForce = 8.0f;
+    private float playerMassMultiplicationFactor = 2f;
+    private float playerJumpForceMultiplicationFactor = 2f;
     private Rigidbody2D rb;
     private PlatformController CurrPlatform = null;
     private Color currentColour;
@@ -729,20 +729,15 @@ public class PlayerController : MonoBehaviour
     {
         if (!isGameOver)
         {
-            float mass = rb.mass;
-            //jumpForce *= mass;
-
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
-
     }
 
     private void DefenseWallPowerUp()
     {
         Vector3 offset = transform.position + Vector3.up * 0.6f + Vector3.right * 2f;
         Instantiate(defenseWallPrefab, offset, Quaternion.identity);
-
     }
 
     public void TakeDamage(int damageAmount)
