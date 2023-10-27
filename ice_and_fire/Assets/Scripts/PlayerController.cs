@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
     private ArrowEnemyBehavior currentArrowEnemyPlayerFighting = null;
     private SwordEnemyBehaviour currentSwordEnemyPlayerFighting = null;
     private SendToGoogle sendToGoogle;
-    public GameObject Myobj;
+    private GameObject Myobj;
     private GateController gateController;
 
     private void Awake()
