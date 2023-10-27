@@ -52,6 +52,7 @@ TagManager:
   - FireArrowEnemy
   - MOD
   - EDW
+  - DragonEgg
   layers:
   - Default
   - TransparentFX
