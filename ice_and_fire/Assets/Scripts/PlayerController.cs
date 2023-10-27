@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour
     private SendToGoogle sendToGoogle;
     private GameObject Myobj;
     private GateController gateController;
+    private KeyGateController keyGateController;
 
     private void Awake()
     {
@@ -80,7 +81,8 @@ public class PlayerController : MonoBehaviour
     {
         this.sendToGoogle = FindObjectOfType<SendToGoogle>();
         this.gateController = FindObjectOfType<GateController>();
-        
+        this.keyGateController = FindObjectOfType<KeyGateController>();
+
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         UpdateHealthUI();
@@ -99,7 +101,7 @@ public class PlayerController : MonoBehaviour
         MovePlayer();
         ButtonControls();
         MODpassFireGate();// open gate
-
+        EDWpassFireGate(); //EDW unlock door
 
     }
 
@@ -119,6 +121,11 @@ public class PlayerController : MonoBehaviour
         {
             gateController.OpenFireGate();
         }
+    }
+
+    public void EDWpassFireGate()
+    {
+        keyGateController.EDWpassGate();
     }
 
 
