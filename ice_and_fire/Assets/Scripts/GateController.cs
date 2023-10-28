@@ -30,6 +30,7 @@ public class GateController : MonoBehaviour
         if (style == "fire")
         {
             OpenFireGate();
+            spriteRenderer.enabled = false;
         }
 
     }
