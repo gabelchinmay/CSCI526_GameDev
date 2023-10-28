@@ -4,7 +4,8 @@ using UnityEngine;
 public class GateController : MonoBehaviour
 {
     public GameObject hingedGate;
-    private SpriteRenderer spriteRenderer; 
+    private SpriteRenderer spriteRenderer;
+    private string style;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -26,6 +27,11 @@ public class GateController : MonoBehaviour
 
         }
 
+        if (style == "fire")
+        {
+            OpenFireGate();
+        }
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -39,8 +45,7 @@ public class GateController : MonoBehaviour
         if (collision.gameObject.CompareTag("MOD")) // MOD mother Fire dragon no need ice holder
         {
             HingeJoint2D hingeJoint = hingedGate.GetComponent<HingeJoint2D>();
-            hingeJoint.useMotor = true;
-            spriteRenderer.enabled = false;
+            
         }
     }
 
@@ -71,6 +76,11 @@ public class GateController : MonoBehaviour
         }
 
         return null;
+    }
+
+    public void passFireStyle(string style)
+    {
+        this.style = style;
     }
 
     public void OpenFireGate()

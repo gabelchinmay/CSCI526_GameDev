@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class KeyGateController : MonoBehaviour
 {
+    public string style;
     public GameObject hingedGate;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null && player.CompareTag("EDW"))
+        
+        if (style == "ice")
         {
             openGate();
         }
@@ -19,20 +20,22 @@ public class KeyGateController : MonoBehaviour
     void Update()
     {
         
+
+        
+    }
+
+    public void passStyle(string style)
+    {
+        this.style = style;
     }
 
     public void openGate() {
         HingeJoint2D hingeJoint = hingedGate.GetComponent<HingeJoint2D>();
-        hingeJoint.useMotor = true;
-
-    }
-
-    public void EDWpassGate()
-    {
-        HingeJoint2D hingeJoint = hingedGate.GetComponent<HingeJoint2D>();
         hingeJoint.GetComponent<Collider2D>().enabled = false;
 
     }
+
+    
 
 
 
