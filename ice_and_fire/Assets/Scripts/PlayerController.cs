@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
     private int currentHealth;
     private int direction = 1;
     private float speed = 10.0f;
-    private float jumpForce = 8.0f;
+    private float jumpForce = 10.0f;
     private float playerMassMultiplicationFactor = 2f;
     private float playerJumpForceMultiplicationFactor = 2f;
     private Rigidbody2D rb;
