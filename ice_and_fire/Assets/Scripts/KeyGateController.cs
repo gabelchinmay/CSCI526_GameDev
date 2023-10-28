@@ -10,18 +10,18 @@ public class KeyGateController : MonoBehaviour
     void Start()
     {
         
-        if (style == "ice")
-        {
-            openGate();
-        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
 
-        
+        if (style == "ice")
+        {
+            EdwardGate();
+        }
+
     }
 
     public void passStyle(string style)
@@ -29,13 +29,18 @@ public class KeyGateController : MonoBehaviour
         this.style = style;
     }
 
-    public void openGate() {
+    public void EdwardGate() {
         HingeJoint2D hingeJoint = hingedGate.GetComponent<HingeJoint2D>();
         hingeJoint.GetComponent<Collider2D>().enabled = false;
 
     }
+    public void openGate()
+    {
+        HingeJoint2D hingeJoint = hingedGate.GetComponent<HingeJoint2D>();
+        hingeJoint.useMotor = true;
 
-    
+    }
+
 
 
 
