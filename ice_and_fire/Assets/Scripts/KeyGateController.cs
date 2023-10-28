@@ -17,9 +17,9 @@ public class KeyGateController : MonoBehaviour
     void Update()
     {
 
-        if (style == "ice")
+        if (style == "fire")
         {
-            EdwardGate();
+            MODGate();
         }
 
     }
@@ -29,7 +29,7 @@ public class KeyGateController : MonoBehaviour
         this.style = style;
     }
 
-    public void EdwardGate() {
+    public void MODGate() {
         HingeJoint2D hingeJoint = hingedGate.GetComponent<HingeJoint2D>();
         hingeJoint.GetComponent<Collider2D>().enabled = false;
 

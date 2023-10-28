@@ -27,9 +27,9 @@ public class GateController : MonoBehaviour
 
         }
 
-        if (style == "fire")
+        if (style == "ice")
         {
-            OpenFireGate();
+            OpenIceGate();
             spriteRenderer.enabled = false;
         }
 
@@ -43,11 +43,7 @@ public class GateController : MonoBehaviour
             spriteRenderer.enabled = false;
         }
 
-        if (collision.gameObject.CompareTag("MOD")) // MOD mother Fire dragon no need ice holder
-        {
-            HingeJoint2D hingeJoint = hingedGate.GetComponent<HingeJoint2D>();
-            
-        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -84,7 +80,14 @@ public class GateController : MonoBehaviour
         this.style = style;
     }
 
-    public void OpenFireGate()
+    public void openGate()
+    {
+        HingeJoint2D hingeJoint = hingedGate.GetComponent<HingeJoint2D>();
+        hingeJoint.useMotor = true;
+
+    }
+
+    public void OpenIceGate()
     {
         hingedGate.GetComponent<Collider2D>().enabled = false;
     }
