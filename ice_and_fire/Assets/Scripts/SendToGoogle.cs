@@ -18,8 +18,9 @@ public class SendToGoogle : MonoBehaviour
     public int ArrowHitsEnemyCount = 0;
     public static SendToGoogle currentSendToGoogle;
     public int KillCount = 0;
+    public int SwordDamageCount;
 
-   
+
 
     public void Start()
     {
@@ -97,10 +98,16 @@ public class SendToGoogle : MonoBehaviour
         ArrowCount++;
     }
 
+    public void SwordAttackCount(int count)
+    {
+        SwordDamageCount = +count;
+        Debug.Log(SwordDamageCount.ToString());
+    }
+
     public void killEnemy()
     {
         KillCount++;
-        Debug.Log("u killed a JACK = =// ");
+        
 
     }
 
@@ -133,15 +140,15 @@ public class SendToGoogle : MonoBehaviour
             Debug.Log(www.result.ToString());
             yield return www.SendWebRequest();
 
-            Debug.Log("Hi first?");
+            
             if (www.result != UnityWebRequest.Result.Success)
             {
-                Debug.Log("Hello???");
+               
                 Debug.LogError(www.error);
             }
             else
             {
-                Debug.Log("good");
+                
                 Debug.Log("Form upload complete!");
 
                 Count = 0.0f;

@@ -1757,6 +1757,7 @@ MonoBehaviour:
   ArrowCount: 0
   ArrowHitsEnemyCount: 0
   KillCount: 0
+  SwordDamageCount: 0
 --- !u!1 &1702356757
 GameObject:
   m_ObjectHideFlags: 0
@@ -2307,7 +2308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6083283999004043883, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: EDW
       objectReference: {fileID: 0}
     - target: {fileID: 6083283999004043884, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: HealthBar
