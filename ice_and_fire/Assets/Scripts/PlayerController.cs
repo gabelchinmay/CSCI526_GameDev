@@ -102,8 +102,7 @@ public class PlayerController : MonoBehaviour
         ButtonControls();
         MODpassFireGate();// open gate
         EDWpassFireGate(); //EDW unlock door
-        keyGateController.passStyle(playerStyle);
-        gateController.passFireStyle(playerStyle);
+        NullPointCheck();
     }
 
     private void InitAnimations()
@@ -115,7 +114,19 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetBool("isHurt", false);
     }
 
-    
+    public void NullPointCheck()
+    {
+        if (keyGateController != null)
+        {
+            keyGateController.passStyle(playerStyle);
+        }
+
+        // Check if gateController is assigned before using it
+        if (gateController != null)
+        {
+            gateController.passFireStyle(playerStyle);
+        }
+    }
 
     public void MODpassFireGate()
     {
