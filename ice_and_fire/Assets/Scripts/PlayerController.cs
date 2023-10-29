@@ -102,8 +102,8 @@ public class PlayerController : MonoBehaviour
         ButtonControls();
         MODpassFireGate();// open gate
         EDWpassFireGate(); //EDW unlock door
-        keyGateController.passStyle(playerStyle);
-        gateController.passFireStyle(playerStyle);
+        updateJumpAnimation(); //set isJumping to true when velocity.y != 0
+        NullPointCheck();
     }
 
     private void InitAnimations()
@@ -115,7 +115,19 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetBool("isHurt", false);
     }
 
-    
+    public void NullPointCheck()
+    {
+        if (keyGateController != null)
+        {
+            keyGateController.passStyle(playerStyle);
+        }
+
+        // Check if gateController is assigned before using it
+        if (gateController != null)
+        {
+            gateController.passFireStyle(playerStyle);
+        }
+    }
 
     public void MODpassFireGate()
     {
@@ -224,6 +236,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void updateJumpAnimation()
+    {
+        float dropping = rb.velocity.y;
+        if (dropping == 0)
+        {
+            playerAnimator.SetBool("isJumping", false);
+        }
+        else
+        {
+            playerAnimator.SetBool("isJumping", true);
+        }
+    }
 
     private void ButtonControls()
     {
@@ -694,7 +718,7 @@ public class PlayerController : MonoBehaviour
             jumpCount = 0;
 
             //Disable the Jumping animation when landing
-            playerAnimator.SetBool("isJumping", false);
+            //playerAnimator.SetBool("isJumping", false);
         }
     }
 
@@ -710,10 +734,10 @@ public class PlayerController : MonoBehaviour
             jumpCount++;
         }
 
-        if (offPlatform)
-        {
-            playerAnimator.SetBool("isJumping", true);
-        }
+        // if (offPlatform)
+        // {
+        //     //playerAnimator.SetBool("isJumping", true);
+        // }
 
         float countDown = 1.0f;
         while (countDown > 0)
