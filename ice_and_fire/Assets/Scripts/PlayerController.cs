@@ -718,7 +718,7 @@ public class PlayerController : MonoBehaviour
             jumpCount = 0;
 
             //Disable the Jumping animation when landing
-            //playerAnimator.SetBool("isJumping", false);
+            playerAnimator.SetBool("isJumping", false);
         }
     }
 
