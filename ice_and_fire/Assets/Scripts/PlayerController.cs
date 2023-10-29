@@ -103,6 +103,8 @@ public class PlayerController : MonoBehaviour
         MODpassFireGate();// open gate
         EDWpassFireGate(); //EDW unlock door
         updateJumpAnimation(); //set isJumping to true when velocity.y != 0
+        keyGateController.passStyle(playerStyle);
+        gateController.passFireStyle(playerStyle);
     }
 
     private void InitAnimations()
@@ -113,13 +115,13 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetBool("shoot", false);
         playerAnimator.SetBool("isHurt", false);
     }
-    
+
     public void MODpassFireGate()
     {
         GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("MOD");
         foreach (GameObject obj in objectsWithTag)
         {
-            gateController.OpenFireGate();
+            
         }
     }
 
@@ -129,7 +131,7 @@ public class PlayerController : MonoBehaviour
         GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("EDW");
         foreach (GameObject obj in objectsWithTag)
         {
-            keyGateController.EDWpassGate();
+            
         }
         
     }
