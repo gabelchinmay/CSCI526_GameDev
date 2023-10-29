@@ -11,7 +11,7 @@ public class GateController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
+    void Update()
     {
         Vector2 checkPosition = transform.position;
 
