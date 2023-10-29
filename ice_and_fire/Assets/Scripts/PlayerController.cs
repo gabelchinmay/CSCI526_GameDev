@@ -560,6 +560,20 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (collision.CompareTag("WildFirePickable"))
+        {
+            if (inventory.ContainsKey("WildFire"))
+            {
+                inventory["WildFire"]+=3;
+            }
+            else
+            {
+                inventory["WildFire"] = 3;
+            }
+            Destroy(collision.gameObject);
+
+        }
+
         if (collision.CompareTag("InvincibleShield"))
         {
             StartCoroutine(ActivateShield(10.0f));
@@ -765,8 +779,18 @@ public class PlayerController : MonoBehaviour
 
     private void DefenseWallPowerUp()
     {
-        Vector3 offset = transform.position + Vector3.up * 0.6f + Vector3.right * 2f;
-        Instantiate(defenseWallPrefab, offset, Quaternion.identity);
+        if(this.direction != -1)
+        {
+            Vector3 offset = transform.position + Vector3.up * 0.4f + Vector3.right * 2f;
+            Instantiate(defenseWallPrefab, offset, Quaternion.identity);
+
+        }
+        else
+        {
+            Vector3 offset = transform.position + Vector3.up * 0.4f + Vector3.left * 2f;
+            Instantiate(defenseWallPrefab, offset, Quaternion.identity);
+        }
+
     }
 
     public void TakeDamage(int damageAmount)
@@ -1037,7 +1061,14 @@ public class PlayerController : MonoBehaviour
         {
             offset = transform.position + Vector3.up * 0.5f + Vector3.left * 3.5f;
             arrow = Instantiate(arrowType, offset, Quaternion.identity);
-            arrow.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
+            if(arrowType == wildFirePrefab)
+            {
+                arrow.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else
+            {
+                arrow.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
+            }
             a = arrow.GetComponent<Rigidbody2D>();
             a.velocity = new Vector2(35f * this.direction, 0);
 
