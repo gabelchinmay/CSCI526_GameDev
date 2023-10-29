@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
         ButtonControls();
         MODpassFireGate();// open gate
         EDWpassFireGate(); //EDW unlock door
-
+        updateJumpAnimation(); //set isJumping to true when velocity.y != 0
     }
 
     private void InitAnimations()
@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetBool("shoot", false);
         playerAnimator.SetBool("isHurt", false);
     }
-
+    
     public void MODpassFireGate()
     {
         GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("MOD");
@@ -221,6 +221,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void updateJumpAnimation()
+    {
+        float dropping = rb.velocity.y;
+        if (dropping == 0)
+        {
+            playerAnimator.SetBool("isJumping", false);
+        }
+        else
+        {
+            playerAnimator.SetBool("isJumping", true);
+        }
+    }
 
     private void ButtonControls()
     {
@@ -691,7 +703,7 @@ public class PlayerController : MonoBehaviour
             jumpCount = 0;
 
             //Disable the Jumping animation when landing
-            playerAnimator.SetBool("isJumping", false);
+            //playerAnimator.SetBool("isJumping", false);
         }
     }
 
@@ -707,10 +719,10 @@ public class PlayerController : MonoBehaviour
             jumpCount++;
         }
 
-        if (offPlatform)
-        {
-            playerAnimator.SetBool("isJumping", true);
-        }
+        // if (offPlatform)
+        // {
+        //     //playerAnimator.SetBool("isJumping", true);
+        // }
 
         float countDown = 1.0f;
         while (countDown > 0)
