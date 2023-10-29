@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
     private int currentHealth;
     private int direction = 1;
     private float speed = 10.0f;
-    private float jumpForce = 8.0f;
+    private float jumpForce = 10.0f;
     private float playerMassMultiplicationFactor = 2f;
     private float playerJumpForceMultiplicationFactor = 2f;
     private Rigidbody2D rb;
@@ -102,7 +102,8 @@ public class PlayerController : MonoBehaviour
         ButtonControls();
         MODpassFireGate();// open gate
         EDWpassFireGate(); //EDW unlock door
-
+        keyGateController.passStyle(playerStyle);
+        gateController.passFireStyle(playerStyle);
     }
 
     private void InitAnimations()
@@ -114,12 +115,14 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetBool("isHurt", false);
     }
 
+    
+
     public void MODpassFireGate()
     {
         GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("MOD");
         foreach (GameObject obj in objectsWithTag)
         {
-            gateController.OpenFireGate();
+            
         }
     }
 
@@ -129,7 +132,7 @@ public class PlayerController : MonoBehaviour
         GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("EDW");
         foreach (GameObject obj in objectsWithTag)
         {
-            keyGateController.EDWpassGate();
+            
         }
         
     }
