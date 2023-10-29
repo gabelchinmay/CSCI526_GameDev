@@ -103,8 +103,7 @@ public class PlayerController : MonoBehaviour
         MODpassFireGate();// open gate
         EDWpassFireGate(); //EDW unlock door
         updateJumpAnimation(); //set isJumping to true when velocity.y != 0
-        keyGateController.passStyle(playerStyle);
-        gateController.passFireStyle(playerStyle);
+        NullPointCheck();
     }
 
     private void InitAnimations()
@@ -114,6 +113,20 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetBool("iceSwordAttack", false);
         playerAnimator.SetBool("shoot", false);
         playerAnimator.SetBool("isHurt", false);
+    }
+
+    public void NullPointCheck()
+    {
+        if (keyGateController != null)
+        {
+            keyGateController.passStyle(playerStyle);
+        }
+
+        // Check if gateController is assigned before using it
+        if (gateController != null)
+        {
+            gateController.passFireStyle(playerStyle);
+        }
     }
 
     public void MODpassFireGate()
