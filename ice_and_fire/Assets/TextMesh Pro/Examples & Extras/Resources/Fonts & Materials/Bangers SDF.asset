@@ -1,14 +1,14 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!21 &2164040
+--- !u!21 &2100000
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Roboto-Bold SDF Material
-  m_Shader: {fileID: 4800000, guid: fe393ace9b354375a9cb14cdbbc28be4, type: 3}
+  m_Name: Bangers SDF Material
+  m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
@@ -32,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 28204114720316640}
+        m_Texture: {fileID: 28584486757587946}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineTex:
@@ -58,7 +58,7 @@ Material:
     - _GlowOffset: 0
     - _GlowOuter: 0.05
     - _GlowPower: 0.75
-    - _GradientScale: 10
+    - _GradientScale: 11
     - _LightAngle: 3.1416
     - _MaskSoftnessX: 0
     - _MaskSoftnessY: 0
@@ -68,9 +68,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 0.9
-    - _ScaleRatioB: 0.73125
-    - _ScaleRatioC: 0.73125
+    - _ScaleRatioA: 0.90909094
+    - _ScaleRatioB: 0.79545456
+    - _ScaleRatioC: 0.79545456
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -89,7 +89,7 @@ Material:
     - _UnderlaySoftness: 0
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
-    - _WeightBold: 0.75
+    - _WeightBold: 0.5
     - _WeightNormal: 0
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
@@ -112,41 +112,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Roboto-Bold SDF
+  m_Name: Bangers SDF
   m_EditorClassIdentifier: 
-  hashCode: -635320526
-  material: {fileID: 2164040}
-  materialHashCode: -1838732846
+  hashCode: 2134875903
+  material: {fileID: 2100000}
+  materialHashCode: -2079879681
   m_Version: 1.1.0
-  m_SourceFontFileGUID: 4beb055f07aaff244873dec698d0363e
-  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e,
+  m_SourceFontFileGUID: 5dd49b3eacc540408c98eee0de38e0f1
+  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 5dd49b3eacc540408c98eee0de38e0f1,
     type: 3}
-  m_SourceFontFile: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
+  m_SourceFontFile: {fileID: 12800000, guid: 5dd49b3eacc540408c98eee0de38e0f1, type: 3}
   m_AtlasPopulationMode: 1
   m_FaceInfo:
-    m_FamilyName: Roboto
-    m_StyleName: Bold
-    m_PointSize: 90
+    m_FamilyName: Bangers
+    m_StyleName: Regular
+    m_PointSize: 144
     m_Scale: 1
-    m_LineHeight: 105.46875
-    m_AscentLine: 83.49609
-    m_CapLine: 64
-    m_MeanLine: 48
+    m_LineHeight: 153.14062
+    m_AscentLine: 127.125
+    m_CapLine: 107
+    m_MeanLine: 106
     m_Baseline: 0
-    m_DescentLine: -21.972656
-    m_SuperscriptOffset: 83.49609
+    m_DescentLine: -26.015625
+    m_SuperscriptOffset: 127.125
     m_SuperscriptSize: 0.5
-    m_SubscriptOffset: -21.972656
+    m_SubscriptOffset: -26.015625
     m_SubscriptSize: 0.5
-    m_UnderlineOffset: -8.7890625
-    m_UnderlineThickness: 4.3945312
-    m_StrikethroughOffset: 19.2
-    m_StrikethroughThickness: 4.3945312
-    m_TabWidth: 22
+    m_UnderlineOffset: 0
+    m_UnderlineThickness: 0
+    m_StrikethroughOffset: 42.4
+    m_StrikethroughThickness: 0
+    m_TabWidth: 28
   m_GlyphTable: []
   m_CharacterTable: []
   m_AtlasTextures:
-  - {fileID: 28204114720316640}
+  - {fileID: 28584486757587946}
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
   m_ClearDynamicDataOnBuild: 1
@@ -157,31 +157,31 @@ MonoBehaviour:
     m_Width: 1023
     m_Height: 1023
   m_fontInfo:
-    Name: Roboto
-    PointSize: 146
+    Name: Bangers
+    PointSize: 137
     Scale: 1
-    CharacterCount: 98
-    LineHeight: 192.5625
+    CharacterCount: 95
+    LineHeight: 145.6875
     Baseline: 0
-    Ascender: 153
-    CapHeight: 103.8125
-    Descender: -39.5625
+    Ascender: 120.9375
+    CapHeight: 101.5625
+    Descender: -24.75
     CenterLine: 0
-    SuperscriptOffset: 153
-    SubscriptOffset: -14.2578125
+    SuperscriptOffset: 120.9375
+    SubscriptOffset: 0
     SubSize: 0.5
-    Underline: -14.2578125
-    UnderlineThickness: 7.1289062
-    strikethrough: 41.25
-    strikethroughThickness: 7.1289062
-    TabWidth: 363.4375
-    Padding: 9
+    Underline: -12.22
+    UnderlineThickness: 5
+    strikethrough: 40.625
+    strikethroughThickness: 0
+    TabWidth: 342.5
+    Padding: 10
     AtlasWidth: 1024
     AtlasHeight: 1024
   atlas: {fileID: 0}
   m_AtlasWidth: 1024
   m_AtlasHeight: 1024
-  m_AtlasPadding: 9
+  m_AtlasPadding: 10
   m_AtlasRenderMode: 4165
   m_glyphInfoList: []
   m_KerningTable:
@@ -192,16 +192,16 @@ MonoBehaviour:
   m_FallbackFontAssetTable: []
   m_CreationSettings:
     sourceFontFileName: 
-    sourceFontFileGUID: 4beb055f07aaff244873dec698d0363e
+    sourceFontFileGUID: 5dd49b3eacc540408c98eee0de38e0f1
     pointSizeSamplingMode: 1
-    pointSize: 90
-    padding: 9
+    pointSize: 144
+    padding: 10
     packingMode: 4
     atlasWidth: 1024
     atlasHeight: 1024
     characterSetSelectionMode: 6
-    characterSequence: 20-7E,A0,200B,2026
-    referencedFontAssetGUID: 5302535af1044152a457ed104f1f4b91
+    characterSequence: 
+    referencedFontAssetGUID: 125cb55b44b24c4393181402bc6200e6
     referencedTextAssetGUID: 
     fontStyle: 0
     fontStyleModifier: 0
@@ -255,13 +255,13 @@ MonoBehaviour:
   boldSpacing: 7
   italicStyle: 35
   tabSize: 10
---- !u!28 &28204114720316640
+--- !u!28 &28584486757587946
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Roboto-Bold SDF Atlas
+  m_Name: Bangers SDF Atlas
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
