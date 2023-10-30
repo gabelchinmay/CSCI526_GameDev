@@ -27,7 +27,7 @@ public class GateController : MonoBehaviour
 
         }
 
-        if (style == "ice")
+        if (style == "fire")
         {
             OpenIceGate();
             spriteRenderer.enabled = false;
