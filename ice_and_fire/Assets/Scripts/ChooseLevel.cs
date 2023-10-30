@@ -7,8 +7,6 @@ using UnityEngine.UI;
 public class ChooseLevel : MonoBehaviour
 {
     public int level;
-    public int chapter;
-    
     public string levelName;
     // Start is called before the first frame update
     void Start()
@@ -25,7 +23,7 @@ public class ChooseLevel : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Chapter" + chapter.ToString() + "_" + "Level" + level.ToString());
+            SceneManager.LoadScene("Level" + level.ToString());
         }
         
     }
@@ -34,8 +32,8 @@ public class ChooseLevel : MonoBehaviour
 
     public void UnlockAll()
     {
-        PlayerPrefs.SetInt("ReachedIndex", 13);
-        PlayerPrefs.SetInt("UnlockedLevel", 13);
+        PlayerPrefs.SetInt("ReachedIndex", 18);
+        PlayerPrefs.SetInt("UnlockedLevel", 18);
         PlayerPrefs.Save();
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
