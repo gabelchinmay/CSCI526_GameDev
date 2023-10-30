@@ -24,7 +24,12 @@ public class ColdArea : MonoBehaviour
     {
         // 这部分如何统计
         hitCount += amt;
-        sendToGoogle.SwordAttackCount(hitCount);
+        if (sendToGoogle != null)
+        {
+            sendToGoogle.ValidSwordAttackCount();
+        }
+
+
         if (hitCount >= maxHits)
         {
             SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();

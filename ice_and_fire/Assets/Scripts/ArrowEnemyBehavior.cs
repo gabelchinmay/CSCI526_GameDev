@@ -15,8 +15,8 @@ public class ArrowEnemyBehavior : MonoBehaviour
     private string arrowEnemyType;
     private bool isOnFire = false;
     private bool canAttack = true;
-
-
+    private PlayerController playerController;
+    private SendToGoogle sendToGoogle;
     void Start()
     {
         this.arrowEnemyType = this.gameObject.tag;
@@ -26,8 +26,8 @@ public class ArrowEnemyBehavior : MonoBehaviour
         playerAnimator.SetBool("attack", false);
         InvokeRepeating("ShootArrow", 0f, shootInterval);
         StartCoroutine(InflictDamages());
-
-
+        this.playerController = FindObjectOfType<PlayerController>();
+        this.sendToGoogle = FindObjectOfType<SendToGoogle>();
     }
 
     void Update()
@@ -146,13 +146,34 @@ public class ArrowEnemyBehavior : MonoBehaviour
         playerAnimator.SetBool("isHurt", true);
         this.canAttack = false;
         StartCoroutine(resetHurtAnimation());
+        if (sendToGoogle != null)
+        {
+            if (playerController.isSword)
+            {
 
+                sendToGoogle.ValidSwordAttackCount();
+
+            }
+            else if (playerController.isArrow)
+            {
+                sendToGoogle.HitCount();
+            }
+        }
         if (hitCount >= maxHits)
         {
             SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
-            if(sendToGoogle != null)
+            if (sendToGoogle != null)
             {
-                sendToGoogle.killEnemy();
+                if (playerController.isSword)
+                {
+
+                    sendToGoogle.killSwordEnemy();
+
+                }
+                else if (playerController.isArrow)
+                {
+                    sendToGoogle.killEnemy();
+                }
             }
             Destroy(gameObject);
         }
