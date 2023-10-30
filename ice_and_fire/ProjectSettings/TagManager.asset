@@ -54,6 +54,7 @@ TagManager:
   - EDW
   - DragonEgg
   - WildFirePickable
+  - FireGate
   layers:
   - Default
   - TransparentFX
