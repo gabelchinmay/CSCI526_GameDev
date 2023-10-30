@@ -141,15 +141,17 @@ public class ArrowEnemyBehavior : MonoBehaviour
     public void TakeHits(int amt)
     {
         hitCount+=amt;
-
+        SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
         playerAnimator.SetBool("shoot", false);
         playerAnimator.SetBool("isHurt", true);
         this.canAttack = false;
         StartCoroutine(resetHurtAnimation());
 
+        sendToGoogle.ValidSwordAttackCount(hitCount);
+
         if (hitCount >= maxHits)
         {
-            SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
+            
             if(sendToGoogle != null)
             {
                 sendToGoogle.killEnemy();
