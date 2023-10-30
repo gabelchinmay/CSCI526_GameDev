@@ -40,6 +40,7 @@ public class ArrowEnemyBehavior : MonoBehaviour
         if (canAttack) {
             if(shootDirection == "left") {
                 Vector3 offset = transform.position + Vector3.up * 1f + Vector3.left * 2f;
+                arrowPrefab.GetComponent<SpriteRenderer>().flipX = true;
                 GameObject arrow = Instantiate(arrowPrefab, offset, Quaternion.identity);
                 Rigidbody2D a = arrow.GetComponent<Rigidbody2D>();
                 a.velocity = new Vector2(-15f, 0); // Shooting to the left
