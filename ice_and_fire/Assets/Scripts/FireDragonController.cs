@@ -111,8 +111,8 @@ public class FireDragonController : MonoBehaviour
     // get hurt by arrows
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Check if the colliding object has the tag "arrow"
-        if (other.CompareTag("arrow"))
+        // Check if the colliding object has the tag "IceArrow"
+        if (other.CompareTag("IceArrow"))
         {
             takeDamage(ARROW_DAMAGE);
 

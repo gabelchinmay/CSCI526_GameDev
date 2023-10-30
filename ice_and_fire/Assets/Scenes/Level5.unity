@@ -1730,6 +1730,10 @@ MonoBehaviour:
   ArrowCount: 0
   ArrowHitsEnemyCount: 0
   KillCount: 0
+  KillSwordCount: 0
+  ValidSwordAttack: 0
+  SwordWaveCount: 0
+  hp: 0
   SwordDamageCount: 0
 --- !u!4 &1213216491
 Transform:
@@ -2389,7 +2393,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Mother of dragon is unburnt, \nsimply get through the gate!"
+  m_text: "Mother of dragon is unburnt, \nsimply get through the firegate!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}

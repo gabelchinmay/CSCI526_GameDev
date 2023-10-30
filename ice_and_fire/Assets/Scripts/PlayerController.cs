@@ -1029,13 +1029,13 @@ public class PlayerController : MonoBehaviour
             if (isOnFireDragon)
             {
                 TakeDamage(2);
-
+                
             }
             if (isOnIceDragon)
             {
                 TakeDamage(1);
                 speed = 1.0f;
-
+                
             }
             yield return new WaitForSeconds(0.1f);
         }
@@ -1198,8 +1198,11 @@ public class PlayerController : MonoBehaviour
     // implement dragons' damage to players
     public void OnDragonFireEnter(FireBehaviour fire)
     {
-        this.TakeDamage(15);
-        isOnFireDragon = true;
+        if (this.playerStyle != "fire"){
+            this.TakeDamage(15);
+            isOnFireDragon = true;
+        }
+        
     }
 
     public void OnDragonFireExit(FireBehaviour fire)
@@ -1209,8 +1212,10 @@ public class PlayerController : MonoBehaviour
 
     public void OnIceDragonFireEnter(IceFireBehaviour iceFire)
     {
-        this.TakeDamage(17);
-        isOnIceDragon = true;
+        if (this.playerStyle != "ice"){
+            this.TakeDamage(17);
+            isOnIceDragon = true;
+        }
     }
 
     public void OnIceDragonFireExit(IceFireBehaviour iceFire)
