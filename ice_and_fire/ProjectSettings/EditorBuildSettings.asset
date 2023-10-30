@@ -14,37 +14,43 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: cc10a8681414e47c2bde7ba8a275d6ac
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: d0f44272e94c84a25a88fbc473315bd7
+  - enabled: 1
+    path: Assets/Scenes/Level4.unity
+    guid: 22d7fee00cfb2493c953fa145d36ca76
   - enabled: 0
     path: Assets/Scenes/Chapter1_Level2.unity
     guid: 12c1a1f6ad86a77479d756cd9f5abd5f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Chapter1_Level3.unity
     guid: edb990683d62d4945aafdcd0aa868726
   - enabled: 1
-    path: Assets/Scenes/Chapter2_Level1.unity
+    path: Assets/Scenes/Level8.unity
     guid: 4db31d99a0dcfe04fa9b921f14c70a6b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Chapter2_Level2.unity
     guid: 867f33f8d7cf58049b2c5f9f88c05b21
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Chapter2_Level3.unity
     guid: 694a05a8f6cd9468280ec494df35d104
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Chapter2_Level4.unity
     guid: 72b731db4bf5b4998aadab43e38a20ee
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Chapter2_Level5.unity
     guid: 0399fdf9c795d99469b741fa33d09f2c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Chapter3_Level0.unity
     guid: 3bcb2a22453e34457ae6f447e62962f7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Chapter3_Level11.unity
     guid: 492994aa6e22557428f08a98dbad16bc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Chapter3_Level12.unity
     guid: 6f47bdc6602287b408a06b2974bcc1ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Chapter3_Level13.unity
     guid: 1abf2d2603e424b938e70e33efceba8e
   - enabled: 1
