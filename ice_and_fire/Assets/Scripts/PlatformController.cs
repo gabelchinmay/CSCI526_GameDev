@@ -24,8 +24,13 @@ public class PlatformController : MonoBehaviour
         {
             spriteRenderer.color = Color.red;
         }
-        else if(platformType == "Bi") {
+        else if(platformType == "Bi") 
+        {
             StartCoroutine(ColorBiChangingLoop());
+        }
+        else if(platformType == "Normal")
+        {
+            spriteRenderer.color = originalColor;
         }
     }
 
@@ -54,8 +59,6 @@ public class PlatformController : MonoBehaviour
     {
         while (true)
         {
-
-
             spriteRenderer.color = Color.red;
             yield return new WaitForSeconds(5f);
 
