@@ -327,6 +327,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5709924795340981188, guid: 2c47eacf560474486822f16e841df2f7, type: 3}
+      propertyPath: platformType
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8819735654176732990, guid: 2c47eacf560474486822f16e841df2f7, type: 3}
       propertyPath: movingSpeed
       value: 3
@@ -872,7 +876,7 @@ PrefabInstance:
       objectReference: {fileID: 1426938101}
     - target: {fileID: 4056333340771122049, guid: f22d95c32705149138a89337517f84b1, type: 3}
       propertyPath: playerStyle
-      value: ice
+      value: fire
       objectReference: {fileID: 0}
     - target: {fileID: 4056333340771122049, guid: f22d95c32705149138a89337517f84b1, type: 3}
       propertyPath: gameOverText
@@ -1172,7 +1176,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1303599796809000183, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
-      value: Level 7
+      value: Level 9
       objectReference: {fileID: 0}
     - target: {fileID: 2896113918490553937, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_AnchoredPosition.y
