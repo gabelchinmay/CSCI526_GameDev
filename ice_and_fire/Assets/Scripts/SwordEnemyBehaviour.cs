@@ -143,7 +143,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if (swordEnemyType == "IceSwordEnemy")
+        if (swordEnemyType == "IceSwordEnemy" || swordEnemyType == "Dead" || swordEnemyType == "WhiteWalker" || swordEnemyType == "NightKing")
         {
             if (other.CompareTag("FireArrow"))
             {

@@ -28,15 +28,15 @@ public class ArrowBehavior : MonoBehaviour
 
         sendToGoogle = SendToGoogle.currentSendToGoogle;
         //PerformActionBeforeDestroy();
-        if (!(collision.CompareTag("IceSwordEnemy") || collision.CompareTag("IceArrowEnemy") || collision.CompareTag("FireSwordEnemy") || collision.CompareTag("FireArrowEnemy")))
-        {
+        //if (!(collision.CompareTag("IceSwordEnemy") || collision.CompareTag("IceArrowEnemy") || collision.CompareTag("FireSwordEnemy") || collision.CompareTag("FireArrowEnemy")))
+        //{
             
-            Destroy(gameObject);
+          //  Destroy(gameObject);
 
-        }
+        //}
 
         //TODO: Need to change this for analytics
-        if (collision.CompareTag("IceSwordEnemy") || collision.CompareTag("IceArrowEnemy") || collision.CompareTag("FireSwordEnemy") || collision.CompareTag("FireArrowEnemy"))
+        if (collision.CompareTag("IceSwordEnemy") || collision.CompareTag("IceArrowEnemy") || collision.CompareTag("FireSwordEnemy") || collision.CompareTag("FireArrowEnemy") || collision.CompareTag("Dead") || collision.CompareTag("WhiteWalker") || collision.CompareTag("NightKing"))
         {
             Debug.Log("got shoot!");
             if (sendToGoogle != null)
@@ -45,6 +45,10 @@ public class ArrowBehavior : MonoBehaviour
 
             }
 
+        } 
+        else
+        {
+            Destroy(gameObject);
         }
     }
             

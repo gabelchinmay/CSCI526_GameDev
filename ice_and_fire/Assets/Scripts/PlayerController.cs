@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
     private bool isGameOver = false;
     private bool canJump = true;
     private bool isOnPlatform = false;
-    private bool isValyrian = false;
     private bool isShielded = false;
     private bool isOnSpike = false;
     private bool isOnMonster = false;
@@ -431,8 +430,6 @@ public class PlayerController : MonoBehaviour
                     currentSwordEnemyPlayerFighting.TakeHits(1);
                 }
 
-
-
             }
 
 
@@ -449,14 +446,20 @@ public class PlayerController : MonoBehaviour
                     currentSwordEnemyPlayerFighting.TakeHits(1);
                 }
 
-            }
-
-
-            if (currentSwordEnemyPlayerFighting != null)
-            {
-                if ((currentSwordEnemyPlayerFighting.CompareTag("Dead") || currentSwordEnemyPlayerFighting.CompareTag("WhiteWalker") || currentSwordEnemyPlayerFighting.CompareTag("NightKing")) && this.isValyrian)
+                if (currentSwordEnemyPlayerFighting != null && currentSwordEnemyPlayerFighting.CompareTag("Dead"))
                 {
                     currentSwordEnemyPlayerFighting.TakeHits(1);
+                }
+
+                if (currentSwordEnemyPlayerFighting != null && currentSwordEnemyPlayerFighting.CompareTag("WhiteWalker"))
+                {
+                    currentSwordEnemyPlayerFighting.TakeHits(1);
+                }
+
+                if (currentSwordEnemyPlayerFighting != null && currentSwordEnemyPlayerFighting.CompareTag("NightKing"))
+                {
+                    currentSwordEnemyPlayerFighting.TakeHits(1);
+                    Debug.Log("Get hurt");
                 }
             }
 
@@ -622,12 +625,6 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("arrow"))
         {       
             this.TakeDamage(2);
-            Destroy(collision.gameObject);
-        }
-
-        if (collision.CompareTag("ValyrianSword"))
-        {
-            this.isValyrian = true;
             Destroy(collision.gameObject);
         }
 
