@@ -118,13 +118,21 @@ public class SwordEnemyBehaviour : MonoBehaviour
 
     public void TakeHits(int amt)
     {
+        PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
         //isAttacking = false;
         //canMove = false;
         playerAnimator.SetBool("isHurt", true);
         StartCoroutine(resetHurtAnimation());
         hitCount +=amt;
         // sword attack count
-      
+        if (sendToGoogle != null)
+        {
+            if (playerController.isSword) { 
+
+            sendToGoogle.SwordAttackCount();
+
+            }
+        }
         if (hitCount >= maxHits)
         {
             SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();

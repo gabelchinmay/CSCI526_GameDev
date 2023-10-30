@@ -22,13 +22,15 @@ public class NightKingArea : MonoBehaviour
     }
     public void TakeHits(int amt)
     {
-        // 这部分如何统计
+        // Track hits
         hitCount += amt;
+
+        // Access SendToGoogle to update the hit count
         if (sendToGoogle != null)
         {
-            sendToGoogle.SwordAttackCount(hitCount);
+            sendToGoogle.ValidSwordAttackCount();
         }
-        
+
         if (hitCount >= maxHits)
         {
             SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
@@ -39,6 +41,7 @@ public class NightKingArea : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 
     void OnTriggerEnter2D(Collider2D other)
     {

@@ -26,7 +26,7 @@ public class ColdArea : MonoBehaviour
         hitCount += amt;
         if (sendToGoogle != null)
         {
-            sendToGoogle.SwordAttackCount(hitCount);
+            sendToGoogle.ValidSwordAttackCount();
         }
 
 
