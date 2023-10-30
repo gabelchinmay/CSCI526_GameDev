@@ -1626,7 +1626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1303599796809000183, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
-      value: "Tutorial: \nCombat System"
+      value: LEVEL14
       objectReference: {fileID: 0}
     - target: {fileID: 2896113918490553937, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3516,6 +3516,10 @@ MonoBehaviour:
   ArrowCount: 0
   ArrowHitsEnemyCount: 0
   KillCount: 0
+  KillSwordCount: 0
+  ValidSwordAttack: 0
+  SwordWaveCount: 0
+  hp: 0
   SwordDamageCount: 0
 --- !u!4 &2137968510
 Transform:
