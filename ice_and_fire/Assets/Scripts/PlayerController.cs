@@ -10,6 +10,8 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     //public Variables
+    public bool isArrow = false;
+    public bool isSword = false;
     public int maxHealth = 100;
     public int killCount = 0;
     public string playerStyle = "normal";
@@ -69,6 +71,8 @@ public class PlayerController : MonoBehaviour
     private GameObject Myobj;
     private GateController gateController;
     private KeyGateController keyGateController;
+    
+
 
     private void Awake()
     {
@@ -333,6 +337,14 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(resetBowAttackAnimation());
             StartCoroutine(ShootArrow(wildFirePrefab));
             inventory["WildFire"]--;
+
+            pressArrow();
+            if (isArrow)
+            {
+                sendToGoogle.ShootArrow();
+            }
+
+
             if (inventory["WildFire"] <= 0)
             {
                 inventory.Remove("WildFire");
@@ -343,7 +355,14 @@ public class PlayerController : MonoBehaviour
         // Arrow
         if (Input.GetKeyDown(KeyCode.UpArrow) && canArrowAttack) // Replace with your preferred shoot key.
         {
-            if(inventory.ContainsKey("IceArrows") || inventory.ContainsKey("FireArrows"))
+
+            pressArrow();
+            if (isArrow)
+            {
+                sendToGoogle.ShootArrow();
+            }
+             
+            if (inventory.ContainsKey("IceArrows") || inventory.ContainsKey("FireArrows"))
             {
                 if (this.sendToGoogle != null)
                 {
@@ -394,13 +413,17 @@ public class PlayerController : MonoBehaviour
         //Sword
         if (Input.GetKeyDown(KeyCode.DownArrow) && canSwordAttack)
         {
-            if(usingFireSword == true || usingIceSword == true)
+
+            pressSword();
+            if (isSword)
+            {
+                sendToGoogle.SwordWavedCount();
+            }
+
+            if (usingFireSword == true || usingIceSword == true)
             {
                 canSwordAttack = false;
-                if (this.sendToGoogle != null)
-                {
-                    sendToGoogle.HitCount();
-                }
+                
                 //Fire sword attack & ice sword attack animation - Ashley 10.26 13:00
                 if (usingFireSword)
                 {
@@ -414,6 +437,12 @@ public class PlayerController : MonoBehaviour
                 //playerAnimator.SetBool("attack", true); //TODO: Need to set based on actual sword animation
                 StartCoroutine(resetSwordAttackAnimation());
 
+
+               // if (hit.collider != null && (hit.collider.CompareTag("Enemy")|| hit.collider.CompareTag("IceArrowEnemy")|| hit.collider.CompareTag("FireArrowEnemy")|| hit.collider.CompareTag("FireSwordEnemy")|| hit.collider.CompareTag("IceSwordEnemy")))
+               // {
+                    // Call the method when hitting an object with "enemy" tag
+               //     sendToGoogle.ValidSwordAttackCount();
+               // }
             }
 
 
@@ -466,6 +495,19 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(swordAttackCooldownRoutine());
         }
 
+    }
+
+
+    private void pressArrow()
+    {
+        isArrow = true;
+        isSword = false;
+    }
+
+    private void pressSword()
+    {
+        isArrow = false;
+        isSword = true;
     }
 
     private void MODopenDoor()
@@ -795,6 +837,7 @@ public class PlayerController : MonoBehaviour
         if (!isShielded) 
         {
             currentHealth -= damageAmount;
+            sendToGoogle.HealthStatus(damageAmount);
             UpdateHealthUI();
             //StartCoroutine(DisplayTextForDuration("-"+ damageAmount.ToString() +" HP", 1f, Color.red));
             playerAnimator.SetBool("isHurt", true);
@@ -805,6 +848,8 @@ public class PlayerController : MonoBehaviour
                 this.freeze();
                 gameOverScreen.SetUp();
             }
+
+            
         }
     }
 

@@ -18,6 +18,10 @@ public class SendToGoogle : MonoBehaviour
     public int ArrowHitsEnemyCount = 0;
     public static SendToGoogle currentSendToGoogle;
     public int KillCount = 0;
+    public int KillSwordCount = 0;
+    public int ValidSwordAttack = 0;
+    public int SwordWaveCount = 0;
+    public int hp=0;
     public int SwordDamageCount;
 
 
@@ -76,7 +80,7 @@ public class SendToGoogle : MonoBehaviour
 
     public void Send()
     {
-        StartCoroutine(Post(sessionID.ToString(), Attempts.ToString(), Chapter.ToString(), Level.ToString(), Count.ToString(), TotalJump.ToString(), ArrowCount.ToString(), ArrowHitsEnemyCount.ToString(), KillCount.ToString()));
+        StartCoroutine(Post(sessionID.ToString(), Attempts.ToString(), Chapter.ToString(), Level.ToString(), Count.ToString(), TotalJump.ToString(), ArrowCount.ToString(), ArrowHitsEnemyCount.ToString(), KillCount.ToString(), KillSwordCount.ToString(), ValidSwordAttack.ToString(), SwordWaveCount.ToString(), hp.ToString()));
         Debug.Log("ArrowHitsEnemyCount: " + ArrowHitsEnemyCount.ToString());
         Debug.Log(KillCount.ToString());
     }
@@ -98,16 +102,30 @@ public class SendToGoogle : MonoBehaviour
         ArrowCount++;
     }
 
-    public void SwordAttackCount(int count)
+    public void HealthStatus(int hp)
     {
-        SwordDamageCount = +count;
-        Debug.Log(SwordDamageCount.ToString());
+        this.hp += hp;
     }
+
+
+    public void ValidSwordAttackCount()
+    {
+        ValidSwordAttack ++;
+    }
+
+    
 
     public void killEnemy()
     {
         KillCount++;
-        
+
+
+    }
+
+    public void killSwordEnemy()
+    {
+        KillSwordCount++;
+
 
     }
 
@@ -117,7 +135,13 @@ public class SendToGoogle : MonoBehaviour
         Debug.Log(ArrowHitsEnemyCount);
     }
 
-    public IEnumerator Post(string sessionID, string attempts, string Chapter, string Level, string Time, string Jump, string arrowShotted, string validShot, string KillCount)
+
+    public void SwordWavedCount()
+    {
+        SwordWaveCount++;
+    }
+
+    public IEnumerator Post(string sessionID, string attempts, string Chapter, string Level, string Time, string Jump, string arrowShotted, string validShot, string KillCount, string KillSwordCount, string ValidSwordAttack, string SwordWaveCount, string hp)
     {
 
 
@@ -132,6 +156,11 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.1161303837", arrowShotted);
         form.AddField("entry.1154553542", validShot);
         form.AddField("entry.1963625633", KillCount);
+        form.AddField("entry.311655864", KillSwordCount);
+        form.AddField("entry.1641108659", ValidSwordAttack);
+        form.AddField("entry.2027457291", SwordWaveCount);
+        form.AddField("entry.226612155", hp);
+
 
         Debug.Log(form.ToString());
 

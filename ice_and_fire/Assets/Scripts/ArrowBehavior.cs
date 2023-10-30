@@ -41,7 +41,7 @@ public class ArrowBehavior : MonoBehaviour
             Debug.Log("got shoot!");
             if (sendToGoogle != null)
             {
-                sendToGoogle.HitCount();
+                
 
             }
 
