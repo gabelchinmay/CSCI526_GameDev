@@ -17,7 +17,7 @@ public class KeyGateController : MonoBehaviour
     void Update()
     {
 
-        if (style == "fire")
+        if (style == "ice")
         {
             MODGate();
         }
