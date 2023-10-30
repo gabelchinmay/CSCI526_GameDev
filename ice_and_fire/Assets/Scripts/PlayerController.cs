@@ -423,11 +423,7 @@ public class PlayerController : MonoBehaviour
             if (usingFireSword == true || usingIceSword == true)
             {
                 canSwordAttack = false;
-                if (this.sendToGoogle != null)
-                {
-
-                    sendToGoogle.HitCount();
-                }
+                
                 //Fire sword attack & ice sword attack animation - Ashley 10.26 13:00
                 if (usingFireSword)
                 {
@@ -841,6 +837,7 @@ public class PlayerController : MonoBehaviour
         if (!isShielded) 
         {
             currentHealth -= damageAmount;
+            sendToGoogle.HealthStatus(damageAmount);
             UpdateHealthUI();
             //StartCoroutine(DisplayTextForDuration("-"+ damageAmount.ToString() +" HP", 1f, Color.red));
             playerAnimator.SetBool("isHurt", true);
@@ -851,6 +848,8 @@ public class PlayerController : MonoBehaviour
                 this.freeze();
                 gameOverScreen.SetUp();
             }
+
+            
         }
     }
 

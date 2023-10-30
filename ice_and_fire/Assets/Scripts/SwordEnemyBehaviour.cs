@@ -143,7 +143,16 @@ public class SwordEnemyBehaviour : MonoBehaviour
             SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
             if(sendToGoogle != null)
             {
-                sendToGoogle.killEnemy();
+                if (playerController.isSword)
+                {
+
+                    sendToGoogle.killSwordEnemy();
+
+                }
+                else if (playerController.isArrow)
+                {
+                    sendToGoogle.killEnemy();
+                }
             }
             Destroy(gameObject);
         }
