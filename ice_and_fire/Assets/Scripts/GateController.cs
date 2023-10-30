@@ -11,7 +11,7 @@ public class GateController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
+    void Update()
     {
         Vector2 checkPosition = transform.position;
 
@@ -27,7 +27,7 @@ public class GateController : MonoBehaviour
 
         }
 
-        if (style == "ice")
+        if (style == "fire")
         {
             OpenIceGate();
             spriteRenderer.enabled = false;

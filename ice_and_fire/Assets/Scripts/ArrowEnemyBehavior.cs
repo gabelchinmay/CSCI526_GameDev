@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class ArrowEnemyBehavior : MonoBehaviour
 {
+    public string shootDirection = "left";
     public GameObject arrowPrefab;
     private float shootInterval = 3f;
     private int hitCount = 0;
@@ -37,10 +38,23 @@ public class ArrowEnemyBehavior : MonoBehaviour
     void ShootArrow()
     {
         if (canAttack) {
-            Vector3 offset = transform.position + Vector3.up * 1f + Vector3.left * 2f;
-            GameObject arrow = Instantiate(arrowPrefab, offset, Quaternion.identity);
-            Rigidbody2D a = arrow.GetComponent<Rigidbody2D>();
-            a.velocity = new Vector2(-15f, 0); // Shooting to the left
+            if(shootDirection == "left") {
+                Vector3 offset = transform.position + Vector3.up * 1f + Vector3.left * 2f;
+                arrowPrefab.GetComponent<SpriteRenderer>().flipX = true;
+                GameObject arrow = Instantiate(arrowPrefab, offset, Quaternion.identity);
+                Rigidbody2D a = arrow.GetComponent<Rigidbody2D>();
+                a.velocity = new Vector2(-15f, 0); // Shooting to the left
+
+            }
+            else
+            {
+                Vector3 offset = transform.position + Vector3.up * 1f + Vector3.right * 2f;
+                GameObject arrow = Instantiate(arrowPrefab, offset, Quaternion.identity);
+                Rigidbody2D a = arrow.GetComponent<Rigidbody2D>();
+                a.velocity = new Vector2(15f, 0); // Shooting to the left
+            }
+
+
         }
 
 

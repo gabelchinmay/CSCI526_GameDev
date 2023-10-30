@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
     private bool isGameOver = false;
     private bool canJump = true;
     private bool isOnPlatform = false;
-    private bool isValyrian = false;
     private bool isShielded = false;
     private bool isOnSpike = false;
     private bool isOnMonster = false;
@@ -431,8 +430,6 @@ public class PlayerController : MonoBehaviour
                     currentSwordEnemyPlayerFighting.TakeHits(1);
                 }
 
-
-
             }
 
 
@@ -449,14 +446,20 @@ public class PlayerController : MonoBehaviour
                     currentSwordEnemyPlayerFighting.TakeHits(1);
                 }
 
-            }
-
-
-            if (currentSwordEnemyPlayerFighting != null)
-            {
-                if ((currentSwordEnemyPlayerFighting.CompareTag("Dead") || currentSwordEnemyPlayerFighting.CompareTag("WhiteWalker") || currentSwordEnemyPlayerFighting.CompareTag("NightKing")) && this.isValyrian)
+                if (currentSwordEnemyPlayerFighting != null && currentSwordEnemyPlayerFighting.CompareTag("Dead"))
                 {
                     currentSwordEnemyPlayerFighting.TakeHits(1);
+                }
+
+                if (currentSwordEnemyPlayerFighting != null && currentSwordEnemyPlayerFighting.CompareTag("WhiteWalker"))
+                {
+                    currentSwordEnemyPlayerFighting.TakeHits(1);
+                }
+
+                if (currentSwordEnemyPlayerFighting != null && currentSwordEnemyPlayerFighting.CompareTag("NightKing"))
+                {
+                    currentSwordEnemyPlayerFighting.TakeHits(1);
+                    Debug.Log("Get hurt");
                 }
             }
 
@@ -560,6 +563,20 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (collision.CompareTag("WildFirePickable"))
+        {
+            if (inventory.ContainsKey("WildFire"))
+            {
+                inventory["WildFire"]+=3;
+            }
+            else
+            {
+                inventory["WildFire"] = 3;
+            }
+            Destroy(collision.gameObject);
+
+        }
+
         if (collision.CompareTag("InvincibleShield"))
         {
             StartCoroutine(ActivateShield(10.0f));
@@ -608,12 +625,6 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("arrow"))
         {       
             this.TakeDamage(2);
-            Destroy(collision.gameObject);
-        }
-
-        if (collision.CompareTag("ValyrianSword"))
-        {
-            this.isValyrian = true;
             Destroy(collision.gameObject);
         }
 
@@ -765,8 +776,18 @@ public class PlayerController : MonoBehaviour
 
     private void DefenseWallPowerUp()
     {
-        Vector3 offset = transform.position + Vector3.up * 0.6f + Vector3.right * 2f;
-        Instantiate(defenseWallPrefab, offset, Quaternion.identity);
+        if(this.direction != -1)
+        {
+            Vector3 offset = transform.position + Vector3.up * 0.4f + Vector3.right * 2f;
+            Instantiate(defenseWallPrefab, offset, Quaternion.identity);
+
+        }
+        else
+        {
+            Vector3 offset = transform.position + Vector3.up * 0.4f + Vector3.left * 2f;
+            Instantiate(defenseWallPrefab, offset, Quaternion.identity);
+        }
+
     }
 
     public void TakeDamage(int damageAmount)
@@ -1037,7 +1058,14 @@ public class PlayerController : MonoBehaviour
         {
             offset = transform.position + Vector3.up * 0.5f + Vector3.left * 3.5f;
             arrow = Instantiate(arrowType, offset, Quaternion.identity);
-            arrow.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
+            if(arrowType == wildFirePrefab)
+            {
+                arrow.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else
+            {
+                arrow.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
+            }
             a = arrow.GetComponent<Rigidbody2D>();
             a.velocity = new Vector2(35f * this.direction, 0);
 
