@@ -1143,7 +1143,7 @@ PrefabInstance:
       objectReference: {fileID: 1588183501}
     - target: {fileID: 4056333340771122049, guid: f22d95c32705149138a89337517f84b1, type: 3}
       propertyPath: playerStyle
-      value: ice
+      value: normal
       objectReference: {fileID: 0}
     - target: {fileID: 4056333340771122049, guid: f22d95c32705149138a89337517f84b1, type: 3}
       propertyPath: gameOverText
