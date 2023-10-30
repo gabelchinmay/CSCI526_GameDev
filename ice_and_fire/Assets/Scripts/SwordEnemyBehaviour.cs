@@ -130,7 +130,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
             SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
             if(sendToGoogle != null)
             {
-                sendToGoogle.killEnemy();
+                sendToGoogle.killSwordEnemy();
             }
             Destroy(gameObject);
         }
