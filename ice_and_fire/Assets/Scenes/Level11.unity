@@ -429,7 +429,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1303599796809000183, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
-      value: Chapter-1, Level-2
+      value: 'Level 11
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 2896113918490553937, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_AnchoredPosition.y
