@@ -124,7 +124,10 @@ public class SwordEnemyBehaviour : MonoBehaviour
         StartCoroutine(resetHurtAnimation());
         hitCount +=amt;
         // sword attack count
-        sendToGoogle.SwordAttackCount(hitCount);
+        if (sendToGoogle != null)
+        {
+            sendToGoogle.SwordAttackCount();
+        }
         if (hitCount >= maxHits)
         {
             SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
