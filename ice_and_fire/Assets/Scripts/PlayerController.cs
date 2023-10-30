@@ -400,7 +400,7 @@ public class PlayerController : MonoBehaviour
                 canSwordAttack = false;
                 if (this.sendToGoogle != null)
                 {
-                    sendToGoogle.HitCount();
+                    sendToGoogle.SwordWavedCount();
                 }
                 //Fire sword attack & ice sword attack animation - Ashley 10.26 13:00
                 if (usingFireSword)
