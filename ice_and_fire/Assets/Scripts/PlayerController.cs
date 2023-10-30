@@ -10,6 +10,8 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     //public Variables
+    public bool isArrow = false;
+    public bool isSword = false;
     public int maxHealth = 100;
     public int killCount = 0;
     public string playerStyle = "normal";
@@ -69,8 +71,7 @@ public class PlayerController : MonoBehaviour
     private GameObject Myobj;
     private GateController gateController;
     private KeyGateController keyGateController;
-    private bool isArrow = false;
-    private bool isSword = false;
+    
 
 
     private void Awake()

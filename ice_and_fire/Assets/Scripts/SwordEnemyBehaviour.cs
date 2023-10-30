@@ -17,11 +17,12 @@ public class SwordEnemyBehaviour : MonoBehaviour
     private bool isOnFire = false;
     private string swordEnemyType;
     private SendToGoogle sendToGoogle;
-
+    private PlayerController playerController;
     void Start()
     {
         this.swordEnemyType = this.gameObject.tag;
         this.sendToGoogle = FindObjectOfType<SendToGoogle>();
+        this.playerController = FindObjectOfType<PlayerController>();
         playerAnimator = GetComponent<Animator>();
         initialPosition = transform.position;
         playerAnimator.SetBool("shoot", false);
@@ -118,7 +119,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
 
     public void TakeHits(int amt)
     {
-        PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
+        
         //isAttacking = false;
         //canMove = false;
         playerAnimator.SetBool("isHurt", true);
@@ -129,8 +130,12 @@ public class SwordEnemyBehaviour : MonoBehaviour
         {
             if (playerController.isSword) { 
 
-            sendToGoogle.SwordAttackCount();
+            sendToGoogle.ValidSwordAttackCount();
 
+            }
+            else if (playerController.isArrow)
+            {
+                sendToGoogle.HitCount();
             }
         }
         if (hitCount >= maxHits)
