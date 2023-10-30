@@ -24,7 +24,11 @@ public class NightKingArea : MonoBehaviour
     {
         // 这部分如何统计
         hitCount += amt;
-        sendToGoogle.SwordAttackCount(hitCount);
+        if (sendToGoogle != null)
+        {
+            sendToGoogle.SwordAttackCount(hitCount);
+        }
+        
         if (hitCount >= maxHits)
         {
             SendToGoogle sendToGoogle = FindObjectOfType<SendToGoogle>();
