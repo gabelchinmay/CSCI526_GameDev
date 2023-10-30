@@ -27,6 +27,10 @@ public class PlatformController : MonoBehaviour
         else if(platformType == "Bi") {
             StartCoroutine(ColorBiChangingLoop());
         }
+        else if (platformType == "Normal")
+        {
+            StartCoroutine(ColorBiChangingLoop());
+        }
     }
 
     private void Update()
