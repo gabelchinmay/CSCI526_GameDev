@@ -56,6 +56,7 @@ TagManager:
   - WildFirePickable
   - FireGate
   - FireDragon
+  - IceDragon
   layers:
   - Default
   - TransparentFX

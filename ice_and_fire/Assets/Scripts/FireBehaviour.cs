@@ -31,6 +31,22 @@ public class FireBehaviour : MonoBehaviour
                 playerController.OnDragonFireEnter(this);
             }
         }
+
+        if (other.gameObject.CompareTag("IceArrowEnemy") || other.gameObject.CompareTag("IceSwordEnemy") || other.gameObject.CompareTag("Dead") || other.gameObject.CompareTag("WhiteWalker") || other.gameObject.CompareTag("NightKing"))
+        {
+            
+            SwordEnemyBehaviour swordEnemyController = other.gameObject.GetComponent<SwordEnemyBehaviour>();
+            ArrowEnemyBehavior arrowEnemyController = other.gameObject.GetComponent<ArrowEnemyBehavior>();
+            if (swordEnemyController != null)
+            {
+                swordEnemyController.TakeHits(2);
+            }
+
+            if (arrowEnemyController != null)
+            {
+                arrowEnemyController.TakeHits(2);
+            }
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other)
@@ -43,5 +59,7 @@ public class FireBehaviour : MonoBehaviour
                 playerController.OnDragonFireExit(this);
             }
         }
+
+
     }
 }

@@ -26,7 +26,25 @@ public class IceFireBehaviour : MonoBehaviour
                 playerController.OnIceDragonFireEnter(this);
             }
         }
+
+        if (other.gameObject.CompareTag("FireArrowEnemy") || other.gameObject.CompareTag("FireSwordEnemy"))
+        {
+            // Debug.Log("IceDragonfire on enemy!");
+            SwordEnemyBehaviour swordEnemyController = other.gameObject.GetComponent<SwordEnemyBehaviour>();
+            ArrowEnemyBehavior arrowEnemyController = other.gameObject.GetComponent<ArrowEnemyBehavior>();
+            if (swordEnemyController != null)
+            {
+                swordEnemyController.TakeHits(2);
+            }
+
+            if (arrowEnemyController != null)
+            {
+                arrowEnemyController.TakeHits(2);
+            }
+        }
     }
+
+    
 
     private void OnCollisionExit2D(Collision2D other)
     {

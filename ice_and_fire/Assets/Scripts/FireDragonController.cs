@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class FireDragonController : MonoBehaviour
 {
     // switching time between idle and flaming
-    public float changingTime = 5.0f;
+    public float changingTime = (float) (2 * Math.PI - 2);
+    public float flamingTime = 2.0f;
+
 
     // gameobject and animator
     public GameObject FireDragon; 
@@ -23,6 +26,13 @@ public class FireDragonController : MonoBehaviour
     Transform fireTransform;
     GameObject fire;
 
+    // moving
+    private Vector3 initialPosition;
+    // private Vector3 initialRotation;
+    public float amplitude = 5f;
+    public float frequency = 1 / 2f;
+    private float previousOscillation = 0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,19 +44,24 @@ public class FireDragonController : MonoBehaviour
 
         healthBar = GetComponentInChildren<FloatingHealthBar>();
 
-        // assign the Fire component
-        fireTransform = FireDragon.transform.Find("Fire");
-        if (fireTransform != null)
-        {
-            // Access the 'Fire' GameObject's components here
-            fire = fireTransform.gameObject;
-            // You can now access the components of the 'Fire' GameObject
-        }
-        else
-        {
-            Debug.LogError("Fire GameObject not found under the dragon.");
-        }
-        fire.SetActive(false);
+        // // assign the Fire component
+        // fireTransform = FireDragon.transform.Find("Fire");
+        // if (fireTransform != null)
+        // {
+        //     // Access the 'Fire' GameObject's components here
+        //     fire = fireTransform.gameObject;
+        //     // You can now access the components of the 'Fire' GameObject
+        // }
+        // else
+        // {
+        //     Debug.LogError("Fire GameObject not found under the dragon.");
+        // }
+        // fire.SetActive(false);
+
+        // initialize moving
+        initialPosition = transform.position;
+        // initialRotation = transform.rotation;
+        previousOscillation = amplitude * Mathf.Sin(frequency * Time.time);
 
         
     }
@@ -54,12 +69,28 @@ public class FireDragonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool isFlaming = anim.GetBool("flaming");
-        fire.SetActive(isFlaming);
+        // bool isFlaming = anim.GetBool("flaming");
+        // bool isHurt = anim.GetBool("isHurt");
+        // fire.SetActive(isFlaming);
 
-        // Set the visibility of the head GameObject
+        // move back and forth
+        float oscillation = amplitude * Mathf.Sin(frequency * Time.time);
+        transform.position = initialPosition + Vector3.right * oscillation;
+            // playerAnimator.SetFloat("speed", oscillation);
+
+        if (oscillation > previousOscillation)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        previousOscillation = oscillation;
+
         
 
+        // set flaming timer
         changingTime -= Time.deltaTime;
         if (changingTime < 0){
             
@@ -68,10 +99,10 @@ public class FireDragonController : MonoBehaviour
             
             
         }
-        if (changingTime < -3.0f){
+        if (changingTime < -flamingTime){
             // fire.SetActive(false);
             anim.SetBool("flaming",false);
-            changingTime = 5.0f;
+            changingTime = (float) (2 * Math.PI - 2);
             
         }
 
@@ -100,7 +131,6 @@ public class FireDragonController : MonoBehaviour
     private void closeHurt()
     {
         anim.SetBool("isHurt", false);
-        anim.SetBool("returnIdle", true);
     }
 
     // disappear
