@@ -1772,6 +1772,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6113703264906306594, guid: 40ce7729e995d45e1958bb41da08e639, type: 3}
+      propertyPath: m_Size.x
+      value: 9.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113703264906306594, guid: 40ce7729e995d45e1958bb41da08e639, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 9.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113703264906306594, guid: 40ce7729e995d45e1958bb41da08e639, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.18
+      objectReference: {fileID: 0}
     - target: {fileID: 8186810413298963996, guid: 40ce7729e995d45e1958bb41da08e639, type: 3}
       propertyPath: m_Name
       value: NormalPlatform (2)
