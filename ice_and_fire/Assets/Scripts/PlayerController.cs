@@ -352,7 +352,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(bowAttackCooldownRoutine());
         }
 
-        // Arrow
+        // Arrow-
         if (Input.GetKeyDown(KeyCode.UpArrow) && canArrowAttack) // Replace with your preferred shoot key.
         {
 
