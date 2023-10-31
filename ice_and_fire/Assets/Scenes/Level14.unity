@@ -152,7 +152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 203494219705783828, guid: 1870300bf39f04288bb1817d515e4763, type: 3}
       propertyPath: m_text
-      value: Hint For Arrows
+      value: Pick Up Arrows
       objectReference: {fileID: 0}
     - target: {fileID: 203494219705783828, guid: 1870300bf39f04288bb1817d515e4763, type: 3}
       propertyPath: m_margin.w
@@ -598,7 +598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 203494219705783828, guid: 1870300bf39f04288bb1817d515e4763, type: 3}
       propertyPath: m_text
-      value: Hint For Wild Fire
+      value: Pick Up Wild Fire
       objectReference: {fileID: 0}
     - target: {fileID: 203494219705783828, guid: 1870300bf39f04288bb1817d515e4763, type: 3}
       propertyPath: m_margin.w
@@ -907,7 +907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 203494219705783828, guid: 1870300bf39f04288bb1817d515e4763, type: 3}
       propertyPath: m_text
-      value: Hint For Using Wild Fire
+      value: Use Wild Fire
       objectReference: {fileID: 0}
     - target: {fileID: 203494219705783828, guid: 1870300bf39f04288bb1817d515e4763, type: 3}
       propertyPath: m_margin.w
