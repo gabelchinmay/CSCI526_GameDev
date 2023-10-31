@@ -941,6 +941,10 @@ MonoBehaviour:
   ArrowCount: 0
   ArrowHitsEnemyCount: 0
   KillCount: 0
+  KillSwordCount: 0
+  ValidSwordAttack: 0
+  SwordWaveCount: 0
+  hp: 0
   SwordDamageCount: 0
 --- !u!4 &569796529
 Transform:
@@ -1167,7 +1171,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6437144975825527531, guid: f2753ed6d5d3e4ad8b9c4d12210b86a9, type: 3}
       propertyPath: nextLevel
-      value: Chapter3_Level0
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6437144975825527533, guid: f2753ed6d5d3e4ad8b9c4d12210b86a9, type: 3}
       propertyPath: m_RootOrder
