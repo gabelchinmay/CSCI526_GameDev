@@ -1107,6 +1107,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+--- !u!114 &906827357 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2327608401022078517, guid: df40229f7eab94490bb764a34777a35f, type: 3}
+  m_PrefabInstance: {fileID: 906827356}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb710914dfdeca4e93ca36cfe8d833d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &953218483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,6 +1907,10 @@ MonoBehaviour:
   ArrowCount: 0
   ArrowHitsEnemyCount: 0
   KillCount: 0
+  KillSwordCount: 0
+  ValidSwordAttack: 0
+  SwordWaveCount: 0
+  hp: 0
   SwordDamageCount: 0
 --- !u!1001 &1727885756
 PrefabInstance:
@@ -2345,7 +2360,11 @@ PrefabInstance:
     - target: {fileID: 6083283999004043884, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: gameOverScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 906827357}
+    - target: {fileID: 6083283999004043884, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
+      propertyPath: iceArrowPrefab
+      value: 
+      objectReference: {fileID: 291200549579088345, guid: 4304455d30002493da96acf281aa05c0, type: 3}
     - target: {fileID: 6083283999004043884, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: wildFirePrefab
       value: 
@@ -2354,6 +2373,10 @@ PrefabInstance:
       propertyPath: defrostTimerTxt
       value: 
       objectReference: {fileID: 1349414934}
+    - target: {fileID: 6083283999004043884, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
+      propertyPath: fireArrowPrefab
+      value: 
+      objectReference: {fileID: 492580531370351248, guid: e2fa6e25ede8c49639c981905e127257, type: 3}
     - target: {fileID: 6083283999004043884, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: shieldTimerText
       value: 
