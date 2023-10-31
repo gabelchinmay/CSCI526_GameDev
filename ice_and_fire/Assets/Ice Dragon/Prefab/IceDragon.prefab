@@ -711,7 +711,7 @@ GameObject:
   - component: {fileID: 3627991843921198192}
   m_Layer: 0
   m_Name: IceDragon
-  m_TagString: Untagged
+  m_TagString: IceDragon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

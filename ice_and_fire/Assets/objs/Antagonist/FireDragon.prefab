@@ -616,7 +616,7 @@ GameObject:
   - component: {fileID: 6746995930351191184}
   m_Layer: 0
   m_Name: FireDragon
-  m_TagString: Untagged
+  m_TagString: FireDragon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -677,6 +677,8 @@ MonoBehaviour:
   health: 1000
   maxHealth: 1000
   healthBar: {fileID: 0}
+  amplitude: 5
+  frequency: 0.5
 --- !u!61 &6746995930351191184
 BoxCollider2D:
   m_ObjectHideFlags: 0

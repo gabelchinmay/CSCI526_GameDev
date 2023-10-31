@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class IceDragonController : MonoBehaviour
 {
     // switching time between idle and flaming
-    public float changingTime = 5.0f;
+    public float changingTime = (float) (2 * Math.PI - 2);
+    public float flamingTime = 2.0f;
 
     // gameobject and animator
     public GameObject IceDragon; 
@@ -19,6 +21,13 @@ public class IceDragonController : MonoBehaviour
     [SerializeField] float health, maxHealth = 1000f;
     [SerializeField] FloatingHealthBar healthBar;
 
+    // moving
+    private Vector3 initialPosition;
+    // private Vector3 initialRotation;
+    public float amplitude = 5f;
+    public float frequency = 1 / 2f;
+    private float previousOscillation = 0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +37,10 @@ public class IceDragonController : MonoBehaviour
         anim.SetBool("isAlive",true);
 
         healthBar = GetComponentInChildren<FloatingHealthBar>();
+        // initialize moving
+        initialPosition = transform.position;
+        // initialRotation = transform.rotation;
+        previousOscillation = amplitude * Mathf.Sin(frequency * Time.time);
 
         
     }
@@ -35,14 +48,35 @@ public class IceDragonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // move back and forth
+        float oscillation = amplitude * Mathf.Sin(frequency * Time.time);
+        transform.position = initialPosition + Vector3.right * oscillation;
+            // playerAnimator.SetFloat("speed", oscillation);
+
+        if (oscillation > previousOscillation)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        previousOscillation = oscillation;
+
+        // set flaming timer
         changingTime -= Time.deltaTime;
         if (changingTime < 0){
+            
             anim.SetBool("flaming",true);
+            // fire.SetActive(true);
+            
             
         }
-        if (changingTime < -3.0f){
+        if (changingTime < -flamingTime){
+            // fire.SetActive(false);
             anim.SetBool("flaming",false);
-            changingTime = 5.0f;
+            changingTime = (float) (2 * Math.PI - 2);
+            
         }
         
     }
