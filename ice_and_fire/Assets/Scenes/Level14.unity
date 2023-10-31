@@ -152,7 +152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 203494219705783828, guid: 1870300bf39f04288bb1817d515e4763, type: 3}
       propertyPath: m_text
-      value: Hint For Arrows
+      value: Pick Up Arrows
       objectReference: {fileID: 0}
     - target: {fileID: 203494219705783828, guid: 1870300bf39f04288bb1817d515e4763, type: 3}
       propertyPath: m_margin.w
@@ -598,7 +598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 203494219705783828, guid: 1870300bf39f04288bb1817d515e4763, type: 3}
       propertyPath: m_text
-      value: Hint For Wild Fire
+      value: Pick Up Wild Fire
       objectReference: {fileID: 0}
     - target: {fileID: 203494219705783828, guid: 1870300bf39f04288bb1817d515e4763, type: 3}
       propertyPath: m_margin.w
@@ -907,7 +907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 203494219705783828, guid: 1870300bf39f04288bb1817d515e4763, type: 3}
       propertyPath: m_text
-      value: Hint For Using Wild Fire
+      value: Use Wild Fire
       objectReference: {fileID: 0}
     - target: {fileID: 203494219705783828, guid: 1870300bf39f04288bb1817d515e4763, type: 3}
       propertyPath: m_margin.w
@@ -1119,6 +1119,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.02459474
       objectReference: {fileID: 0}
+    - target: {fileID: 7523905617811977667, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7523905617811977676, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
       propertyPath: m_Name
       value: HingedGate2
@@ -1133,11 +1137,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7523905617811977679, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.719635
+      value: -22.74
       objectReference: {fileID: 0}
     - target: {fileID: 7523905617811977679, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.8000002
+      value: 2.71
       objectReference: {fileID: 0}
     - target: {fileID: 7523905617811977679, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2744,8 +2748,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549766294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: -2.3042161}
-  m_LocalScale: {x: 1, y: 0.1771875, z: 1}
+  m_LocalPosition: {x: -10, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2825,6 +2829,14 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.02459474
       objectReference: {fileID: 0}
+    - target: {fileID: 7523905617811977667, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523905617811977667, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7523905617811977676, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
       propertyPath: m_Name
       value: HingedGate1
@@ -2838,12 +2850,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7523905617811977679, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.3782
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523905617811977679, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -67.719635
       objectReference: {fileID: 0}
     - target: {fileID: 7523905617811977679, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.8
+      value: 9.7391
       objectReference: {fileID: 0}
     - target: {fileID: 7523905617811977679, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
       propertyPath: m_LocalPosition.z

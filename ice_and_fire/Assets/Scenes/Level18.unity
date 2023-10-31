@@ -285,8 +285,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124101564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: -10, z: -2.3042161}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalPosition: {x: 12, y: -10, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2236,6 +2236,14 @@ PrefabInstance:
       propertyPath: m_Motor.m_MotorSpeed
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 7523905617811977667, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523905617811977667, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7523905617811977676, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
       propertyPath: m_Name
       value: HingedGate
@@ -2960,6 +2968,14 @@ PrefabInstance:
     - target: {fileID: 7523905617811977665, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: 0.7599999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523905617811977667, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523905617811977667, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7523905617811977676, guid: f65a32f1f080f477786a037bcf6e81dd, type: 3}
       propertyPath: m_Name
@@ -4501,6 +4517,10 @@ PrefabInstance:
       propertyPath: shieldTimerText
       value: 
       objectReference: {fileID: 712611431}
+    - target: {fileID: 4056333340771122049, guid: f22d95c32705149138a89337517f84b1, type: 3}
+      propertyPath: defenseWallPrefab
+      value: 
+      objectReference: {fileID: 7171553044905755986, guid: cf7cba3a7fdfe451cba0488c5c84010b, type: 3}
     - target: {fileID: 4056333340771122054, guid: f22d95c32705149138a89337517f84b1, type: 3}
       propertyPath: m_Name
       value: Player
