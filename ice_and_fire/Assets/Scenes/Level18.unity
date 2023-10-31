@@ -4501,6 +4501,10 @@ PrefabInstance:
       propertyPath: shieldTimerText
       value: 
       objectReference: {fileID: 712611431}
+    - target: {fileID: 4056333340771122049, guid: f22d95c32705149138a89337517f84b1, type: 3}
+      propertyPath: defenseWallPrefab
+      value: 
+      objectReference: {fileID: 7171553044905755986, guid: cf7cba3a7fdfe451cba0488c5c84010b, type: 3}
     - target: {fileID: 4056333340771122054, guid: f22d95c32705149138a89337517f84b1, type: 3}
       propertyPath: m_Name
       value: Player
