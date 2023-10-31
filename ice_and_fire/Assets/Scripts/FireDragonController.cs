@@ -115,11 +115,7 @@ public class FireDragonController : MonoBehaviour
         if (other.CompareTag("IceArrow"))
         {
             takeDamage(ARROW_DAMAGE);
-
         }
-
     }
-
-
-       
+    
 }
