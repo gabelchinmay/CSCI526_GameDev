@@ -765,6 +765,7 @@ public class PlayerController : MonoBehaviour
         bool onPlatform = (other.gameObject.CompareTag("Platform_Normal") || other.gameObject.CompareTag("Platform_Moving") || other.gameObject.CompareTag("Platform_Rotate") || other.gameObject.CompareTag("Platform_AutoSpin")
                            || other.gameObject.CompareTag("Platform_Breakable") || other.gameObject.CompareTag("Platform_Color") || other.gameObject.CompareTag("Platform_Tri") || other.gameObject.CompareTag("DefenseWallSpawn"));
         bool onAntagonist = (isOnMonster || isOnSaw || isOnSpike);
+        bool isTouchDragon = (other.gameObject.CompareTag("FireDragon") || other.gameObject.CompareTag("IceDragon"));
         if (onPlatform || onAntagonist)
         {
             canJump = true;
@@ -772,6 +773,13 @@ public class PlayerController : MonoBehaviour
 
             //Disable the Jumping animation when landing
             playerAnimator.SetBool("isJumping", false);
+        }
+
+        // If the player has a contact with the dragon, this player will be killed
+        if (isTouchDragon)
+        {
+            this.freeze();
+            gameOverScreen.SetUp();
         }
     }
 
