@@ -177,7 +177,7 @@ public class PlayerController : MonoBehaviour
             }
             if (inventory.ContainsKey("Key"))
             {
-                InventoryText.text += "\nKeys: " + inventory["Key"];
+                InventoryText.text += "\nFire Magics: " + inventory["Key"];
             }
             if (inventory.ContainsKey("DefenseWall"))
             {
@@ -571,11 +571,21 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Key") || collision.CompareTag("Defrost") || collision.CompareTag("Placeholder") || collision.CompareTag("DefenseWall"))
+        if ( (collision.CompareTag("Key") && this.playerStyle != "ice") || collision.CompareTag("Defrost") || (collision.CompareTag("Placeholder") && this.playerStyle != "fire") || collision.CompareTag("DefenseWall"))
         {
 
             string itemName = collision.tag;
-            StartCoroutine(DisplayTextForDuration("Picked up " + itemName + "!", 3.0f, Color.yellow));
+            if (collision.CompareTag("Key"))
+            {
+                StartCoroutine(DisplayTextForDuration("Picked up " + "Fire Magic" + "!", 3.0f, Color.yellow));
+
+
+            }
+            else {
+                StartCoroutine(DisplayTextForDuration("Picked up " + itemName + "!", 3.0f, Color.yellow));
+
+            }
+
 
 
             if (inventory.ContainsKey(itemName))

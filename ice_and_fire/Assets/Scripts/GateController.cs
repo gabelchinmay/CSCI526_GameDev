@@ -5,10 +5,13 @@ public class GateController : MonoBehaviour
 {
     public GameObject hingedGate;
     private SpriteRenderer spriteRenderer;
+    private Collider2D collider;
+
     private string style;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        this.collider = GetComponent<Collider2D>();
     }
 
     void Update()
@@ -31,6 +34,7 @@ public class GateController : MonoBehaviour
         {
             OpenIceGate();
             spriteRenderer.enabled = false;
+            this.collider.enabled = false;
         }
 
     }
