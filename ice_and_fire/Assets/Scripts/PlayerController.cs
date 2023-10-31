@@ -255,7 +255,7 @@ public class PlayerController : MonoBehaviour
     private void ButtonControls()
     {
         //Placeholder
-        if (Input.GetKeyDown(KeyCode.K) && inventory.ContainsKey("Placeholder") && !isMovingToPosition)
+        if (Input.GetKeyDown(KeyCode.A) && inventory.ContainsKey("Placeholder") && !isMovingToPosition)
         {
 
             playerPreviousPosition = transform.position;
@@ -277,7 +277,7 @@ public class PlayerController : MonoBehaviour
 
 
         // Defense Wall
-        if (Input.GetKeyDown(KeyCode.J) && inventory.ContainsKey("DefenseWall"))
+        if (Input.GetKeyDown(KeyCode.D) && inventory.ContainsKey("DefenseWall"))
         {
             DefenseWallPowerUp();
 
@@ -294,7 +294,7 @@ public class PlayerController : MonoBehaviour
 
 
         // Defrost
-        if (Input.GetKeyDown(KeyCode.F) && inventory.ContainsKey("Defrost"))
+        if (Input.GetKeyDown(KeyCode.W) && inventory.ContainsKey("Defrost"))
         {
             StartCoroutine(DefrostPowerUp());
 
