@@ -132,16 +132,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1303599796809000183, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
-      value: Level 3
+      value: LEVEL 6
       objectReference: {fileID: 0}
     - target: {fileID: 1303599796809000183, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
     - target: {fileID: 1303599796809000183, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
     - target: {fileID: 2896113918490553937, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -1.25177
