@@ -2264,6 +2264,10 @@ PrefabInstance:
       propertyPath: platformType
       value: Tri
       objectReference: {fileID: 0}
+    - target: {fileID: 5709924795340981188, guid: 2c47eacf560474486822f16e841df2f7, type: 3}
+      propertyPath: rotationSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5982138976164433477, guid: 2c47eacf560474486822f16e841df2f7, type: 3}
       propertyPath: m_Mass
       value: 10
