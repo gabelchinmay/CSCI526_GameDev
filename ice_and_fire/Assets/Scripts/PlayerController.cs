@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
     private int maxJumps = 1;
     private int currentHealth;
     private int direction = 1;
-    private float speed = 10.0f;
+    private float speed = 8.0f;
     private float jumpForce = 10.0f;
     private float playerMassMultiplicationFactor = 2f;
     private float playerJumpForceMultiplicationFactor = 2f;
@@ -449,7 +449,7 @@ public class PlayerController : MonoBehaviour
         }
         if (!isOnPlatform)
         {
-            speed = 10.0f;
+            //speed = 10.0f;
             canJump = true;
         }
         else
@@ -760,7 +760,7 @@ public class PlayerController : MonoBehaviour
                 if (currentColour == Color.red && this.playerStyle != "fire")
                 {
                     this.TakeDamage(2);
-                    speed = 10.0f;
+                    //speed = 10.0f;
                 }
 
                 else if (currentColour == Color.cyan  && this.playerStyle != "ice")
@@ -770,7 +770,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    speed = 10.0f;
+                    //speed = 10.0f;
                 }
             }
 
