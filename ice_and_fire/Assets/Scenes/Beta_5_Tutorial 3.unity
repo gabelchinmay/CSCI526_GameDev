@@ -2174,6 +2174,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 68dcbb6cc1c01499488804dc8b113137, type: 3}
     - target: {fileID: 417693268123398353, guid: 3944b0b30a4e1462a931b7c6979ff3af, type: 3}
+      propertyPath: playerStyle
+      value: fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 417693268123398353, guid: 3944b0b30a4e1462a931b7c6979ff3af, type: 3}
       propertyPath: gameOverText
       value: 
       objectReference: {fileID: 1238759246}
