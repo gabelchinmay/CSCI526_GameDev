@@ -6,8 +6,9 @@ public class PlatformController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     public string platformType;
+    public GameObject player;
     public float rotationSpeed = 30f;
-
+    private bool isOnPlatform = false;
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -32,6 +33,7 @@ public class PlatformController : MonoBehaviour
         {
             spriteRenderer.color = originalColor;
         }
+        StartCoroutine(InflictDamagesFromPlatform());
     }
 
     private void Update()
@@ -75,7 +77,9 @@ public class PlatformController : MonoBehaviour
             if (playerController != null)
             {
                 playerController.OnPlatformEnter(this);
+
             }
+            this.isOnPlatform = true;
         }
     }
 
@@ -88,6 +92,7 @@ public class PlatformController : MonoBehaviour
             {
                 playerController.OnPlatformExit(this);
             }
+            this.isOnPlatform = false;
         }
     }
 
@@ -96,6 +101,44 @@ public class PlatformController : MonoBehaviour
     {
         return this.spriteRenderer.color;
 
+    }
+
+    private IEnumerator InflictDamagesFromPlatform()
+    {
+        while (true)
+        {
+            //Debug.Log((spriteRenderer.color == Color.red).ToString() + this.playerStyle + isOnPlatform);
+
+
+
+            if (this.isOnPlatform)
+            {
+                //currentColour = CurrPlatform.getSpriteColor();
+
+
+                if (spriteRenderer.color == Color.red && player.GetComponent<PlayerController>().getPlayerStyle() != "fire")
+                {
+                    //this.TakeDamage(10);
+                    player.GetComponent<PlayerController>().TakeDamage(10);
+                    //speed = 10.0f;
+                }
+
+                else if (spriteRenderer.color == Color.cyan && player.GetComponent<PlayerController>().getPlayerStyle() != "ice")
+                {
+                    player.GetComponent<PlayerController>().TakeDamage(1);
+                    //this.TakeDamage(1);
+                    //speed = 1.0f;
+                }
+                else
+                {
+                    //speed = 10.0f;
+                }
+            }
+
+
+            yield return new WaitForSeconds(1.0f);
+
+        }
     }
 
 }
