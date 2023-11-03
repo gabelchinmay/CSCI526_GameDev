@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public bool isSword = false;
     public int maxHealth = 100;
     public int killCount = 0;
+    public string playerStyle = "fire";
     public TMP_Text healthText;
     public TMP_Text gameOverText;
     public TMP_Text pickUpText;
@@ -56,7 +57,6 @@ public class PlayerController : MonoBehaviour
     private float jumpForce = 10.0f;
     private float playerMassMultiplicationFactor = 2f;
     private float playerJumpForceMultiplicationFactor = 2f;
-    private string playerStyle = "fire";
     private Rigidbody2D rb;
     private PlatformController CurrPlatform = null;
     private Color currentColour;
@@ -454,9 +454,13 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            if ( (currentColour == Color.red && this.playerStyle != "fire") || (currentColour == Color.cyan && this.playerStyle != "ice")) //removed defrost
+            if ( (currentColour == Color.cyan && this.playerStyle != "ice")) //removed defrost
             {
                 canJump = false;
+            }
+            else if ((currentColour == Color.red && this.playerStyle != "fire"))
+            {
+                canJump = true;
             }
             else
             {
@@ -759,7 +763,7 @@ public class PlayerController : MonoBehaviour
 
                 if (currentColour == Color.red && this.playerStyle != "fire")
                 {
-                    this.TakeDamage(2);
+                    this.TakeDamage(10);
                     //speed = 10.0f;
                 }
 
