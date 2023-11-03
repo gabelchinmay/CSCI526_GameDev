@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3106164812962953775}
   - component: {fileID: 3106164812962953774}
   - component: {fileID: 3106164812962953773}
-  - component: {fileID: 4140780150221033856}
   - component: {fileID: 4912706323754293427}
   m_Layer: 0
   m_Name: Ziyu
@@ -153,37 +152,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c7ff325f0e764658ac34dcc9c494598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isArrow: 0
+  isSword: 0
   maxHealth: 30
   killCount: 0
   playerStyle: normal
   healthText: {fileID: 0}
   gameOverText: {fileID: 0}
-  InventoryText: {fileID: 0}
   pickUpText: {fileID: 0}
   shieldTimerText: {fileID: 0}
-  defrostTimerTxt: {fileID: 0}
   HealthSkeleton: {fileID: 0}
   HealthBar: {fileID: 0}
   fireArrowPrefab: {fileID: 0}
   iceArrowPrefab: {fileID: 0}
-  wildFirePrefab: {fileID: 0}
-  placeholderPrefab: {fileID: 1679066785320752784, guid: 587e236623100447aae1b3afc4f0b1a8, type: 3}
   defenseWallPrefab: {fileID: 0}
   gameOverScreen: {fileID: 0}
---- !u!114 &4140780150221033856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3106164812962953770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a37ce3798293e8644a5e7b88072ed971, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  localCamera: {fileID: 0}
-  globalCamera: {fileID: 0}
+  modRenderer: {fileID: 0}
+  edRenderer: {fileID: 0}
+  modAnimator: {fileID: 0}
+  edAnimator: {fileID: 0}
 --- !u!95 &4912706323754293427
 Animator:
   serializedVersion: 5
