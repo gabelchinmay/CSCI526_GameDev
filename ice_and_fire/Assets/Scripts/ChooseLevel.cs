@@ -32,8 +32,8 @@ public class ChooseLevel : MonoBehaviour
 
     public void UnlockAll()
     {
-        PlayerPrefs.SetInt("ReachedIndex", 18);
-        PlayerPrefs.SetInt("UnlockedLevel", 18);
+        PlayerPrefs.SetInt("ReachedIndex", 6);
+        PlayerPrefs.SetInt("UnlockedLevel", 6);
         PlayerPrefs.Save();
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
