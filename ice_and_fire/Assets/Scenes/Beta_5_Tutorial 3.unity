@@ -2189,6 +2189,10 @@ PrefabInstance:
       propertyPath: shieldTimerText
       value: 
       objectReference: {fileID: 145768347}
+    - target: {fileID: 417693268123398354, guid: 3944b0b30a4e1462a931b7c6979ff3af, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 417693268123398358, guid: 3944b0b30a4e1462a931b7c6979ff3af, type: 3}
       propertyPath: m_Name
       value: MotherOfDragon
