@@ -458,7 +458,7 @@ public class PlayerController : MonoBehaviour
             {
                 canJump = false;
             }
-            else if ((currentColour == Color.red && this.playerStyle != "fire"))
+            else if (currentColour == Color.red )
             {
                 canJump = true;
             }
@@ -758,8 +758,14 @@ public class PlayerController : MonoBehaviour
     {
         while (true)
         {
+            Debug.Log((currentColour == Color.red).ToString() +  this.playerStyle + isOnPlatform);
+
+
+
             if (isOnPlatform)
             {
+                currentColour = CurrPlatform.getSpriteColor();
+
 
                 if (currentColour == Color.red && this.playerStyle != "fire")
                 {
