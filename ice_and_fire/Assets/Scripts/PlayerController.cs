@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         UpdateHealthUI();
-        StartCoroutine(InflictDamagesFromPlatform());
+        //StartCoroutine(InflictDamagesFromPlatform());
         StartCoroutine(InflictDamagesFromAntagonists());
         StartCoroutine(InflictColdDamage());
         InitAnimations();
@@ -754,41 +754,41 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private IEnumerator InflictDamagesFromPlatform()
-    {
-        while (true)
-        {
-            Debug.Log((currentColour == Color.red).ToString() +  this.playerStyle + isOnPlatform);
+    //private IEnumerator InflictDamagesFromPlatform()
+    //{
+    //    while (true)
+    //    {
+    //        Debug.Log((currentColour == Color.red).ToString() +  this.playerStyle + isOnPlatform);
 
 
 
-            if (isOnPlatform)
-            {
-                currentColour = CurrPlatform.getSpriteColor();
+    //        if (isOnPlatform)
+    //        {
+    //            currentColour = CurrPlatform.getSpriteColor();
 
 
-                if (currentColour == Color.red && this.playerStyle != "fire")
-                {
-                    this.TakeDamage(10);
-                    //speed = 10.0f;
-                }
+    //            if (currentColour == Color.red && this.playerStyle != "fire")
+    //            {
+    //                this.TakeDamage(10);
+    //                //speed = 10.0f;
+    //            }
 
-                else if (currentColour == Color.cyan  && this.playerStyle != "ice")
-                {
-                    this.TakeDamage(1);
-                    //speed = 1.0f;
-                }
-                else
-                {
-                    //speed = 10.0f;
-                }
-            }
+    //            else if (currentColour == Color.cyan  && this.playerStyle != "ice")
+    //            {
+    //                this.TakeDamage(1);
+    //                //speed = 1.0f;
+    //            }
+    //            else
+    //            {
+    //                //speed = 10.0f;
+    //            }
+    //        }
 
 
-            yield return new WaitForSeconds(1.0f);
+    //        yield return new WaitForSeconds(1.0f);
 
-        }
-    }
+    //    }
+    //}
 
     private IEnumerator InflictDamagesFromAntagonists()
     {
