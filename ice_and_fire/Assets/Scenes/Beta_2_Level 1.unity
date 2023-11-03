@@ -2113,7 +2113,7 @@ PrefabInstance:
     - target: {fileID: 4276742610548151997, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: 7b39fe0e4fba34b638e015a962e56522, type: 2}
     - target: {fileID: 5044167347324355009, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: localCamera
       value: 
