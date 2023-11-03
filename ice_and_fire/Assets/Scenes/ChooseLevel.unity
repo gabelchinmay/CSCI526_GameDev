@@ -296,7 +296,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -208, y: 32}
+  m_AnchoredPosition: {x: -36, y: -17}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &68222491
@@ -405,8 +405,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd1a8ffb6c8440f2b6c08c2a2a24fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 2
-  levelName: 
+  level: 0
+  levelName: Beta_2_Level 1
 --- !u!1 &134809774
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,7 +715,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -410, y: 32}
+  m_AnchoredPosition: {x: -237, y: -17}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &270377058
@@ -824,8 +824,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd1a8ffb6c8440f2b6c08c2a2a24fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
-  levelName: 
+  level: 0
+  levelName: Beta_1_Tutorial 1
 --- !u!1 &276436531
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &276436532
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1264,7 +1264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &372667461
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1413,7 +1413,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &480679138
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1784,7 +1784,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -402, y: -49}
+  m_AnchoredPosition: {x: 182, y: -98}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &742997407
@@ -1893,8 +1893,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd1a8ffb6c8440f2b6c08c2a2a24fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 6
-  levelName: 
+  level: 0
+  levelName: Beta_6_Level 3
 --- !u!1 &802928739
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,7 +2135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &859200166
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2303,7 +2303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 429, y: 29}
+  m_AnchoredPosition: {x: -34, y: -97}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &914809019
@@ -2412,8 +2412,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd1a8ffb6c8440f2b6c08c2a2a24fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 5
-  levelName: 
+  level: 0
+  levelName: Beta_5_Tutorial 3
 --- !u!1 &929326978
 GameObject:
   m_ObjectHideFlags: 0
@@ -3072,18 +3072,6 @@ MonoBehaviour:
   - {fileID: 1646706205}
   - {fileID: 914809019}
   - {fileID: 742997407}
-  - {fileID: 1655245483}
-  - {fileID: 2116025080}
-  - {fileID: 1993306178}
-  - {fileID: 859200167}
-  - {fileID: 1807217198}
-  - {fileID: 276436533}
-  - {fileID: 1654527404}
-  - {fileID: 1983862584}
-  - {fileID: 480679140}
-  - {fileID: 1824390236}
-  - {fileID: 1715359523}
-  - {fileID: 372667463}
 --- !u!1 &1096897771
 GameObject:
   m_ObjectHideFlags: 0
@@ -3924,7 +3912,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 226, y: 32}
+  m_AnchoredPosition: {x: -240, y: -96}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1646706205
@@ -4033,8 +4021,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd1a8ffb6c8440f2b6c08c2a2a24fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 4
-  levelName: 
+  level: 0
+  levelName: Beta_4_Level 2
 --- !u!1 &1654527401
 GameObject:
   m_ObjectHideFlags: 0
@@ -4054,7 +4042,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1654527402
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4203,7 +4191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1655245482
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4769,7 +4757,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1715359521
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4918,7 +4906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1807217197
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5202,7 +5190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1824390234
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5621,7 +5609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1983862582
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5770,7 +5758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1993306176
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5938,7 +5926,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16, y: 32}
+  m_AnchoredPosition: {x: 182, y: -17}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2011703528
@@ -6047,8 +6035,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd1a8ffb6c8440f2b6c08c2a2a24fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 3
-  levelName: 
+  level: 0
+  levelName: Beta_3_Tutorial 2
 --- !u!1 &2017166884
 GameObject:
   m_ObjectHideFlags: 0
@@ -6338,7 +6326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2116025078
 RectTransform:
   m_ObjectHideFlags: 0
