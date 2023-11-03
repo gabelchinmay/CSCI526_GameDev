@@ -42,6 +42,7 @@ public class ArrowEnemyBehavior : MonoBehaviour
                 Vector3 offset = transform.position + Vector3.up * 1f + Vector3.left * 2f;
                 arrowPrefab.GetComponent<SpriteRenderer>().flipX = true;
                 GameObject arrow = Instantiate(arrowPrefab, offset, Quaternion.identity);
+
                 Rigidbody2D a = arrow.GetComponent<Rigidbody2D>();
                 a.velocity = new Vector2(-15f, 0); // Shooting to the left
 
@@ -50,8 +51,10 @@ public class ArrowEnemyBehavior : MonoBehaviour
             {
                 Vector3 offset = transform.position + Vector3.up * 1f + Vector3.right * 2f;
                 GameObject arrow = Instantiate(arrowPrefab, offset, Quaternion.identity);
+                // change the arrow's target
+                arrow.transform.eulerAngles = new Vector3(0, 180, 0);
                 Rigidbody2D a = arrow.GetComponent<Rigidbody2D>();
-                a.velocity = new Vector2(15f, 0); // Shooting to the left
+                a.velocity = new Vector2(15f, 0); // Shooting to the right
             }
 
 
