@@ -2174,6 +2174,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 68dcbb6cc1c01499488804dc8b113137, type: 3}
     - target: {fileID: 417693268123398353, guid: 3944b0b30a4e1462a931b7c6979ff3af, type: 3}
+      propertyPath: playerStyle
+      value: fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 417693268123398353, guid: 3944b0b30a4e1462a931b7c6979ff3af, type: 3}
       propertyPath: gameOverText
       value: 
       objectReference: {fileID: 1238759246}
@@ -2186,9 +2190,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1238759242}
     - target: {fileID: 417693268123398353, guid: 3944b0b30a4e1462a931b7c6979ff3af, type: 3}
+      propertyPath: iceArrowPrefab
+      value: 
+      objectReference: {fileID: 4434421788435884114, guid: 8af1602e5f02c4e5db64ea49d5af7930, type: 3}
+    - target: {fileID: 417693268123398353, guid: 3944b0b30a4e1462a931b7c6979ff3af, type: 3}
+      propertyPath: fireArrowPrefab
+      value: 
+      objectReference: {fileID: 2047358359191647925, guid: fa010d54d8f904a8abaa8f6d7d827651, type: 3}
+    - target: {fileID: 417693268123398353, guid: 3944b0b30a4e1462a931b7c6979ff3af, type: 3}
       propertyPath: shieldTimerText
       value: 
       objectReference: {fileID: 145768347}
+    - target: {fileID: 417693268123398353, guid: 3944b0b30a4e1462a931b7c6979ff3af, type: 3}
+      propertyPath: defenseWallPrefab
+      value: 
+      objectReference: {fileID: 7171553044905755986, guid: cf7cba3a7fdfe451cba0488c5c84010b, type: 3}
     - target: {fileID: 417693268123398354, guid: 3944b0b30a4e1462a931b7c6979ff3af, type: 3}
       propertyPath: m_Size.y
       value: 2

@@ -157,7 +157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1303599796809000183, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
-      value: LEVEL 16
+      value: tutorial 1
       objectReference: {fileID: 0}
     - target: {fileID: 2686880121707296671, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_RootOrder
@@ -743,7 +743,7 @@ PrefabInstance:
       objectReference: {fileID: 2762176623784743391, guid: b04ef77d74a7d4b80bf27adf51a56bc1, type: 3}
     - target: {fileID: 6083283999004043884, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: playerStyle
-      value: normal
+      value: fire
       objectReference: {fileID: 0}
     - target: {fileID: 6083283999004043884, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: gameOverText
