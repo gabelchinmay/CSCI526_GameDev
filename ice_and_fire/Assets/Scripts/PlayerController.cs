@@ -540,7 +540,7 @@ public class PlayerController : MonoBehaviour
             gameOverScreen.SetUp();
         }
 
-        if (collision.CompareTag("DragonEgg"))
+        if (collision.CompareTag("DragonEgg") && this.playerStyle == "fire")
         {
             StartCoroutine(DisplayTextForDuration("Picked up a Dragon egg!", 3.0f, Color.yellow));
             Destroy(collision.gameObject);
