@@ -894,7 +894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3592692152791652514, guid: e77d255328ed6431c821def4cb3de7c3, type: 3}
       propertyPath: m_Size.y
-      value: 1.2
+      value: 1.16
       objectReference: {fileID: 0}
     - target: {fileID: 3592692152791652514, guid: e77d255328ed6431c821def4cb3de7c3, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -2096,7 +2096,7 @@ PrefabInstance:
     - target: {fileID: 4276742610548151997, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: db7f96ed4f52c4bb5a579db3fbe82346, type: 2}
+      objectReference: {fileID: 9100000, guid: 7b39fe0e4fba34b638e015a962e56522, type: 2}
     - target: {fileID: 5044167347324355009, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: localCamera
       value: 
@@ -2259,7 +2259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6083283999004043885, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3
+      value: 2.668
       objectReference: {fileID: 0}
     - target: {fileID: 6083283999004043885, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
