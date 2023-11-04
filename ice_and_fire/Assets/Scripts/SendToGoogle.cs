@@ -23,6 +23,9 @@ public class SendToGoogle : MonoBehaviour
     public int SwordWaveCount = 0;
     public int hp=0;
     public int SwordDamageCount;
+    public int egg=0;
+    public float timeForEgg = 0.0f;
+    public float eggDoneTime = 0.0f;
 
 
 
@@ -36,31 +39,8 @@ public class SendToGoogle : MonoBehaviour
     {
         
         this.Level = level;
-        if (this.Level <3 )
-        {
-            this.Chapter = 1;
-            this.Level = level;
-        }
-        else if (this.Level > 3 && this.Level <9)
-        {
-            this.Chapter=2;
-            this.Level = level-3;
-        }
-        else if (this.Level ==9)
-        {
-            this.Chapter = 3;
-            this.Level = 0;
-        }
-        else if (this.Level > 8 && this.Level < 13)
-        {
-            this.Chapter=3;
-            this.Level = level+1;
-        }
-        else if (this.Level > 12)
-        {
-            this.Chapter=4;
-            this.Level = level -11;
-        }
+       
+        
         Debug.Log("parameter passed");
 
         Debug.Log(chapter.ToString() + " " + level.ToString());
@@ -80,7 +60,7 @@ public class SendToGoogle : MonoBehaviour
 
     public void Send()
     {
-        StartCoroutine(Post(sessionID.ToString(), Attempts.ToString(), Chapter.ToString(), Level.ToString(), Count.ToString(), TotalJump.ToString(), ArrowCount.ToString(), ArrowHitsEnemyCount.ToString(), KillCount.ToString(), KillSwordCount.ToString(), ValidSwordAttack.ToString(), SwordWaveCount.ToString(), hp.ToString()));
+        StartCoroutine(Post(sessionID.ToString(), Attempts.ToString(), Chapter.ToString(), Level.ToString(), Count.ToString(), TotalJump.ToString(), ArrowCount.ToString(), ArrowHitsEnemyCount.ToString(), KillCount.ToString(), KillSwordCount.ToString(), ValidSwordAttack.ToString(), SwordWaveCount.ToString(), hp.ToString(), eggDoneTime.ToString()));
         Debug.Log("ArrowHitsEnemyCount: " + ArrowHitsEnemyCount.ToString());
         Debug.Log(KillCount.ToString());
     }
@@ -129,6 +109,25 @@ public class SendToGoogle : MonoBehaviour
 
     }
 
+    public void pickUpEgg()
+    {
+        egg++;
+        if (egg == 1)
+        {
+            timeForEgg = Time.time;
+            Debug.Log( + eggDoneTime + " sec");
+        }
+        
+        
+        if (egg == 3)
+        {
+            eggDoneTime = Time.time - timeForEgg;
+            Debug.Log( + eggDoneTime + " sec");
+        }
+    }
+
+
+
     public void HitCount()
     {
         ArrowHitsEnemyCount++;
@@ -141,7 +140,7 @@ public class SendToGoogle : MonoBehaviour
         SwordWaveCount++;
     }
 
-    public IEnumerator Post(string sessionID, string attempts, string Chapter, string Level, string Time, string Jump, string arrowShotted, string validShot, string KillCount, string KillSwordCount, string ValidSwordAttack, string SwordWaveCount, string hp)
+    public IEnumerator Post(string sessionID, string attempts, string Chapter, string Level, string Time, string Jump, string arrowShotted, string validShot, string KillCount, string KillSwordCount, string ValidSwordAttack, string SwordWaveCount, string hp, string eggDoneTime )
     {
 
 
@@ -160,6 +159,7 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.1641108659", ValidSwordAttack);
         form.AddField("entry.2027457291", SwordWaveCount);
         form.AddField("entry.226612155", hp);
+        form.AddField("entry.212953843", eggDoneTime);
 
 
         Debug.Log(form.ToString());
