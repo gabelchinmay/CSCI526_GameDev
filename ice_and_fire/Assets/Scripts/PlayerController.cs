@@ -305,7 +305,7 @@ public class PlayerController : MonoBehaviour
 
 
         // Arrow-
-        if (Input.GetKeyDown(KeyCode.C) && canArrowAttack) // Replace with your preferred shoot key.
+        if (Input.GetKeyDown(KeyCode.V) && canArrowAttack) // Replace with your preferred shoot key.
         {
 
             pressArrow();
@@ -342,7 +342,7 @@ public class PlayerController : MonoBehaviour
         }
         
         //Sword
-        if (Input.GetKeyDown(KeyCode.V) && canSwordAttack)
+        if (Input.GetKeyDown(KeyCode.C) && canSwordAttack)
         {
 
             pressSword();
