@@ -375,12 +375,12 @@ public class PlayerController : MonoBehaviour
 
                 if (currentArrowEnemyPlayerFighting != null && currentArrowEnemyPlayerFighting.CompareTag("FireArrowEnemy"))
                 {
-                    currentArrowEnemyPlayerFighting.TakeHits(1);
+                    currentArrowEnemyPlayerFighting.TakeHits(2);
                 }
 
                 if (currentSwordEnemyPlayerFighting != null && currentSwordEnemyPlayerFighting.CompareTag("FireSwordEnemy"))
                 {
-                    currentSwordEnemyPlayerFighting.TakeHits(1);
+                    currentSwordEnemyPlayerFighting.TakeHits(2);
                 }
 
             }

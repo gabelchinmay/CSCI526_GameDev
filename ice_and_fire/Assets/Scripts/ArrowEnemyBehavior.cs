@@ -10,7 +10,7 @@ public class ArrowEnemyBehavior : MonoBehaviour
     public GameObject arrowPrefab;
     private float shootInterval = 3f;
     private int hitCount = 0;
-    private int maxHits = 3;
+    private int maxHits = 4;
     private Animator playerAnimator;
     private string arrowEnemyType;
     private bool isOnFire = false;
@@ -75,7 +75,7 @@ public class ArrowEnemyBehavior : MonoBehaviour
         {
             if (other.CompareTag("FireArrow"))
             {
-                TakeHits(1);
+                TakeHits(2);
             }
 
         }
