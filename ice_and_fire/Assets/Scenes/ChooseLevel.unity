@@ -825,7 +825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  levelName: Beta_1_Tutorial 1
+  levelName: Beta_Tutorial1
 --- !u!1 &276436531
 GameObject:
   m_ObjectHideFlags: 0
