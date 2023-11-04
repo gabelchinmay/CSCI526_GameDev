@@ -60,7 +60,7 @@ public class SendToGoogle : MonoBehaviour
 
     public void Send()
     {
-        StartCoroutine(Post(sessionID.ToString(), Attempts.ToString(), Chapter.ToString(), Level.ToString(), Count.ToString(), TotalJump.ToString(), ArrowCount.ToString(), ArrowHitsEnemyCount.ToString(), KillCount.ToString(), KillSwordCount.ToString(), ValidSwordAttack.ToString(), SwordWaveCount.ToString(), hp.ToString()));
+        StartCoroutine(Post(sessionID.ToString(), Attempts.ToString(), Chapter.ToString(), Level.ToString(), Count.ToString(), TotalJump.ToString(), ArrowCount.ToString(), ArrowHitsEnemyCount.ToString(), KillCount.ToString(), KillSwordCount.ToString(), ValidSwordAttack.ToString(), SwordWaveCount.ToString(), hp.ToString(), eggDoneTime.ToString()));
         Debug.Log("ArrowHitsEnemyCount: " + ArrowHitsEnemyCount.ToString());
         Debug.Log(KillCount.ToString());
     }
@@ -112,22 +112,21 @@ public class SendToGoogle : MonoBehaviour
     public void pickUpEgg()
     {
         egg++;
-    }
-
-    public void threeEggSend()
-    {
         if (egg == 1)
         {
-            timeForEgg += Time.time;
+            timeForEgg = Time.time;
+            Debug.Log( + eggDoneTime + " sec");
         }
-            if(egg == 3) {
-
+        
+        
+        if (egg == 3)
+        {
             eggDoneTime = Time.time - timeForEgg;
+            Debug.Log( + eggDoneTime + " sec");
         }
-
     }
 
-   
+
 
     public void HitCount()
     {
@@ -141,7 +140,7 @@ public class SendToGoogle : MonoBehaviour
         SwordWaveCount++;
     }
 
-    public IEnumerator Post(string sessionID, string attempts, string Chapter, string Level, string Time, string Jump, string arrowShotted, string validShot, string KillCount, string KillSwordCount, string ValidSwordAttack, string SwordWaveCount, string hp)
+    public IEnumerator Post(string sessionID, string attempts, string Chapter, string Level, string Time, string Jump, string arrowShotted, string validShot, string KillCount, string KillSwordCount, string ValidSwordAttack, string SwordWaveCount, string hp, string eggDoneTime )
     {
 
 
@@ -160,6 +159,7 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.1641108659", ValidSwordAttack);
         form.AddField("entry.2027457291", SwordWaveCount);
         form.AddField("entry.226612155", hp);
+        form.AddField("entry.212953843", eggDoneTime);
 
 
         Debug.Log(form.ToString());

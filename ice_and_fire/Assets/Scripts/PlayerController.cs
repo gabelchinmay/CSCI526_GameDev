@@ -547,7 +547,7 @@ public class PlayerController : MonoBehaviour
             if (sendToGoogle != null)
             {
                 sendToGoogle.pickUpEgg();
-                sendToGoogle.threeEggSend();
+
             }
             rb.mass *= playerMassMultiplicationFactor;
             jumpForce *= playerJumpForceMultiplicationFactor;
