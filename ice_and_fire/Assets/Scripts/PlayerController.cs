@@ -105,8 +105,7 @@ public class PlayerController : MonoBehaviour
         //UpdateInventoryTxt();
         MovePlayer();
         ButtonControls();
-        MODpassFireGate();// open gate
-        EDWpassFireGate(); //EDW unlock door
+      
         updateJumpAnimation(); //set isJumping to true when velocity.y != 0
         switchPlayerStyle();
         NullPointCheck();
@@ -167,16 +166,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void EDWpassFireGate()
-    {
 
-        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("EDW");
-        foreach (GameObject obj in objectsWithTag)
-        {
-            
-        }
-        
-    }
 
     private void switchPlayerStyle()
     {
