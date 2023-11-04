@@ -26,6 +26,7 @@ public class SendToGoogle : MonoBehaviour
     public int egg=0;
     public float timeForEgg = 0.0f;
     public float eggDoneTime = 0.0f;
+    public int wrongColorGate = 0;
 
 
 
@@ -60,7 +61,7 @@ public class SendToGoogle : MonoBehaviour
 
     public void Send()
     {
-        StartCoroutine(Post(sessionID.ToString(), Attempts.ToString(), Chapter.ToString(), Level.ToString(), Count.ToString(), TotalJump.ToString(), ArrowCount.ToString(), ArrowHitsEnemyCount.ToString(), KillCount.ToString(), KillSwordCount.ToString(), ValidSwordAttack.ToString(), SwordWaveCount.ToString(), hp.ToString(), eggDoneTime.ToString()));
+        StartCoroutine(Post(sessionID.ToString(), Attempts.ToString(), Chapter.ToString(), Level.ToString(), Count.ToString(), TotalJump.ToString(), ArrowCount.ToString(), ArrowHitsEnemyCount.ToString(), KillCount.ToString(), KillSwordCount.ToString(), ValidSwordAttack.ToString(), SwordWaveCount.ToString(), hp.ToString(), eggDoneTime.ToString(), wrongColorGate.ToString()));
         Debug.Log("ArrowHitsEnemyCount: " + ArrowHitsEnemyCount.ToString());
         Debug.Log(KillCount.ToString());
     }
@@ -69,6 +70,12 @@ public class SendToGoogle : MonoBehaviour
     {
         Attempts++;
         Debug.Log("Attempts: " + Attempts);
+    }
+
+    public void hitWrongGate()
+    {
+        wrongColorGate= wrongColorGate+1;
+
     }
 
     public void PlayerPassedLevel()
@@ -140,7 +147,7 @@ public class SendToGoogle : MonoBehaviour
         SwordWaveCount++;
     }
 
-    public IEnumerator Post(string sessionID, string attempts, string Chapter, string Level, string Time, string Jump, string arrowShotted, string validShot, string KillCount, string KillSwordCount, string ValidSwordAttack, string SwordWaveCount, string hp, string eggDoneTime )
+    public IEnumerator Post(string sessionID, string attempts, string Chapter, string Level, string Time, string Jump, string arrowShotted, string validShot, string KillCount, string KillSwordCount, string ValidSwordAttack, string SwordWaveCount, string hp, string eggDoneTime,string wrongColorGate )
     {
 
 
@@ -160,6 +167,7 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.2027457291", SwordWaveCount);
         form.AddField("entry.226612155", hp);
         form.AddField("entry.212953843", eggDoneTime);
+        form.AddField("entry.59142740", wrongColorGate);
 
 
         Debug.Log(form.ToString());
