@@ -305,7 +305,7 @@ public class PlayerController : MonoBehaviour
 
 
         // Arrow-
-        if (Input.GetKeyDown(KeyCode.UpArrow) && canArrowAttack) // Replace with your preferred shoot key.
+        if (Input.GetKeyDown(KeyCode.C) && canArrowAttack) // Replace with your preferred shoot key.
         {
 
             pressArrow();
@@ -342,7 +342,7 @@ public class PlayerController : MonoBehaviour
         }
         
         //Sword
-        if (Input.GetKeyDown(KeyCode.DownArrow) && canSwordAttack)
+        if (Input.GetKeyDown(KeyCode.V) && canSwordAttack)
         {
 
             pressSword();
@@ -540,7 +540,7 @@ public class PlayerController : MonoBehaviour
             gameOverScreen.SetUp();
         }
 
-        if (collision.CompareTag("DragonEgg"))
+        if (collision.CompareTag("DragonEgg") && this.playerStyle == "fire")
         {
             StartCoroutine(DisplayTextForDuration("Picked up a Dragon egg!", 3.0f, Color.yellow));
             Destroy(collision.gameObject);
