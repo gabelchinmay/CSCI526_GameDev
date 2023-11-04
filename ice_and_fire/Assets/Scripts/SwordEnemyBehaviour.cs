@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SwordEnemyBehaviour : MonoBehaviour
 {
-    public int maxHits = 3;
+    public int maxHits = 6;
     public float amplitude = 5f;
     public float frequency = 1 / 2f;
 
@@ -169,7 +169,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
         {
             if (other.CompareTag("FireArrow"))
             {
-                this.TakeHits(1);
+                this.TakeHits(2);
             }
 
         }
