@@ -31,19 +31,19 @@ public class IceFireGateController : MonoBehaviour
         }
     }
 
-    // 当碰撞发生时被调用
+   
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) // 检查碰撞的物体是否有"FireGate"标签
+        if (collision.gameObject.CompareTag("Player")) // "FireGate"
         {
-            // 在碰撞发生时增加计数器
+            // 
             collisionCount++;
             if (sendToGoogle != null)
             {
                 sendToGoogle.hitWrongGate();
 
             }
-            // 输出调试信息
+            // 
             Debug.Log("Collision Count: " + collisionCount);
         }
     }
