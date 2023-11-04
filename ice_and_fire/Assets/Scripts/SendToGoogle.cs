@@ -23,6 +23,9 @@ public class SendToGoogle : MonoBehaviour
     public int SwordWaveCount = 0;
     public int hp=0;
     public int SwordDamageCount;
+    public int egg=0;
+    public float timeForEgg = 0.0f;
+    public float eggDoneTime = 0.0f;
 
 
 
@@ -36,31 +39,8 @@ public class SendToGoogle : MonoBehaviour
     {
         
         this.Level = level;
-        if (this.Level <3 )
-        {
-            this.Chapter = 1;
-            this.Level = level;
-        }
-        else if (this.Level > 3 && this.Level <9)
-        {
-            this.Chapter=2;
-            this.Level = level-3;
-        }
-        else if (this.Level ==9)
-        {
-            this.Chapter = 3;
-            this.Level = 0;
-        }
-        else if (this.Level > 8 && this.Level < 13)
-        {
-            this.Chapter=3;
-            this.Level = level+1;
-        }
-        else if (this.Level > 12)
-        {
-            this.Chapter=4;
-            this.Level = level -11;
-        }
+       
+        
         Debug.Log("parameter passed");
 
         Debug.Log(chapter.ToString() + " " + level.ToString());
@@ -128,6 +108,26 @@ public class SendToGoogle : MonoBehaviour
 
 
     }
+
+    public void pickUpEgg()
+    {
+        egg++;
+    }
+
+    public void threeEggSend()
+    {
+        if (egg == 1)
+        {
+            timeForEgg += Time.time;
+        }
+            if(egg == 3) {
+
+            eggDoneTime = Time.time - timeForEgg;
+        }
+
+    }
+
+   
 
     public void HitCount()
     {

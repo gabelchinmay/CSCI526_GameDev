@@ -544,6 +544,11 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(DisplayTextForDuration("Picked up a Dragon egg!", 3.0f, Color.yellow));
             Destroy(collision.gameObject);
+            if (sendToGoogle != null)
+            {
+                sendToGoogle.pickUpEgg();
+                sendToGoogle.threeEggSend();
+            }
             rb.mass *= playerMassMultiplicationFactor;
             jumpForce *= playerJumpForceMultiplicationFactor;
         }
