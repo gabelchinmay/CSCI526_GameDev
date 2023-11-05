@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
+using System.Diagnostics;
 
 public class SendToGoogle : MonoBehaviour
 {
@@ -12,8 +13,13 @@ public class SendToGoogle : MonoBehaviour
     public int Level = 1;
     public float Count = 0.0f;
     public int TotalJump = 0;
-    public static int Attempts = 1; // 将Attempts变为静态变量
-    public int ArrowCount = 0; // 用于记录箭矢数量
+
+    public static int Attempts = 1;
+    public int ArrowCount = 0;
+
+    public static int Attempts = 1; /
+    public int ArrowCount = 0; 
+
     private bool arrowHitsEnemy = false;
     public int ArrowHitsEnemyCount = 0;
     public static SendToGoogle currentSendToGoogle;
@@ -21,38 +27,50 @@ public class SendToGoogle : MonoBehaviour
     public int KillSwordCount = 0;
     public int ValidSwordAttack = 0;
     public int SwordWaveCount = 0;
-    public int hp=0;
+    public int hp = 0;
     public int SwordDamageCount;
-    public int egg=0;
+    public int egg = 0;
     public float timeForEgg = 0.0f;
     public float eggDoneTime = 0.0f;
     public int wrongColorGate = 0;
-
-
+    public int missSwordAttack = 0;
+    public int missArrowAttack = 0;
+    private System.Diagnostics.Stopwatch timer1; // ��һ����ʱ��
+    private System.Diagnostics.Stopwatch timer2; // �ڶ�����ʱ��
+    private bool isTimer1Paused;
+    private bool isTimer2Paused;
 
 
     public void Start()
     {
         sessionID = DateTime.Now.Ticks;
         currentSendToGoogle = this;
+        timer1 = new System.Diagnostics.Stopwatch();
+        timer2 = new System.Diagnostics.Stopwatch();
+        timer1.Start();
     }
 
     public void SetParameters(int chapter, int level)
     {
-        
         this.Level = level;
+
+        UnityEngine.Debug.Log("Parameter passed");
+        UnityEngine.Debug.Log(chapter.ToString() + " " + level.ToString());
+
        
         
         Debug.Log("parameter passed");
 
         Debug.Log(chapter.ToString() + " " + level.ToString());
 
-        // 当关卡被设置时，重置尝试次数
+
     }
 
     public void addJump()
     {
         TotalJump++;
+        UnityEngine.Debug.Log(timer1.Elapsed.TotalSeconds);
+        UnityEngine.Debug.Log(timer2.Elapsed.TotalSeconds);
     }
 
     public void Update()
@@ -63,27 +81,35 @@ public class SendToGoogle : MonoBehaviour
     public void Send()
     {
 
+        missArrowAttack = SwordWaveCount - ValidSwordAttack;
+        missSwordAttack = ArrowCount - ArrowHitsEnemyCount;
+        
+        StartCoroutine(Post(sessionID.ToString(), Attempts.ToString(), Chapter.ToString(), Level.ToString(), Count.ToString(), TotalJump.ToString(), ArrowCount.ToString(), ArrowHitsEnemyCount.ToString(), KillCount.ToString(), KillSwordCount.ToString(), ValidSwordAttack.ToString(), SwordWaveCount.ToString(), hp.ToString(), eggDoneTime.ToString(), wrongColorGate.ToString(), missSwordAttack.ToString(), missArrowAttack.ToString(), timer1.Elapsed.TotalSeconds.ToString(), timer2.Elapsed.TotalSeconds.ToString()));
+        UnityEngine.Debug.Log("ArrowHitsEnemyCount: " + ArrowHitsEnemyCount.ToString());
+        UnityEngine.Debug.Log(KillCount.ToString());
+
+
         StartCoroutine(Post(sessionID.ToString(), Attempts.ToString(), Chapter.ToString(), Level.ToString(), Count.ToString(), TotalJump.ToString(), ArrowCount.ToString(), ArrowHitsEnemyCount.ToString(), KillCount.ToString(), KillSwordCount.ToString(), ValidSwordAttack.ToString(), SwordWaveCount.ToString(), hp.ToString(), eggDoneTime.ToString(), wrongColorGate.ToString()));
 
         Debug.Log("ArrowHitsEnemyCount: " + ArrowHitsEnemyCount.ToString());
         Debug.Log(KillCount.ToString());
+
     }
 
     public void PlayerAttempted()
     {
         Attempts++;
-        Debug.Log("Attempts: " + Attempts);
+        UnityEngine.Debug.Log("Attempts: " + Attempts);
     }
 
     public void hitWrongGate()
     {
-        wrongColorGate= wrongColorGate+1;
-
+        wrongColorGate = wrongColorGate + 1;
     }
 
     public void PlayerPassedLevel()
     {
-        // 在玩家通过关卡时重置尝试次数
+
         Attempts = 1;
     }
 
@@ -97,26 +123,19 @@ public class SendToGoogle : MonoBehaviour
         this.hp += hp;
     }
 
-
     public void ValidSwordAttackCount()
     {
-        ValidSwordAttack ++;
+        ValidSwordAttack++;
     }
-
-    
 
     public void killEnemy()
     {
         KillCount++;
-
-
     }
 
     public void killSwordEnemy()
     {
         KillSwordCount++;
-
-
     }
 
     public void pickUpEgg()
@@ -125,25 +144,21 @@ public class SendToGoogle : MonoBehaviour
         if (egg == 1)
         {
             timeForEgg = Time.time;
-            Debug.Log( + eggDoneTime + " sec");
+            UnityEngine.Debug.Log(eggDoneTime + " sec");
         }
-        
-        
+
         if (egg == 3)
         {
             eggDoneTime = Time.time - timeForEgg;
-            Debug.Log( + eggDoneTime + " sec");
+            UnityEngine.Debug.Log(eggDoneTime + " sec");
         }
     }
-
-
 
     public void HitCount()
     {
         ArrowHitsEnemyCount++;
-        Debug.Log(ArrowHitsEnemyCount);
+        UnityEngine.Debug.Log(ArrowHitsEnemyCount);
     }
-
 
     public void SwordWavedCount()
     {
@@ -151,11 +166,26 @@ public class SendToGoogle : MonoBehaviour
     }
 
 
+    public void fireMode()
+
+
     public IEnumerator Post(string sessionID, string attempts, string Chapter, string Level, string Time, string Jump, string arrowShotted, string validShot, string KillCount, string KillSwordCount, string ValidSwordAttack, string SwordWaveCount, string hp, string eggDoneTime,string wrongColorGate )
 
+
     {
+        timer1.Start();
+        timer2.Stop();
+    }
 
+    public void iceMode()
+    {
+        timer2.Start();
+        timer1.Stop();
+    }
 
+    public IEnumerator Post(string sessionID, string attempts, string Chapter, string Level, string Time, string Jump, string arrowShotted, string validShot, string KillCount, string KillSwordCount, string ValidSwordAttack, string SwordWaveCount, string hp, string eggDoneTime, string wrongColorGate,
+        string missSwordAttack, string missArrowAttack, string timer1, string timer2)
+    {
         WWWForm form = new WWWForm();
         form.AddField("entry.779211660", sessionID);
         form.AddField("entry.1494050405", attempts);
@@ -174,6 +204,13 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.212953843", eggDoneTime);
 
         form.AddField("entry.59142740", wrongColorGate);
+        form.AddField("entry.182701653", missSwordAttack);
+        form.AddField("entry.936295988", missArrowAttack);
+        form.AddField("entry.2106273834", timer1);
+        form.AddField("entry.1565283428", timer2);
+
+
+        UnityEngine.Debug.Log(form.ToString());
 
 
 
@@ -181,23 +218,23 @@ public class SendToGoogle : MonoBehaviour
 
         using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
         {
-            Debug.Log(www.result.ToString());
+            UnityEngine.Debug.Log(www.result.ToString());
             yield return www.SendWebRequest();
 
-            
             if (www.result != UnityWebRequest.Result.Success)
             {
-               
-                Debug.LogError(www.error);
+                UnityEngine.Debug.LogError(www.error);
             }
             else
             {
-                
-                Debug.Log("Form upload complete!");
-
+                UnityEngine.Debug.Log("Form upload complete!");
                 Count = 0.0f;
                 TotalJump = 0;
-                Attempts = 1; // 在提交后重置尝试次数
+
+                Attempts = 1;
+
+                Attempts = 1; 
+
 
                 www.Dispose();
             }
