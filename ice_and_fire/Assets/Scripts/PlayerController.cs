@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     //public Variables
     public bool isArrow = false;
     public bool isSword = false;
+    public bool isFire = true;
+    public bool isIce = false;
     public int maxHealth = 100;
     public int killCount = 0;
     public string playerStyle = "fire";
@@ -172,6 +174,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
+
             // For MOD
             this.playerStyle = "fire";
             this.usingFireArrows = true;
@@ -207,7 +210,10 @@ public class PlayerController : MonoBehaviour
         {
             spriteRenderer.sprite = modRenderer;
             playerAnimator.runtimeAnimatorController = modAnimator;
-
+            if (sendToGoogle != null)
+            {
+                sendToGoogle.fireMode();
+            }
         }
 
 
@@ -216,6 +222,11 @@ public class PlayerController : MonoBehaviour
         {
             spriteRenderer.sprite = edRenderer;
             playerAnimator.runtimeAnimatorController = edAnimator;
+            if (sendToGoogle != null)
+            {
+                sendToGoogle.iceMode();
+            }
+            
         }
     }
 
@@ -301,14 +312,15 @@ public class PlayerController : MonoBehaviour
             pressArrow();
             if (isArrow)
             {
-                sendToGoogle.ShootArrow();
-            }
-             
-            //{
                 if (this.sendToGoogle != null)
                 {
                     this.sendToGoogle.ShootArrow();
                 }
+                
+            }
+             
+            //{
+                
                 
                 //Testing fire arrow attack & ice arrow attack animation - Ashley 10.26 13:00
                 if (usingFireArrows)
