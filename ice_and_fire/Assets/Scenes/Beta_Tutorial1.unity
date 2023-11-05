@@ -479,6 +479,12 @@ MonoBehaviour:
   SwordWaveCount: 0
   hp: 0
   SwordDamageCount: 0
+  egg: 0
+  timeForEgg: 0
+  eggDoneTime: 0
+  wrongColorGate: 0
+  missSwordAttack: 0
+  missArrowAttack: 0
 --- !u!4 &140296294
 Transform:
   m_ObjectHideFlags: 0
