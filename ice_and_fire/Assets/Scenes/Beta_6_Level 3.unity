@@ -2532,7 +2532,7 @@ PrefabInstance:
       objectReference: {fileID: 1527508260}
     - target: {fileID: 5709924795340981188, guid: 2c47eacf560474486822f16e841df2f7, type: 3}
       propertyPath: platformType
-      value: Bi
+      value: Frost
       objectReference: {fileID: 0}
     - target: {fileID: 8819735654176732990, guid: 2c47eacf560474486822f16e841df2f7, type: 3}
       propertyPath: movingSpeed
