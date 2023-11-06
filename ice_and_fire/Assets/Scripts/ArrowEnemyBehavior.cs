@@ -27,7 +27,7 @@ public class ArrowEnemyBehavior : MonoBehaviour
         InvokeRepeating("ShootArrow", 0f, shootInterval);
         StartCoroutine(InflictDamages());
         this.playerController = FindObjectOfType<PlayerController>();
-        this.sendToGoogle = FindObjectOfType<SendToGoogle>();
+        sendToGoogle = FindObjectOfType<SendToGoogle>();
     }
 
     void Update()
@@ -76,6 +76,11 @@ public class ArrowEnemyBehavior : MonoBehaviour
             if (other.CompareTag("FireArrow"))
             {
                 TakeHits(2);
+                if (sendToGoogle != null)
+                {
+                    sendToGoogle.firePlatDamage();
+
+                }
             }
 
         }
@@ -85,6 +90,12 @@ public class ArrowEnemyBehavior : MonoBehaviour
             if (other.CompareTag("IceArrow"))
             {
                 TakeHits(1);
+
+                if (sendToGoogle != null)
+                {
+                    sendToGoogle.icePlatDamage();
+
+                }
             }
 
         }

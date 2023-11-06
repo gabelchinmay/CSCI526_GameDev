@@ -170,6 +170,11 @@ public class SwordEnemyBehaviour : MonoBehaviour
             if (other.CompareTag("FireArrow"))
             {
                 this.TakeHits(2);
+                if (sendToGoogle != null)
+                {
+                    sendToGoogle.firePlatDamage();
+
+                }
             }
 
         }
@@ -179,6 +184,11 @@ public class SwordEnemyBehaviour : MonoBehaviour
             if (other.CompareTag("IceArrow"))
             {
                 this.TakeHits(1);
+                if (sendToGoogle != null)
+                {
+                    sendToGoogle.icePlatDamage();
+
+                }
             }
 
         }
