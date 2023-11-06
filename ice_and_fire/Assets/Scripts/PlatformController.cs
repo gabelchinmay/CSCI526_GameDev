@@ -9,11 +9,14 @@ public class PlatformController : MonoBehaviour
     public GameObject player;
     public float rotationSpeed = 30f;
     private bool isOnPlatform = false;
+    private SendToGoogle sendToGoogle;
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
-        if( platformType == "Tri")
+        sendToGoogle = FindObjectOfType<SendToGoogle>();
+        if ( platformType == "Tri")
         {
             StartCoroutine(ColorTriChangingLoop());
         }
@@ -120,12 +123,23 @@ public class PlatformController : MonoBehaviour
                 {
                     //this.TakeDamage(10);
                     player.GetComponent<PlayerController>().TakeDamage(10);
+                    if (sendToGoogle != null)
+                    {
+                        sendToGoogle.firePlatDamage();
+
+                    }
+
                     //speed = 10.0f;
                 }
 
                 else if (spriteRenderer.color == Color.cyan && player.GetComponent<PlayerController>().getPlayerStyle() != "ice")
                 {
                     player.GetComponent<PlayerController>().TakeDamage(1);
+                    if (sendToGoogle != null)
+                    {
+                        sendToGoogle.icePlatDamage();
+
+                    }
                     //this.TakeDamage(1);
                     //speed = 1.0f;
                 }
