@@ -19,6 +19,10 @@ public class NightKingArea : MonoBehaviour
         {
             transform.position = enemyToFollow.position;
         }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
     public void TakeHits(int amt)
     {

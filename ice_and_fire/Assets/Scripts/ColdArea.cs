@@ -18,6 +18,10 @@ public class ColdArea : MonoBehaviour
         if (enemyToFollow != null)
         {
             transform.position = enemyToFollow.position;
+        } 
+        else
+        {
+            Destroy(this.gameObject);
         }
     }
     public void TakeHits(int amt)
