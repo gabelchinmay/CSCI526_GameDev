@@ -843,6 +843,25 @@ public class PlayerController : MonoBehaviour
             if (currentSwordEnemyPlayerFighting != null)
             {
                 this.TakeDamage(1);
+                if (SwordDam != null)
+                {
+                    if (SwordDam.getSwordEnemyType() == "FireSwordEnemy")
+                    {
+                        if (sendToGoogle != null)
+                        {
+                            sendToGoogle.fireDamage();
+
+                        }
+                    }
+                    if (SwordDam.getSwordEnemyType() == "IceSwordEnemy")
+                    {
+                        if (sendToGoogle != null)
+                        {
+                            sendToGoogle.iceDamage();
+
+                        }
+                    }
+                }
             }
 
             if (isOnFireDragon)
