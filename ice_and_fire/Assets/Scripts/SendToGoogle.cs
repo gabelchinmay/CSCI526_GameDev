@@ -30,6 +30,13 @@ public class SendToGoogle : MonoBehaviour
     public int wrongColorGate = 0;
     public int missSwordAttack = 0;
     public int missArrowAttack = 0;
+
+    public int icePlatHit = 0;
+    public int firePlatHit = 0;
+    public int iceDamag = 0;
+    public int fireDamag = 0;
+
+
     private System.Diagnostics.Stopwatch timer1; // 第一个计时器
     private System.Diagnostics.Stopwatch timer2; // 第二个计时器
     private bool isTimer1Paused;
@@ -68,7 +75,8 @@ public class SendToGoogle : MonoBehaviour
         missArrowAttack = SwordWaveCount - ValidSwordAttack;
         missSwordAttack = ArrowCount - ArrowHitsEnemyCount;
         
-        StartCoroutine(Post(sessionID.ToString(), Attempts.ToString(), Chapter.ToString(), Level.ToString(), Count.ToString(), TotalJump.ToString(), ArrowCount.ToString(), ArrowHitsEnemyCount.ToString(), KillCount.ToString(), KillSwordCount.ToString(), ValidSwordAttack.ToString(), SwordWaveCount.ToString(), hp.ToString(), eggDoneTime.ToString(), wrongColorGate.ToString(), missSwordAttack.ToString(), missArrowAttack.ToString(), timer1.Elapsed.TotalSeconds.ToString(), timer2.Elapsed.TotalSeconds.ToString()));
+        StartCoroutine(Post(sessionID.ToString(), Attempts.ToString(), Chapter.ToString(), Level.ToString(), Count.ToString(), TotalJump.ToString(), ArrowCount.ToString(), ArrowHitsEnemyCount.ToString(), KillCount.ToString(), KillSwordCount.ToString(), ValidSwordAttack.ToString(), SwordWaveCount.ToString(), hp.ToString(), eggDoneTime.ToString(), wrongColorGate.ToString(), missSwordAttack.ToString(), missArrowAttack.ToString(), timer1.Elapsed.TotalSeconds.ToString(), timer2.Elapsed.TotalSeconds.ToString(),
+            icePlatHit.ToString(), firePlatHit.ToString(), iceDamag.ToString(), fireDamag.ToString()));
         UnityEngine.Debug.Log("ArrowHitsEnemyCount: " + ArrowHitsEnemyCount.ToString());
         UnityEngine.Debug.Log(KillCount.ToString());
     }
@@ -153,8 +161,28 @@ public class SendToGoogle : MonoBehaviour
         timer1.Stop();
     }
 
+    public void iceDamage()
+    {
+        iceDamag = iceDamag + 1;
+    }
+
+    public void fireDamage()
+    {
+        fireDamag = fireDamag + 2;
+    }
+
+    public void icePlatDamage()
+    {
+        icePlatHit = icePlatHit + 1;
+    }
+
+    public void firePlatDamage()
+    {
+        firePlatHit = firePlatHit + 10;
+    }
+
     public IEnumerator Post(string sessionID, string attempts, string Chapter, string Level, string Time, string Jump, string arrowShotted, string validShot, string KillCount, string KillSwordCount, string ValidSwordAttack, string SwordWaveCount, string hp, string eggDoneTime, string wrongColorGate,
-        string missSwordAttack, string missArrowAttack, string timer1, string timer2)
+        string missSwordAttack, string missArrowAttack, string timer1, string timer2, string icePlatHit, string firePlatHit, string iceDamag, string fireDamag)
     {
         WWWForm form = new WWWForm();
         form.AddField("entry.779211660", sessionID);
@@ -177,6 +205,11 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.936295988", missArrowAttack);
         form.AddField("entry.2106273834", timer1);
         form.AddField("entry.1565283428", timer2);
+        form.AddField("entry.1906357093", icePlatHit);
+        form.AddField("entry.1641710712", firePlatHit);
+
+        form.AddField("entry.1302369172", iceDamag);
+        form.AddField("entry.2016559714", fireDamag);
 
         UnityEngine.Debug.Log(form.ToString());
 

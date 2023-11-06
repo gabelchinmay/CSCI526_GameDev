@@ -68,6 +68,11 @@ public class SwordEnemyBehaviour : MonoBehaviour
 
     }
 
+    public string getSwordEnemyType()
+    {
+        return swordEnemyType;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("wall"))
@@ -170,6 +175,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
             if (other.CompareTag("FireArrow"))
             {
                 this.TakeHits(2);
+               
             }
 
         }
@@ -179,6 +185,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
             if (other.CompareTag("IceArrow"))
             {
                 this.TakeHits(1);
+                
             }
 
         }

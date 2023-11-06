@@ -70,6 +70,8 @@ public class PlayerController : MonoBehaviour
     private GateController gateController;
     private KeyGateController keyGateController;
     private SpriteRenderer spriteRenderer;
+    private SwordEnemyBehaviour SwordDam;
+    private ArrowEnemyBehavior ArrowdDam;
 
 
 
@@ -88,6 +90,8 @@ public class PlayerController : MonoBehaviour
         this.sendToGoogle = FindObjectOfType<SendToGoogle>();
         this.gateController = FindObjectOfType<GateController>();
         this.keyGateController = FindObjectOfType<KeyGateController>();
+        this.SwordDam = FindObjectOfType<SwordEnemyBehaviour>();
+        this.ArrowdDam = FindObjectOfType<ArrowEnemyBehavior>();
 
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
@@ -559,6 +563,26 @@ public class PlayerController : MonoBehaviour
         {       
             this.TakeDamage(2);
             Destroy(collision.gameObject);
+            if(ArrowdDam != null)
+            {
+                if(ArrowdDam.getarrowEnemyType() == "FireArrowEnemy")
+                {
+                    if (sendToGoogle != null)
+                    {
+                        sendToGoogle.fireDamage();
+
+                    }
+                }
+                if(ArrowdDam.getarrowEnemyType() == "IceArrowEnemy")
+                {
+                    if (sendToGoogle != null)
+                    {
+                        sendToGoogle.iceDamage();
+
+                    }
+                }
+            }
+
         }
 
         if (collision.CompareTag("FireArea"))
@@ -819,6 +843,25 @@ public class PlayerController : MonoBehaviour
             if (currentSwordEnemyPlayerFighting != null)
             {
                 this.TakeDamage(1);
+                if (SwordDam != null)
+                {
+                    if (SwordDam.getSwordEnemyType() == "FireSwordEnemy")
+                    {
+                        if (sendToGoogle != null)
+                        {
+                            sendToGoogle.fireDamage();
+
+                        }
+                    }
+                    if (SwordDam.getSwordEnemyType() == "IceSwordEnemy")
+                    {
+                        if (sendToGoogle != null)
+                        {
+                            sendToGoogle.iceDamage();
+
+                        }
+                    }
+                }
             }
 
             if (isOnFireDragon)
