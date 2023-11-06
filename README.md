@@ -4,7 +4,7 @@
 * Game Name: A Journey of Ice and Fire
 * GDD: https://docs.google.com/document/d/1JIe3gtocTormrH2_740sOwYux0RFbqNJ5cfkP2wucFo/edit
 * Alpha Build: https://gabelchinmay.github.io/ice_and_fire/alpha720/
-* Beta Build: https://gabelchinmay.github.io/ice_and_fire/beta/
+* Beta Build: https://gabelchinmay.github.io/ice_and_fire/beta720/
 
 Credits (From left to right in the pic):
 Ziyu Liu,
