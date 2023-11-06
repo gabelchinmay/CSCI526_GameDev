@@ -35,6 +35,11 @@ public class ArrowEnemyBehavior : MonoBehaviour
         
     }
 
+    public string getarrowEnemyType()
+    {
+        return arrowEnemyType;
+    }
+
     void ShootArrow()
     {
         if (canAttack) {
@@ -76,11 +81,7 @@ public class ArrowEnemyBehavior : MonoBehaviour
             if (other.CompareTag("FireArrow"))
             {
                 TakeHits(2);
-                if (sendToGoogle != null)
-                {
-                    sendToGoogle.firePlatDamage();
-
-                }
+                
             }
 
         }
@@ -91,11 +92,7 @@ public class ArrowEnemyBehavior : MonoBehaviour
             {
                 TakeHits(1);
 
-                if (sendToGoogle != null)
-                {
-                    sendToGoogle.icePlatDamage();
-
-                }
+                
             }
 
         }
