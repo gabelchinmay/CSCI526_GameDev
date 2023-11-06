@@ -193,6 +193,8 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.936295988", missArrowAttack);
         form.AddField("entry.2106273834", timer1);
         form.AddField("entry.1565283428", timer2);
+        form.AddField("entry.1906357093", icePlatHit);
+        form.AddField("entry.1641710712", firePlatHit);
 
         UnityEngine.Debug.Log(form.ToString());
 
