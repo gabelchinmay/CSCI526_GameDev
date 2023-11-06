@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 8409569}
   m_Layer: 0
   m_Name: Wall1
-  m_TagString: wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -758,7 +758,7 @@ GameObject:
   - component: {fileID: 454533396}
   m_Layer: 0
   m_Name: Wall4
-  m_TagString: wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1014,6 +1014,16 @@ MonoBehaviour:
   SwordWaveCount: 0
   hp: 0
   SwordDamageCount: 0
+  egg: 0
+  timeForEgg: 0
+  eggDoneTime: 0
+  wrongColorGate: 0
+  missSwordAttack: 0
+  missArrowAttack: 0
+  icePlatHit: 0
+  firePlatHit: 0
+  iceDamag: 0
+  fireDamag: 0
 --- !u!4 &538074004
 Transform:
   m_ObjectHideFlags: 0
@@ -2043,7 +2053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 897400135330868251, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
       propertyPath: m_LocalScale.x
-      value: 16
+      value: 15.8
       objectReference: {fileID: 0}
     - target: {fileID: 897400135330868251, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
       propertyPath: m_LocalPosition.x
