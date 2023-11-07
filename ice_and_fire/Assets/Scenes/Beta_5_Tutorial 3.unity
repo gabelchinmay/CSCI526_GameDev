@@ -1254,6 +1254,10 @@ MonoBehaviour:
   wrongColorGate: 0
   missSwordAttack: 0
   missArrowAttack: 0
+  icePlatHit: 0
+  firePlatHit: 0
+  iceDamag: 0
+  fireDamag: 0
 --- !u!4 &849721426
 Transform:
   m_ObjectHideFlags: 0
@@ -1428,8 +1432,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 313858167116525945, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
-      value: "Move forward     -> \nMove backward    <-\nJump    <Space>\nDouble-jump   
-        <Space> x 2\nPress V to change view\n\n"
+      value: "Use  <- -> to move \n<space> to jump.\nUse Z to change to Mother of
+        Dragon (fire)\nUse X to change to Ed (ice)\nUse C to use sword\nUse V to
+        use arrow\n"
       objectReference: {fileID: 0}
     - target: {fileID: 313858167116525945, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_margin.x

@@ -5082,10 +5082,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Use  <- -> to move \n<space> to jump.\n2x <space> to double jump\nPlace
-    \u201CWeight\u201D or the player on the button to open the door\nWeight  press
-    K: put on any button to open a door\nDefrost  press F: use it when you are frozen\nPress
-    O to use the key to open the gate\nPress Q to enable shield for 10 sec\n"
+  m_text: "Use  <- -> to move \n<space> to jump.\nUse Z to change to Mother of Dragon
+    (fire)\nUse X to change to Ed (ice)\nUse C to use sword\nUse V to use arrow"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
