@@ -1029,10 +1029,10 @@ public class PlayerController : MonoBehaviour
     // implement dragons' damage to players
     public void OnDragonFireEnter(FireBehaviour fire)
     {
-        if (this.playerStyle != "fire"){
-            this.TakeDamage(15);
-            isOnFireDragon = true;
-        }
+        // if (this.playerStyle != "fire"){
+        this.TakeDamage(15);
+        isOnFireDragon = true;
+        // }
         
     }
 
