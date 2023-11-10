@@ -1361,6 +1361,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1491778785}
     - target: {fileID: 6083283999004043884, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
+      propertyPath: HpTxtPrefab
+      value: 
+      objectReference: {fileID: 1873996643394271313, guid: 097d5af6edb9446038e4ae3e5d3df6b7, type: 3}
+    - target: {fileID: 6083283999004043884, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: arrowPrefab
       value: 
       objectReference: {fileID: 2762176623784743391, guid: b04ef77d74a7d4b80bf27adf51a56bc1, type: 3}
