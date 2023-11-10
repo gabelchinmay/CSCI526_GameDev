@@ -26,11 +26,13 @@ public class PlayerController : MonoBehaviour
     public GameObject fireArrowPrefab;
     public GameObject iceArrowPrefab;
     public GameObject defenseWallPrefab;
+    public GameObject HpTxtPrefab;
     public GameOverScreen gameOverScreen;
     public Sprite modRenderer;
     public Sprite edRenderer;
     public RuntimeAnimatorController modAnimator;
     public RuntimeAnimatorController edAnimator;
+
 
 
     //private variables
@@ -703,6 +705,7 @@ public class PlayerController : MonoBehaviour
             currentHealth -= damageAmount;
             sendToGoogle.HealthStatus(damageAmount);
             UpdateHealthUI();
+            ShowDamageText(damageAmount);
             //StartCoroutine(DisplayTextForDuration("-"+ damageAmount.ToString() +" HP", 1f, Color.red));
             playerAnimator.SetBool("isHurt", true);
             StartCoroutine(resetHurtAnimation());
@@ -731,6 +734,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+    private void ShowDamageText(int damage)
+    {
+        GameObject textObj = Instantiate(HpTxtPrefab, transform.position, Quaternion.identity, transform);
+
+        textObj.transform.GetChild(0).localPosition = new Vector3(-4.4f, -2.7f, 0);
+
+        textObj.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "-"+ damage.ToString() + "HP";
+
+        StartCoroutine(DestroyAfterDelay(textObj));
+    }
+
+
+    private IEnumerator DestroyAfterDelay(GameObject obj)
+    {
+        yield return new WaitForSeconds(0.5f); 
+        Destroy(obj);
+    }
 
 
 
