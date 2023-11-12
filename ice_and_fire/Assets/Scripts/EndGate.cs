@@ -1,20 +1,23 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class EndGate : MonoBehaviour
 {
     public string nextLevel;
+    [SerializeField] Animator transitionAnimator;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             // Load the next level when the player enters the end gate
             UnlockNewLevel();
-            LoadNextLevel();
+            StartCoroutine(LoadNextLevel());
         }
     }
 
-    private void LoadNextLevel()
+
+    IEnumerator LoadNextLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
@@ -32,15 +35,19 @@ public class EndGate : MonoBehaviour
 
         }
 
-        if(!nextLevel.Equals(""))
+        transitionAnimator.SetTrigger("End");
+        yield return new WaitForSeconds(1);
+        if (!nextLevel.Equals(""))
         {
-            SceneManager.LoadScene(nextLevel);
+            SceneManager.LoadSceneAsync(nextLevel);
         }
 
         else
         {
-            SceneManager.LoadScene(currentSceneIndex + 1);
+            SceneManager.LoadSceneAsync(currentSceneIndex + 1);
         }
+
+        transitionAnimator.SetTrigger("Start");
 
     }
 
