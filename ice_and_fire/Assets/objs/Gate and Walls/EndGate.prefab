@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevel: 
+  transitionAnimator: {fileID: 111246223325986047, guid: 201020fd6558078448b92ebb7abab243, type: 3}
 --- !u!61 &6437144975825527532
 BoxCollider2D:
   m_ObjectHideFlags: 0
