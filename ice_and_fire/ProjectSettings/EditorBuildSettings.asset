@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Beta_1_Tutorial 1.unity
     guid: a0e87412b4b92d1478e794b0b7813469
   - enabled: 1
-    path: Assets/Scenes/Beta_Tutorial1.unity
+    path: Assets/Scenes/Beta_1_Tutorial1.unity
     guid: 290113c7afee04f458cce8dbc42cf238
   - enabled: 1
     path: Assets/Scenes/Beta_2_Level 1.unity
