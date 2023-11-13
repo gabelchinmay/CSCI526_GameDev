@@ -7,11 +7,16 @@ public class SwordEnemyBehaviour : MonoBehaviour
     public int maxHits = 6;
     public float amplitude = 5f;
     public float frequency = 1 / 2f;
+    public string moveDirection = "oscillate";
+    public float moveSpeed = 2.0f;
+
 
     private int hitCount = 0;
     private bool isAttacking = false;
     private Animator playerAnimator;
     private float previousOscillation = 0f;
+    private float speed;
+
     private Vector3 initialPosition;
     private bool canMove = true;
     private bool isOnFire = false;
@@ -29,13 +34,15 @@ public class SwordEnemyBehaviour : MonoBehaviour
         playerAnimator.SetBool("isHurt", false);
         playerAnimator.SetBool("attack", false);
         previousOscillation = amplitude * Mathf.Sin(frequency * Time.time);
+        this.speed = this.moveSpeed;
         StartCoroutine(InflictDamages());
 
     }
 
     void Update()
     {
-        if (canMove)
+
+        if (canMove && this.moveDirection == "oscillate")
         {
 
             float oscillation = amplitude * Mathf.Sin(frequency * Time.time);
@@ -52,6 +59,17 @@ public class SwordEnemyBehaviour : MonoBehaviour
                 this.GetComponent<SpriteRenderer>().flipX = true;
             }
             previousOscillation = oscillation;
+
+        }
+        else if(canMove && this.moveDirection == "right")
+        {
+            transform.position += Vector3.right * speed * Time.deltaTime;
+            playerAnimator.SetFloat("speed", this.speed);
+        }
+        else if(canMove && this.moveDirection == "left")
+        {
+            transform.position += Vector3.left * speed * Time.deltaTime;
+            playerAnimator.SetFloat("speed", this.speed);
 
         }
 

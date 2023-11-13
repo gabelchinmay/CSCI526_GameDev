@@ -7,7 +7,10 @@ using UnityEngine;
 public class ArrowEnemyBehavior : MonoBehaviour
 {
     public string shootDirection = "left";
+    public bool canMove = false;
     public GameObject arrowPrefab;
+    public float moveSpeed = 2.0f;
+
     private float shootInterval = 3f;
     private int hitCount = 0;
     private int maxHits = 4;
@@ -15,16 +18,18 @@ public class ArrowEnemyBehavior : MonoBehaviour
     private string arrowEnemyType;
     private bool isOnFire = false;
     private bool canAttack = true;
+    private float speed;
     private PlayerController playerController;
     private SendToGoogle sendToGoogle;
     void Start()
     {
         this.arrowEnemyType = this.gameObject.tag;
         playerAnimator = GetComponent<Animator>();
-        playerAnimator.SetBool("shoot", true);
+        playerAnimator.SetBool("shoot", false);
         playerAnimator.SetBool("isHurt", false);
         playerAnimator.SetBool("attack", false);
         InvokeRepeating("ShootArrow", 0f, shootInterval);
+        this.speed = this.moveSpeed;
         StartCoroutine(InflictDamages());
         this.playerController = FindObjectOfType<PlayerController>();
         sendToGoogle = FindObjectOfType<SendToGoogle>();
@@ -32,7 +37,20 @@ public class ArrowEnemyBehavior : MonoBehaviour
 
     void Update()
     {
-        
+
+        if (this.shootDirection == "right" && canMove)
+        {
+            transform.position += Vector3.right * speed * Time.deltaTime;
+            playerAnimator.SetFloat("speed", this.speed);
+        }
+        else if (this.shootDirection == "left" && canMove)
+        {
+            transform.position += Vector3.left * speed * Time.deltaTime;
+            playerAnimator.SetFloat("speed", this.speed);
+
+        }
+
+
     }
 
     public string getarrowEnemyType()
@@ -43,7 +61,10 @@ public class ArrowEnemyBehavior : MonoBehaviour
     void ShootArrow()
     {
         if (canAttack) {
-            if(shootDirection == "left") {
+            playerAnimator.SetFloat("speed", 0f);
+            playerAnimator.SetBool("shoot", true);
+            if (shootDirection == "left") {
+
                 Vector3 offset = transform.position + Vector3.up * 1f + Vector3.left * 2f;
                 arrowPrefab.GetComponent<SpriteRenderer>().flipX = true;
                 GameObject arrow = Instantiate(arrowPrefab, offset, Quaternion.identity);
@@ -61,6 +82,7 @@ public class ArrowEnemyBehavior : MonoBehaviour
                 Rigidbody2D a = arrow.GetComponent<Rigidbody2D>();
                 a.velocity = new Vector2(15f, 0); // Shooting to the right
             }
+            
 
 
         }
@@ -120,7 +142,10 @@ public class ArrowEnemyBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
+        if (collision.gameObject.CompareTag("wall"))
+        {
+            Destroy(gameObject);
+        }
 
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -138,6 +163,7 @@ public class ArrowEnemyBehavior : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+
 
         if (collision.gameObject.CompareTag("Player"))
         {
