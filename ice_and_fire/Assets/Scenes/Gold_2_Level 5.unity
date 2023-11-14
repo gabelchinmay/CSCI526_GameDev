@@ -462,7 +462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1303599796809000183, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_text
-      value: Tutorial 3
+      value: level 5
       objectReference: {fileID: 0}
     - target: {fileID: 2686880121707296671, guid: df40229f7eab94490bb764a34777a35f, type: 3}
       propertyPath: m_RootOrder
@@ -2828,6 +2828,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHits: 6
+  health: 0
+  maxHealth: 6
+  healthBar: {fileID: 0}
 --- !u!1001 &1831008060
 PrefabInstance:
   m_ObjectHideFlags: 0

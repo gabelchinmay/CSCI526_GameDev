@@ -29,6 +29,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Beta_6_Level 3.unity
     guid: 404711f86a6e74b48b1552aeb4031cc2
+  - enabled: 1
+    path: Assets/Scenes/Gold_1_Level 4.unity
+    guid: 253e7f5c66874a843865e3b6f06cc57c
+  - enabled: 1
+    path: Assets/Scenes/Gold_2_Level 5.unity
+    guid: 281a0f5ec0efc0042ba97d8849f09029
+  - enabled: 1
+    path: Assets/Scenes/Gold_3_Level 6.unity
+    guid: 48aebdc411824d340a04911f19c0656a
+  - enabled: 1
+    path: Assets/Scenes/Gold_5_Level 8.unity
+    guid: 3801d223523eb714b9160f031f61a51e
+  - enabled: 1
+    path: Assets/Scenes/Gold_6_Level 9.unity
+    guid: fa66396e487a717439edc26b76dcfdf7
   - enabled: 0
     path: Assets/Scenes/Level1.unity
     guid: 298585f15a922420d88909edc3431845
