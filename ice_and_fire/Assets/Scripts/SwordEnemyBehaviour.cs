@@ -9,7 +9,10 @@ public class SwordEnemyBehaviour : MonoBehaviour
     public float frequency = 1 / 2f;
     public string moveDirection = "oscillate";
     public float moveSpeed = 2.0f;
-
+    
+    //Initialize Healthbar related component
+    [SerializeField] float health, maxHealth = 6.0f;
+    [SerializeField] FloatingHealthBar healthBar;
 
     private int hitCount = 0;
     private bool isAttacking = false;
@@ -29,6 +32,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
         this.sendToGoogle = FindObjectOfType<SendToGoogle>();
         this.playerController = FindObjectOfType<PlayerController>();
         playerAnimator = GetComponent<Animator>();
+        this.healthBar = GetComponentInChildren<FloatingHealthBar>();
         initialPosition = transform.position;
         playerAnimator.SetBool("shoot", false);
         playerAnimator.SetBool("isHurt", false);
@@ -150,6 +154,11 @@ public class SwordEnemyBehaviour : MonoBehaviour
         playerAnimator.SetBool("isHurt", true);
         StartCoroutine(resetHurtAnimation());
         hitCount +=amt;
+        
+        //Update the healthbar
+        health -= (float)amt;
+        healthBar.UpdateHealthBar(health, maxHealth);
+        
         // sword attack count
         if (sendToGoogle != null)
         {

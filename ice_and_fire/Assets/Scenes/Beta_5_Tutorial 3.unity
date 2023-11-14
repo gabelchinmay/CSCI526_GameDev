@@ -1046,6 +1046,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2843936248942166299, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2843936248942166299, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3899588425943358121, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1133,6 +1141,10 @@ PrefabInstance:
     - target: {fileID: 3899588425943358131, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
       propertyPath: m_Name
       value: Arrow_Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114271035814201079, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
@@ -3115,11 +3127,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3457904877118372521, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -32.000004
+      value: -32
       objectReference: {fileID: 0}
     - target: {fileID: 3457904877118372521, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.5
+      value: 1.4999998
       objectReference: {fileID: 0}
     - target: {fileID: 3457904877118372521, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3144,6 +3156,18 @@ PrefabInstance:
     - target: {fileID: 3457904877118372527, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
       propertyPath: m_Name
       value: Sword_Ice
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438801676540789584, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044047679908683733, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044047679908683733, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}

@@ -21,10 +21,16 @@ public class ArrowEnemyBehavior : MonoBehaviour
     private float speed;
     private PlayerController playerController;
     private SendToGoogle sendToGoogle;
+    
+    //Initialize Healthbar related component
+    [SerializeField] float health, maxHealth = 4.0f;
+    [SerializeField] FloatingHealthBar healthBar;
+    
     void Start()
     {
         this.arrowEnemyType = this.gameObject.tag;
         playerAnimator = GetComponent<Animator>();
+        this.healthBar = GetComponentInChildren<FloatingHealthBar>();
         playerAnimator.SetBool("shoot", false);
         playerAnimator.SetBool("isHurt", false);
         playerAnimator.SetBool("attack", false);
@@ -178,6 +184,10 @@ public class ArrowEnemyBehavior : MonoBehaviour
     public void TakeHits(int amt)
     {
         hitCount+=amt;
+        
+        //Update the healthbar
+        health -= (float)amt;
+        healthBar.UpdateHealthBar(health, maxHealth);
 
         playerAnimator.SetBool("shoot", false);
         playerAnimator.SetBool("isHurt", true);
