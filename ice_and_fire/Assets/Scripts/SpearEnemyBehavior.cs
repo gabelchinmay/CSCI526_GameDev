@@ -5,6 +5,10 @@ using UnityEngine;
 public class SpearEnemyBehavior : MonoBehaviour
 {
     public int maxHits = 6;
+    
+    //Initialize Healthbar related component
+    [SerializeField] float health, maxHealth = 6.0f;
+    [SerializeField] FloatingHealthBar healthBar;
 
     private string spearEnemyType;
     private int hitCount = 0;
@@ -15,7 +19,8 @@ public class SpearEnemyBehavior : MonoBehaviour
     void Start()
     {
         this.spearEnemyType = this.gameObject.tag;
-        
+        this.healthBar = GetComponentInChildren<FloatingHealthBar>();
+
     }
 
     // Update is called once per frame
@@ -27,6 +32,9 @@ public class SpearEnemyBehavior : MonoBehaviour
     public void TakeHits(int amt)
     {
         hitCount +=amt;
+        health -= (float)amt;
+        
+        healthBar.UpdateHealthBar(health,maxHealth);
         StartCoroutine(resetHurtAnimation());
         
         
