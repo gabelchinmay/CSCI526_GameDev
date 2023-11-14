@@ -179,7 +179,7 @@ MonoBehaviour:
   frequency: 0.5
   moveDirection: oscillate
   moveSpeed: 2
-  health: 0
+  health: 6
   maxHealth: 6
   healthBar: {fileID: 0}
 --- !u!1 &3414393517449759986
