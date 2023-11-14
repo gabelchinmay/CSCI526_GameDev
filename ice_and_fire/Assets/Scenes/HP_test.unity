@@ -969,6 +969,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arrow_Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 3899588425943358132, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
+      propertyPath: canMove
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
 --- !u!1 &667650429 stripped
@@ -2056,7 +2060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3457904877118372521, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -23.39
+      value: -14.28
       objectReference: {fileID: 0}
     - target: {fileID: 3457904877118372521, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
       propertyPath: m_AnchoredPosition.y
