@@ -3,6 +3,9 @@ using System.Collections;
 
 public class PlatformController : MonoBehaviour
 {
+    // interlaced change for bi-color platforms
+    public bool anotherOrder = false;
+
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     public string platformType;
@@ -10,6 +13,7 @@ public class PlatformController : MonoBehaviour
     public float rotationSpeed = 30f;
     private bool isOnPlatform = false;
     private SendToGoogle sendToGoogle;
+    
 
     private void Start()
     {
@@ -62,14 +66,27 @@ public class PlatformController : MonoBehaviour
 
     private IEnumerator ColorBiChangingLoop()
     {
-        while (true)
-        {
-            spriteRenderer.color = Color.red;
-            yield return new WaitForSeconds(5f);
+        if (anotherOrder){
+            while (true)
+            {
+                spriteRenderer.color = Color.cyan;
+                yield return new WaitForSeconds(5f);
 
-            spriteRenderer.color = Color.cyan;
-            yield return new WaitForSeconds(5f);
+                spriteRenderer.color = Color.red;
+                yield return new WaitForSeconds(5f);
+            }
         }
+        else{
+            while (true)
+            {
+                spriteRenderer.color = Color.red;
+                yield return new WaitForSeconds(5f);
+
+                spriteRenderer.color = Color.cyan;
+                yield return new WaitForSeconds(5f);
+            }
+        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D other)
