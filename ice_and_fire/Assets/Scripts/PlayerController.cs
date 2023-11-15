@@ -1064,10 +1064,10 @@ public class PlayerController : MonoBehaviour
 
     public void OnIceDragonFireEnter(IceFireBehaviour iceFire)
     {
-        if (this.playerStyle != "ice"){
-            this.TakeDamage(17);
-            isOnIceDragon = true;
-        }
+        // if (this.playerStyle != "ice"){
+        this.TakeDamage(17);
+        isOnIceDragon = true;
+        // }
     }
 
     public void OnIceDragonFireExit(IceFireBehaviour iceFire)
