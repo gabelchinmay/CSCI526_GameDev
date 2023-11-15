@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class EnemyDeathHandler : MonoBehaviour
 {
-    public GameObject DragonEgg;
+    public GameObject associatedEnemy;
     public Vector3 targetPosition; 
 
     void Update()
     {
-        if (!gameObject.activeInHierarchy)
+        if (associatedEnemy == null)
         {
-            if (DragonEgg != null)
+            if (this.gameObject != null)
             {
-                DragonEgg.transform.position = targetPosition;
+                this.gameObject.transform.position = targetPosition;
             }
         }
     }

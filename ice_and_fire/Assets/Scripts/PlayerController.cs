@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     public GameObject iceArrowPrefab;
     public GameObject defenseWallPrefab;
     public GameObject HpTxtPrefab;
-    public GameOverScreen gameOverScreen;
+     
     public Sprite modRenderer;
     public Sprite edRenderer;
     public RuntimeAnimatorController modAnimator;
@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour
     private ArrowEnemyBehavior currentArrowEnemyPlayerFighting = null;
     private SwordEnemyBehaviour currentSwordEnemyPlayerFighting = null;
     private SendToGoogle sendToGoogle;
+    public GameOverScreen gameOverScreen;
     private GateController gateController;
     private KeyGateController keyGateController;
     private SpriteRenderer spriteRenderer;

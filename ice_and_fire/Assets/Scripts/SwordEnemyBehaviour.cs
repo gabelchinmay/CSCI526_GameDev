@@ -25,6 +25,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
     private bool isOnFire = false;
     private string swordEnemyType;
     private SendToGoogle sendToGoogle;
+    public GameOverScreen gameOverScreen;
     private PlayerController playerController;
     void Start()
     {
@@ -223,6 +224,12 @@ public class SwordEnemyBehaviour : MonoBehaviour
         {
             isOnFire = true;
             Debug.Log("On Fire!!!");
+        }
+
+        if (other.CompareTag("FireMagic") || other.CompareTag("IceMagic"))
+        {
+            Destroy(this.gameObject);
+            gameOverScreen.SetUp();
         }
     }
 
