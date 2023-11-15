@@ -176,3 +176,8 @@ MonoBehaviour:
   maxHits: 7
   amplitude: 5
   frequency: 0.5
+  moveDirection: oscillate
+  moveSpeed: 2
+  health: 6
+  maxHealth: 6
+  healthBar: {fileID: 0}
