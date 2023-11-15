@@ -572,6 +572,6 @@ MonoBehaviour:
   canMove: 0
   arrowPrefab: {fileID: 2762176623784743391, guid: b04ef77d74a7d4b80bf27adf51a56bc1, type: 3}
   moveSpeed: 2
-  health: 0
+  health: 4
   maxHealth: 4
   healthBar: {fileID: 0}
