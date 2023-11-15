@@ -191,6 +191,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &145500557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8816021814260332236, guid: 1e8d3a9df297e1642ad4103fa0081602, type: 3}
+  m_PrefabInstance: {fileID: 1144970938}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &145500558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145500557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c252b2c601412419c305e903109408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  associatedEnemy: {fileID: 586035824}
+  targetPosition: {x: -2, y: 1.5, z: 0}
 --- !u!1001 &156775653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -516,6 +535,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 201020fd6558078448b92ebb7abab243, type: 3}
+--- !u!1 &586035824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3457904877118372527, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
+  m_PrefabInstance: {fileID: 1262537944}
+  m_PrefabAsset: {fileID: 0}
 --- !u!20 &660624486 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5436406374883510393, guid: 603efd81e104c4637ad9b705eb43204f, type: 3}
@@ -534,7 +558,7 @@ GameObject:
   - component: {fileID: 669963608}
   m_Layer: 0
   m_Name: FireMagic
-  m_TagString: Untagged
+  m_TagString: FireMagic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1450,11 +1474,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3457904877118372521, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -150
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 3457904877118372521, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.5
+      value: 10.6
       objectReference: {fileID: 0}
     - target: {fileID: 3457904877118372521, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2465,7 +2489,7 @@ GameObject:
   - component: {fileID: 2042801873}
   m_Layer: 0
   m_Name: IceMagic
-  m_TagString: Untagged
+  m_TagString: IceMagic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

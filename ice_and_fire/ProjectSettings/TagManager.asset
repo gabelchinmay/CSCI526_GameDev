@@ -58,6 +58,8 @@ TagManager:
   - FireDragon
   - IceDragon
   - FireSpear
+  - FireMagic
+  - IceMagic
   layers:
   - Default
   - TransparentFX

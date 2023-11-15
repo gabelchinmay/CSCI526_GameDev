@@ -20,6 +20,7 @@ public class ArrowEnemyBehavior : MonoBehaviour
     private bool canAttack = true;
     private float speed;
     private PlayerController playerController;
+    public GameOverScreen gameOverScreen;
     private SendToGoogle sendToGoogle;
     
     //Initialize Healthbar related component
@@ -125,15 +126,16 @@ public class ArrowEnemyBehavior : MonoBehaviour
 
         }
 
-
-
-
         if (other.CompareTag("FireArea"))
         {
             isOnFire = true;
         }
 
-
+        if (other.CompareTag("FireMagic") || other.CompareTag("IceMagic"))
+        {
+            Destroy(this.gameObject);
+            gameOverScreen.SetUp();
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
