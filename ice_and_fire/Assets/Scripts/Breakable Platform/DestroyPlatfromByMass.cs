@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DestroyPlatfromByMass : MonoBehaviour
 {
-    private bool playerOnPlatform = false;
+    private bool isFading = false;
     private float massThreshold = 5f;
     public float fadeSpeed = 1.0f;
     private SpriteRenderer spriteRenderer;
@@ -19,7 +19,7 @@ public class DestroyPlatfromByMass : MonoBehaviour
 
     private void Update()
     {
-        if (playerOnPlatform)
+        if (isFading)
         { 
             currentColor.a -= fadeSpeed * Time.deltaTime;
             spriteRenderer.color = currentColor;
@@ -35,7 +35,11 @@ public class DestroyPlatfromByMass : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && collision.gameObject.GetComponent<Rigidbody2D>().mass >= massThreshold)
         {
-            playerOnPlatform = true;
+            PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
+            if (playerController.playerStyle == "fire")
+            {
+                isFading = true;
+            }
         }
     }
 }

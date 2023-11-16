@@ -1201,6 +1201,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1704364171151453819, guid: 04e1d025a6b3b8f4e8aaead6747ef9e5, type: 3}
+      propertyPath: fadeSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1766517167624194202, guid: 04e1d025a6b3b8f4e8aaead6747ef9e5, type: 3}
       propertyPath: m_Name
       value: MassBreakablePlatform
