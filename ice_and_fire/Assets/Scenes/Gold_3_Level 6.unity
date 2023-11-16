@@ -291,6 +291,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeltingGate
       objectReference: {fileID: 0}
+    - target: {fileID: 3765387789976561513, guid: c92f831b36ba4124ba6064f6293581c4, type: 3}
+      propertyPath: fadeSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3765387789976561516, guid: c92f831b36ba4124ba6064f6293581c4, type: 3}
       propertyPath: m_RootOrder
       value: 31

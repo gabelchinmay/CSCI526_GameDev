@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestroyGateByMass : MonoBehaviour
 {
     private float massThreshold = 5f;
-    public float fadeSpeed = 1.0f;
+    public float fadeSpeed = 0.5f;
     private SpriteRenderer spriteRenderer;
     private Color currentColor;
     private bool isFading = false;
@@ -34,7 +34,11 @@ public class DestroyGateByMass : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && (float)collision.gameObject.GetComponent<Rigidbody2D>().mass > massThreshold)
         {
-            isFading = true;
+            PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
+            if (playerController.playerStyle == "fire")
+            {
+                isFading = true;
+            }    
         }
     }
 }
