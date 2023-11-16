@@ -565,6 +565,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: shoorFire
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: iceHurt
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: fireHurt
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7752777897846453378}
   m_Solo: 0
@@ -744,6 +750,12 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: shoorFire
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: fireHurt
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: iceHurt
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1762308362015062896}
