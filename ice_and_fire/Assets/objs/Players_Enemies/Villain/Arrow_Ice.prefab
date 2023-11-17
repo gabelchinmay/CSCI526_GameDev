@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 5837373753056713130}
   - component: {fileID: 3673015263889595363}
   - component: {fileID: 5717804272029550584}
+  - component: {fileID: 357438450568254607}
   m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
@@ -177,6 +178,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &357438450568254607
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851940023477974413}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 81acc114a697768439812bb973a8deea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5752203438875449077
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,6 +594,7 @@ MonoBehaviour:
   canMove: 0
   arrowPrefab: {fileID: 2762176623784743391, guid: b04ef77d74a7d4b80bf27adf51a56bc1, type: 3}
   moveSpeed: 2
+  gameOverScreen: {fileID: 0}
   health: 4
   maxHealth: 4
   healthBar: {fileID: 0}
