@@ -22,7 +22,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.5
+        value: 0.03
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -32,8 +32,8 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.11111111
         value: 0.58
-        inSlope: 0.6749999
-        outSlope: 0.6749999
+        inSlope: 1.2599998
+        outSlope: 1.2599998
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -114,7 +114,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 2
+        value: 2.2
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -124,8 +124,8 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.11111111
         value: 2.2
-        inSlope: 1.8000004
-        outSlope: 1.8000004
+        inSlope: 0
+        outSlope: 0
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -141,7 +141,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 1
+        value: 2.1
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -209,6 +209,8 @@ AnimationClip:
       value: {fileID: 21300000, guid: 8129bc3fe19ca4450b616dc7d99dd32d, type: 3}
     - time: 0.22222222
       value: {fileID: 21300000, guid: 7062a7ed5e78044158d819e3e276b638, type: 3}
+    - time: 0.33333334
+      value: {fileID: 21300000, guid: f6e6cb36e5c9a442d9a634f7ece7970a, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -259,12 +261,13 @@ AnimationClip:
     - {fileID: 21300000, guid: f6e6cb36e5c9a442d9a634f7ece7970a, type: 3}
     - {fileID: 21300000, guid: 8129bc3fe19ca4450b616dc7d99dd32d, type: 3}
     - {fileID: 21300000, guid: 7062a7ed5e78044158d819e3e276b638, type: 3}
+    - {fileID: 21300000, guid: f6e6cb36e5c9a442d9a634f7ece7970a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.33333334
+    m_StopTime: 0.44444445
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -285,7 +288,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.5
+        value: 0.03
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -295,8 +298,8 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.11111111
         value: 0.58
-        inSlope: 0.6749999
-        outSlope: 0.6749999
+        inSlope: 1.2599998
+        outSlope: 1.2599998
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -377,7 +380,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 2
+        value: 2.2
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -387,8 +390,8 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.11111111
         value: 2.2
-        inSlope: 1.8000004
-        outSlope: 1.8000004
+        inSlope: 0
+        outSlope: 0
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -404,7 +407,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 1
+        value: 2.1
         inSlope: 0
         outSlope: 0
         tangentMode: 136
