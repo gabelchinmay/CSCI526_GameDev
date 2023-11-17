@@ -75,6 +75,14 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private SwordEnemyBehaviour SwordDam;
     private ArrowEnemyBehavior ArrowdDam;
+    // count dragon egg
+    private float numDragonEgg;
+    Transform fireIcon1Transform;
+    Transform fireIcon2Transform;
+    Transform fireIcon3Transform;
+    GameObject fireIcon1;
+    GameObject fireIcon2;
+    GameObject fireIcon3;
 
 
 
@@ -105,6 +113,30 @@ public class PlayerController : MonoBehaviour
         InitAnimations();
         InitPlayerWepons();
         //HandleWildFireArrows();
+
+        // reset number of dragon eggs and hide fires
+        numDragonEgg = 0f;
+
+
+        // hide fire icon 
+        fireIcon1Transform = this.transform.Find("fireicon1");
+        fireIcon2Transform = this.transform.Find("fireicon2");
+        fireIcon3Transform = this.transform.Find("fireicon3");
+        if (fireIcon1Transform != null && fireIcon2Transform != null && fireIcon3Transform != null)
+        {
+            // assign the fireIcon component
+            fireIcon1 = fireIcon1Transform.gameObject;
+            fireIcon2 = fireIcon2Transform.gameObject;
+            fireIcon3 = fireIcon3Transform.gameObject;
+            
+        }
+        else
+        {
+            Debug.LogError("Some fireIcon GameObject not found under the player.");
+        }
+        fireIcon1.SetActive(false);
+        fireIcon2.SetActive(false);
+        fireIcon3.SetActive(false);
     }
 
     void Update()
@@ -118,6 +150,27 @@ public class PlayerController : MonoBehaviour
         updateJumpAnimation(); //set isJumping to true when velocity.y != 0
         switchPlayerStyle();
         NullPointCheck();
+
+        // display fireicons
+        if(this.playerStyle == "fire"){
+            if(numDragonEgg == 1){
+                fireIcon1.SetActive(true);
+            }
+            if(numDragonEgg == 2){
+                fireIcon1.SetActive(true);
+                fireIcon2.SetActive(true);
+            }
+            if(numDragonEgg == 3){
+                fireIcon1.SetActive(true);
+                fireIcon2.SetActive(true);
+                fireIcon3.SetActive(true);
+            }
+            
+        }else{
+            fireIcon1.SetActive(false);
+            fireIcon2.SetActive(false);
+            fireIcon3.SetActive(false);
+        }
     }
 
     private void InitAnimations()
@@ -558,8 +611,12 @@ public class PlayerController : MonoBehaviour
                 sendToGoogle.pickUpEgg();
 
             }
+
             rb.mass *= playerMassMultiplicationFactor;
             jumpForce *= playerJumpForceMultiplicationFactor;
+
+            // count dragon eggs
+            numDragonEgg += 1;
         }
 
         if (collision.CompareTag("arrow"))
