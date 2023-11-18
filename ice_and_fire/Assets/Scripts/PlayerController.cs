@@ -821,7 +821,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator bowAttackCooldownRoutine()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         canArrowAttack = true; // Reset the flag after cooldown
     }
 
@@ -848,7 +848,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator resetBowAttackAnimation()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         playerAnimator.SetBool("shoot", false);
         playerAnimator.SetBool("fireArrowShoot", false);
         playerAnimator.SetBool("iceArrowShoot", false);
