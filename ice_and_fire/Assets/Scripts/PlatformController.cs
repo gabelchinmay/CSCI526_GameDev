@@ -5,7 +5,8 @@ public class PlatformController : MonoBehaviour
 {
     // interlaced change for bi-color platforms
     public bool anotherOrder = false;
-
+    public float biFrequencyTime = 10.0f;
+    public float triFrequencyTime = 5.0f;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     public string platformType;
@@ -53,13 +54,13 @@ public class PlatformController : MonoBehaviour
         while (true)
         {
             spriteRenderer.color = originalColor;
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(triFrequencyTime);
 
             spriteRenderer.color = Color.red;
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(triFrequencyTime);
 
             spriteRenderer.color = Color.cyan;
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(triFrequencyTime);
 
         }
     }
@@ -70,20 +71,20 @@ public class PlatformController : MonoBehaviour
             while (true)
             {
                 spriteRenderer.color = Color.cyan;
-                yield return new WaitForSeconds(10f);
+                yield return new WaitForSeconds(biFrequencyTime);
 
                 spriteRenderer.color = Color.red;
-                yield return new WaitForSeconds(10f);
+                yield return new WaitForSeconds(biFrequencyTime);
             }
         }
         else{
             while (true)
             {
                 spriteRenderer.color = Color.red;
-                yield return new WaitForSeconds(10f);
+                yield return new WaitForSeconds(biFrequencyTime);
 
                 spriteRenderer.color = Color.cyan;
-                yield return new WaitForSeconds(10f);
+                yield return new WaitForSeconds(biFrequencyTime);
             }
         }
         
