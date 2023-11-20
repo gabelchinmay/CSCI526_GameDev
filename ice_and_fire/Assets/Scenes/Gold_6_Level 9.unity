@@ -294,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5586221038828294628, guid: 7fc1f10f00128c645979d73f6ae4ecd2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 102.1
+      value: 102.2
       objectReference: {fileID: 0}
     - target: {fileID: 5586221038828294628, guid: 7fc1f10f00128c645979d73f6ae4ecd2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -552,6 +552,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5837373753056713130, guid: 4bf252046a4bf484d862c3d868a0cd6c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5837373753056713130, guid: 4bf252046a4bf484d862c3d868a0cd6c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7623762612295027013, guid: 4bf252046a4bf484d862c3d868a0cd6c, type: 3}
       propertyPath: m_Name
       value: Arrow_Ice (1)
@@ -649,6 +657,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4631007772643182899, guid: f374e2b119e4f4fd0b488a6b3e1cd834, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4631007772643182899, guid: f374e2b119e4f4fd0b488a6b3e1cd834, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6980899481862469664, guid: f374e2b119e4f4fd0b488a6b3e1cd834, type: 3}
       propertyPath: m_Name
       value: WhiteWalker
@@ -1297,7 +1313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1290862026727416777, guid: 20bc77d6d61d741bf9e0aa9c9991b924, type: 3}
       propertyPath: m_Size.x
-      value: 0.0001
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1290862026727416778, guid: 20bc77d6d61d741bf9e0aa9c9991b924, type: 3}
       propertyPath: m_Pivot.x
@@ -1691,6 +1707,14 @@ PrefabInstance:
     - target: {fileID: 3457904877118372527, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
       propertyPath: m_Name
       value: Sword_Ice1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044047679908683733, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044047679908683733, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
@@ -2174,6 +2198,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireSpear
       objectReference: {fileID: 0}
+    - target: {fileID: 7519710009089392261, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519710009089392261, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
 --- !u!1001 &1034597029
@@ -2313,6 +2345,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2843936248942166299, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2843936248942166299, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3899588425943358121, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2410,6 +2450,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2843936248942166299, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2843936248942166299, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3899588425943358121, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2822,6 +2870,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5837373753056713130, guid: 4bf252046a4bf484d862c3d868a0cd6c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5837373753056713130, guid: 4bf252046a4bf484d862c3d868a0cd6c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7623762612295027013, guid: 4bf252046a4bf484d862c3d868a0cd6c, type: 3}
       propertyPath: m_Name
       value: Arrow_Ice2
@@ -3987,6 +4043,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5837373753056713130, guid: 4bf252046a4bf484d862c3d868a0cd6c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5837373753056713130, guid: 4bf252046a4bf484d862c3d868a0cd6c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7623762612295027013, guid: 4bf252046a4bf484d862c3d868a0cd6c, type: 3}
       propertyPath: m_Name
       value: Arrow_Ice (2)
