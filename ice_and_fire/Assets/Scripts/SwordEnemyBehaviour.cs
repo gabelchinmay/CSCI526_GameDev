@@ -29,6 +29,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
     private PlayerController playerController;
     void Start()
     {
+        health = 6;
         this.swordEnemyType = this.gameObject.tag;
         this.sendToGoogle = FindObjectOfType<SendToGoogle>();
         this.playerController = FindObjectOfType<PlayerController>();
