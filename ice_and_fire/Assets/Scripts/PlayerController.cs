@@ -848,7 +848,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator resetBowAttackAnimation()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.0f);
         playerAnimator.SetBool("shoot", false);
         playerAnimator.SetBool("fireArrowShoot", false);
         playerAnimator.SetBool("iceArrowShoot", false);
