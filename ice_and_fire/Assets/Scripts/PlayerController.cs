@@ -951,7 +951,8 @@ public class PlayerController : MonoBehaviour
             if (isOnIceDragon)
             {
                 TakeDamage(1);
-                speed = 1.0f;
+                // remove freeze
+                // speed = 1.0f;
                 
             }
             yield return new WaitForSeconds(0.1f);
