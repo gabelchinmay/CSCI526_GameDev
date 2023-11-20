@@ -70,20 +70,20 @@ public class PlatformController : MonoBehaviour
             while (true)
             {
                 spriteRenderer.color = Color.cyan;
-                yield return new WaitForSeconds(5f);
+                yield return new WaitForSeconds(10f);
 
                 spriteRenderer.color = Color.red;
-                yield return new WaitForSeconds(5f);
+                yield return new WaitForSeconds(10f);
             }
         }
         else{
             while (true)
             {
                 spriteRenderer.color = Color.red;
-                yield return new WaitForSeconds(5f);
+                yield return new WaitForSeconds(10f);
 
                 spriteRenderer.color = Color.cyan;
-                yield return new WaitForSeconds(5f);
+                yield return new WaitForSeconds(10f);
             }
         }
         

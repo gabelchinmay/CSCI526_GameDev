@@ -1700,6 +1700,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2531073574378305893, guid: 3761eea48b23e4f08b9222c304ff68c1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531073574378305893, guid: 3761eea48b23e4f08b9222c304ff68c1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2844535348003448698, guid: 3761eea48b23e4f08b9222c304ff68c1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2965,6 +2973,10 @@ MonoBehaviour:
   health: 0
   maxHealth: 6
   healthBar: {fileID: 0}
+  amplitude: 5
+  frequency: 0.5
+  moveDirection: oscillate
+  moveSpeed: 2
 --- !u!1001 &1831008060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3550,11 +3562,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3008287152392379171, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 12.5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3008287152392379171, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.064023
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3008287152392379171, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3576,6 +3588,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: FireSpear
       objectReference: {fileID: 0}
+    - target: {fileID: 7519710009089392261, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519710009089392261, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
 --- !u!1001 &2133358382
@@ -3585,6 +3605,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2843936248942166299, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2843936248942166299, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3899588425943358121, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
