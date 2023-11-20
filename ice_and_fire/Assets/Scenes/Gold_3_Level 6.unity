@@ -757,6 +757,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4631007772643182899, guid: f374e2b119e4f4fd0b488a6b3e1cd834, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4631007772643182899, guid: f374e2b119e4f4fd0b488a6b3e1cd834, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6980899481862469664, guid: f374e2b119e4f4fd0b488a6b3e1cd834, type: 3}
       propertyPath: m_Name
       value: WhiteWalker
@@ -2615,6 +2623,10 @@ MonoBehaviour:
   health: 0
   maxHealth: 6
   healthBar: {fileID: 0}
+  amplitude: 5
+  frequency: 0.5
+  moveDirection: oscillate
+  moveSpeed: 2
 --- !u!1001 &1248922061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3732,7 +3744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3008287152392379171, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 27.83
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 3008287152392379171, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3757,6 +3769,14 @@ PrefabInstance:
     - target: {fileID: 3008287152392379193, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
       propertyPath: m_TagString
       value: FireSpear
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519710009089392261, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519710009089392261, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
