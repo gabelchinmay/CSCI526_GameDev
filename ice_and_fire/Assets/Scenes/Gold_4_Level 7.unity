@@ -3074,6 +3074,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireSpear
       objectReference: {fileID: 0}
+    - target: {fileID: 3008287152392379193, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
+      propertyPath: m_TagString
+      value: FireSwordEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7519710009089392261, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
