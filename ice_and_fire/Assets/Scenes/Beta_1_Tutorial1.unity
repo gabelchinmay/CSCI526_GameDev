@@ -681,6 +681,10 @@ PrefabInstance:
       propertyPath: defenseWallPrefab
       value: 
       objectReference: {fileID: 8405549490185210882, guid: 63bac9ecba1434af3b392b92ce7d6817, type: 3}
+    - target: {fileID: 417693268123398354, guid: 3944b0b30a4e1462a931b7c6979ff3af, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 417693268123398358, guid: 3944b0b30a4e1462a931b7c6979ff3af, type: 3}
       propertyPath: m_Name
       value: Player
