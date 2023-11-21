@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3899588425943358120, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3899588425943358121, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -243,6 +247,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3457904877118372520, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3457904877118372521, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -520,6 +528,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3457904877118372520, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3457904877118372521, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -795,6 +807,10 @@ PrefabInstance:
       propertyPath: shootDirection
       value: right
       objectReference: {fileID: 0}
+    - target: {fileID: 7623762612295027070, guid: 4bf252046a4bf484d862c3d868a0cd6c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7623762612295027071, guid: 4bf252046a4bf484d862c3d868a0cd6c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1049,6 +1065,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2844535348003448699, guid: 3761eea48b23e4f08b9222c304ff68c1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2844535348003448700, guid: 3761eea48b23e4f08b9222c304ff68c1, type: 3}
       propertyPath: m_Name
       value: Sword_Fire1
@@ -1170,6 +1190,10 @@ PrefabInstance:
     - target: {fileID: 7623762612295027066, guid: 4bf252046a4bf484d862c3d868a0cd6c, type: 3}
       propertyPath: shootDirection
       value: right
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623762612295027070, guid: 4bf252046a4bf484d862c3d868a0cd6c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7623762612295027071, guid: 4bf252046a4bf484d862c3d868a0cd6c, type: 3}
       propertyPath: m_Pivot.x
@@ -1812,6 +1836,10 @@ PrefabInstance:
       propertyPath: shootDirection
       value: right
       objectReference: {fileID: 0}
+    - target: {fileID: 7623762612295027070, guid: 4bf252046a4bf484d862c3d868a0cd6c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7623762612295027071, guid: 4bf252046a4bf484d862c3d868a0cd6c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1962,6 +1990,10 @@ PrefabInstance:
     - target: {fileID: 7623762612295027066, guid: 4bf252046a4bf484d862c3d868a0cd6c, type: 3}
       propertyPath: shootDirection
       value: right
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623762612295027070, guid: 4bf252046a4bf484d862c3d868a0cd6c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7623762612295027071, guid: 4bf252046a4bf484d862c3d868a0cd6c, type: 3}
       propertyPath: m_Pivot.x
@@ -2397,6 +2429,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3457904877118372520, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3457904877118372521, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2679,6 +2715,10 @@ PrefabInstance:
     - target: {fileID: 2843936248942166299, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899588425943358120, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3899588425943358121, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
       propertyPath: m_Pivot.x
@@ -2965,6 +3005,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2844535348003448699, guid: 3761eea48b23e4f08b9222c304ff68c1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2844535348003448700, guid: 3761eea48b23e4f08b9222c304ff68c1, type: 3}
       propertyPath: m_Name
       value: Sword_Fire5
@@ -2986,6 +3030,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3008287152392379170, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3008287152392379171, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3272,6 +3320,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2844535348003448699, guid: 3761eea48b23e4f08b9222c304ff68c1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2844535348003448700, guid: 3761eea48b23e4f08b9222c304ff68c1, type: 3}
       propertyPath: m_Name
       value: Sword_Fire3
@@ -3297,6 +3349,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3457904877118372520, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3457904877118372521, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3425,6 +3481,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3457904877118372520, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3457904877118372521, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3634,6 +3694,10 @@ PrefabInstance:
     - target: {fileID: 2843936248942166299, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899588425943358120, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3899588425943358121, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
       propertyPath: m_Pivot.x
@@ -4360,7 +4424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6083283999004043885, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6083283999004043885, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4435,6 +4499,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3457904877118372520, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3457904877118372521, guid: e426aeb55fd5843ef9aef779fc5105c5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4850,6 +4918,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6980899481862469678, guid: f374e2b119e4f4fd0b488a6b3e1cd834, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f374e2b119e4f4fd0b488a6b3e1cd834, type: 3}
 --- !u!1001 &1922596506
@@ -4950,6 +5022,10 @@ PrefabInstance:
     - target: {fileID: 2844535348003448698, guid: 3761eea48b23e4f08b9222c304ff68c1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844535348003448699, guid: 3761eea48b23e4f08b9222c304ff68c1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2844535348003448700, guid: 3761eea48b23e4f08b9222c304ff68c1, type: 3}
       propertyPath: m_Name
@@ -5195,6 +5271,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2844535348003448699, guid: 3761eea48b23e4f08b9222c304ff68c1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2844535348003448700, guid: 3761eea48b23e4f08b9222c304ff68c1, type: 3}
       propertyPath: m_Name
       value: Sword_Fire2
@@ -5434,6 +5514,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2844535348003448699, guid: 3761eea48b23e4f08b9222c304ff68c1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2844535348003448700, guid: 3761eea48b23e4f08b9222c304ff68c1, type: 3}
       propertyPath: m_Name
       value: Sword_Fire4
@@ -5466,6 +5550,10 @@ PrefabInstance:
     - target: {fileID: 2843936248942166299, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899588425943358120, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3899588425943358121, guid: 4cde64a410c72434e9dea71bab77d419, type: 3}
       propertyPath: m_Pivot.x
