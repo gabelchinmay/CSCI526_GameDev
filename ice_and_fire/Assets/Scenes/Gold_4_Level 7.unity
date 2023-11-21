@@ -1426,6 +1426,7 @@ GameObject:
   - component: {fileID: 640744875}
   - component: {fileID: 640744874}
   - component: {fileID: 640744873}
+  - component: {fileID: 640744876}
   m_Layer: 0
   m_Name: Hint15_FireArea
   m_TagString: Untagged
@@ -1521,6 +1522,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &640744876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640744872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e70c54d075ae34c6ab60d3b0ad9c25d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &660624486 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5436406374883510393, guid: 603efd81e104c4637ad9b705eb43204f, type: 3}
@@ -3808,6 +3821,7 @@ GameObject:
   - component: {fileID: 1425333701}
   - component: {fileID: 1425333700}
   - component: {fileID: 1425333699}
+  - component: {fileID: 1425333702}
   m_Layer: 0
   m_Name: Hint16_IceArea
   m_TagString: Untagged
@@ -3903,6 +3917,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1425333702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425333698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e70c54d075ae34c6ab60d3b0ad9c25d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1467014653 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6083283999004043883, guid: 1ef70b87d17a140ce98f8503fbea6198, type: 3}
