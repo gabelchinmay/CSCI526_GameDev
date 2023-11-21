@@ -330,8 +330,8 @@ public class PlayerController : MonoBehaviour
 
     private void updateJumpAnimation()
     {
-        float dropping = rb.velocity.y;
-        if (dropping == 0)
+        float dropping = Math.Abs(rb.velocity.y);
+        if (dropping < 0.01)
         {
             playerAnimator.SetBool("isJumping", false);
         }
