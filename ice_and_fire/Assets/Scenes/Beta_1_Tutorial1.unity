@@ -361,7 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 1928042812}
   triggerDistance: 7
-  player: {fileID: 0}
+  player: {fileID: 100629495}
 --- !u!4 &35874019
 Transform:
   m_ObjectHideFlags: 0
@@ -409,7 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 1315003470}
   triggerDistance: 7
-  player: {fileID: 0}
+  player: {fileID: 100629495}
 --- !u!4 &56636862
 Transform:
   m_ObjectHideFlags: 0
@@ -1309,7 +1309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 817269046}
   triggerDistance: 5
-  player: {fileID: 0}
+  player: {fileID: 100629495}
 --- !u!4 &846825234
 Transform:
   m_ObjectHideFlags: 0
@@ -1357,7 +1357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 560300793}
   triggerDistance: 10
-  player: {fileID: 0}
+  player: {fileID: 100629495}
 --- !u!4 &1210274877
 Transform:
   m_ObjectHideFlags: 0
@@ -1479,7 +1479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 474571307}
   triggerDistance: 7
-  player: {fileID: 0}
+  player: {fileID: 100629495}
 --- !u!4 &1281723641
 Transform:
   m_ObjectHideFlags: 0
@@ -1611,7 +1611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 2100833669}
   triggerDistance: 10
-  player: {fileID: 0}
+  player: {fileID: 100629495}
 --- !u!4 &1377657486
 Transform:
   m_ObjectHideFlags: 0

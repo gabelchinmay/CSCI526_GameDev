@@ -170,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 1214013530}
   triggerDistance: 7
-  player: {fileID: 1821481276}
+  player: {fileID: 96405605}
 --- !u!1 &22990371
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,7 +861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 1352271176}
   triggerDistance: 9
-  player: {fileID: 0}
+  player: {fileID: 96405605}
 --- !u!1001 &291645595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1382,9 +1382,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0409697a906ca064e8abcc54034d6630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 0}
-  triggerDistance: 10
-  player: {fileID: 0}
+  targetObject: {fileID: 1856427137}
+  triggerDistance: 7
+  player: {fileID: 96405605}
 --- !u!1001 &925161188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2164,7 +2164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 1618562597}
   triggerDistance: 7
-  player: {fileID: 1821481276}
+  player: {fileID: 96405605}
 --- !u!4 &1400971721
 Transform:
   m_ObjectHideFlags: 0
