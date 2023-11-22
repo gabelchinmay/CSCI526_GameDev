@@ -466,6 +466,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 798292228821733960, guid: 3c8fcd31546b22644b651aec7d11fff1, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 23.891382
+      objectReference: {fileID: 0}
+    - target: {fileID: 798292228821733960, guid: 3c8fcd31546b22644b651aec7d11fff1, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 2.865401
+      objectReference: {fileID: 0}
     - target: {fileID: 4435103441504537426, guid: 3c8fcd31546b22644b651aec7d11fff1, type: 3}
       propertyPath: m_Name
       value: FireGate1 (1)
@@ -3306,6 +3314,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 96405599}
+    - target: {fileID: 8875477726896825563, guid: 3c8fcd31546b22644b651aec7d11fff1, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875477726896825563, guid: 3c8fcd31546b22644b651aec7d11fff1, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 360298327
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c8fcd31546b22644b651aec7d11fff1, type: 3}
 --- !u!1001 &4350322640700624294
