@@ -12,7 +12,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
     
     //Initialize Healthbar related component
     [SerializeField] float health, maxHealth = 6.0f;
-    [SerializeField] FloatingHealthBar healthBar;
+    private FloatingHealthBar healthBar;
 
     private int hitCount = 0;
     private bool isAttacking = false;
@@ -29,7 +29,6 @@ public class SwordEnemyBehaviour : MonoBehaviour
     private PlayerController playerController;
     void Start()
     {
-        health = 6;
         this.swordEnemyType = this.gameObject.tag;
         this.sendToGoogle = FindObjectOfType<SendToGoogle>();
         this.playerController = FindObjectOfType<PlayerController>();
