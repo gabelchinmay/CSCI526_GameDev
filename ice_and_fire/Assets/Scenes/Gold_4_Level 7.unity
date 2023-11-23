@@ -3320,6 +3320,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: FireSpear
       objectReference: {fileID: 0}
+    - target: {fileID: 5229240360960985856, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
+      propertyPath: moveDirection
+      value: left
+      objectReference: {fileID: 0}
     - target: {fileID: 7519710009089392261, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
