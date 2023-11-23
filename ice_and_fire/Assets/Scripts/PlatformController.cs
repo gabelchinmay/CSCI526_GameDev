@@ -37,6 +37,14 @@ public class PlatformController : MonoBehaviour
         {
             StartCoroutine(ColorBiChangingLoop());
         }
+        else if(platformType == "lavaBi") 
+        {
+            StartCoroutine(lavaBiChangingLoop());
+        }
+        else if(platformType == "frostBi") 
+        {
+            StartCoroutine(frostBiChangingLoop());
+        }
         else if(platformType == "Normal")
         {
             spriteRenderer.color = originalColor;
@@ -67,6 +75,7 @@ public class PlatformController : MonoBehaviour
 
     private IEnumerator ColorBiChangingLoop()
     {
+        // if anotherOrder is true, change from frost
         if (anotherOrder){
             while (true)
             {
@@ -84,6 +93,60 @@ public class PlatformController : MonoBehaviour
                 yield return new WaitForSeconds(biFrequencyTime);
 
                 spriteRenderer.color = Color.cyan;
+                yield return new WaitForSeconds(biFrequencyTime);
+            }
+        }
+        
+    }
+
+    // change between lava and normal
+    private IEnumerator lavaBiChangingLoop()
+    {
+        // if anotherOrder is true, change from normal
+        if (anotherOrder){
+            while (true)
+            {
+                spriteRenderer.color = originalColor;
+                yield return new WaitForSeconds(biFrequencyTime);
+
+                spriteRenderer.color = Color.red;
+                yield return new WaitForSeconds(biFrequencyTime);
+            }
+        }
+        else{
+            while (true)
+            {
+                spriteRenderer.color = Color.red;
+                yield return new WaitForSeconds(biFrequencyTime);
+
+                spriteRenderer.color = originalColor;
+                yield return new WaitForSeconds(biFrequencyTime);
+            }
+        }
+        
+    }
+
+    // change between frost and normal
+    private IEnumerator frostBiChangingLoop()
+    {
+        // if anotherOrder is true, change from normal
+        if (anotherOrder){
+            while (true)
+            {
+                spriteRenderer.color = originalColor;
+                yield return new WaitForSeconds(biFrequencyTime);
+
+                spriteRenderer.color = Color.cyan;
+                yield return new WaitForSeconds(biFrequencyTime);
+            }
+        }
+        else{
+            while (true)
+            {
+                spriteRenderer.color = Color.cyan;
+                yield return new WaitForSeconds(biFrequencyTime);
+
+                spriteRenderer.color = originalColor;
                 yield return new WaitForSeconds(biFrequencyTime);
             }
         }
