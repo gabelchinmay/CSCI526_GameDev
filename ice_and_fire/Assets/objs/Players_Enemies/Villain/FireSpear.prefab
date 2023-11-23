@@ -230,10 +230,10 @@ GameObject:
   - component: {fileID: 3008287152392379197}
   - component: {fileID: 3008287152392379196}
   - component: {fileID: 7984365488435127558}
-  - component: {fileID: 4913914394330447612}
+  - component: {fileID: 5229240360960985856}
   m_Layer: 0
   m_Name: FireSpear
-  m_TagString: FireSwordEnemy
+  m_TagString: FireSpear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -379,7 +379,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4913914394330447612
+--- !u!114 &5229240360960985856
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -391,7 +391,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c13d43448d9af4277896d344095b85d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHits: 6
   amplitude: 5
   frequency: 0.5
   moveDirection: oscillate
