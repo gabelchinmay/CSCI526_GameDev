@@ -396,9 +396,8 @@ MonoBehaviour:
   frequency: 0.5
   moveDirection: oscillate
   moveSpeed: 2
-  health: 0
+  health: 6
   maxHealth: 6
-  healthBar: {fileID: 0}
   gameOverScreen: {fileID: 0}
 --- !u!1 &4115649804055138615
 GameObject:
