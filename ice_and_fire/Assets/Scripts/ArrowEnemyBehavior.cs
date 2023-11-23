@@ -25,7 +25,7 @@ public class ArrowEnemyBehavior : MonoBehaviour
     
     //Initialize Healthbar related component
     [SerializeField] float health, maxHealth = 4.0f;
-    [SerializeField] FloatingHealthBar healthBar;
+    private FloatingHealthBar healthBar;
     
     void Start()
     {
