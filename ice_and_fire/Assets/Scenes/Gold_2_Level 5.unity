@@ -3144,26 +3144,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3008287152392379193, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
   m_PrefabInstance: {fileID: 2112362357}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1649819087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1649819086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c13d43448d9af4277896d344095b85d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHits: 6
-  amplitude: 5
-  frequency: 0.5
-  moveDirection: oscillate
-  moveSpeed: 2
-  health: 6
-  maxHealth: 6
-  gameOverScreen: {fileID: 0}
 --- !u!1001 &1831008060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3743,6 +3723,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2549531437060603113, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
+      propertyPath: amplitude
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2549531437060603113, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3008287152392379170, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -3837,7 +3825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3008287152392379193, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
       propertyPath: m_TagString
-      value: FireSwordEnemy
+      value: FireSpear
       objectReference: {fileID: 0}
     - target: {fileID: 7519710009089392261, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
       propertyPath: m_AnchorMax.x
