@@ -30,6 +30,12 @@ public class SwordEnemyBehaviour : MonoBehaviour
     void Start()
     {
         this.swordEnemyType = this.gameObject.tag;
+        if (this.swordEnemyType == "spearman")
+        {
+            this.maxHits = 10;
+            this.health = 10f;
+            this.maxHealth = 10.0f;
+        }
         this.sendToGoogle = FindObjectOfType<SendToGoogle>();
         this.playerController = FindObjectOfType<PlayerController>();
         playerAnimator = GetComponent<Animator>();
@@ -210,7 +216,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
 
         }
 
-        if (swordEnemyType == "FireSwordEnemy")
+        if (swordEnemyType == "FireSwordEnemy" || swordEnemyType == "spearman")
         {
             if (other.CompareTag("IceArrow"))
             {
