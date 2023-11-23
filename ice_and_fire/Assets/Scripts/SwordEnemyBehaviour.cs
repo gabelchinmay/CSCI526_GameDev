@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SwordEnemyBehaviour : MonoBehaviour
 {
-    public int maxHits = 6;
+    private int maxHits = 6;
     public float amplitude = 5f;
     public float frequency = 1 / 2f;
     public string moveDirection = "oscillate";
