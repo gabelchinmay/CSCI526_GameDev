@@ -30,7 +30,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
     void Start()
     {
         this.swordEnemyType = this.gameObject.tag;
-        if (this.swordEnemyType == "spearman")
+        if (this.swordEnemyType == "spearman" || this.swordEnemyType == "FireSpear")
         {
             this.maxHits = 10;
             this.health = 10f;
@@ -216,7 +216,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
 
         }
 
-        if (swordEnemyType == "FireSwordEnemy" || swordEnemyType == "spearman")
+        if (swordEnemyType == "FireSwordEnemy" || swordEnemyType == "spearman" || this.swordEnemyType == "FireSpear")
         {
             if (other.CompareTag("IceArrow"))
             {
