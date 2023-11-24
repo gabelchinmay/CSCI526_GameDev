@@ -543,6 +543,10 @@ PrefabInstance:
       propertyPath: rotationSpeed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 897400135330868254, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
+      propertyPath: biFrequencyTime
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 897400135330868260, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1478,6 +1482,10 @@ PrefabInstance:
       propertyPath: rotationSpeed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 897400135330868254, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
+      propertyPath: biFrequencyTime
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 897400135330868260, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1659,6 +1667,10 @@ PrefabInstance:
     - target: {fileID: 897400135330868254, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
       propertyPath: rotationSpeed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 897400135330868254, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
+      propertyPath: biFrequencyTime
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 897400135330868260, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
       propertyPath: m_Sprite
@@ -2267,6 +2279,10 @@ PrefabInstance:
       propertyPath: rotationSpeed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 897400135330868254, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
+      propertyPath: biFrequencyTime
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 897400135330868260, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2788,6 +2804,10 @@ PrefabInstance:
       propertyPath: rotationSpeed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 897400135330868254, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
+      propertyPath: biFrequencyTime
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 897400135330868260, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3231,6 +3251,10 @@ PrefabInstance:
       propertyPath: rotationSpeed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 897400135330868254, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
+      propertyPath: biFrequencyTime
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 897400135330868260, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3328,6 +3352,10 @@ PrefabInstance:
       propertyPath: rotationSpeed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 897400135330868254, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
+      propertyPath: biFrequencyTime
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 897400135330868260, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3420,6 +3448,10 @@ PrefabInstance:
     - target: {fileID: 897400135330868254, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
       propertyPath: rotationSpeed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 897400135330868254, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
+      propertyPath: biFrequencyTime
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 897400135330868260, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
       propertyPath: m_Sprite

@@ -221,6 +221,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
             if (other.CompareTag("IceArrow"))
             {
                 this.TakeHits(1);
+                // Debug.Log("Get hurt by ice arrow! health: " + health);
                 
             }
 
