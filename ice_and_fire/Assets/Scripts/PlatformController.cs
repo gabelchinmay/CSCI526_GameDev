@@ -203,7 +203,7 @@ public class PlatformController : MonoBehaviour
                 if (spriteRenderer.color == Color.red && player.GetComponent<PlayerController>().getPlayerStyle() != "fire")
                 {
                     //this.TakeDamage(10);
-                    player.GetComponent<PlayerController>().TakeDamage(10);
+                    player.GetComponent<PlayerController>().TakeDamage(5);
                     if (sendToGoogle != null)
                     {
                         sendToGoogle.firePlatDamage();
@@ -215,7 +215,7 @@ public class PlatformController : MonoBehaviour
 
                 else if (spriteRenderer.color == Color.cyan && player.GetComponent<PlayerController>().getPlayerStyle() != "ice")
                 {
-                    player.GetComponent<PlayerController>().TakeDamage(1);
+                    player.GetComponent<PlayerController>().TakeDamage(2);
                     if (sendToGoogle != null)
                     {
                         sendToGoogle.icePlatDamage();
