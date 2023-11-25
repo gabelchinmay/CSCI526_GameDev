@@ -9,7 +9,8 @@ public class SwordEnemyBehaviour : MonoBehaviour
     public float frequency = 1 / 2f;
     public string moveDirection = "oscillate";
     public float moveSpeed = 2.0f;
-    
+    private SpriteRenderer spriteRenderer;
+    private float biFrequencyTime = 10.0f;
     //Initialize Healthbar related component
     [SerializeField] float health, maxHealth = 6.0f;
     private FloatingHealthBar healthBar;
@@ -27,8 +28,15 @@ public class SwordEnemyBehaviour : MonoBehaviour
     private SendToGoogle sendToGoogle;
     public GameOverScreen gameOverScreen;
     private PlayerController playerController;
+    //private Color originalColor;
+
+    private string NKMode = "fire";
+
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        //originalColor = spriteRenderer.color;
+
         this.swordEnemyType = this.gameObject.tag;
         if (this.swordEnemyType == "spearman" || this.swordEnemyType == "FireSpear")
         {
@@ -36,6 +44,16 @@ public class SwordEnemyBehaviour : MonoBehaviour
             this.health = 10f;
             this.maxHealth = 10.0f;
         }
+
+        if (this.swordEnemyType == "NightKing")
+        {
+            this.maxHits = 20;
+            this.health = 20f;
+            this.maxHealth = 20.0f;
+            StartCoroutine(ColorChangingLoop());
+        }
+
+
         this.sendToGoogle = FindObjectOfType<SendToGoogle>();
         this.playerController = FindObjectOfType<PlayerController>();
         playerAnimator = GetComponent<Animator>();
@@ -206,7 +224,7 @@ public class SwordEnemyBehaviour : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if (swordEnemyType == "IceSwordEnemy" || swordEnemyType == "Dead" || swordEnemyType == "WhiteWalker" || swordEnemyType == "NightKing")
+        if (swordEnemyType == "IceSwordEnemy" || swordEnemyType == "WhiteWalker")
         {
             if (other.CompareTag("FireArrow"))
             {
@@ -226,6 +244,27 @@ public class SwordEnemyBehaviour : MonoBehaviour
             }
 
         }
+
+
+        if (swordEnemyType == "NightKing")
+        {
+            if (other.CompareTag("IceArrow") && this.NKMode == "fire")
+            {
+                this.TakeHits(1);
+                // Debug.Log("Get hurt by ice arrow! health: " + health);
+
+            }
+            else if (other.CompareTag("FireArrow") && this.NKMode == "ice")
+            {
+                this.TakeHits(1);
+                // Debug.Log("Get hurt by ice arrow! health: " + health);
+
+            }
+
+
+        }
+
+
 
         if (other.CompareTag("FireArea"))
         {
@@ -273,6 +312,33 @@ public class SwordEnemyBehaviour : MonoBehaviour
             yield return new WaitForSeconds(1.0f);
 
         }
+    }
+
+
+    private IEnumerator ColorChangingLoop()
+    {
+
+            while (true)
+            {
+                this.spriteRenderer.color = Color.red;
+                this.NKMode = "fire";
+                yield return new WaitForSeconds(biFrequencyTime);
+
+                this.spriteRenderer.color = Color.cyan;
+                this.NKMode = "ice";
+                yield return new WaitForSeconds(biFrequencyTime);
+
+
+            }
+
+
+
+    }
+
+
+    public string getNKMode()
+    {
+        return this.NKMode;
     }
 
 }

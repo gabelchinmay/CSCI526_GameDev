@@ -445,6 +445,21 @@ public class PlayerController : MonoBehaviour
                     currentSwordEnemyPlayerFighting.TakeHits(2);
                 }
 
+                if (currentSwordEnemyPlayerFighting != null && currentSwordEnemyPlayerFighting.CompareTag("NightKing"))
+                {
+                    string nm = currentSwordEnemyPlayerFighting.getNKMode();
+                    if (nm == "fire")
+                    {
+                        currentSwordEnemyPlayerFighting.TakeHits(2);
+
+                    }
+                }
+
+                if (currentSwordEnemyPlayerFighting != null &&  currentSwordEnemyPlayerFighting.CompareTag("FireSpear"))
+                {
+                    currentSwordEnemyPlayerFighting.TakeHits(2);
+                }
+
             }
 
 
@@ -473,8 +488,12 @@ public class PlayerController : MonoBehaviour
 
                 if (currentSwordEnemyPlayerFighting != null && currentSwordEnemyPlayerFighting.CompareTag("NightKing"))
                 {
-                    currentSwordEnemyPlayerFighting.TakeHits(1);
-                    Debug.Log("Get hurt");
+                    string nm = currentSwordEnemyPlayerFighting.getNKMode();
+                    if (nm == "ice")
+                    {
+                        currentSwordEnemyPlayerFighting.TakeHits(2);
+
+                    }
                 }
             }
 
