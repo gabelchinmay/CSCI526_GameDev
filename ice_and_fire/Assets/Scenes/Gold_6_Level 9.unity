@@ -1878,6 +1878,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c47eacf560474486822f16e841df2f7, type: 3}
+--- !u!1 &728069320 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3008287152392379193, guid: c9c7b5e3ae03c4d86ad9848d50872710, type: 3}
+  m_PrefabInstance: {fileID: 463172859}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &781282572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2334,7 +2339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b73ffb6bafa4f754ea96267eb804b557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  associatedEnemy: {fileID: 0}
+  associatedEnemy: {fileID: 728069320}
 --- !u!1001 &1034597029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2406,6 +2411,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1546216826}
+    - target: {fileID: 897400135330868254, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
+      propertyPath: anotherOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 897400135330868254, guid: 09481abb3a061485ca88805f484e70c0, type: 3}
       propertyPath: platformType
       value: Bi
