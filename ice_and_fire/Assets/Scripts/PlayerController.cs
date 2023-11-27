@@ -940,7 +940,15 @@ public class PlayerController : MonoBehaviour
             }
             if (currentSwordEnemyPlayerFighting != null)
             {
-                this.TakeDamage(1);
+                if (currentSwordEnemyPlayerFighting.CompareTag("NightKing"))
+                {
+                    this.TakeDamage(3);
+                }
+                else
+                {
+                    this.TakeDamage(1);
+                }
+                
                 if (SwordDam != null)
                 {
                     if (SwordDam.getSwordEnemyType() == "FireSwordEnemy")
